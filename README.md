@@ -1,2 +1,1 @@
 # StakingRakis6
-test

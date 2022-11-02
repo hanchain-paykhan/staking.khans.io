@@ -1,0 +1,22 @@
+{
+  "name": "stakingrakis6",
+  "version": "1.0.0",
+  "description": "test",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hanchain-paykhan/StakingRakis6.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hanchain-paykhan/StakingRakis6/issues"
+  },
+  "homepage": "https://github.com/hanchain-paykhan/StakingRakis6#readme",
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.7.3"
+  }
+}
