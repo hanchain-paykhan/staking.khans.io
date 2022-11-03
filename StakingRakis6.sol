@@ -88,8 +88,19 @@ contract StakingRakis6 is ReentrancyGuard, Ownable {
         return balance;
     }
 
+    // Blunder staking token lookup function of contract
+    function unappliedStakingToken() public view returns (uint256) {
+        uint256 unappliedToken;
+        unappliedToken = stakingTokenBalance() - totalSupply;
+        return unappliedToken;
+    }
+
     // LP Token Transfer Function of Contract
     function transferStakingToken(uint256 _amount) public onlyOwner {
+        require(
+            unappliedStakingToken() >= _amount,
+            "Exceeded Unapplied Token Amount"
+        );
         stakingToken.transfer(msg.sender, _amount);
     }
 
@@ -140,7 +151,7 @@ contract StakingRakis6 is ReentrancyGuard, Ownable {
             uint256(getStakingStartTime[_user]));
         getBalance[_user] +=
             stakedTime *
-            ((getAmount[msg.sender] / 1 ether) * hanTokenPerLpToken);
+            ((getAmount[msg.sender] * hanTokenPerLpToken) / 10**18);
         rewardToken.transfer(_user, getBalance[_user]);
         getRewardReleased[_user] += getBalance[_user];
         emit RewardPaid(_user, getBalance[_user]);
@@ -161,7 +172,7 @@ contract StakingRakis6 is ReentrancyGuard, Ownable {
                 uint256(getStakingStartTime[_user]));
             getBalance[_user] +=
                 stakedTime *
-                ((getAmount[msg.sender] / 1 ether) * hanTokenPerLpToken);
+                ((getAmount[msg.sender] * hanTokenPerLpToken) / 10**18);
             stakingToken.transferFrom(_user, address(this), _amount);
             getAmount[_user] += _amount;
             getStakingStartTime[_user] = block.timestamp;
@@ -185,7 +196,7 @@ contract StakingRakis6 is ReentrancyGuard, Ownable {
             uint256(getStakingStartTime[_user]));
         getBalance[_user] +=
             stakedTime *
-            ((getAmount[msg.sender] / 1 ether) * hanTokenPerLpToken);
+            ((getAmount[msg.sender] * hanTokenPerLpToken) / 10**18);
         getAmount[_user] -= _amount;
         getStakingStartTime[_user] = block.timestamp;
         stakingToken.transfer(_user, _amount);
@@ -195,14 +206,14 @@ contract StakingRakis6 is ReentrancyGuard, Ownable {
     // Compensation lookup function
     function updateReward() public view returns (uint256) {
         uint256 value;
-        uint256 stakedTime = (block.timestamp -
-            uint256(getStakingStartTime[msg.sender]));
-        value +=
-            stakedTime *
-            ((getAmount[msg.sender] / 1 ether) * hanTokenPerLpToken);
+        // uint stakedTime = (block.timestamp - uint(getStakingStartTime[msg.sender]));
+        value += ((getAmount[msg.sender] * hanTokenPerLpToken) / 10**18);
         return value;
     }
 
+    // 0.000001256958972041
+    // 1256958972041
+    // 1000000000000000000
     /* ==================== EVENTS ==================== */
 
     event Staked(address indexed user, uint256 amount);
