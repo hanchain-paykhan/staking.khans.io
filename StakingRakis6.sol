@@ -5,8 +5,9 @@ import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 import "@openzeppelin/contracts/token/ERC721/IERC721.sol";
+import "@openzeppelin/contracts/security/Pausable.sol";
 
-contract StakingRakis6 is ReentrancyGuard, Ownable {
+contract StakingRakis6 is ReentrancyGuard, Ownable, Pausable {
     IERC20 public stakingToken; // rakis-6
     IERC20 public rewardToken; // Han
     IERC20 public wethToken; // WETH
@@ -29,7 +30,7 @@ contract StakingRakis6 is ReentrancyGuard, Ownable {
         address _wethToken,
         address _usdcToken,
         address _uniV3Token
-    ) {
+    ) onlyOwner {
         stakingToken = IERC20(_stakingToken);
         rewardToken = IERC20(_rewardToken);
         wethToken = IERC20(_wethToken);
@@ -47,6 +48,15 @@ contract StakingRakis6 is ReentrancyGuard, Ownable {
                 uint256(getStakingStartTime[msg.sender]));
             return stakedTime;
         }
+    }
+
+    // Staking pause
+    function pause() public onlyOwner {
+        _pause();
+    }
+
+    function unpause() public onlyOwner {
+        _unpause();
     }
 
     /* ==================== Admin ==================== */
@@ -141,7 +151,7 @@ contract StakingRakis6 is ReentrancyGuard, Ownable {
     }
 
     // Compensation claim function
-    function claimReward(address _user) public {
+    function claimReward(address _user) public nonReentrant {
         require(
             block.timestamp - uint256(getStakingStartTime[_user]) != 0,
             "Too Early"
@@ -160,7 +170,11 @@ contract StakingRakis6 is ReentrancyGuard, Ownable {
     }
 
     // Steakings function Detail Logic
-    function _stake(address _user, uint256 _amount) internal {
+    function _stake(address _user, uint256 _amount)
+        internal
+        nonReentrant
+        whenNotPaused
+    {
         require(_amount > 0, "Cannot stake 0");
         require(stakingToken.balanceOf(_user) != 0, "Do Not Have Token");
         require((_amount + totalSupply) <= tokenVolume, "Too Many Token");
@@ -187,10 +201,9 @@ contract StakingRakis6 is ReentrancyGuard, Ownable {
     }
 
     // withdrawal function detail logic
-    function _withdraw(address _user, uint256 _amount) internal {
+    function _withdraw(address _user, uint256 _amount) internal nonReentrant {
         require(_amount > 0, "Cannot withdraw 0");
         require(getAmount[_user] >= _amount, "Insufficient Balance");
-        require(_amount < rewardTokenBalance(), "Do Not Have Reward Token");
         totalSupply -= _amount;
         uint256 stakedTime = (block.timestamp -
             uint256(getStakingStartTime[_user]));
@@ -211,9 +224,13 @@ contract StakingRakis6 is ReentrancyGuard, Ownable {
         return value;
     }
 
-    // 0.000001256958972041
     // 1256958972041
+    // 1256958972041
+    // 125695897204
+    // 12569589720
     // 1000000000000000000
+    // 1000000000000000000
+    // 10000000000000000000000
     /* ==================== EVENTS ==================== */
 
     event Staked(address indexed user, uint256 amount);
