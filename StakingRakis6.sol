@@ -14,7 +14,7 @@ contract StakingRakis6 is ReentrancyGuard, Ownable, Pausable {
     IERC20 public usdcToken; // USDC
     IERC721 public uniV3Token; // Uniswap V3
 
-    uint256 public constant hanTokenPerLpToken = 1256958972041; // HanToken quantity per LP token
+    uint256 public constant hanTokenPerLpToken = 274959775134; // HanToken quantity per LP token
 
     uint256 public totalSupply; // Total amount of tokens staked
     uint256 public tokenVolume = 10000 ether; // Amount of tokens that the user can stake in the contract
@@ -224,13 +224,7 @@ contract StakingRakis6 is ReentrancyGuard, Ownable, Pausable {
         return value;
     }
 
-    // 1256958972041
-    // 1256958972041
-    // 125695897204
-    // 12569589720
-    // 1000000000000000000
-    // 1000000000000000000
-    // 10000000000000000000000
+
     /* ==================== EVENTS ==================== */
 
     event Staked(address indexed user, uint256 amount);
