@@ -1,0 +1,505 @@
+html,
+body {
+    font-weight: 400;
+    font-size: 14px;
+    -webkit-font-smoothing: antialiased;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    overflow-x: hidden;
+    background-image: url(../img/1.jpg);
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+}
+
+ul,
+li,
+a {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a:hover {}
+
+a,
+a:hover,
+a:active,
+a:focus {
+    outline: none !important;
+    text-decoration: none !important;
+    box-shadow: none !important;
+}
+
+
+a {
+    -webkit-transition: all 500ms ease;
+    -moz-transition: all 500ms ease;
+    -ms-transition: all 500ms ease;
+    -o-transition: all 500ms ease;
+    transition: all 500ms ease;
+}
+
+
+section {
+    -webkit-background-size: cover;
+    width: 100%;
+    min-height: 100%;
+}
+
+.home-section {
+    color: #fff;
+    padding: 100px 0 0 40px;
+    
+}
+
+
+.home-content {}
+
+/*---------------------*/
+.home-1 {
+    font-weight: bold;
+    font-size: 65px;
+    border-left: 5px solid #0a93eb;
+    padding-left: 15px;
+
+}
+
+/*
+.home-1 .sktxt {
+    padding-bottom: 35px;
+    word-break: break-all;
+}
+*/
+
+.home-1 .pjtxt {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.home-1 .pjtxt .hanlogo {
+    flex-grow: 0;
+
+}
+
+.home-1 .pjtxt .hanlogo img {
+    width: 80px;
+}
+
+.home-1 .pjtxt .hantxt {
+    flex-grow: 0;
+}
+
+.home-1 .pjtxt b {
+    font-size: 50px;
+
+}
+
+/*-------------------------------*/
+
+.home-eth {
+    margin-top: 200px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 10%;
+    justify-content: center;
+}
+
+.eth-box {
+    margin-right: 4%;
+    position: relative;
+}
+
+.eth-txt {
+    position: absolute;
+    font-size: 25px;
+    top: -30%;
+}
+
+#staking {
+    width: 630px;
+    padding: 12% 0% 0 5%;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 30px;
+    height: 155px;
+}
+
+#pool {
+    width: 630px;
+    padding: 5% 0% 0 5%;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 30px;
+    height: 200px;
+}
+
+
+.home-eth #pool .home-2:first-child {
+    margin-bottom: 3%;
+}
+
+.home-2 {
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+}
+
+.home-2 .home-2_0 {
+    width: 11%;
+}
+
+.home-2 .home-2_0 img {
+    width: 70px;
+}
+
+.home-2 .home-2_1 {
+    margin: 0 2.5% 0 10px;
+    font-size: 32px;
+    /* width: %; */
+}
+.home-2 .add-btn1{
+   padding-left: 25%;
+    width: 19%;
+}
+.home-2 .add-btn2{
+   padding-left: 26.5%;
+    width: 19%;
+}
+
+.home-2 .home-2_2 a {
+    color: #fff;
+    width: 120px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 25px;
+    display: block;
+}
+
+.home-2 .home-2_2:hover {
+    transform: scale(1.1);
+    transition-duration: 0.5s;
+    font-size: 35px;
+}
+
+/*-------------------------*/
+.home-footer-logo {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.home-footer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
+    position: absolute;
+    /*    width: 100%;*/
+    bottom: 0;
+    right: 0;
+    margin: 0 30px 20px 0;
+}
+
+.home-footer .logoimg {
+    align-self: center;
+    opacity: 0.6;
+    margin-left: 8px;
+}
+
+.home-footer .logoimg a img {
+    width: 30px;
+}
+
+.home-footer .logoimg:hover {
+    opacity: 1;
+    transition-duration: 0.5s;
+    /*    box-shadow: 0 4px 11px rgba(248 249 250 / 35%);*/
+}
+
+.ether {
+    margin-right: 10px;
+    color: #212529;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 2px 8px;
+}
+
+.ether .ether_txt {
+    width: 80px;
+    font-weight: bold;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.ether .ether_copy {
+    cursor: pointer;
+}
+
+.tooltip,
+.tooltip2 {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 140px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 150%;
+    left: 50%;
+    margin-left: -75px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.tooltip2 .tooltiptext2 {
+    visibility: hidden;
+    background-color: rgba(255, 255, 255, 0.3);
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 110%;
+    left: 0;
+    margin-left: -20px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext,
+.tooltip2:hover .tooltiptext2 {
+    visibility: visible;
+    opacity: 1;
+}
+
+#metamask_txt {
+    font-weight: normal;
+}
+
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;  /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    color: white;
+    direction: ltr;
+  
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+  
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+  
+    /* Support for IE. */
+    font-feature-settings: 'liga';
+  }
+  
+  .material-icons:hover {
+    opacity: 0.4;
+  }
+  
+  .tooltip-main-container {
+    margin-right: 10px;
+    position: relative;
+    font-size: 13px;
+    font-family: sans-serif;
+    &:hover {
+      .tooltip-main-content {
+        visibility: visible;
+        opacity: 1;
+        transition: .25s all ease;
+        transition-delay: 0s;
+        top: -200px;
+        left: -20%;
+        // right: 200px;
+
+        width: 300px;
+        height: 150px;
+        font-size: 13px;
+  
+      }
+    }
+  }
+  .tooltip-main-content {
+    font-family: sans-serif;
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    background: #646FD4;
+    display: flex;
+    flex-direction: column;
+    left: 100px;
+    top: -300px;
+    padding: 0 15px;
+    margin: 10px;
+    font-size: 15px;  
+    width: 250px;
+    transition: .25s all ease;
+    transition-delay: .25s;
+    z-index: 2;
+    font-size: 13px;
+    color: #FFFFFF;
+
+    .tooltip-main-content a {
+        text-decoration: underline;
+    }
+
+    .align-main-right {
+        text-decoration: underline;
+        color: yellow;
+
+    }
+    //   .align-main-right {
+    //     text-align: left;
+    //     a {
+    //       font-size: 13px;
+  
+    //       color: yellow;
+    //       text-decoration: none;
+    //       &:hover {
+    //         text-decoration: underline;
+    //       }
+    //     }
+    //   }
+    &:after {
+        
+    }
+  }
+
+
+/* ------------------------------ */
+@media only screen and (max-width: 1410px) {
+    .eth-box:first-child {
+        margin-bottom: 80px;
+    }
+
+}
+
+/* ------------------------------ */
+
+@media only screen and (max-width:757px) {
+    .home-pools {
+        width: 90%;
+        height: 100%;
+    }
+    .eth-box:first-child {
+        margin-bottom:90px;;
+    }
+    .eth-txt {
+    position: absolute;
+    font-size: 25px;
+    top: -40px;
+
+}
+    .home-eth {
+    margin-top: 100px;
+    }
+}
+
+/* ------------------------------ */
+
+@media only screen and (max-width: 645px) {
+    .home-1 .pjtxt {
+        align-items: center;
+    }
+
+
+    .home-2 .home-2_2 {
+        width: 90%;
+        margin-top: 3%;
+    }
+
+    .home-1 .pjtxt .hanlogo img {
+        width: 60px;
+    }
+
+    .home-footer {
+        margin: 0 10px 5px 0;
+
+    }
+
+    .home-2 .home-2_0 img {
+        width: 50px;
+    }
+
+}
+
+@media only screen and (max-width: 523px) {
+    .home-section {
+        padding-left: 20px;
+    }
+
+    .home-1 .pjtxt .hanlogo img {
+        width: 50px;
+    }
+
+    .home-footer .logoimg a img {
+        width: 30px;
+    }
+
+}
+
+
+@media only screen and (max-width: 425px) {
+
+    .home-content {
+        margin: 0 auto;
+    }
+
+    .home-1 {
+        font-size: 40px;
+    }
+
+    .home-1 .pjtxt b {
+        font-size: 30px;
+    }
+
+    .home-1 .pjtxt {
+        line-height: 30px;
+    }
+}
