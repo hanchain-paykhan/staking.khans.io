@@ -2,9 +2,19 @@ import React, { useEffect, useCallback, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import "./StakingPage.scss";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+// import { ReactComponent as HanLogo } from '../images/HanLogo.svg'
 import HanLogo from "../assets/images/HanLogo.svg";
 import { FiRefreshCcw } from "react-icons/fi";
 import Web3 from "web3";
+import {
+  StakingContract,
+  WETHContract,
+  RewardTokenContract,
+  ArrakisContract,
+  StakingAddress,
+  StakingTokenAddress,
+  StakingTokenContract,
+} from "../config";
 import { stakingAction } from "../redux/actions/stakingAction";
 import { stakingCancelAction } from "../redux/actions/stakingCancelAction";
 import { stakingRewardAction } from "../redux/actions/stakingRewardAction";
@@ -12,18 +22,21 @@ import { stakingViewAction } from "../redux/actions/stakingViewAction";
 import BigNumber from "bignumber.js";
 import { OptimismRedLogo, ArrakisBlackIcon } from "../assets/_index";
 import { stakingApproveAction } from "../redux/actions/stakingApproveAction";
-import HelpIcon from '@mui/icons-material/Help';
-
+import { HiQuestionMarkCircle } from "react-icons/hi";
+import HelpIcon from "@mui/icons-material/Help";
+import { Tooltip, IconButton } from "@mui/material";
 
 const StakingPage = () => {
   const dispatch = useDispatch();
-  const [account, setAccount] = useState(null);
+  const [account, setAccount] = useState("");
   const [web3, setWeb3] = useState(null);
   const [error, setError] = useState();
   const [stakingAmount, setStakingAmount] = useState("");
   const [withdrawAmount, setWithdrawAmount] = useState("");
+  const [disable, setDisable] = useState(false);
+  const [checkChainId, setCheckChainId] = useState("");
+  const [testAmount, setTestAmount] = useState("");
 
-  
   const AmountBN = new BigNumber("1000000000000000000");
   const {
     getAmount,
@@ -33,9 +46,14 @@ const StakingPage = () => {
     getBalance,
     stakingTokenAmount,
     getWithdrawAmount,
+    tokenVolume,
+    totalSupply,
     canAmountStake,
     successApprove,
-    // getMintAmounts,
+    allowanceAmount,
+    WETHBalanceOf,
+    HanBalanceOf,
+    getMintAmounts,
     HanQuantityLpQuantityPerYear1HanValue,
   } = useSelector((state) => state.stakingView);
 
@@ -83,10 +101,25 @@ const StakingPage = () => {
     }
   };
 
+  const handleConnectWallet = async () => {
+    const account = await window.ethereum.request({
+      method: "eth_requestAccounts",
+    });
+    const web3Instance = new Web3(window.ethereum);
+    setWeb3(web3Instance);
+    setAccount(account[0]);
+  };
+
   const handleNetworkSwitch = async (networkName) => {
     setError();
     await changeNetwork({ networkName, setError });
   };
+
+  
+
+
+
+
 
   const networkChanged = (chainId) => {
     console.log({ chainId });
@@ -124,6 +157,8 @@ const StakingPage = () => {
       console.log(error);
     }
   };
+
+  // console.log(typeof window.ethereum.chainId,"이더확인");
 
   const addRewardToken = async () => {
     const tokenAddress = "0xC7483FbDB5c03E785617a638E0f22a08da10084B";
@@ -180,6 +215,8 @@ const StakingPage = () => {
     });
   }, []);
 
+
+
   useEffect(() => {
     if (window.ethereum) {
       window.ethereum.on("chainChanged", () => {
@@ -191,9 +228,16 @@ const StakingPage = () => {
     }
   });
 
+  useEffect(() => {
+    if ( window.ethereum.chainId === "0xa") {
+      setCheckChainId("Oxa")
+    } 
+  },[window.ethereum.chainId]);
+
   const staking = () => {
     let stakingAmountSet = document.getElementById("maxStakeAmount").value;
     const stakingnum = AmountBN.multipliedBy(new BigNumber(stakingAmountSet));
+    // const stakingnum = Web3.utils.toWei(String(stakingAmountSet),'ether');
     dispatch(stakingAction.stakingAct(account, stakingnum));
   };
 
@@ -220,18 +264,18 @@ const StakingPage = () => {
   };
 
   const changeStakingAmount = (e) => {
-      const pattern = /^(\d{0,4}([.]\d{0,14})?)?$/;
-      if (pattern.test(e.target.value)) {
-        setStakingAmount(e.target.value);
-      }
+    const pattern = /^(\d{0,4}([.]\d{0,14})?)?$/;
+    if (pattern.test(e.target.value)) {
+      setStakingAmount(e.target.value);
+    }
   };
+
 
   const changeWithdrawAmount = (e) => {
     const pattern = /^(\d{0,4}([.]\d{0,14})?)?$/;
-      if (pattern.test(e.target.value)) {
-        setWithdrawAmount(e.target.value);     
-       }
-    
+    if (pattern.test(e.target.value)) {
+      setWithdrawAmount(e.target.value);
+    }
   };
 
   const changeMaxDepositAmount = () => {
@@ -246,7 +290,7 @@ const StakingPage = () => {
     dispatch(stakingViewAction.stakingViewAct(account));
   }, [account]);
 
-
+ 
   return (
     <div className="stakingPageContainer">
       <div className="stakingPageHanLogoContainer">
@@ -260,14 +304,28 @@ const StakingPage = () => {
               <a>APR</a>
             </div>
             <div className="tooltip-container">
-              <i className="info-icon material-icons"><HelpIcon/></i>
+              <i className="info-icon material-icons">
+                <HelpIcon />
+              </i>
               <div className="tooltip-content">
-                <span>APR displayed is not historical statistics. 
-              According to the LP token quantity standard that fluctuates with the HAN weight of the POOL, when staking at the present time, APR is the annual interest rate of the amount of HAN to be obtained against the liquidity supplied.</span>
-                <span className="align-right"> <a href='https://medium.com/@HanIdentity/hanchain-x-optimism-x-uniswap-v3-x-arrakis-af564de80f81' target="_blank">Read More</a></span>
+                <span>
+                  APR displayed is not historical statistics. According to the
+                  LP token quantity standard that fluctuates with the HAN weight
+                  of the POOL, when staking at the present time, APR is the
+                  annual interest rate of the amount of HAN to be obtained
+                  against the liquidity supplied.
+                </span>
+                <span className="align-right">
+                  {" "}
+                  <a
+                    href="https://medium.com/@HanIdentity/hanchain-x-optimism-x-uniswap-v3-x-arrakis-af564de80f81"
+                    target="_blank"
+                  >
+                    Read More
+                  </a>
+                </span>
               </div>
             </div>
-                    
           </div>
           <div className="stakingAprAmountNum">
             <a>{HanQuantityLpQuantityPerYear1HanValue}%</a>
@@ -282,6 +340,35 @@ const StakingPage = () => {
         <div className="stakingCanAmountSection">
           <p>Available Quota : {canAmountStake}</p>
         </div>
+        {account === '' ?
+        (
+          <div className="connectWalletSection">
+            <img
+                  width="30px"
+                  height="30px"
+                  src="https://static.coingecko.com/s/metamask_fox-99d631a5c38b5b392fdb2edd238a525ba0657bc9ce045077c4bae090cfc5b90a.svg"
+                /><button onClick={handleConnectWallet}>Connect Wallet</button>
+          </div>
+          ) :  checkChainId === "Oxa" ? (
+          <div className="connectWalletComSection">
+            <img
+                  width="30px"
+                  height="30px"
+                  src={OptimismRedLogo}
+                />
+            <button disabled={true}>{account.substr(0,6)}...{account.slice(-6)}</button>
+          </div>
+          ):(
+          <div className="connectWalletComSection">
+            <img
+                  width="30px"
+                  height="30px"
+                  src="https://assets.coingecko.com/coins/images/279/small/ethereum.png?1595348880"
+                />
+            <button disabled={true}>{account.substr(0,6)}...{account.slice(-6)}</button>
+          </div>
+          ) 
+        }
         <TabList>
           <Tab>DEPOSIT</Tab>
           <Tab>REWARDS</Tab>
@@ -290,6 +377,7 @@ const StakingPage = () => {
         <TabPanel>
           <div className="stakingTokenBalanceSection">
             <p>Available : {stakingTokenBalance}</p>
+            {/* <p>allowanceAmount : {allowanceAmount}</p> */}
           </div>
           {stakingAmount === "" ?
             (
@@ -315,7 +403,7 @@ const StakingPage = () => {
                 </div>
               </>
               ) :  
-              (stakingTokenBalance === 0 || stakingAmount > stakingTokenBalance ?
+              (stakingTokenBalance === "0" || stakingAmount > stakingTokenBalance ?
                 (
                 <>
                   <div className="depositAmountSection">
@@ -371,6 +459,7 @@ const StakingPage = () => {
                             step="0.00000000000001"
                             id="maxStakeAmount"
                             placeholder="0"
+                            // onChange={changeStakingAmount}
                             value={stakingAmount}
                           ></input>
                           <p className="amountTxt">RAKIS-6</p>
@@ -388,39 +477,33 @@ const StakingPage = () => {
             )
           )
         }
-          <button className="learn-more" onClick={balance}>
-              balance
-          </button>
         </TabPanel>
-        <TabPanel>
-          <div className="allRewardsCumulativeSection">
-            <p>Estimated Interest : </p>
-            <p>{resultValue}</p>
-            <p>
-              <FiRefreshCcw
-                className="allRefreshClaimIcon"
-                onClick={changeState}
-              />
-            </p>
-            <p>HAN</p>
-          </div>
-          <div className="amountTokenRewardSection">
-            <p className="amountTookenRewardGetBalanceTxt">
-              Accumulated Interest : {getBalance} HAN
-            </p>
-            <p>Rewarded Interest: {getRewardReleased} HAN </p>
-          </div>
-            <div className="rewardsClaimBtnSection">
+        <TabPanel className="allTokenRewardsContainer">
+            <div className="allRewardsCumulativeSection">
+              <p>Estimated Interest : {resultValue}  <FiRefreshCcw
+                  className="allRefreshClaimIcon"
+                  onClick={changeState} 
+                /> HAN </p>
+            </div>
+              <div className="amountTokenRewardAccSection">
+                <p>
+                  Accumulated Interest : {getBalance} HAN
+                </p>
+              </div>
+              <div className="amountTokenRewardTxtSection">
+                <p>Rewarded Interest : {getRewardReleased} HAN </p>
+              </div>
+          <div className="rewardsClaimBtnSection">
               {(resultValue + getBalance) <= 0 ? (
               <button className="cant-learn-more" disabled={true}>
                 NOTHING TO CLAIM
               </button>
-              ) : (
+            ) : (
               <button className="learn-more" onClick={rewardClaim}>
                 CLAIM
               </button>
               )}
-            </div> 
+          </div> 
         </TabPanel>
         <TabPanel>
           <div className="withdrawAmountSection">
@@ -437,31 +520,24 @@ const StakingPage = () => {
               Max
             </button>
           </div>
-          <div className="withdrawUnstakeBtnSection">            
-            { withdrawAmount === "" ?
-            (
-             <div className="unStakeBtnSection">
-              <button className="enter-learn-more" >
-                ENTER AMOUNT
-              </button>
+          <div className="withdrawUnstakeBtnSection">
+            {withdrawAmount === "" ? (
+              <div className="unStakeBtnSection">
+                <button className="enter-learn-more">ENTER AMOUNT</button>
               </div>
-            ) :
-            (getAmount === 0 || withdrawAmount > getAmount ?
-              (
-                <div className="unStakeCantBtnSection">
-                  <button className="cant-learn-more" disabled={true} >
-                    INSUFFICIENT RAKIS-6 BALANCE
-                  </button>
-                </div>    
-              ) : (
-                <div className="unStakeBtnSection">
-                  <button className="learn-more" onClick={unStaking}>
-                    UNSTAKE
-                  </button>
-                </div>
-              )
-            )
-            }
+            ) : getAmount === 0 || withdrawAmount > getAmount ? (
+              <div className="unStakeCantBtnSection">
+                <button className="cant-learn-more" disabled={true}>
+                  INSUFFICIENT RAKIS-6 BALANCE
+                </button>
+              </div>
+            ) : (
+              <div className="unStakeBtnSection">
+                <button className="learn-more" onClick={unStaking}>
+                  UNSTAKE
+                </button>
+              </div>
+            )}
           </div>
         </TabPanel>
         <div className="logoContainer">
