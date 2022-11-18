@@ -13,14 +13,13 @@ function stakingMaxAmountAct(account) {
         dispatch({
           type: "GET_STAKING_MAX_AMOUNT",
           payload: {
-            stakingTokenAmount: (stakingTokenAmount / 10 ** 18),
+            stakingTokenAmount: stakingTokenAmount / 10 ** 18,
           },
         });
-        console.log(typeof stakingTokenAmount,"?");
+        console.log(typeof stakingTokenAmount, "?");
       }
     } catch (error) {
       console.error(error);
-
     }
   };
 }
