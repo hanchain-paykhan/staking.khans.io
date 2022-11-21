@@ -8,28 +8,29 @@ import "@openzeppelin/contracts/token/ERC721/IERC721.sol";
 import "@openzeppelin/contracts/security/Pausable.sol";
 
 contract StakingRakis6 is ReentrancyGuard, Ownable, Pausable {
-    IERC20 public stakingToken; // rakis-6
-    IERC20 public rewardToken; // Han
+    IERC20 public stakingToken; // RAKIS-6 token
+    IERC20 public rewardToken; // HAN token
 
     constructor(address _stakingToken, address _rewardToken) onlyOwner {
         stakingToken = IERC20(_stakingToken);
         rewardToken = IERC20(_rewardToken);
     }
 
-    uint256 public constant hanTokenPerLpToken = 274959775134; // HanToken quantity per LP token
+    uint256 public constant hanTokenPerLpToken = 274959775134; // Quantity of HAN tokens rewarded per LP token
 
-    uint256 public totalSupply; // Total amount of tokens staked
-    uint256 public tokenVolume = 10000 ether; // Amount of tokens that the user can stake in the contract
-    uint256 public rewardsDuration = 365 days;
+    uint256 public totalSupply; // Total amount of token staked
+    uint256 public tokenVolume = 10000 ether; // The total amount of LP token that users can stake to contract
+    uint256 public rewardsDuration = 365 days; // The total amount of HAN token available for reward = hanTokenPerLpToken * tokenVolume * rewardsDuration
 
-    mapping(address => uint256) public getAmount; // Amount of tokens staked
-    mapping(address => uint256) public getStakingStartTime; // Time Staking Started
-    mapping(address => uint256) public getRewardReleased; // The total amount of Han Token received as a reward
-    mapping(address => uint256) public getBalance; // Han Token is piled up before making a claim
+    mapping(address => uint256) public getAmount; // The amount of LP token staked
+    mapping(address => uint256) public getStakingStartTime; // Staking time started
+    mapping(address => uint256) public getRewardReleased; // The total amount of HAN Token received as reward
+    mapping(address => uint256) public getBalance; // The accumulated amount of HAN token before "CLAIM"
 
+    
     // ------------------ Admin ------------------ //
 
-    // Staking pause
+    // Pause Staking
     function pause() public onlyOwner {
         _pause();
     }
@@ -42,27 +43,26 @@ contract StakingRakis6 is ReentrancyGuard, Ownable, Pausable {
         rewardsDuration = _newDuration;
     }
 
-    // Token amount modification function that can be staked into a contract
+    // The total amount of token that can be staked to the contract may change
     function setTokenVolume(uint256 _newVolume) public onlyOwner {
         require(_newVolume > totalSupply, "Too Small Volume");
         tokenVolume = _newVolume;
     }
 
-    // LP Token lookup function of contract
+    // Lookup function for LP token amount in the contract
     function stakingTokenBalance() public view returns (uint256) {
         uint256 balance;
         balance = stakingToken.balanceOf(address(this));
         return balance;
     }
 
-    // Blunder staking token lookup function of contract
+    // Lookup function for LP token deposited by mistake (not by staking)
     function unappliedStakingToken() public view returns (uint256) {
         uint256 unappliedToken;
         unappliedToken = stakingTokenBalance() - totalSupply;
         return unappliedToken;
     }
 
-    // LP Token Transfer Function of Contract
     function transferStakingToken(uint256 _amount) public onlyOwner {
         require(
             unappliedStakingToken() >= _amount,
@@ -99,9 +99,10 @@ contract StakingRakis6 is ReentrancyGuard, Ownable, Pausable {
         emit RecoveredERC721(_tokenAddress, _tokenId);
     }
 
-    // ------------------ Staking Function ------------------ //
+    
+    // ------------------ Staking Functions ------------------ //
 
-    // Staking function
+    // "STAKE" function
     function stake(uint256 amount) public nonReentrant whenNotPaused {
         require(amount > 0, "Cannot stake 0");
         require(stakingToken.balanceOf(msg.sender) != 0, "Do Not Have Token");
@@ -137,7 +138,7 @@ contract StakingRakis6 is ReentrancyGuard, Ownable, Pausable {
         }
     }
 
-    // withdrawal function
+    // "WITHDRAW" function
     function withdraw(uint256 amount) public nonReentrant {
         require(amount > 0, "Cannot withdraw 0");
         require(getAmount[msg.sender] >= amount, "Insufficient Balance");
@@ -153,7 +154,7 @@ contract StakingRakis6 is ReentrancyGuard, Ownable, Pausable {
         emit Withdrawn(msg.sender, amount);
     }
 
-    // Compensation claim function
+    // "CLAIM" function
     function claimReward(address _user) public nonReentrant {
         require(
             block.timestamp - uint256(getStakingStartTime[_user]) != 0,
@@ -175,14 +176,13 @@ contract StakingRakis6 is ReentrancyGuard, Ownable, Pausable {
         getStakingStartTime[_user] = block.timestamp;
     }
 
-    // Compensation lookup function
     function updateReward() public view returns (uint256) {
         uint256 value;
         value += ((getAmount[msg.sender] * hanTokenPerLpToken) / 10**18);
         return value;
     }
 
-    // Staked time lookup function
+    // Staking time checking function
     function stakingTimeData() public view returns (uint256) {
         if (getAmount[msg.sender] == 0) {
             return block.timestamp;
