@@ -1,3 +1,3 @@
 Contract Information
 # StakingRakis6 - Optimistic Ethereum Network
-0x282b3c1fF58B3b4587A22f761Bb1B8D2994FEB01
+0x96Ea5E0255daFe9825210F1375826FA4f0de1e8c
