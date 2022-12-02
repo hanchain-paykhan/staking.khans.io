@@ -9,8 +9,8 @@ import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
 import "@openzeppelin/contracts/security/Pausable.sol";
 
 contract SheepooriStaking is Ownable, ERC721Holder, ReentrancyGuard, Pausable {
-    IERC721 public stakingToken; // Sheepoori
-    IERC20 public rewardToken; // Han
+    IERC721 public stakingToken; // Sheepoori NFT
+    IERC20 public rewardToken; // HAN token
 
     constructor(address _stakingToken, address _rewardToken) onlyOwner {
         stakingToken = IERC721(_stakingToken);
@@ -18,23 +18,23 @@ contract SheepooriStaking is Ownable, ERC721Holder, ReentrancyGuard, Pausable {
     }
 
     struct Staker {
-        uint256[] tokenIds; // Stacked token ID
+        uint256[] tokenIds; // Stacked NFT tokenID
         uint256 totalReward; // The total amount of HAN Token received as reward
         uint256 unclaimedRewards; // The accumulated amount of HAN token before "CLAIM"
-        uint256 amountStaked; // The amount of tokenId staked
-        uint256 timeOfLastUpdate; // Last updated time by token ID
+        uint256 amountStaked; // The amount of NFT tokenID staked
+        uint256 timeOfLastUpdate; // Last updated time by NFT tokenID
     }
 
-    uint256 public constant rewardTokenPerstakingToken = 1157407407407; // Quantity of HAN tokens rewarded per LP token
-    uint256 public totalSupply; // Total amount of tokenId staked
+    uint256 public constant rewardTokenPerstakingToken = 1157407407407; // Quantity of HAN tokens rewarded per NFT tokenID
+    uint256 public totalSupply; // Total amount of NFT tokenID staked
     uint256 public rewardsDuration = 31536000; // The total amount of HAN token available for reward = rewardTokenPerstakingToken * rewardsDuration
-    // 36500000000000000001
-    mapping(uint256 => address) public tokenOwner; // Return owner address when token ID is entered
+
+    mapping(uint256 => address) public tokenOwner; // Return owner address when NFT tokenID is entered
     mapping(address => Staker) public stakers;
 
     // ------------------ Admin ------------------ //
 
-    // Staking pause
+    // Pause Staking
     function pause() public onlyOwner {
         _pause();
     }
@@ -47,7 +47,7 @@ contract SheepooriStaking is Ownable, ERC721Holder, ReentrancyGuard, Pausable {
         rewardsDuration = _newDuration;
     }
 
-    // Blunder staking token lookup function of contract
+    // Lookup function for NFT tokenID deposited by mistake (not by staking)
     function unappliedStakingToken() public view returns (uint256) {
         uint256 unappliedToken;
         uint256 balance = stakingToken.balanceOf(address(this));
@@ -55,12 +55,11 @@ contract SheepooriStaking is Ownable, ERC721Holder, ReentrancyGuard, Pausable {
         return unappliedToken;
     }
 
-    // LP Token Transfer Function of Contract
     function transferStakingToken(uint256 _tokenId) public onlyOwner {
         require(
             tokenOwner[_tokenId] == address(0),
             "The owner of NFT tokenID must not exist"
-        ); // 확인
+        );
         stakingToken.safeTransferFrom(address(this), msg.sender, _tokenId);
     }
 
@@ -92,7 +91,7 @@ contract SheepooriStaking is Ownable, ERC721Holder, ReentrancyGuard, Pausable {
         emit RecoveredERC721(_tokenAddress, _tokenId);
     }
 
-    // ------------------ Transaction Function ------------------ //
+    // ------------------ Transaction Functions ------------------ //
 
     // "STAKE" function
     function stake(uint256 _tokenId) public nonReentrant whenNotPaused {
@@ -167,7 +166,8 @@ contract SheepooriStaking is Ownable, ERC721Holder, ReentrancyGuard, Pausable {
         emit RewardPaid(msg.sender, rewards);
     }
 
-    // ------------------ View Function ------------------ //
+    // ------------------ View Functions ------------------ //
+
     function amountRewards() public view returns (uint256) {
         Staker storage staker = stakers[msg.sender];
         uint256 reward;
@@ -198,12 +198,12 @@ contract SheepooriStaking is Ownable, ERC721Holder, ReentrancyGuard, Pausable {
         return stakers[_user].amountStaked;
     }
 
-    // Last updated time by token ID
+    // Last updated time by NFT tokenID
     function getTimeOfLastUpdate(address _user) public view returns (uint256) {
         return stakers[_user].timeOfLastUpdate;
     }
 
-    // ------------------ Private Function ------------------ //
+    // ------------------ Private Functions ------------------ //
 
     // Reward amount check function
     function calculateRewards(address _user) private view returns (uint256) {
