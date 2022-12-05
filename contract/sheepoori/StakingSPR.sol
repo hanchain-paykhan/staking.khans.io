@@ -9,7 +9,7 @@ import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
 import "@openzeppelin/contracts/security/Pausable.sol";
 
 contract StakingSPR is Ownable, ERC721Holder, ReentrancyGuard, Pausable {
-    IERC721 public stakingToken; // Sheepoori NFT
+    IERC721 public stakingToken; // Sheepoori SPR NFT
     IERC20 public rewardToken; // HAN token
 
     constructor(address _stakingToken, address _rewardToken) onlyOwner {
