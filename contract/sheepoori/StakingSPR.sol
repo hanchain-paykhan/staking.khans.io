@@ -8,7 +8,7 @@ import "@openzeppelin/contracts/token/ERC721/utils/ERC721Holder.sol";
 import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
 import "@openzeppelin/contracts/security/Pausable.sol";
 
-contract SheepooriStaking is Ownable, ERC721Holder, ReentrancyGuard, Pausable {
+contract StakingSPR is Ownable, ERC721Holder, ReentrancyGuard, Pausable {
     IERC721 public stakingToken; // Sheepoori NFT
     IERC20 public rewardToken; // HAN token
 
