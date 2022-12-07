@@ -1,10 +1,16 @@
 import {
   StakingTokenContract,
-  StakingContract,
   StakingAddress,
   StakingTokenAddress,
   web3,
-} from "../../config";
+} from "../../config/StakingRakis6Config";
+// import {
+//   StakingTokenContract,
+//   StakingAddress,
+//   StakingTokenAddress,
+//   web3,
+// } from "../../config/StakingRakis6ConfigTest";
+
 import Swal from "sweetalert2";
 
 function stakingApproveAct(account, stakingAmount) {

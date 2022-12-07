@@ -8,6 +8,7 @@ import OptimismRedLogo from './images/optimism_logo02.png'
 import HanGoldLogo from './images/hanchain_logo.png'
 import HanLogo from './images/hanchain_logo01.png';
 import HanWhiteLogo from './images/hanchain_logo02.png'
+import SheepooriLogo from './images/logo_sheepoori.svg'
 
 export {
     ArrakisWhiteIcon,
@@ -19,5 +20,6 @@ export {
     OptimismRedLogo,
     HanGoldLogo,
     HanLogo,
-    HanWhiteLogo
+    HanWhiteLogo,
+    SheepooriLogo,
 }

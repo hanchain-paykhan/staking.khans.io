@@ -1,4 +1,5 @@
-import { StakingContract } from "../../config";
+import { StakingContract } from "../../config/StakingRakis6Config";
+// import { StakingContract } from "../../config/StakingRakis6ConfigTest";
 import BigNumber from "bignumber.js";
 
 function stakingMaxWithdrawAmountAct(account) {

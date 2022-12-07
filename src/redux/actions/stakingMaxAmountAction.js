@@ -1,4 +1,5 @@
-import { StakingTokenContract } from "../../config";
+import { StakingTokenContract } from "../../config/StakingRakis6Config";
+// import { StakingTokenContract } from "../../config/StakingRakis6ConfigTest";
 
 function stakingMaxAmountAct(account) {
   return async (dispatch) => {

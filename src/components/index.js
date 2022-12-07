@@ -1,10 +1,10 @@
 // import Navbar from "./Global/Navbar";
-import MainQuestionHover from "./MainPage/MainQuestionHover"
 import AprToolTip from "./Global/AprToolTip"
+import Loading from "./SprStakingPage/Loading"
 
 
 export {
     // Navbar,
-    MainQuestionHover,
     AprToolTip,
+    Loading,
 }
