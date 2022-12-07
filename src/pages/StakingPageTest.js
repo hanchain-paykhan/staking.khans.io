@@ -6,15 +6,6 @@ import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import HanLogo from "../assets/images/HanLogo.svg";
 import { FiRefreshCcw } from "react-icons/fi";
 import Web3 from "web3";
-import {
-  StakingContract,
-  WETHContract,
-  RewardTokenContract,
-  ArrakisContract,
-  StakingAddress,
-  StakingTokenAddress,
-  StakingTokenContract,
-} from "../config/StakingRakis6Config";
 import { stakingAction } from "../redux/actions/stakingAction";
 import { stakingCancelAction } from "../redux/actions/stakingCancelAction";
 import { stakingRewardAction } from "../redux/actions/stakingRewardAction";
@@ -22,9 +13,8 @@ import { stakingViewAction } from "../redux/actions/stakingViewAction";
 import BigNumber from "bignumber.js";
 import { OptimismRedLogo, ArrakisBlackIcon } from "../assets/_index";
 import { stakingApproveAction } from "../redux/actions/stakingApproveAction";
-import { HiQuestionMarkCircle } from "react-icons/hi";
 import HelpIcon from "@mui/icons-material/Help";
-import { Tooltip, IconButton } from "@mui/material";
+import axios from "axios";
 
 const StakingPage = () => {
   const dispatch = useDispatch();
@@ -33,10 +23,7 @@ const StakingPage = () => {
   const [error, setError] = useState();
   const [stakingAmount, setStakingAmount] = useState("");
   const [withdrawAmount, setWithdrawAmount] = useState("");
-  const [disable, setDisable] = useState(false);
   const [checkChainId, setCheckChainId] = useState("");
-  const [testAmount, setTestAmount] = useState("");
-  const [test, setTest] = useState("");
 
   const AmountBN = new BigNumber("1000000000000000000");
   const {
@@ -282,12 +269,24 @@ const StakingPage = () => {
     dispatch(stakingViewAction.stakingViewAct(account));
   }, [account]);
 
+  const test = async () => {
+    const result = await axios.get(
+      "https://staking.paykhan.io:12000/alchemy/getEthGasPrice"
+    );
+    console.log(
+      web3.utils.hexToNumber(result.data.data.result),
+      "Ethereum Main"
+    );
+  };
 
   return (
     <div className="stakingPageContainer">
       <div className="stakingPageHanLogoContainer">
         <img className="stakingHanLogo" src={HanLogo} alt="HanLogo" />
         <a>STAKING</a>
+        <button className="learn-more" onClick={test}>
+          TEST
+        </button>
       </div>
       <div className="stakingAllAmountContainer">
         <div className="stakingAprAmountContainer">

@@ -22,6 +22,7 @@ import HelpIcon from "@mui/icons-material/Help";
 import { Tooltip, IconButton } from "@mui/material";
 import { HiQuestionMarkCircle } from "react-icons/hi";
 import AprToolTip from "../components/Global/AprToolTip";
+import SheepooriLogo from "../assets/images/logo_sheepoori.svg"
 
 const MainPage = () => {
   const navigate = useNavigate();
@@ -70,7 +71,8 @@ const MainPage = () => {
                   <div className="home-2_0">
                     <img src={MainArrakisLogo} />
                   </div>
-                  <div className="home-2_1">Arrakis Vault WETH/HAN</div>
+                  <div className="home-2_1">Arrakis Vault </div>
+                  <div className="hometxt">WETH/HAN </div>
                   <div className="tooltip-main-container">
                     <i className="info-icon material-main-icons">
                       <HelpIcon />
@@ -97,6 +99,37 @@ const MainPage = () => {
                   <div className="home-2_2 staking_btn">
                     {/* <a href="https://staking.paykhan.io/rakis6" target="_blank">Go</a> */}
                     <a href="/rakis6" target="_blank">
+                      Go
+                    </a>
+                  </div>
+                </div>
+                <div className="home-2" id="sprStaking">
+                  <div className="home-2_0">
+                    <img src={SheepooriLogo} />
+                  </div>
+                  <div className="home-2_1" >Sheepoori SPR NFT </div>
+                  <div className="tooltip-main-spr-container">
+                    <i className="info-icon material-main-spr-icons">
+                      <HelpIcon />
+                    </i>
+                    <div className="tooltip-main-spr-content">
+                      <p>
+                      The right to possess digital content forever and get yourself a Sheepoori card -Ms. 
+                      Caring one of three sheep siblings characters from Sewoori Union for AdKhan: Advertising Platform
+                        <br></br>
+                        <a
+                          className="align-main-spr-right"
+                          href="https://medium.com/@HanIdentity/as-the-second-staking-of-the-hanchain-project-e29da8da25e3"
+                          target="_blank"
+                        >
+                          Read More
+                        </a>
+                      </p>
+                      {/* <p className="align-main-right"> </p> */}
+                    </div>
+                  </div>
+                  <div className="home-2_2 staking_btn" id="sprStakingBtn">              
+                    <a href="/spr" target="_blank">
                       Go
                     </a>
                   </div>

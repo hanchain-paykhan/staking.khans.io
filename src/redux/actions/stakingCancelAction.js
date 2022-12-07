@@ -2,7 +2,12 @@ import {
   StakingContract,
   StakingAddress,
   web3,
-} from "../../config";
+} from "../../config/StakingRakis6Config";
+// import {
+//   StakingContract,
+//   StakingAddress,
+//   web3,
+// } from "../../config/StakingRakis6ConfigTest";
 import Swal from "sweetalert2";
 
 

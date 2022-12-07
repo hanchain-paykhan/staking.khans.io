@@ -58,6 +58,8 @@ function stakingViewReducer(state = initialState, action) {
 
     case "SUCCESS_APPORVE":
       return { ...state, successApprove: payload.successApprove };
+    
+    
 
     default:
       return { ...state };
