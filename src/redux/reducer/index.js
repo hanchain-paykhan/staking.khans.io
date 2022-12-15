@@ -5,6 +5,7 @@ import sprStakingViewReducer from "./sprStakingViewReducer";
 import sprStakingResultReducer from "./sprStakingResultReducer";
 import sprStakingApproveReducer from "./sprStakingApproveReducer"
 import gasPriceResultReducer from "./gasPriceResultReducer"
+import getSprTokenImgVideoReducer from "./getSprTokenImgVideoReducer"
 
 export default combineReducers ({
     stakingView : stakingViewReducer,
@@ -13,4 +14,5 @@ export default combineReducers ({
     sprStakingResultView : sprStakingResultReducer,
     sprStakingApporveView : sprStakingApproveReducer,
     gasPrice : gasPriceResultReducer,
+    allStakingToken : getSprTokenImgVideoReducer,
 })

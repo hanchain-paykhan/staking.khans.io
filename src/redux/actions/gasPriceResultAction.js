@@ -8,7 +8,6 @@ function gasPriceResultAct(account) {
 
                 const gasPriceResultApi = gasPriceBack.data.data.result;
 
-                // console.log(gasPriceResultApi,"32423432")
                 let [
                     gasPriceResult,
                 ] = await Promise.all([

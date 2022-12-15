@@ -10,15 +10,11 @@ function sprSingleApproveStateAct(account, stakingmyTokenId) {
     return async (dispatch ) => {
         try {
             if (account !== "") {
-                // SingleApprove 상태
-                console.log(stakingmyTokenId)
                  const getSingleApprovedAPi = await SheepooriTokenContract.methods
-                 .getApproved(8)
+                 .getApproved(stakingmyTokenId)
                  .call();
                 
-                console.log(getSingleApprovedAPi,"123322342344")
             
-                
                 let [
                     getSingleApproved,
                 ] = await Promise.all([   

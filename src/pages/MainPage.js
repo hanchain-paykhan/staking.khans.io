@@ -47,7 +47,7 @@ const MainPage = () => {
   };
 
   return (
-    <div>
+    <div className="mainPageContainer">
       <div className="home-section">
         <div className="home-content">
           <div className="home-1">
