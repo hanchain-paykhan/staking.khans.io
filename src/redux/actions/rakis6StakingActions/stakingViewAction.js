@@ -5,7 +5,7 @@ import {
   StakingAddress,
   WETHContract,
   ArrakisContract,
-} from "../../config/StakingRakis6Config";
+} from "../../../config/StakingRakis6Config";
 // import {
 //   StakingContract,
 //   StakingTokenContract,
@@ -13,7 +13,7 @@ import {
 //   StakingAddress,
 //   WETHContract,
 //   ArrakisContract,
-// } from "../../config/StakingRakis6ConfigTest";
+// } from "../../../config/StakingRakis6ConfigTest";
 import web3 from "web3";
 import BigNumber from "bignumber.js";
 
@@ -25,10 +25,6 @@ function stakingViewAct(account) {
       if (account !== "") {
         const getAmountApi = await StakingContract.methods
           .getAmount(account)
-          .call();
-
-        const getStakingStartTimeApi = await StakingContract.methods
-          .getStakingStartTime(account)
           .call();
 
         const getRewardReleasedApi = await StakingContract.methods
@@ -51,8 +47,6 @@ function stakingViewAct(account) {
         const rewardTokenBalanceApi = await RewardTokenContract.methods
           .balanceOf(account)
           .call();
-
-        const currentTimeApi = Math.floor(new Date().getTime() / 1000);
 
         const hanTokenPerLpTokenApi = await StakingContract.methods
           .hanTokenPerLpToken()
@@ -87,34 +81,30 @@ function stakingViewAct(account) {
           .call();
 
         // // 1항
-        const QuantityOfWethEqualTo1Han = web3.utils.toWei(String(WETHBalanceOfApi / HanBalanceOfApi),'ether');
+        const QuantityOfWethEqualTo1Han = web3.utils.toWei(
+          String((WETHBalanceOfApi / HanBalanceOfApi) * AmountBN),
+          "ether"
+        );
 
         const getMintAmountsApi = await ArrakisContract.methods
           .getMintAmounts(QuantityOfWethEqualTo1Han, AmountBN)
           .call();
 
-        console.log(getMintAmountsApi, "getmintaction")
-
         // // // 2항
-        const AmountOfLpTokenWorth1Han = (getMintAmountsApi.mintAmount/2);
+        const AmountOfLpTokenWorth1Han = getMintAmountsApi.mintAmount / 2;
 
-        const HanQuantityLpQuantityPerYear1HanValueApi = web3.utils.fromWei(String(0.000000274959775134*60*60*24*365 * AmountOfLpTokenWorth1Han), 'ether')
+        const HanQuantityLpQuantityPerYear1HanValueApi = web3.utils.fromWei(
+          String(
+            0.000000274959775134 * 60 * 60 * 24 * 365 * AmountOfLpTokenWorth1Han
+          ),
+          "ether"
+        );
 
         const canAmountStakeApi = tokenVolumeApi - totalSupplyApi;
 
-        const stakedTime = currentTimeApi - getStakingStartTimeApi;
-
-        const resultValueApi =
-          (stakedTime * (getAmountApi * hanTokenPerLpTokenApi)) /
-          10 ** 18 /
-          10 ** 18;
-
         let [
           getAmount,
-          getRewardReleased,
           stakingTokenBalance,
-          resultValue,
-          getBalance,
           tokenVolume,
           totalSupply,
           canAmountStake,
@@ -128,10 +118,7 @@ function stakingViewAct(account) {
           HanQuantityLpQuantityPerYear1HanValue,
         ] = await Promise.all([
           getAmountApi,
-          getRewardReleasedApi,
           stakingTokenBalanceApi,
-          resultValueApi,
-          getBalanceApi,
           tokenVolumeApi,
           totalSupplyApi,
           canAmountStakeApi,
@@ -151,15 +138,9 @@ function stakingViewAct(account) {
             getAmount:
               Math.floor((getAmount / 10 ** 18) * 100000000000000) /
               100000000000000,
-            getRewardReleased:
-              Math.floor((getRewardReleased / 10 ** 18) * 100000000) /
-              100000000,
             stakingTokenBalance:
               Math.floor((stakingTokenBalance / 10 ** 18) * 100000000000000) /
               100000000000000,
-            getBalance:
-              Math.floor((getBalance / 10 ** 18) * 100000000) / 100000000,
-            resultValue: Math.floor(resultValue * 100000000) / 100000000,
             tokenVolume: (tokenVolume / 10 ** 18).toFixed(8),
             totalSupply: (totalSupply / 10 ** 18).toFixed(8),
             canAmountStake:
@@ -177,15 +158,16 @@ function stakingViewAct(account) {
             WETHBalanceOf: (WETHBalanceOf / 10 ** 18).toFixed(8),
             HanBalanceOf: (HanBalanceOf / 10 ** 18).toFixed(8),
             allowanceAmount: web3.utils.fromWei(allowanceAmount, "ether"),
-            getMintAmounts : (getMintAmounts / 10 ** 18).toFixed(8),
-            HanQuantityLpQuantityPerYear1HanValue : (HanQuantityLpQuantityPerYear1HanValue * 100).toFixed(2),
+            getMintAmounts: (getMintAmounts / 10 ** 18).toFixed(8),
+            HanQuantityLpQuantityPerYear1HanValue: (
+              HanQuantityLpQuantityPerYear1HanValue * 100
+            ).toFixed(2),
           },
         });
       }
     } catch (error) {
       console.error(error);
     }
-    // console.log(getMintAmounts,"getMintAmounts")
   };
 }
 

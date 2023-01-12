@@ -2,7 +2,7 @@ import Web3 from "web3";
 
 export const web3 = new Web3(window.ethereum);
 
-export const RewardTokenAddress = "0xBb370eF2768B0CdCf0D3a6cE14eAF6Ee1383532f";
+export const RewardTokenAddress = "0x3F3958cd675A9b8b2dc569D34956a4257FaDec3a";
 export const RewardTokenABI = {
   abi: [
     {
@@ -340,7 +340,7 @@ export const RewardTokenContract = new web3.eth.Contract(
 );
 
 export const SheepooriTokenAddress =
-  "0x30cC938b3B434A89d2F7d8c8c94D3529B4cbcAaA";
+  "0xFa18fd710Fa509E4100f465BEff4fd91a6778d98";
 export const SheepooriTokenABI = {
   abi: [
     {
@@ -839,7 +839,7 @@ export const SheepooriTokenContract = new web3.eth.Contract(
 );
 
 export const SheepooriStakingAddress =
-  "0x9EE9D52DB42E2c4ee0aAF9A0Bc40F4838dBbEd9D";
+  "0x7347Be455E7FaAA72B6186Fb4f7921B25b4cB9A1";
 export const SheepooriStakingABI = {
   abi: [
     {
@@ -1089,6 +1089,19 @@ export const SheepooriStakingABI = {
           internalType: "uint256",
           name: "",
           type: "uint256",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [],
+      name: "getTotalTokenIds",
+      outputs: [
+        {
+          internalType: "uint256[]",
+          name: "",
+          type: "uint256[]",
         },
       ],
       stateMutability: "view",
@@ -1357,6 +1370,25 @@ export const SheepooriStakingABI = {
     {
       inputs: [],
       name: "totalSupply",
+      outputs: [
+        {
+          internalType: "uint256",
+          name: "",
+          type: "uint256",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "uint256",
+          name: "",
+          type: "uint256",
+        },
+      ],
+      name: "totalTokenIds",
       outputs: [
         {
           internalType: "uint256",

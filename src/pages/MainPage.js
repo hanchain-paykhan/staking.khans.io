@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./MainPage.scss";
 // import './reset.css'
 import { Link } from "react-router-dom";
@@ -22,10 +22,17 @@ import HelpIcon from "@mui/icons-material/Help";
 import { Tooltip, IconButton } from "@mui/material";
 import { HiQuestionMarkCircle } from "react-icons/hi";
 import AprToolTip from "../components/Global/AprToolTip";
-import SheepooriLogo from "../assets/images/logo_sheepoori.svg"
+import { SheepooriLogoBackX } from "../img/_index";
+import { useDispatch, useSelector } from "react-redux";
+import { hanChainPriceActtion } from "../redux/actions/mainActions/hanChainPriceAction";
 
 const MainPage = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const { hanChainPrice, hanChainPercentage } = useSelector(
+    (state) => state.coinPrice
+  );
 
   const myFunction = () => {
     var copyText = document.getElementById("myInput");
@@ -46,131 +53,228 @@ const MainPage = () => {
     navigate("./rakis6");
   };
 
+  const addRewardToken = async () => {
+    const tokenAddress = "0xC7483FbDB5c03E785617a638E0f22a08da10084B";
+    const tokenSymbol = "HAN";
+    const tokenDecimals = 18;
+    const tokenImage =
+      "https://raw.githubusercontent.com/hanchain-paykhan/hanchain/3058eecc5d26f980db884f1318da6c4de18a7aea/logo/logo.svg";
+
+    try {
+      const wasAdded = await window.ethereum?.request({
+        method: "wallet_watchAsset",
+        params: {
+          type: "ERC20",
+          options: {
+            address: tokenAddress,
+            symbol: tokenSymbol,
+            decimals: tokenDecimals,
+            image: tokenImage,
+          },
+        },
+      });
+
+      if (wasAdded) {
+        console.log("Thanks for your interest!");
+      } else {
+        console.log("Your loss!");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    dispatch(hanChainPriceActtion.hanChainPriceAct());
+  }, []);
+
   return (
-    <div className="mainPageContainer">
-      <div className="home-section">
-        <div className="home-content">
-          <div className="home-1">
-            {/*                    <div class="sktxt">STAKING IS COMING SOON</div>*/}
-            <div className="pjtxt">
-              <div className="hanlogo">
-                <img src={MainHanLogo} />
+    <div className="mainPageTestContainer">
+      <div className="mainPageTopPaddingSection"></div>
+      <div className="mainPageLogoTitleContainer">
+        <div className="mainPageLogoSection">
+          <img src={MainHanLogo} />
+        </div>
+        <div className="mainPageTitleTxtSection">
+          <a>HANCHAIN PROJECT</a>
+        </div>
+      </div>
+      <div className="hanChainPriceContainer">
+        <div className="test1">
+          {/* <div className="hanChainPriceLogoSection">
+            <img src={MainHanLogo} />
+          </div> */}
+          <div className="hanChainPricTextSection">
+            <span className="hanChainPriceTitleSection">
+              <a
+                href="https://www.coingecko.com/ko/%EC%BD%94%EC%9D%B8/hanchain"
+                target="_blank"
+              >
+                HanChain (HAN)
+              </a>
+            </span>
+            <br />
+            <span className="hanChainPriceAmountSection">{hanChainPrice}</span>
+            <span className="hanChainPriceUnitSection">USD</span>
+            {hanChainPercentage > 0 ? (
+              <span className="hanChainPrice24hPercentageInSection">
+                ({hanChainPercentage}%)
+              </span>
+            ) : (
+              <span className="hanChainPrice24HPercentageDeSection">
+                ({hanChainPercentage}%)
+              </span>
+            )}
+          </div>
+        </div>
+        <div className="test2">
+          <a
+            href="https://www.coingecko.com/ko/%EC%BD%94%EC%9D%B8/hanchain"
+            target="_blank"
+          >
+            Powered by CoinGecko
+          </a>
+        </div>
+      </div>
+      <div className="airDropSection">
+        <a href="/airdrop" target="_blank" className="airDropTxt1">
+          HAN e-Platform
+        </a>
+        <a href="/airdrop" target="_blank" className="airDropTxt2">
+          Airdrop
+        </a>
+      </div>
+
+      <div className="mainPageStakingPoolContainer">
+        <div className="mainPageStakingContainer">
+          <div className="mainPageStakingTitleSection">
+            <p>STAKING</p>
+          </div>
+          <div className="mainPageStakingBoxSection">
+            <div className="stakingBoxArrakisSection">
+              <div className="stakingBoxArrakisLogoSection">
+                <img src={MainArrakisLogo} />
               </div>
-              <div className="hantxt">
-                <b>HANCHAIN PROJECT</b>
+              <div className="stakingBoxArrakisTxtSection">
+                <p>Arrakis Valut WETH/HAN</p>
+              </div>
+              <div className="tooltip-rakis6-main-container">
+                <i className="info-icon material-main-icons">
+                  <HelpIcon />
+                </i>
+                <div className="tooltip-rakis6-main-content">
+                  <p>
+                    APR displayed is not historical statistics. According to the
+                    LP token quantity standard that fluctuates with the HAN
+                    weight of the POOL, when staking at the present time, APR is
+                    the annual interest rate of the amount of HAN to be obtained
+                    against the liquidity supplied.
+                    <br></br>
+                    <a
+                      className="align-rakis6-main-right"
+                      href="https://medium.com/@HanIdentity/hanchain-x-optimism-x-uniswap-v3-x-arrakis-af564de80f81"
+                      target="_blank"
+                    >
+                      Read More
+                    </a>
+                  </p>
+                  {/* <p className="align-main-right"> </p> */}
+                </div>
+              </div>
+              <div className="stakingBoxArrakisBtnSection">
+                <a href="/rakis6" target="_blank">
+                  GO
+                </a>
+              </div>
+            </div>
+            <div className="stakingBoxSpriSection">
+              <div className="stakingBoxSpriLogoSection">
+                <img src={SheepooriLogoBackX} />
+              </div>
+              <div className="stakingBoxSpriTxtSection">
+                <p>Sheepoori SPR NFT</p>
+              </div>
+              <div className="tooltip-main-spri-container">
+                <i className="info-icon material-main-spri-icons">
+                  <HelpIcon />
+                </i>
+                <div className="tooltip-main-spri-content">
+                  <p>
+                    The right to possess digital content forever and get
+                    yourself a Sheepoori card -Ms. Caring one of three sheep
+                    siblings characters from Sewoori Union for AdKhan:
+                    Advertising Platform
+                    <br></br>
+                    <a
+                      className="align-main-spri-right"
+                      href="https://medium.com/@HanIdentity/as-the-second-staking-of-the-hanchain-project-e29da8da25e3"
+                      target="_blank"
+                    >
+                      Read More
+                    </a>
+                  </p>
+                  {/* <p className="align-main-right"> </p> */}
+                </div>
+              </div>
+              <div className="stakingBoxSpriBtnSection">
+                <a href="/spr" target="_blank">
+                  GO
+                </a>
               </div>
             </div>
           </div>
-          <div className="home-eth">
-            <div className="eth-box">
-              <div className="eth-txt">
-                <h4>STAKING</h4>
+        </div>
+        <div className="mainPagePoolContainer">
+          <div className="mainPagePoolTitleSection">
+            <p>MARKET</p>
+          </div>
+          <div className="mainPagePoolBoxSection">
+            <div className="poolBoxWethSection">
+              <div className="poolBoxWethLogoSection">
+                <img src={MainArrakisLogo} />
               </div>
-              <div className="home-pools" id="staking">
-                <div className="home-2">
-                  <div className="home-2_0">
-                    <img src={MainArrakisLogo} />
-                  </div>
-                  <div className="home-2_1">Arrakis Vault </div>
-                  <div className="hometxt">WETH/HAN </div>
-                  <div className="tooltip-main-container">
-                    <i className="info-icon material-main-icons">
-                      <HelpIcon />
-                    </i>
-                    <div className="tooltip-main-content">
-                      <p>
-                        APR displayed is not historical statistics. According to
-                        the LP token quantity standard that fluctuates with the
-                        HAN weight of the POOL, when staking at the present
-                        time, APR is the annual interest rate of the amount of
-                        HAN to be obtained against the liquidity supplied.
-                        <br></br>
-                        <a
-                          className="align-main-right"
-                          href="https://medium.com/@HanIdentity/hanchain-x-optimism-x-uniswap-v3-x-arrakis-af564de80f81"
-                          target="_blank"
-                        >
-                          Read More
-                        </a>
-                      </p>
-                      {/* <p className="align-main-right"> </p> */}
-                    </div>
-                  </div>
-                  <div className="home-2_2 staking_btn">
-                    {/* <a href="https://staking.paykhan.io/rakis6" target="_blank">Go</a> */}
-                    <a href="/rakis6" target="_blank">
-                      Go
-                    </a>
-                  </div>
-                </div>
-                <div className="home-2" id="sprStaking">
-                  <div className="home-2_0">
-                    <img src={SheepooriLogo} />
-                  </div>
-                  <div className="home-2_1" >Sheepoori SPR NFT </div>
-                  <div className="tooltip-main-spr-container">
-                    <i className="info-icon material-main-spr-icons">
-                      <HelpIcon />
-                    </i>
-                    <div className="tooltip-main-spr-content">
-                      <p>
-                      The right to possess digital content forever and get yourself a Sheepoori card -Ms. 
-                      Caring one of three sheep siblings characters from Sewoori Union for AdKhan: Advertising Platform
-                        <br></br>
-                        <a
-                          className="align-main-spr-right"
-                          href="https://medium.com/@HanIdentity/as-the-second-staking-of-the-hanchain-project-e29da8da25e3"
-                          target="_blank"
-                        >
-                          Read More
-                        </a>
-                      </p>
-                      {/* <p className="align-main-right"> </p> */}
-                    </div>
-                  </div>
-                  <div className="home-2_2 staking_btn" id="sprStakingBtn">              
-                    <a href="/spr" target="_blank">
-                      Go
-                    </a>
-                  </div>
-                </div>
+              <div className="poolBoxWethTxtSection">
+                <p>WETH-V3-HAN</p>
+              </div>
+              <div className="poolBoxWethBtnSection">
+                <a
+                  href="https://beta.arrakis.finance/vaults/10/0x3fa8CEE6795220Ac25DD35D4d39ec306a3e4fb3f/add"
+                  target="_blank"
+                >
+                  ADD POOL
+                </a>
               </div>
             </div>
-            <div className="eth-box">
-              <div className="eth-txt">
-                <h4>POOL</h4>
+            <div className="poolBoxUsdcSection">
+              <div className="poolBoxUsdcLogoSection">
+                <img src={MainUniLogo} />
               </div>
-              <div className="home-pools" id="pool">
-                <div className="home-2">
-                  <div className="home-2_0">
-                    <img src={MainArrakisLogo} />
-                  </div>
-                  <div className="home-2_1">WETH-V3-HAN</div>
-                  <div className="home-2_2 add-btn1">
-                    <a
-                      href="https://beta.arrakis.finance/vaults/10/0x3fa8CEE6795220Ac25DD35D4d39ec306a3e4fb3f/add"
-                      target="_blank"
-                    >
-                      {" "}
-                      Add
-                    </a>
-                  </div>
-                </div>
-                <div className="home-2">
-                  <div className="home-2_0">
-                    <img src={MainUniLogo} />
-                  </div>
-                  <div className="home-2_1">USDC-V2-HAN</div>
-                  <div className="home-2_2 add-btn2">
-                    <a
-                      href="https://bafybeigkgx3gq5yrrsyxpna2czlq3bc2ish2gk6yqh7v57kugehlq6qoly.ipfs.dweb.link/#/add/v2/0x0c90C57aaf95A3A87eadda6ec3974c99D786511F/0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
-                      target="_blank"
-                    >
-                      {" "}
-                      Add
-                    </a>
-                  </div>
-                </div>
+              <div className="poolBoxUsdcTxtSection">
+                <p>USDC-V2-HAN</p>
+              </div>
+              <div className="poolBoxUsdcBtnSection">
+                <a
+                  href="https://bafybeigkgx3gq5yrrsyxpna2czlq3bc2ish2gk6yqh7v57kugehlq6qoly.ipfs.dweb.link/#/add/v2/0x0c90C57aaf95A3A87eadda6ec3974c99D786511F/0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
+                  target="_blank"
+                >
+                  ADD POOL
+                </a>
+              </div>
+            </div>
+            <div className="poolBoxSpriSection">
+              <div className="poolBoxSpriLogoSection">
+                <img src={SheepooriLogoBackX} />
+              </div>
+              <div className="poolBoxSpriTxtSection">
+                <p>Sheepoori SPR NFT</p>
+              </div>
+              <div className="poolBoxSpriBtnSection">
+                <a
+                  href="https://opensea.io/collection/sheepoori"
+                  target="_blank"
+                >
+                  PURCHASE
+                </a>
               </div>
             </div>
           </div>
@@ -178,6 +282,13 @@ const MainPage = () => {
       </div>
       <div className="home-footer-logo">
         <div className="home-footer">
+          {/* <div className="airDropSection">
+            <div className="airDropBtnSection">
+              <a href="/airdrop" target="_blank">
+                Go
+              </a>
+            </div>
+          </div> */}
           <div>
             <div className="ether">
               <span className="ether_logo">
@@ -209,7 +320,7 @@ const MainPage = () => {
                   <i className="far fa-far fa-clone" />
                 </button>
               </a>
-              <a href="./meta.html" className="tooltip">
+              <a onClick={addRewardToken} className="tooltip">
                 <img
                   width="20px"
                   height="20px"

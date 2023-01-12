@@ -1,15 +1,15 @@
 import {
-    SheepooriTokenAddress,
-    SheepooriTokenContract,
-    SheepooriStakingAddress,
-    web3,
-} from "../../config/SheepooriStakingConfig"
+  SheepooriTokenAddress,
+  SheepooriTokenContract,
+  SheepooriStakingAddress,
+  web3,
+} from "../../../config/SheepooriStakingConfig";
 // import {
 //     SheepooriTokenAddress,
 //     SheepooriTokenContract,
 //     SheepooriStakingAddress,
 //     web3
-// } from "../../config/SheepooriStakingConfigTest";
+// } from "../../../config/SheepooriStakingConfigTest";
 import Swal from "sweetalert2";
 
 function sprStakingSingleApproveAct(account, stakingmyTokenId, gasPriceResult) {

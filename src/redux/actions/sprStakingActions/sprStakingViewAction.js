@@ -1,15 +1,15 @@
 import {
-    SheepooriStakingContract,
-    SheepooriStakingAddress,
-    SheepooriTokenContract,
-    SheepooriTokenAddress,
- } from "../../config/SheepooriStakingConfig"
+  SheepooriStakingContract,
+  SheepooriStakingAddress,
+  SheepooriTokenContract,
+  SheepooriTokenAddress,
+} from "../../../config/SheepooriStakingConfig";
 // import {
 //   SheepooriStakingContract,
 //   SheepooriStakingAddress,
 //   SheepooriTokenContract,
 //   SheepooriTokenAddress,
-// } from "../../config/SheepooriStakingConfigTest"
+// } from "../../../config/SheepooriStakingConfigTest"
 import axios from "axios";
 import web3 from "web3";
 
@@ -58,7 +58,10 @@ function sprStakingViewAct(account) {
         const getMyTokenToBack = await axios.get(
           `https://staking.paykhan.io:12000/alchemy/getNFTs?owner=${account}&contractAddress=${SheepooriTokenAddress}`
         );
-;
+        // test
+        // const getMyTokenToBack = await axios.get(
+        //   `https://staking.paykhan.io:12000/test/alchemy/getNFTs?owner=${account}&contractAddress=${SheepooriTokenAddress}`
+        // );
 
         const getMyTokenIdsApi = getMyTokenToBack.data.data;
 
@@ -76,6 +79,10 @@ function sprStakingViewAct(account) {
           `https://staking.paykhan.io:12000/alchemy/getNFTImages?contractAddress=${SheepooriTokenAddress}&tokenIds=${getStakedTokenIdsApi}`
         );
 
+        //test
+        // const stakingTokenIdImgBack = await axios.get(
+        //   `https://staking.paykhan.io:12000/test/alchemy/getNFTImages?contractAddress=${SheepooriTokenAddress}&tokenIds=${getStakedTokenIdsApi}`
+        // );
 
         const stakingTokenIdImgApi = stakingTokenIdImgBack.data.data;
 

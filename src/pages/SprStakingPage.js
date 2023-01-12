@@ -8,10 +8,10 @@ import HelpIcon from "@mui/icons-material/Help";
 import Web3 from "web3";
 import { ArrakisBlackIcon } from "../assets/_index";
 import { FiRefreshCcw } from "react-icons/fi";
-import { sprStakingAction } from "../redux/actions/sprStakingAction";
-import { sprStakingCancelAction } from "../redux/actions/sprStakingCancelAction";
-import { sprStakingRewardAction } from "../redux/actions/sprStakingRewardAction";
-import { sprStakingViewAction } from "../redux/actions/sprStakingViewAction";
+import { sprStakingAction } from "../redux/actions/sprStakingActions/sprStakingAction";
+import { sprStakingCancelAction } from "../redux/actions/sprStakingActions/sprStakingCancelAction";
+import { sprStakingRewardAction } from "../redux/actions/sprStakingActions/sprStakingRewardAction";
+import { sprStakingViewAction } from "../redux/actions/sprStakingActions/sprStakingViewAction";
 import {
   SheepooriStakingAddress,
   SheepooriTokenAddress,
@@ -22,20 +22,20 @@ import {
 //   SheepooriTokenAddress,
 //   SheepooriTokenContract,
 // } from "../config/SheepooriStakingConfigTest";
-import { sprStakingAllApproveAction } from "../redux/actions/sprStakingAllApproveAction";
-import { sprStakingSingleApproveAction } from "../redux/actions/sprStakingSingleApproveAction";
+import { sprStakingAllApproveAction } from "../redux/actions/sprStakingActions/sprStakingAllApproveAction";
+import { sprStakingSingleApproveAction } from "../redux/actions/sprStakingActions/sprStakingSingleApproveAction";
 import { FcCancel } from "react-icons/fc";
-import SheepooriLogo from "../assets/images/sheeprilogo.png";
+import { SheepooriLogoBackX } from "../img/_index";
 import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
-import Carousel from 'react-multi-carousel';
-import 'react-multi-carousel/lib/styles.css';
-import { AllStakingInfo, Loading  } from "../components";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
+import { AllStakingInfo, Loading } from "../components";
 // import Loading from "../components/SprStakingPage/Loading";
-import { sprStakingResultViewAction } from "../redux/actions/sprStakingResultViewAction";
-import { sprSingleApproveStateAction } from "../redux/actions/sprSingleApproveStateAction";
-import { gasPriceResultAction } from "../redux/actions/gasPriceResultAction";
-import { allSprStakedViewAction } from "../redux/actions/allSprStakedViewAction";
+import { sprStakingResultViewAction } from "../redux/actions/sprStakingActions/sprStakingResultViewAction";
+import { sprSingleApproveStateAction } from "../redux/actions/sprStakingActions/sprSingleApproveStateAction";
+import { gasPriceResultAction } from "../redux/actions/sprStakingActions/gasPriceResultAction";
+import { allSprStakedViewAction } from "../redux/actions/sprStakingActions/allSprStakedViewAction";
 import { SlArrowLeft } from "react-icons/sl";
 import { SlArrowRight } from "react-icons/sl";
 import { SlArrowUp } from "react-icons/sl";
@@ -82,8 +82,10 @@ const SprStakingPage = () => {
   );
 
   const { gasPriceResult } = useSelector((state) => state.gasPrice);
-  
-  const {getStakingTokenIdImgVideoUrl} = useSelector((state) => state.allStakingToken);
+
+  const { getStakingTokenIdImgVideoUrl } = useSelector(
+    (state) => state.allStakingToken
+  );
   //---------------- Ethereum Network Switching ----------------
   const networks = {
     GoerliTestNetwork: {
@@ -157,7 +159,7 @@ const SprStakingPage = () => {
   const networkChanged = (chainId) => {
     console.log({ chainId });
   };
-  
+
   // add to Reward Token
   const addRewardToken = async () => {
     const tokenAddress = "0x0c90C57aaf95A3A87eadda6ec3974c99D786511F";
@@ -235,6 +237,7 @@ const SprStakingPage = () => {
     }
   }, [window.ethereum?.chainId]);
 
+  // console.log(window.ethereum.chainId,"chainid")
   const sprStaking = () => {
     dispatch(
       sprStakingAction.sprStakingAct(
@@ -292,8 +295,23 @@ const SprStakingPage = () => {
     );
   };
 
-  
+  // 지울거
+  const sprMint = async () => {
+    const mint = await web3.eth.sendTransaction({
+      from: account,
+      to: SheepooriTokenAddress,
+      gasPrice: "3000000",
+      data: SheepooriTokenContract.methods.mint().encodeABI(),
+    });
+    console.log("테스트 민팅: ", mint);
+  };
 
+  const test = async () => {
+    const getTotalTokenIdsApi = await SheepooriTokenContract.methods
+      .getTotalTokenIds(account)
+      .call();
+    console.log("tokenid", getTotalTokenIdsApi);
+  };
 
   useEffect(() => {
     dispatch(
@@ -306,21 +324,23 @@ const SprStakingPage = () => {
     dispatch(allSprStakedViewAction.allSprStakedViewAct(account));
   }, [account]);
 
-
+  // console.log(getStakingTokenIdImgVideoUrl,"1234")
   // ----------------------- Staking Slider Section ----------------------- //
   const handleClickButton = (myTokenId) => {
-    dispatch({type:"SELECT_STAKING_NFT", payload:myTokenId})
+    console.log(myTokenId, " 체크");
+    dispatch({ type: "SELECT_STAKING_NFT", payload: myTokenId });
     // dispatch(sprStakingViewAction.sprStakingViewAct(account, Number(myStakedTokenId)));
   };
 
   const stakingCheckOnlyOne = (checkThis) => {
-    const checkboxes = document.getElementsByName('test3')
-
+    const checkboxes = document.getElementsByName("test3");
+    // console.log(checkboxes)
     for (let i = 0; i < checkboxes.length; i++) {
       if (checkboxes[i] !== checkThis) {
         checkboxes[i].checked = false;
       } else {
-        setMyTokenId(checkThis.value)
+        setMyTokenId(checkThis.value);
+        // console.log(typeof Number(checkThis.value))
       }
     }
   };
@@ -328,22 +348,29 @@ const SprStakingPage = () => {
   // ----------------------- UnStaking Slider Section ----------------------- //
 
   const selectUnStakingCheckButton = (myStakedTokenId) => {
-      dispatch({type:"SELECT_UNSTAKING_NFT", payload:myStakedTokenId})
-  }
+    console.log(myStakedTokenId, "체크");
+    dispatch({ type: "SELECT_UNSTAKING_NFT", payload: myStakedTokenId });
+  };
 
   const checkOnlyOne = (checkThis) => {
-      const checkboxes = document.getElementsByName('test2')
-
-      for (let i = 0; i < checkboxes.length; i++) {
-        if (checkboxes[i] !== checkThis) {
-          checkboxes[i].checked = false
-        } else {
-          setMyStakedTokenId(checkThis.value)
-
-        }
+    const checkboxes = document.getElementsByName("test2");
+    // console.log(checkboxes)
+    for (let i = 0; i < checkboxes.length; i++) {
+      if (checkboxes[i] !== checkThis) {
+        checkboxes[i].checked = false;
+      } else {
+        setMyStakedTokenId(checkThis.value);
+        // console.log(checkThis.value);
       }
     }
+  };
 
+  // const responsive = {
+  //   0: { items: 1 , itemsFit: 'contain'},
+  //   568: { items: 2, itemsFit: 'contain' },
+  //   800: { items: 3 ,itemsFit: 'contain'},
+  //   1024: { items: 5 , itemsFit: 'contain'},
+  // };
 
   useEffect(() => {
     dispatch(sprStakingResultViewAction.sprStakingResultViewAct(account));
@@ -365,7 +392,7 @@ const SprStakingPage = () => {
     id.scrollTo({
       top: 0,
       left: 0,
-      behavior: "smooth"
+      behavior: "smooth",
     });
   };
 
@@ -373,7 +400,7 @@ const SprStakingPage = () => {
     id.scrollTo({
       top: id.scrollHeight,
       left: 0,
-      behavior: "smooth"
+      behavior: "smooth",
     });
   };
 
@@ -386,36 +413,45 @@ const SprStakingPage = () => {
       breakpoint: { max: 3000, min: 1024 },
       items: 5,
       // partialVisibilityGutter: 96,
-      slidesToSlide: 1 // optional, default to 1.
+      slidesToSlide: 1, // optional, default to 1.
     },
     tablet: {
       breakpoint: { max: 1024, min: 464 },
       items: 3,
-      slidesToSlide: 2 // optional, default to 1.
+      slidesToSlide: 2, // optional, default to 1.
     },
     mobile: {
       breakpoint: { max: 464, min: 0 },
       items: 1,
-      slidesToSlide: 1 // optional, default to 1.
-    }
+      slidesToSlide: 1, // optional, default to 1.
+    },
   };
 
   const ButtonGroup = ({ next, previous, goToSlide, ...rest }) => {
-    const { carouselState: { currentSlide } } = rest;
+    const {
+      carouselState: { currentSlide },
+    } = rest;
     return (
       <div className="carousel-button-group">
-        <SlArrowRight id="sliderRightBtn" onClick={() => next()}/>
-        <SlArrowLeft id="sliderLeftBtn" className={currentSlide === 0 ? 'disable' : ''} onClick={() => previous()}  />
+        <SlArrowRight id="sliderRightBtn" onClick={() => next()} />
+        <SlArrowLeft
+          id="sliderLeftBtn"
+          className={currentSlide === 0 ? "disable" : ""}
+          onClick={() => previous()}
+        />
         {/* <ButtonThree onClick={() => goToSlide(currentSlide + 1)}> Go to any slide </ButtonThree> */}
       </div>
     );
   };
 
-
   return (
     <div className="stakingSprPageContainer">
       <div className="stakingPageSprLogoContainer">
-        <img className="stakingSprLogo" src={SheepooriLogo} alt="HanLogo" />
+        <img
+          className="stakingSprLogo"
+          src={SheepooriLogoBackX}
+          alt="HanLogo"
+        />
         <a>SPR STAKING</a>
       </div>
       <div className="stakingSprAllAmountContainer">
@@ -488,7 +524,8 @@ const SprStakingPage = () => {
             </a>
           </div>
         ) : (
-          <div className="connectSprWalletSection">
+          <div className="cantConnectSprWalletSection">
+            <p className="cantConnetSprTxt">Please swith to mainnet</p>
             <a
               className="social-button button--social-login button--google"
               href="#"
@@ -506,9 +543,9 @@ const SprStakingPage = () => {
           <Tab>VIEW ADS</Tab>
         </TabList>
         <TabPanel>
-        <div className="stakedSprCanAmountSection">
-          <p>STAKED : {getAmountStaked} </p>
-        </div>
+          <div className="stakedSprCanAmountSection">
+            <p>STAKED : {getAmountStaked} </p>
+          </div>
           {getAmountStaked ? (
             getMyTokenIds.length === 0 ? (
               <div className="sprStakingDepositContainer">
@@ -519,6 +556,10 @@ const SprStakingPage = () => {
                     </a>
                   </div>
                 </div>
+                {/* <div className="sprStakingSelectBtnSection">
+                  <button onClick={sprMint}>Test Minting</button>
+                  <button onClick={test}>Test Token</button>
+                </div> */}
               </div>
             ) : (
               <div className="sprStakingDepositContainer">
@@ -540,7 +581,8 @@ const SprStakingPage = () => {
                                 <div
                                   className="sprStakingImgCard"
                                   style={{
-                                    backgroundImage: `url(https://gateway.pinata.cloud/ipfs/${item.nft.image})`,
+                                    backgroundImage: `url(https://gateway.pinata.cloud/ipfs/QmcTcBbZtNRbwnDSjGjwfYXt8SiWahPtMFSL77dgfzHPUX)`,
+                                    // backgroundImage: `url(https://gateway.pinata.cloud/ipfs/${item.nft.image})`,
                                   }}
                                 >
                                   <input
@@ -565,6 +607,14 @@ const SprStakingPage = () => {
                       </Carousel>
                     ) : null}
                   </div>
+                  {/* <div className='sprStakingSelectBtnSection'>
+                                  <button onClick={sprMint}>
+                                    Test Minting            
+                                  </button>
+                                  <button onClick={test}>
+                                    Test Token           
+                                  </button>
+                    </div> */}
                 </div>
                 <div className="depositSprStakeBtnSection">
                   {getSingleApproved !== SheepooriStakingAddress ? (
@@ -581,7 +631,6 @@ const SprStakingPage = () => {
                   )}
                 </div>
               </div>
-              
             )
           ) : (
             <div className="sprStakingDepositContainer">
@@ -591,18 +640,18 @@ const SprStakingPage = () => {
             </div>
           )}
           <div className="logoContainer">
-          <img
-            src="https://assets.coingecko.com/coins/images/279/small/ethereum.png?1595348880"
-            onClick={changeEthereumNetWork}
-            className="opIcon"
-          />
-          <img src={HanLogo} onClick={addRewardToken} className="hanIcon" />
+            <img
+              src="https://assets.coingecko.com/coins/images/279/small/ethereum.png?1595348880"
+              onClick={changeEthereumNetWork}
+              className="opIcon"
+            />
+            <img src={HanLogo} onClick={addRewardToken} className="hanIcon" />
           </div>
         </TabPanel>
         <TabPanel className="allTokenSprRewardsContainer">
-        <div className="stakedSprCanAmountSection">
-          <p>STAKED : {getAmountStaked} </p>
-        </div>
+          <div className="stakedSprCanAmountSection">
+            <p>STAKED : {getAmountStaked} </p>
+          </div>
           <div className="allRewardsSprCumulativeSection">
             <p>
               Estimated Interest : {sprResultValue}{" "}
@@ -640,9 +689,9 @@ const SprStakingPage = () => {
           </div>
         </TabPanel>
         <TabPanel>
-        <div className="stakedSprCanAmountSection">
-          <p>STAKED : {getAmountStaked} </p>
-        </div>
+          <div className="stakedSprCanAmountSection">
+            <p>STAKED : {getAmountStaked} </p>
+          </div>
           {getStakedTokenIds.length === 0 ? (
             <div className="sprStakingWithdrawContainer">
               <div className="sprStakingCantChoiceContainer">
@@ -668,13 +717,16 @@ const SprStakingPage = () => {
                     >
                       {stakingTokenIdImg.map((item, index) => {
                         return (
-                          <div className="sprUnStakingSlider"   key={index}>
-                            <div className="sprUnStakingImgContainer" id="test3223232">
-                              
+                          <div className="sprUnStakingSlider" key={index}>
+                            <div
+                              className="sprUnStakingImgContainer"
+                              id="test3223232"
+                            >
                               <div
-                                className="sprUnStakingImgCard"                       
+                                className="sprUnStakingImgCard"
                                 style={{
-                                  backgroundImage: `url(https://gateway.pinata.cloud/ipfs/${item.image})`,
+                                  backgroundImage: `url(https://gateway.pinata.cloud/ipfs/QmcTcBbZtNRbwnDSjGjwfYXt8SiWahPtMFSL77dgfzHPUX)`,
+                                  // backgroundImage: `url(https://gateway.pinata.cloud/ipfs/${item.image})`,
                                 }}
                               >
                                 <input
@@ -689,7 +741,7 @@ const SprStakingPage = () => {
                                   onChange={(e) => checkOnlyOne(e.target)}
                                 />
                               </div>
-                              <div className="sprStakingImgTokenId" >
+                              <div className="sprStakingImgTokenId">
                                 <p>Sheepoori # {item.tokenId}</p>
                               </div>
                             </div>
@@ -708,71 +760,76 @@ const SprStakingPage = () => {
             </div>
           )}
           <div className="logoContainer">
-          <img
-            src="https://assets.coingecko.com/coins/images/279/small/ethereum.png?1595348880"
-            onClick={changeEthereumNetWork}
-            className="opIcon"
-          />
-          <img src={HanLogo} onClick={addRewardToken} className="hanIcon" />
+            <img
+              src="https://assets.coingecko.com/coins/images/279/small/ethereum.png?1595348880"
+              onClick={changeEthereumNetWork}
+              className="opIcon"
+            />
+            <img src={HanLogo} onClick={addRewardToken} className="hanIcon" />
           </div>
         </TabPanel>
         <TabPanel>
           {getStakingTokenIdImgVideoUrl.length === 0 ? (
-            <div className="sprStakingWithdrawContainer">
-              <div className="sprStakingCantChoiceContainer">
-                <div className="sprStakingCantChoiceSection">
-                  <a className="cantStakingSprBtn" disabled={true}>
-                    INSUFFICIENT BALANCE
-                  </a>
-                </div>
+            // <div className="sprStakingWithdrawContainer">
+            //   <div className="sprStakingCantChoiceContainer">
+            //     <div className="sprStakingCantChoiceSection">
+            //       <a className="cantStakingSprBtn" disabled={true}>
+            //         INSUFFICIENT BALANCE
+            //       </a>
+            //     </div>
+            //   </div>
+            // </div>
+            <div className="sprStakingCantViewContainer">
+              <Loading />
+            </div>
+          ) : (
+            <div className="sprAllStakingComContainer">
+              <div className="sprAllStakingArrowUpSection">
+                <SlArrowUp
+                  onPointerDown={(e) => goUp(ref.current)}
+                  onPointerUp={(e) => stopScroll(ref.current)}
+                />
               </div>
-            </div>
-          ):(
-          <div className="sprAllStakingComContainer">
-            <div className="sprAllStakingArrowUpSection">
-              <SlArrowUp 
-              onPointerDown={(e) => goUp(ref.current)}
-              onPointerUp={(e) => stopScroll(ref.current)}
-              />
-            </div>
-            <div className="sprAllStakingContainer">
-              {getStakingTokenIdImgVideoUrl !== "" ? (
-              <div className="allStakingInfoImgContainer">
-                <div className="scrollBox" >
-                  <div className="scrollBoxInner" ref={ref}>
-                    {getStakingTokenIdImgVideoUrl.map((item, index) => {
-                    return(
-                      <div className="allStakingInfoSection" key={index}>
-                          <div className="allStakingInfoImgSection"
-                          style={{
-
-                            backgroundImage:`url(https://gateway.pinata.cloud/ipfs/${item.image})`,
-                          }}
-                          onClick={()=>window.open(`${item.externalUrl}`,'_blank')}
-                          // onClick={()=>window.open(`https://www.youtube.com/channel/UCekUY9Bc3J9adN2tQ-uDXqA/videos`,'_blank')}
-                          >
-                            
-                          </div>
-                        <div className="allStakingInfoNameSection">
-                          <p>Sheepoori # {item.tokenId}</p>
-                          {/* <p>{item.name}</p> */}
-                        </div>
+              <div className="sprAllStakingContainer">
+                {getStakingTokenIdImgVideoUrl !== "" ? (
+                  <div className="allStakingInfoImgContainer">
+                    <div className="scrollBox">
+                      <div className="scrollBoxInner" ref={ref}>
+                        {getStakingTokenIdImgVideoUrl.map((item, index) => {
+                          return (
+                            <div className="allStakingInfoSection">
+                              <div
+                                className="allStakingInfoImgSection"
+                                style={{
+                                  // backgroundImage:
+                                  // `url(https://gateway.pinata.cloud/ipfs/QmcTcBbZtNRbwnDSjGjwfYXt8SiWahPtMFSL77dgfzHPUX)`
+                                  // backgroundImage: `url(https://gateway.pinata.cloud/ipfs/${item.image})`,
+                                  backgroundImage: `url(https://gateway.pinata.cloud/ipfs/${item.image})`,
+                                }}
+                                onClick={() =>
+                                  window.open(`${item.externalUrl}`, "_blank")
+                                }
+                                // onClick={()=>window.open(`https://www.youtube.com/channel/UCekUY9Bc3J9adN2tQ-uDXqA/videos`,'_blank')}
+                              ></div>
+                              <div className="allStakingInfoNameSection">
+                                <p>Sheepoori # {item.tokenId}</p>
+                                {/* <p>{item.name}</p> */}
+                              </div>
+                            </div>
+                          );
+                        })}
                       </div>
-
-                      );
-                    })}
+                    </div>
                   </div>
-                </div>
+                ) : null}
               </div>
-              ) : null}
+              <div className="sprAllStakingArrowDownSection">
+                <SlArrowDown
+                  onPointerDown={(e) => goDown(ref.current)}
+                  onPointerUp={(e) => stopScroll(ref.current)}
+                />
+              </div>
             </div>
-           <div className="sprAllStakingArrowDownSection">
-             <SlArrowDown
-               onPointerDown={(e) => goDown(ref.current)}
-               onPointerUp={(e) => stopScroll(ref.current)}
-             />
-           </div>
-          </div>
           )}
         </TabPanel>
       </Tabs>
