@@ -1,5 +1,5 @@
-import { StakingContract } from "../../config/StakingRakis6Config";
-// import { StakingContract } from "../../config/StakingRakis6ConfigTest";
+import { StakingContract } from "../../../config/StakingRakis6Config";
+// import { StakingContract } from "../../../config/StakingRakis6ConfigTest";
 import BigNumber from "bignumber.js";
 
 function stakingMaxWithdrawAmountAct(account) {
@@ -11,15 +11,11 @@ function stakingMaxWithdrawAmountAct(account) {
           .getAmount(account)
           .call();
 
-        // let [ getWithdrawAmount ] = await Promise.all([ getWithdrawAmountApi ])
-        // 0.1111111155
-
         dispatch({
           type: "GET_STAKING_WITHDRAW_MAX_AMOUNT",
           payload: {
             getWithdrawAmount: getWithdrawAmount / 10 ** 18,
           },
-          // getWithdrawAmount: (AmountBN.dividedBy(new BigNumber((getWithdrawAmount)))).toFixed(18),                    }
         });
       }
     } catch (error) {

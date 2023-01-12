@@ -4,14 +4,14 @@ import {
   RewardTokenAddress,
   StakingAddress,
   web3,
-} from "../../config/StakingRakis6Config";
+} from "../../../config/StakingRakis6Config";
 // import {
 //   RewardTokenContract,
 //   StakingContract,
 //   RewardTokenAddress,
 //   StakingAddress,
 //   web3,
-// } from "../../config/StakingRakis6ConfigTest";
+// } from "../../../config/StakingRakis6ConfigTest";
 import Swal from "sweetalert2";
 
 function stakingRewardAct(account) {
@@ -28,13 +28,8 @@ function stakingRewardAct(account) {
         title: "Success",
         text: "Claim was successful!",
         icon: "success",
-        confirmButtonColor: "#3085d6", // confrim 버튼 색깔 지정
-        confirmButtonText: "OK", // confirm 버튼 텍스트 지정
-        // showCancelButton: true,
-        // cancelButtonText: '취소',
-        // cancelButtonColor: '#d33',
-
-        // reverseButtons: true,
+        confirmButtonColor: "#3085d6",
+        confirmButtonText: "OK",
       }).then((result) => {
         if (result.isConfirmed) {
           window.location.reload();

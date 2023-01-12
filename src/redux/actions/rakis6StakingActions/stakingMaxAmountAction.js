@@ -1,5 +1,5 @@
-import { StakingTokenContract } from "../../config/StakingRakis6Config";
-// import { StakingTokenContract } from "../../config/StakingRakis6ConfigTest";
+import { StakingTokenContract } from "../../../config/StakingRakis6Config";
+// import { StakingTokenContract } from "../../../config/StakingRakis6ConfigTest";
 
 function stakingMaxAmountAct(account) {
   return async (dispatch) => {
@@ -9,15 +9,12 @@ function stakingMaxAmountAct(account) {
           .balanceOf(account)
           .call();
 
-        // let [stakingTokenAmount] = await Promise.all([stakingTokenAmountApi]);
-
         dispatch({
           type: "GET_STAKING_MAX_AMOUNT",
           payload: {
             stakingTokenAmount: stakingTokenAmount / 10 ** 18,
           },
         });
-        console.log(typeof stakingTokenAmount, "?");
       }
     } catch (error) {
       console.error(error);

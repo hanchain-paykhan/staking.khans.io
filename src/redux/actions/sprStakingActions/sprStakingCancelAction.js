@@ -2,28 +2,30 @@ import {
   SheepooriStakingAddress,
   SheepooriStakingContract,
   web3,
-} from "../../config/SheepooriStakingConfig";
-//   import {
-//     SheepooriStakingAddress,
-//     SheepooriStakingContract,
-//     web3
-// } from "../../config/SheepooriStakingConfigTest"
+} from "../../../config/SheepooriStakingConfig";
+// import {
+//   SheepooriStakingAddress,
+//   SheepooriStakingContract,
+//   web3,
+// } from "../../../config/SheepooriStakingConfigTest";
 import Swal from "sweetalert2";
 
-function sprStakingRewardAct(account, gasPriceResult) {
+function sprStakingCancelAct(account, myStakedTokenId, gasPriceResult) {
   return async (dispatch) => {
-    // 클레임
     try {
-      const sheepooriClaimReward = await web3.eth.sendTransaction({
+      const unstake = await web3.eth.sendTransaction({
         from: account,
         to: SheepooriStakingAddress,
         gasPrice: web3.utils.hexToNumber(gasPriceResult),
-        data: SheepooriStakingContract.methods.claimReward().encodeABI(),
+        data: SheepooriStakingContract.methods
+          .unstake(myStakedTokenId)
+          .encodeABI(),
       });
       Swal.fire({
         title: "Success",
-        text: "Claim was successful!",
+        text: "UnStake was successful!",
         icon: "success",
+
         confirmButtonColor: "#3085d6",
         confirmButtonText: "OK",
       }).then((result) => {
@@ -32,14 +34,14 @@ function sprStakingRewardAct(account, gasPriceResult) {
         }
       });
       dispatch({
-        type: "SUCCESS_SPR_CLAIM",
-        payload: { successSprClaim: true },
+        type: "SUCCESS_SPR_UNSTAKING",
+        payload: { successSprUnStaking: true },
       });
-    } catch (err) {
-      console.log(err);
+    } catch (error) {
+      console.error(error);
       Swal.fire({
         title: "Fail",
-        text: "Claim was Fail!",
+        text: "UnStaking was Fail!",
         icon: "error",
 
         confirmButtonColor: "#3085d6",
@@ -49,4 +51,4 @@ function sprStakingRewardAct(account, gasPriceResult) {
   };
 }
 
-export const sprStakingRewardAction = { sprStakingRewardAct };
+export const sprStakingCancelAction = { sprStakingCancelAct };

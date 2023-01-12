@@ -1,45 +1,45 @@
 import {
-    SheepooriStakingAddress,
-    SheepooriStakingContract,
-    web3
-} from "../../config/SheepooriStakingConfig"
-// import {
+  SheepooriStakingAddress,
+  SheepooriStakingContract,
+  web3,
+} from "../../../config/SheepooriStakingConfig";
+//   import {
 //     SheepooriStakingAddress,
 //     SheepooriStakingContract,
 //     web3
-// } from "../../config/SheepooriStakingConfigTest"
+// } from "../../../config/SheepooriStakingConfigTest"
 import Swal from "sweetalert2";
 
-function sprStakingAct(account, stakingmyTokenId, gasPriceResult) {
+function sprStakingRewardAct(account, gasPriceResult) {
   return async (dispatch) => {
+    // 클레임
     try {
-      const stake = await web3.eth.sendTransaction({
+      const sheepooriClaimReward = await web3.eth.sendTransaction({
         from: account,
         to: SheepooriStakingAddress,
         gasPrice: web3.utils.hexToNumber(gasPriceResult),
-        data: SheepooriStakingContract.methods
-          .stake(stakingmyTokenId)
-          .encodeABI(),
+        data: SheepooriStakingContract.methods.claimReward().encodeABI(),
       });
       Swal.fire({
         title: "Success",
-        text: "Staking was successful!",
+        text: "Claim was successful!",
         icon: "success",
         confirmButtonColor: "#3085d6",
+        confirmButtonText: "OK",
       }).then((result) => {
         if (result.isConfirmed) {
           window.location.reload();
         }
       });
       dispatch({
-        type: "SUCCUESS_SPR_STAKING",
-        payload: { successSprStaking: true },
+        type: "SUCCESS_SPR_CLAIM",
+        payload: { successSprClaim: true },
       });
-    } catch (error) {
-      console.error(error);
+    } catch (err) {
+      console.log(err);
       Swal.fire({
         title: "Fail",
-        text: "Staking was Fail!",
+        text: "Claim was Fail!",
         icon: "error",
 
         confirmButtonColor: "#3085d6",
@@ -49,4 +49,4 @@ function sprStakingAct(account, stakingmyTokenId, gasPriceResult) {
   };
 }
 
-export const sprStakingAction = { sprStakingAct };
+export const sprStakingRewardAction = { sprStakingRewardAct };

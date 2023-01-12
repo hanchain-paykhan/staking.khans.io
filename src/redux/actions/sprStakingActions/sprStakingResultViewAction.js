@@ -1,8 +1,8 @@
-import { SheepooriStakingContract } from "../../config/SheepooriStakingConfig";
+import { SheepooriStakingContract } from "../../../config/SheepooriStakingConfig";
 // import {
 //     SheepooriStakingContract,
 //     SheepooriTokenContract,
-//  } from "../../config/SheepooriStakingConfigTest"
+//  } from "../../../config/SheepooriStakingConfigTest"
 
 function sprStakingResultViewAct(account) {
   return async (dispatch) => {
