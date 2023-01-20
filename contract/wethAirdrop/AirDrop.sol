@@ -64,8 +64,9 @@ contract Airdrop is Ownable, Pausable {
         require(block.timestamp > (startTime + claimDuration), "claimDuration must be exceeded in order to update root");
         root = _root;
         startTime = block.timestamp;
+            
         if(whitelistClaimed.length > 0) {
-            for(uint i =0; i < whitelistClaimed.length; i++) {
+            for(uint i = 0; i <= whitelistClaimed.length; i++) {
                 whitelistClaimed.pop();
             }
         }
@@ -87,7 +88,7 @@ contract Airdrop is Ownable, Pausable {
         bytes32 result = leaf(amount);
         require(MerkleProof.verify(merkleProof, root, result), "Proof is not valid");
         if(whitelistClaimed.length > 0) {
-            for(uint i =0; i < whitelistClaimed.length; i++) {
+            for(uint i = 0; i < whitelistClaimed.length; i++) {
                 if(whitelistClaimed[i] == msg.sender) {
                     checkClaimed = true;
                 }
@@ -140,7 +141,7 @@ contract Airdrop is Ownable, Pausable {
         require(block.timestamp <= (startTime + claimDuration), "Claim is not allowed after claimDuration");
         require(token.balanceOf(address(this)) >= amount, "Contract doesnt have enough tokens");
         if(whitelistClaimed.length > 0) {
-            for(uint i =0; i < whitelistClaimed.length; i++) {
+            for(uint i = 0; i < whitelistClaimed.length; i++) {
                 if(whitelistClaimed[i] == msg.sender) {
                     revert("Already Claimed");
                 }
