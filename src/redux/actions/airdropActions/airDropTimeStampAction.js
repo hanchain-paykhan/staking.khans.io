@@ -16,11 +16,23 @@ function airDropTimeStampAct() {
         .remainingDuration()
         .call();
 
-      const claimDate = new Date(timeStampToContractApi * 1000);
+      const reMainDurationtoContract = timeStampToContractApi * 1000;
 
-      const claimDayDateApi = claimDate.getDay();
-      const claimHoursDateApi = claimDate.getHours();
-      const claimMinDateApi = claimDate.getMinutes();
+      const claimDayDateApi = String(
+        Math.floor(reMainDurationtoContract / (1000 * 60 * 60 * 24))
+      ).padStart(2, "0");
+
+      // console.log(claimDayDateApi, "일");
+
+      const claimHoursDateApi = String(
+        Math.floor(reMainDurationtoContract / (1000 * 60 * 60)) % 24
+      ).padStart(2, "0");
+      // console.log(claimHoursDateApi, "시간");
+
+      const claimMinDateApi = String(
+        Math.floor((reMainDurationtoContract / (1000 * 60)) % 60)
+      ).padStart(2, "0");
+      // console.log(claimMinDateApi, "분");
 
       let [claimDayDate, claimHoursDate, claimMinDate] = await Promise.all([
         claimDayDateApi,
@@ -31,9 +43,9 @@ function airDropTimeStampAct() {
       dispatch({
         type: "GET_AIRDROP_SUCCESS_TIMESTAMP",
         payload: {
-          claimDayDate: String(claimDayDate).padStart(2, "0"),
-          claimHoursDate: String(claimHoursDate).padStart(2, "0"),
-          claimMinDate: String(claimMinDate).padStart(2, "0"),
+          claimDayDate: claimDayDate,
+          claimHoursDate: claimHoursDate,
+          claimMinDate: claimMinDate,
         },
       });
     } catch (error) {

@@ -2,22 +2,9 @@ import Web3 from "web3";
 
 export const web3 = new Web3(window.ethereum);
 
-export const AirDropAddress = "0xC988445aB2Bc5bB7Ef8c1ad7Bf8d008A3056A50a";
+export const AirDropAddress = "0x4C6A04a844039d8348485064d2Cb3FB8e9e1aD19";
 export const AirDropABI = {
   abi: [
-    {
-      inputs: [
-        {
-          internalType: "address payable",
-          name: "beneficiary",
-          type: "address",
-        },
-      ],
-      name: "_selfDestruct",
-      outputs: [],
-      stateMutability: "nonpayable",
-      type: "function",
-    },
     {
       inputs: [
         {
@@ -477,17 +464,17 @@ export const AirDropABI = {
     {
       inputs: [
         {
-          internalType: "address",
+          internalType: "uint256",
           name: "",
-          type: "address",
+          type: "uint256",
         },
       ],
       name: "whitelistClaimed",
       outputs: [
         {
-          internalType: "bool",
+          internalType: "address",
           name: "",
-          type: "bool",
+          type: "address",
         },
       ],
       stateMutability: "view",

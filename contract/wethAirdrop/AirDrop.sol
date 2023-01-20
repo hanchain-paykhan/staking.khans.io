@@ -18,8 +18,8 @@ contract Airdrop is Ownable, Pausable {
     uint8 public decimals;
     bytes32 public root; // merkle tree root
     uint256 public startTime;
-    uint256 public claimDuration = 7 days;
-    mapping(address => bool) public whitelistClaimed;
+    uint256 public claimDuration = 7 days; // 604800
+    address[] public whitelistClaimed;
     uint256 private constant GRACE_PERIOD_TIME = 3600;
 
     error SequencerDown();
@@ -64,11 +64,16 @@ contract Airdrop is Ownable, Pausable {
         require(block.timestamp > (startTime + claimDuration), "claimDuration must be exceeded in order to update root");
         root = _root;
         startTime = block.timestamp;
+        if(whitelistClaimed.length > 0) {
+            for(uint i =0; i < whitelistClaimed.length; i++) {
+                whitelistClaimed.pop();
+            }
+        }
     }
 
     // helper for the dapp
     function canClaim(bytes32[] memory merkleProof, uint256 amount) external view returns (bool) {
-        require(block.timestamp <= (startTime + claimDuration), "CLAIM can only be selfdestruct after claimDuration");
+        require(block.timestamp <= (startTime + claimDuration), "Claim is not allowed after claimDuration");
         bytes32 result = leaf(amount);
         require(MerkleProof.verify(merkleProof, root, result), "Proof is not valid");
         require(!claimed(merkleProof, amount), "Address has already claimed.");
@@ -78,9 +83,17 @@ contract Airdrop is Ownable, Pausable {
     // Check if a given reward has already been claimed
     function claimed(bytes32[] memory merkleProof, uint256 amount) public view returns (bool) {
         // Compute the merkle leaf from recipient and amount
+        bool checkClaimed = false;
         bytes32 result = leaf(amount);
         require(MerkleProof.verify(merkleProof, root, result), "Proof is not valid");
-        return(whitelistClaimed[msg.sender]);
+        if(whitelistClaimed.length > 0) {
+            for(uint i =0; i < whitelistClaimed.length; i++) {
+                if(whitelistClaimed[i] == msg.sender) {
+                    checkClaimed = true;
+                }
+            }
+        }
+        return checkClaimed;
     }
 
     function leaf(uint256 amount) internal view returns(bytes32){
@@ -124,9 +137,16 @@ contract Airdrop is Ownable, Pausable {
     // Get airdrop tokens assigned to address
     // Requires sending merkle proof to the function
     function claim(bytes32[] memory merkleProof, uint256 amount) public whenNotPaused {
-        require(block.timestamp <= (startTime + claimDuration), "CLAIM can only be selfdestruct after claimDuration");
+        require(block.timestamp <= (startTime + claimDuration), "Claim is not allowed after claimDuration");
         require(token.balanceOf(address(this)) >= amount, "Contract doesnt have enough tokens");
-
+        if(whitelistClaimed.length > 0) {
+            for(uint i =0; i < whitelistClaimed.length; i++) {
+                if(whitelistClaimed[i] == msg.sender) {
+                    revert("Already Claimed");
+                }
+            }
+        }
+        
         // verify the proof is valid
         bytes32 result = leaf(amount);
         require(MerkleProof.verify(merkleProof, root, result), "Proof is not valid");
@@ -145,14 +165,8 @@ contract Airdrop is Ownable, Pausable {
         (, int256 price, , , ) = baseFeed.latestRoundData();
         uint claimAmount = amount * 10 ** decimals / uint(price);
         token.transfer(msg.sender, claimAmount);
-        whitelistClaimed[msg.sender] = true;
+        whitelistClaimed.push(msg.sender);
         emit Claim(msg.sender, claimAmount, block.timestamp);
-    }
-
-
-    function _selfDestruct(address payable beneficiary) external onlyOwner {
-        token.transfer(beneficiary, token.balanceOf(address(this)));
-        selfdestruct(beneficiary);
     }
 
     function recoverERC20(address _tokenAddress, uint256 _tokenAmount) external onlyOwner {

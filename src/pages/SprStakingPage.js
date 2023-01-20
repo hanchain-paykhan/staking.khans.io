@@ -564,49 +564,47 @@ const SprStakingPage = () => {
             ) : (
               <div className="sprStakingDepositContainer">
                 <div className="sprStakingBeforeChoiceImgContainer">
-                  <div className="test1">
-                    {getMyTokenIds !== "" ? (
-                      <Carousel
-                        responsive={responsive}
-                        arrows={false}
-                        className="mainUnSlider"
-                        partialVisible
-                        customButtonGroup={<ButtonGroup />}
-                        renderButtonGroupOutside
-                      >
-                        {getMyTokenIds.map((item, index) => {
-                          return (
-                            <div className="sprStakingSlider" key={index}>
-                              <div className="sprStakingImgContainer">
-                                <div
-                                  className="sprStakingImgCard"
-                                  style={{
-                                    backgroundImage: `url(https://gateway.pinata.cloud/ipfs/QmcTcBbZtNRbwnDSjGjwfYXt8SiWahPtMFSL77dgfzHPUX)`,
-                                    // backgroundImage: `url(https://gateway.pinata.cloud/ipfs/${item.nft.image})`,
-                                  }}
-                                >
-                                  <input
-                                    className="imgCheckBox"
-                                    name="test3"
-                                    type="radio"
-                                    key={index}
-                                    value={item.tokenId}
-                                    onClick={() => handleClickButton}
-                                    onChange={(e) =>
-                                      stakingCheckOnlyOne(e.target)
-                                    }
-                                  ></input>
-                                </div>
-                                <div className="sprStakingImgTokenId">
-                                  <p>Sheepoori # {item.tokenId}</p>
-                                </div>
+                  {getMyTokenIds !== "" ? (
+                    <Carousel
+                      responsive={responsive}
+                      arrows={false}
+                      className="mainUnSlider"
+                      partialVisible
+                      customButtonGroup={<ButtonGroup />}
+                      renderButtonGroupOutside
+                    >
+                      {getMyTokenIds.map((item, index) => {
+                        return (
+                          <div className="sprStakingSlider" key={index}>
+                            <div className="sprStakingImgContainer">
+                              <div
+                                className="sprStakingImgCard"
+                                style={{
+                                  // backgroundImage: `url(https://gateway.pinata.cloud/ipfs/QmcTcBbZtNRbwnDSjGjwfYXt8SiWahPtMFSL77dgfzHPUX)`,
+                                  backgroundImage: `url(https://gateway.pinata.cloud/ipfs/${item.nft.image})`,
+                                }}
+                              >
+                                <input
+                                  className="imgCheckBox"
+                                  name="test3"
+                                  type="radio"
+                                  key={index}
+                                  value={item.tokenId}
+                                  onClick={() => handleClickButton}
+                                  onChange={(e) =>
+                                    stakingCheckOnlyOne(e.target)
+                                  }
+                                ></input>
+                              </div>
+                              <div className="sprStakingImgTokenId">
+                                <p>Sheepoori # {item.tokenId}</p>
                               </div>
                             </div>
-                          );
-                        })}
-                      </Carousel>
-                    ) : null}
-                  </div>
+                          </div>
+                        );
+                      })}
+                    </Carousel>
+                  ) : null}
                   {/* <div className='sprStakingSelectBtnSection'>
                                   <button onClick={sprMint}>
                                     Test Minting            
@@ -705,52 +703,50 @@ const SprStakingPage = () => {
           ) : (
             <div className="sprStakingWithdrawContainer">
               <div className="sprUnStakingChoiceImgContainer">
-                <div className="test1">
-                  {stakingTokenIdImg !== "" ? (
-                    <Carousel
-                      responsive={responsive}
-                      arrows={false}
-                      className="mainUnSlider"
-                      partialVisible
-                      customButtonGroup={<ButtonGroup />}
-                      renderButtonGroupOutside
-                    >
-                      {stakingTokenIdImg.map((item, index) => {
-                        return (
-                          <div className="sprUnStakingSlider" key={index}>
+                {stakingTokenIdImg !== "" ? (
+                  <Carousel
+                    responsive={responsive}
+                    arrows={false}
+                    className="mainUnSlider"
+                    partialVisible
+                    customButtonGroup={<ButtonGroup />}
+                    renderButtonGroupOutside
+                  >
+                    {stakingTokenIdImg.map((item, index) => {
+                      return (
+                        <div className="sprUnStakingSlider" key={index}>
+                          <div
+                            className="sprUnStakingImgContainer"
+                            id="sprUnStakingImgIdCardContainer"
+                          >
                             <div
-                              className="sprUnStakingImgContainer"
-                              id="test3223232"
+                              className="sprUnStakingImgCard"
+                              style={{
+                                // backgroundImage: `url(https://gateway.pinata.cloud/ipfs/QmcTcBbZtNRbwnDSjGjwfYXt8SiWahPtMFSL77dgfzHPUX)`,
+                                backgroundImage: `url(https://gateway.pinata.cloud/ipfs/${item.image})`,
+                              }}
                             >
-                              <div
-                                className="sprUnStakingImgCard"
-                                style={{
-                                  backgroundImage: `url(https://gateway.pinata.cloud/ipfs/QmcTcBbZtNRbwnDSjGjwfYXt8SiWahPtMFSL77dgfzHPUX)`,
-                                  // backgroundImage: `url(https://gateway.pinata.cloud/ipfs/${item.image})`,
-                                }}
-                              >
-                                <input
-                                  className="imgUnCheckBox"
-                                  name="test2"
-                                  type="radio"
-                                  key={index}
-                                  value={item.tokenId}
-                                  onClick={() =>
-                                    selectUnStakingCheckButton(item.tokenId)
-                                  }
-                                  onChange={(e) => checkOnlyOne(e.target)}
-                                />
-                              </div>
-                              <div className="sprStakingImgTokenId">
-                                <p>Sheepoori # {item.tokenId}</p>
-                              </div>
+                              <input
+                                className="imgUnCheckBox"
+                                name="test2"
+                                type="radio"
+                                key={index}
+                                value={item.tokenId}
+                                onClick={() =>
+                                  selectUnStakingCheckButton(item.tokenId)
+                                }
+                                onChange={(e) => checkOnlyOne(e.target)}
+                              />
+                            </div>
+                            <div className="sprStakingImgTokenId">
+                              <p>Sheepoori # {item.tokenId}</p>
                             </div>
                           </div>
-                        );
-                      })}
-                    </Carousel>
-                  ) : null}
-                </div>
+                        </div>
+                      );
+                    })}
+                  </Carousel>
+                ) : null}
               </div>
               <div className="sprUnStakeBtnSection">
                 <button className="spr-learn-more" onClick={sprUnStaking}>

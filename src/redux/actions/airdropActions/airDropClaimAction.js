@@ -21,15 +21,7 @@ function airDropClaimAct(
       const airdropclaim = await AirDropContract.methods
         .claim(getProofToBack, getAmountToBack)
         .send({ from: account });
-      // const airdropclaim = await web3.eth.sendTransaction({
-      //   from: account,
-      //   to: AirDropAddress,
-      //   // gasPrice: 3000000,
-      //   // gasPrice: web3.utils.hexToNumber(gasPriceResult),
-      //   data: AirDropContract.methods
-      //     .claim(getProofToBack, getAmountToBack)
-      //     .encodeABI(),
-      // });
+
       Swal.fire({
         text: "Claim was successful!",
         icon: "success",
