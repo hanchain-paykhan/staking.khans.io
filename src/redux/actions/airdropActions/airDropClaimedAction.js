@@ -30,6 +30,10 @@ function airDropClaimedAct(account) {
           timeout: 3000,
         });
 
+        await setTimeout(0);
+
+        console.log(getProofAmountToBack, "123431232");
+
         const claimedApi = await AirDropContract.methods
           .claimed(
             getProofAmountToBack.data.proof,

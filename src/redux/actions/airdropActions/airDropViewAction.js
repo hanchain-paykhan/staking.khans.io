@@ -30,6 +30,9 @@ function airDropViewAct(account) {
           timeout: 3000,
         });
 
+        await setTimeout(0);
+
+        // console.log(getProofAmountToBack.data.proof, "Proof");
         const canClaimApi = await AirDropContract.methods
           .canClaim(
             getProofAmountToBack.data.proof,
@@ -37,7 +40,9 @@ function airDropViewAct(account) {
           )
           .call({ from: account });
 
+        // console.log(canClaimApi, "canClaim");
         const getProofToBackApi = getProofAmountToBack.data.proof;
+        // console.log(getProofAmountToBack, "Amount");
 
         const getAmountToBackApi = getProofAmountToBack.data.eth_amount;
 
