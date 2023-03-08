@@ -14,7 +14,7 @@ Contract Information
 
 # MusikhanStaking - Optimistic Ethereum Network
 
-0xbcEba2070A2c8cc60AA3bc43c82eaF4Ae0C7b558
+0x5AD7e2BF0204C066ac9C3DD7028cE30B41D12682
 
 # MusikhanTokenFactory - Optimistic Ethereum Network
 
