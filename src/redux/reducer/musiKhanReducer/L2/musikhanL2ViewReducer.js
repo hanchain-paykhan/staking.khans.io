@@ -4,6 +4,7 @@ const initialState = {
     L2DepositTokenSymbol: "",
     L2DepositTokenCa: "",
     L2DepositBalance: "",
+    musiAllowance: "",
     L2WithdrawTokenSymbol: "",
     L2WithdrawAmountStaked: "",
     L2WithdrawTokenCa: "",
@@ -38,6 +39,7 @@ const musikhanL2ViewReducer = (state = initialState, action) => {
             return {
                 ...state,
                 L2DepositBalance: payload.L2DepositBalance,
+                musiAllowance: payload.musiAllowance,
             };
 
         case "L2_WITHDRAW_TOKEN_LIST":

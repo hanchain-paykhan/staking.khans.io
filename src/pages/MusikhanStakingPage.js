@@ -59,8 +59,16 @@ const MusikhanStakingPage = () => {
     };
 
     //L2 Deposit
-    const { L2DepositTokenSymbol, L2DepositBalance, L2DepositTokenCa, L2Contract, L2WithdrawTokenSymbol, L2WithdrawAmountStaked, L2WithdrawTokenCa } =
-        useSelector((state) => state.musikhanL2View);
+    const {
+        L2DepositTokenSymbol,
+        L2DepositBalance,
+        musiAllowance,
+        L2DepositTokenCa,
+        L2Contract,
+        L2WithdrawTokenSymbol,
+        L2WithdrawAmountStaked,
+        L2WithdrawTokenCa,
+    } = useSelector((state) => state.musikhanL2View);
     const { successL2TokenApprove } = useSelector((state) => state.musiL2Approve);
 
     const handleNetworkSwitch = async (networkName) => {
@@ -311,7 +319,7 @@ const MusikhanStakingPage = () => {
                 // Ethereum
                 <div className="musiStakingPageEthLogoContainer">
                     <img className="stakingmusiEthLogo" src={HanLogo} alt="HanLogo" />
-                    <a>BRIDGE TO OPTIMSIM</a>
+                    <a>BRIDGE TO OPTIMISM</a>
                 </div>
             ) : checkChainId === "Oxa" ? (
                 // Optimism
@@ -479,7 +487,7 @@ const MusikhanStakingPage = () => {
                                 <div className="musiStakingBirdgeOpTitleSection">
                                     <a className="musiStakingOpTitleTxt">To</a>
                                     <img src={OptimismRedLogo} className="musiStakingOpImg" />
-                                    <a className="musiStakingOpTxt">Optimsim</a>
+                                    <a className="musiStakingOpTxt">Optimism</a>
                                 </div>
                                 {L1TokenBalanceOf === "" ? (
                                     <>
@@ -519,38 +527,211 @@ const MusikhanStakingPage = () => {
                         // Optimism Deposit Section
                         <div className="musiStakingL2DepositContainer">
                             <div className="musiStakingL2DepositSection">
-                                <>
-                                    <div className="musiStakingL2DepositAmountSection">
-                                        <div className="musiStakingL2DepositAmountTitleSection">
-                                            <p>
-                                                Availave: {L2DepositBalance} {L2DepositTokenSymbol}
-                                            </p>
-                                            <button className="amountMusiMaxBtn" onClick={changeL2MaxStakingAmount}>
-                                                Max
+                                {L2DepositTokenSymbol === "" ? (
+                                    <>
+                                        <div className="musiStakingL2DepositAmountSection">
+                                            <div className="musiStakingL2DepositAmountTitleSection">
+                                                <p>
+                                                    Available: {L2DepositBalance} {L2DepositTokenSymbol}
+                                                </p>
+                                                <button className="amountMusiMaxBtn" onClick={changeL2MaxStakingAmount}>
+                                                    Max
+                                                </button>
+                                            </div>
+                                            <input
+                                                type="number"
+                                                placeholder="0.0"
+                                                min="0"
+                                                step="0.0000000000000000001"
+                                                id="maxStakingAmount"
+                                                onChange={changeL2StakingAmount}
+                                                value={stakingAmount}
+                                            ></input>
+                                            <div className="musiStakingL2DepositPickerSection">
+                                                <button className="musiStakingL2DepositPicker_SelectBtn" onClick={openL2DepositModal}>
+                                                    <img src={MusiKhanLogo}></img>
+                                                    <span>{L2DepositTokenSymbol}</span>
+                                                    <MdKeyboardArrowDown size="15" />
+                                                </button>
+                                                <L2DepositModal open={musiL2DepositModal} close={closeL2DepositModal} header="Modal heading"></L2DepositModal>
+                                            </div>
+                                        </div>
+                                        <div className="musiStakingL2DepositSwitchBtnSection">
+                                            <button className="musi-L2Deposit-Enter-learn-more">SELECT TOKEN</button>
+                                        </div>
+                                    </>
+                                ) : musiAllowance > 0 ? (
+                                    <>
+                                        <div className="musiStakingL2DepositAmountSection">
+                                            <div className="musiStakingL2DepositAmountTitleSection">
+                                                <p>
+                                                    Available: {L2DepositBalance} {L2DepositTokenSymbol}
+                                                </p>
+                                                <button className="amountCantMusiMaxBtn">Max</button>
+                                            </div>
+                                            <input
+                                                type="number"
+                                                placeholder="0.0"
+                                                min="0"
+                                                step="0.0000000000000000001"
+                                                id="maxStakingAmount"
+                                                disabled
+                                                // onChange={changeL2StakingAmount}
+                                                value={musiAllowance}
+                                            ></input>
+                                            <div className="musiStakingL2DepositPickerSection">
+                                                <button className="musiStakingCantL2DepositPicker_SelectBtn" onClick={openL2DepositModal}>
+                                                    <img src={MusiKhanLogo}></img>
+                                                    <span>{L2DepositTokenSymbol}</span>
+                                                    <MdKeyboardArrowDown size="15" />
+                                                </button>
+                                                <L2DepositModal open={musiL2DepositModal} close={closeL2DepositModal} header="Modal heading"></L2DepositModal>
+                                            </div>
+                                        </div>
+                                        <div className="musiStakingL2DepositSwitchBtnSection">
+                                            <button className="musi-L2Deposit-learn-more" onClick={setL2TokenStaking}>
+                                                STAKING
                                             </button>
                                         </div>
-                                        <input
-                                            type="number"
-                                            placeholder="0.0"
-                                            min="0"
-                                            step="0.0000000000000000001"
-                                            id="maxStakingAmount"
-                                            onChange={changeL2StakingAmount}
-                                            value={stakingAmount}
-                                        ></input>
-                                        <div className="musiStakingL2DepositPickerSection">
-                                            <button className="musiStakingL2DepositPicker_SelectBtn" onClick={openL2DepositModal}>
-                                                <img src={MusiKhanLogo}></img>
-                                                <span>{L2DepositTokenSymbol}</span>
-                                                <MdKeyboardArrowDown size="15" />
-                                            </button>
-                                            <L2DepositModal open={musiL2DepositModal} close={closeL2DepositModal} header="Modal heading"></L2DepositModal>
+                                    </>
+                                ) : stakingAmount === "" ? (
+                                    <>
+                                        <div className="musiStakingL2DepositAmountSection">
+                                            <div className="musiStakingL2DepositAmountTitleSection">
+                                                <p>
+                                                    Available: {L2DepositBalance} {L2DepositTokenSymbol}
+                                                </p>
+                                                <button className="amountMusiMaxBtn" onClick={changeL2MaxStakingAmount}>
+                                                    Max
+                                                </button>
+                                            </div>
+                                            <input
+                                                type="number"
+                                                placeholder="0.0"
+                                                min="0"
+                                                step="0.0000000000000000001"
+                                                id="maxStakingAmount"
+                                                onChange={changeL2StakingAmount}
+                                                value={stakingAmount}
+                                            ></input>
+                                            <div className="musiStakingL2DepositPickerSection">
+                                                <button className="musiStakingL2DepositPicker_SelectBtn" onClick={openL2DepositModal}>
+                                                    <img src={MusiKhanLogo}></img>
+                                                    <span>{L2DepositTokenSymbol}</span>
+                                                    <MdKeyboardArrowDown size="15" />
+                                                </button>
+                                                <L2DepositModal open={musiL2DepositModal} close={closeL2DepositModal} header="Modal heading"></L2DepositModal>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div className="musiStakingL2DepositSwitchBtnSection">
-                                        <button className="musi-L2Deposit-Enter-learn-more">COMING SOON</button>
-                                    </div>
-                                </>
+                                        <div className="musiStakingL2DepositSwitchBtnSection">
+                                            <button className="musi-L2Deposit-Enter-learn-more">ENTER AMOUNT</button>
+                                        </div>
+                                    </>
+                                ) : L2DepositBalance === 0 || stakingAmount > L2DepositBalance ? (
+                                    <>
+                                        <div className="musiStakingL2DepositAmountSection">
+                                            <div className="musiStakingL2DepositAmountTitleSection">
+                                                <p>
+                                                    Available: {L2DepositBalance} {L2DepositTokenSymbol}
+                                                </p>
+                                                <button className="amountMusiMaxBtn" onClick={changeL2MaxStakingAmount}>
+                                                    Max
+                                                </button>
+                                            </div>
+                                            <input
+                                                type="number"
+                                                placeholder="0.0"
+                                                min="0"
+                                                step="0.0000000000000000001"
+                                                id="maxStakingAmount"
+                                                onChange={changeL2StakingAmount}
+                                                value={stakingAmount}
+                                            ></input>
+                                            <div className="musiStakingL2DepositPickerSection">
+                                                <button className="musiStakingL2DepositPicker_SelectBtn" onClick={openL2DepositModal}>
+                                                    <img src={MusiKhanLogo}></img>
+                                                    <span>{L2DepositTokenSymbol}</span>
+                                                    <MdKeyboardArrowDown size="15" />
+                                                </button>
+                                                <L2DepositModal open={musiL2DepositModal} close={closeL2DepositModal} header="Modal heading"></L2DepositModal>
+                                            </div>
+                                        </div>
+                                        <div className="musiStakingL2DepositSwitchBtnSection">
+                                            <button className="cant-Musi-L2Bridge-learn-more" disabled={true}>
+                                                INSUFFICIENT TOKEN BALANCE
+                                            </button>
+                                        </div>
+                                    </>
+                                ) : successL2TokenApprove === false ? (
+                                    <>
+                                        <div className="musiStakingL2DepositAmountSection">
+                                            <div className="musiStakingL2DepositAmountTitleSection">
+                                                <p>
+                                                    Available: {L2DepositBalance} {L2DepositTokenSymbol}
+                                                </p>
+                                                <button className="amountMusiMaxBtn" onClick={changeL2MaxStakingAmount}>
+                                                    Max
+                                                </button>
+                                            </div>
+                                            <input
+                                                type="number"
+                                                placeholder="0.0"
+                                                min="0"
+                                                step="0.0000000000000000001"
+                                                id="maxStakingAmount"
+                                                onChange={changeL2StakingAmount}
+                                                value={stakingAmount}
+                                            ></input>
+                                            <div className="musiStakingL2DepositPickerSection">
+                                                <button className="musiStakingL2DepositPicker_SelectBtn" onClick={openL2DepositModal}>
+                                                    <img src={MusiKhanLogo}></img>
+                                                    <span>{L2DepositTokenSymbol}</span>
+                                                    <MdKeyboardArrowDown size="15" />
+                                                </button>
+                                                <L2DepositModal open={musiL2DepositModal} close={closeL2DepositModal} header="Modal heading"></L2DepositModal>
+                                            </div>
+                                        </div>
+                                        <div className="musiStakingL2DepositSwitchBtnSection">
+                                            <button className="musi-L2Deposit-learn-more" onClick={setL2TokenApprove}>
+                                                APPROVE
+                                            </button>
+                                        </div>
+                                    </>
+                                ) : (
+                                    <>
+                                        <div className="musiStakingL2DepositAmountSection">
+                                            <div className="musiStakingL2DepositAmountTitleSection">
+                                                <p>
+                                                    Available: {L2DepositBalance} {L2DepositTokenSymbol}
+                                                </p>
+                                                <button className="amountCantMusiMaxBtn">Max</button>
+                                            </div>
+                                            <input
+                                                type="number"
+                                                placeholder="0.0"
+                                                min="0"
+                                                step="0.0000000000000000001"
+                                                id="maxStakingAmount"
+                                                disabled
+                                                // onChange={changeL2StakingAmount}
+                                                value={stakingAmount}
+                                            ></input>
+                                            <div className="musiStakingL2DepositPickerSection">
+                                                <button className="musiStakingCantL2DepositPicker_SelectBtn" onClick={openL2DepositModal}>
+                                                    <img src={MusiKhanLogo}></img>
+                                                    <span>{L2DepositTokenSymbol}</span>
+                                                    <MdKeyboardArrowDown size="15" />
+                                                </button>
+                                                <L2DepositModal open={musiL2DepositModal} close={closeL2DepositModal} header="Modal heading"></L2DepositModal>
+                                            </div>
+                                        </div>
+                                        <div className="musiStakingL2DepositSwitchBtnSection">
+                                            <button className="musi-L2Deposit-learn-more" onClick={setL2TokenStaking}>
+                                                STAKING
+                                            </button>
+                                        </div>
+                                    </>
+                                )}
                             </div>
                         </div>
                     ) : (
@@ -627,7 +808,7 @@ const MusikhanStakingPage = () => {
                                 <div className="musiStakingL2WithdrawAmountSection">
                                     <div className="musiStakingL2WithdrawAmountTitleSection">
                                         <p>
-                                            Availave: {L2WithdrawAmountStaked} {L2WithdrawTokenSymbol}
+                                            Available: {L2WithdrawAmountStaked} {L2WithdrawTokenSymbol}
                                         </p>
                                         <button className="amountMusiMaxBtn" onClick={changeL2MaxUnStakingAmount}>
                                             Max

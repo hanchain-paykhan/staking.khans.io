@@ -2,12 +2,12 @@ import axios from "axios";
 import { MusikhanAirdropContract } from "../../../../config/MusikhanConfig";
 // import { MusikhanAirdropContract } from "../../../../config/MusikhanConfigTest";
 
-function musiAirDropBackDataInfoAct(account, musiTokenRoot) {
+function musiAirDropBackDataInfoAct(account, musiKhanNewRoot) {
     return async (dispatch) => {
         try {
             let musiBackData = {};
             musiBackData.account = account;
-            musiBackData.c_root = musiTokenRoot;
+            musiBackData.c_root = musiKhanNewRoot;
 
             const getMusiProofAmountToBack = await axios({
                 method: "POST", // [요청 타입]

@@ -3,9 +3,10 @@ let initialState = {
     musiRoot: "",
     musiName: "",
     musiSymbol: "",
-    musiClaimDayDate: "",
-    musiClaimHoursDate: "",
-    musiClaimMinDate: "",
+    musiClaimDayDate: 0,
+    musiClaimHoursDate: 0,
+    musiClaimMinDate: 0,
+    musiKhanNewRoot: "",
     musiL2Ca: "",
     getmusiProofToBack: "",
     getmusiTokenCaToBack: "",
@@ -13,11 +14,11 @@ let initialState = {
     musiCanClaim: false,
     successMusiAirDropClaim: false,
     musiClaimed: false,
+    timeStampErrorState: false,
 };
 
 function musiAirDropReducer(state = initialState, action) {
     let { type, payload } = action;
-
     switch (type) {
         case "MUSI_AIRDROP_TOKENLIST":
             return {
@@ -40,6 +41,7 @@ function musiAirDropReducer(state = initialState, action) {
                 musiClaimDayDate: payload.musiClaimDayDate,
                 musiClaimHoursDate: payload.musiClaimHoursDate,
                 musiClaimMinDate: payload.musiClaimMinDate,
+                musiKhanNewRoot: payload.musiKhanNewRoot,
             };
 
         case "AIRDROP_MUSI_BACK_DATA_SUCCESS":
@@ -61,6 +63,12 @@ function musiAirDropReducer(state = initialState, action) {
             return {
                 ...state,
                 musiClaimed: payload.musiClaimed,
+            };
+
+        case "GET_ERROR_MUSI_AIRDROP_TIMESTAMP":
+            return {
+                ...state,
+                timeStampErrorState: payload.timeStampErrorState,
             };
         default:
             return { ...state };

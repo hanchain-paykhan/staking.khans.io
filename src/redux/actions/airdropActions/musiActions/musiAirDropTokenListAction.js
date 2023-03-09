@@ -7,7 +7,6 @@ function musiAirDropTokenListAct() {
     return async (dispatch) => {
         try {
             const getCanClaimTokenList = await MusikhanAirdropContract.methods.getCanClaimTokenList().call();
-
             const musiAirDropTokenListArray = [];
 
             for (let i = 0; i < getCanClaimTokenList.length; i++) {

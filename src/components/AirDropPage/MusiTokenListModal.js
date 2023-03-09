@@ -24,9 +24,9 @@ const MusiTokenListModal = (props) => {
         const musiTokenl2Ca = musiAirDropTokenList.l2Ca;
         dispatch(musiAirDropViewAction.musiAirDropViewAct(musiTokenRoot, musiTokenName, musiTokenSymbol, musiTokenl2Ca, account));
         dispatch(musiAirDropTimeStampAction.musiAirDropTimeStampAct(musiTokenl2Ca));
-        dispatch(musiAirDropClaimedAction.musiAirDropClaimedAct(account, musiTokenRoot));
-        dispatch(musiAirDropBackDataInfoAction.musiAirDropBackDataInfoAct(account, musiTokenRoot));
-        dispatch(musiAirDropClaimedAction.musiAirDropClaimedAct(account, musiTokenRoot));
+        // dispatch(musiAirDropClaimedAction.musiAirDropClaimedAct(account, musiTokenRoot));
+        // dispatch(musiAirDropBackDataInfoAction.musiAirDropBackDataInfoAct(account, musiTokenRoot));
+        // dispatch(musiAirDropClaimedAction.musiAirDropClaimedAct(account, musiTokenRoot));
     };
     useEffect(() => {
         dispatch(musiAirDropTokenListAction.musiAirDropTokenListAct());
