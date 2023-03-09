@@ -4,7 +4,7 @@ import { MusikhanStakingContract } from "../../../../config/MusikhanConfig";
 function L2RewardTokenListAct(account) {
     return async (dispatch) => {
         try {
-            const getClaimTokenListApi = await MusikhanStakingContract.methods.getClaimTokenList(account).call();
+            const getClaimTokenListApi = await MusikhanStakingContract.methods.getCanClaimedTokenList(account).call();
 
             const rewardTokenArray = [];
 

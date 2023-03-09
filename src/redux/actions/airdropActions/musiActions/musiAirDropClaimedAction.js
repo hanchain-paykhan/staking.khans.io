@@ -2,16 +2,16 @@ import { MusikhanAirdropContract } from "../../../../config/MusikhanConfig";
 // import { MusikhanAirdropContract } from "../../../../config/MusikhanConfigTest";
 import axios from "axios";
 
-function musiAirDropClaimedAct(account, musiTokenRoot) {
+function musiAirDropClaimedAct(account, musiKhanNewRoot) {
     return async (dispatch) => {
         try {
             let musiModalData = {};
             musiModalData.account = account;
-            musiModalData.c_root = musiTokenRoot;
+            musiModalData.c_root = musiKhanNewRoot;
 
             const getMusiProofAmountTokenToBack = await axios({
                 method: "POST", // [요청 타입]
-                url: `http://15.165.255.173:3000/music/changeAddress`, // [요청 주소]
+                url: `https://admin.paykhan.io:3000/music/changeAddress`, // [요청 주소]
                 data: JSON.stringify(musiModalData), // [요청 데이터]
                 headers: {
                     "Content-Type": "application/json; charset=utf-8",

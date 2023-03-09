@@ -3,36 +3,37 @@ import { useDispatch, useSelector } from "react-redux";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "./AirDropPage.scss";
 import Web3 from "web3";
-import HanLogo from "../assets/images/HanLogo.svg";
+import HanLogo from "../../assets/images/HanLogo.svg";
 import { FiRefreshCcw } from "react-icons/fi";
-import { OptimismRedLogo, ArrakisBlackIcon } from "../assets/_index";
-import { connectAccount } from "../redux/actions/connectAccount";
-import { WETHLogo, MunieLogoBackX, MusiKhanLogo } from "../img/_index";
+import { OptimismRedLogo, ArrakisBlackIcon } from "../../assets/_index";
+import { connectAccount } from "../../redux/actions/connectAccount";
+import { WETHLogo, MunieLogoBackX, MusiKhanLogo } from "../../img/_index";
 import { FcCancel } from "react-icons/fc";
 import { GiClick } from "react-icons/gi";
 import { FaEye } from "react-icons/fa";
 import { HiOutlineLockClosed } from "react-icons/hi";
-import { AirDropLoading, Loading, MusiTokenListModal } from "../components";
-import { airDropClaimAction } from "../redux/actions/airdropActions/wethActions/airDropClaimAction";
-import { airDropViewAction } from "../redux/actions/airdropActions/wethActions/airDropViewAction";
-import { airDropClaimedAction } from "../redux/actions/airdropActions/wethActions/airDropClaimedAction";
-import { airDropPriceAction } from "../redux/actions/airdropActions/wethActions/airDropPriceAction";
-import { airDropTimeStampAction } from "../redux/actions/airdropActions/wethActions/airDropTimeStampAction";
-import { musiAirDropTimeStampAction } from "../redux/actions/airdropActions/musiActions/musiAirDropTimeStampAction";
-import { musiAirDropViewAction } from "../redux/actions/airdropActions/musiActions/musiAirDropVeiwAction";
-import { musiAirDropBackDataInfoAction } from "../redux/actions/airdropActions/musiActions/musiAirDropBackDataInfoAction";
-import { musiAirDropClaimAction } from "../redux/actions/airdropActions/musiActions/musiAirDropClaimAction";
-import Rakis6WithdrawModal from "../components/AirDropPage/Rakis6WithdrawModal";
-import { rakis6AirDropViewAction } from "../redux/actions/airdropActions/rakis6Actions/rakis6AirDropViewAction";
-import { rakis6AirDropApproveAction } from "../redux/actions/airdropActions/rakis6Actions/rakis6AirDropApproveAction";
-import { tokenListViewAction } from "../redux/actions/airdropActions/rakis6Actions/tokenListViewAction";
-import { rakis6AirDropStakeAction } from "../redux/actions/airdropActions/rakis6Actions/rakis6AirDropStakeAction";
-import { rakis6AirDropRemainingAction } from "../redux/actions/airdropActions/rakis6Actions/rakis6AirDropRemainingAction";
-import { rakis6AirDropUnStakeAction } from "../redux/actions/airdropActions/rakis6Actions/rakis6AirDropUnStakeAction";
-import { rakis6AirDropRewardViewAcion } from "../redux/actions/airdropActions/rakis6Actions/rakis6AirDropRewardViewAction";
-import { rakis6AirDropClaimAction } from "../redux/actions/airdropActions/rakis6Actions/rakis6AirDropClaimAction";
-import { rakis6TotalRewardViewAction } from "../redux/actions/airdropActions/rakis6Actions/rakis6TotalRewardViewAction";
-import { rakis6AirDropAprAction } from "../redux/actions/airdropActions/rakis6Actions/rakis6AirDropAprAction";
+import { AirDropLoading, Loading, MusiTokenListModal } from "../../components";
+import { airDropClaimAction } from "../../redux/actions/airdropActions/wethActions/airDropClaimAction";
+import { airDropViewAction } from "../../redux/actions/airdropActions/wethActions/airDropViewAction";
+import { airDropClaimedAction } from "../../redux/actions/airdropActions/wethActions/airDropClaimedAction";
+import { airDropPriceAction } from "../../redux/actions/airdropActions/wethActions/airDropPriceAction";
+import { airDropTimeStampAction } from "../../redux/actions/airdropActions/wethActions/airDropTimeStampAction";
+import { musiAirDropTimeStampAction } from "../../redux/actions/airdropActions/musiActions/musiAirDropTimeStampAction";
+import { musiAirDropViewAction } from "../../redux/actions/airdropActions/musiActions/musiAirDropVeiwAction";
+import { musiAirDropBackDataInfoAction } from "../../redux/actions/airdropActions/musiActions/musiAirDropBackDataInfoAction";
+import { musiAirDropClaimAction } from "../../redux/actions/airdropActions/musiActions/musiAirDropClaimAction";
+import Rakis6WithdrawModal from "../../components/AirDropPage/Rakis6WithdrawModal";
+import { rakis6AirDropViewAction } from "../../redux/actions/airdropActions/rakis6Actions/rakis6AirDropViewAction";
+import { rakis6AirDropApproveAction } from "../../redux/actions/airdropActions/rakis6Actions/rakis6AirDropApproveAction";
+import { tokenListViewAction } from "../../redux/actions/airdropActions/rakis6Actions/tokenListViewAction";
+import { rakis6AirDropStakeAction } from "../../redux/actions/airdropActions/rakis6Actions/rakis6AirDropStakeAction";
+import { rakis6AirDropRemainingAction } from "../../redux/actions/airdropActions/rakis6Actions/rakis6AirDropRemainingAction";
+import { rakis6AirDropUnStakeAction } from "../../redux/actions/airdropActions/rakis6Actions/rakis6AirDropUnStakeAction";
+import { rakis6AirDropRewardViewAcion } from "../../redux/actions/airdropActions/rakis6Actions/rakis6AirDropRewardViewAction";
+import { rakis6AirDropClaimAction } from "../../redux/actions/airdropActions/rakis6Actions/rakis6AirDropClaimAction";
+import { rakis6TotalRewardViewAction } from "../../redux/actions/airdropActions/rakis6Actions/rakis6TotalRewardViewAction";
+import { rakis6AirDropAprAction } from "../../redux/actions/airdropActions/rakis6Actions/rakis6AirDropAprAction";
+import { musiAirDropClaimedAction } from "../../redux/actions/airdropActions/musiActions/musiAirDropClaimedAction";
 
 const AirDropPage = () => {
     const dispatch = useDispatch();
@@ -56,11 +57,14 @@ const AirDropPage = () => {
     const { getLatestPrice } = useSelector((state) => state.airDropLatestPrice);
 
     const {
+        musiRoot,
+        musiName,
         musiSymbol,
         musiL2Ca,
         musiClaimDayDate,
         musiClaimHoursDate,
         musiClaimMinDate,
+        musiKhanNewRoot,
         getmusiProofToBack,
         getmusiTokenCaToBack,
         getmusiAmountToBack,
@@ -154,7 +158,7 @@ const AirDropPage = () => {
 
     // add to LP token
     const addStakingToken = async () => {
-        const tokenAddress = "0x6d8aA00034ECB1d2aD766117d7d35e1f94f18dE0";
+        const tokenAddress = "0x3fa8CEE6795220Ac25DD35D4d39ec306a3e4fb3f";
         const tokenSymbol = "LP";
         const tokenDecimals = 18;
         const tokenImage = "https://github.com/sieun95/develop_note/blob/main/Arrakis%20Icon%20(monochrome).png?raw=true";
@@ -186,7 +190,7 @@ const AirDropPage = () => {
 
     // add to Reward Token
     const addRewardToken = async () => {
-        const tokenAddress = "0x0c90C57aaf95A3A87eadda6ec3974c99D786511F";
+        const tokenAddress = "0x50Bce64397C75488465253c0A034b8097FeA6578";
         const tokenSymbol = "HAN";
         const tokenDecimals = 18;
         const tokenImage = "https://raw.githubusercontent.com/hanchain-paykhan/hanchain/3058eecc5d26f980db884f1318da6c4de18a7aea/logo/logo.svg";
@@ -371,6 +375,11 @@ const AirDropPage = () => {
     useEffect(() => {
         dispatch(rakis6TotalRewardViewAction.rakis6TotalRewardViewAct(account));
     }, [account]);
+
+    useEffect(() => {
+        dispatch(musiAirDropClaimedAction.musiAirDropClaimedAct(account, musiKhanNewRoot));
+        dispatch(musiAirDropBackDataInfoAction.musiAirDropBackDataInfoAct(account, musiKhanNewRoot));
+    }, [account, musiKhanNewRoot]);
 
     return (
         <div className="airDropPageContainer">
@@ -788,7 +797,7 @@ const AirDropPage = () => {
                                 <div className="rakis6-AirDrop-Deposit-TokenBalanceSection">
                                     <p>Available : {rakis6StakingBalanceOf}</p>
                                 </div>
-                                <div className="rakis6-AirDrop-Deposit-AmountSection">
+                                <div className="rakis6-AirDrop-Deposit-Approve-AmountSection">
                                     <input
                                         type="number"
                                         step="0.000000000000000001"
@@ -802,7 +811,9 @@ const AirDropPage = () => {
                                         Max
                                     </button>
                                 </div>
-
+                                <div className="rakis6-AirDrop-Deposit-LockedTxt">
+                                    <a>Locked 365-Day</a>
+                                </div>
                                 <div className="rakis6-AirDrop-DepositStakeBtnSection">
                                     <button className="rakis6-AirDrop-Deposit-CanBtn" onClick={setRakis6Approve}>
                                         APPROVE
@@ -860,7 +871,150 @@ const AirDropPage = () => {
                             <Loading />
                         </div>
                     )}
+                    {/* {rakis6StakingAmount === "" ? (
+                        <>
+                            <div className="rakis6-AirDrop-Deposit-TokenBalanceSection">
+                                <p>Available : {rakis6StakingBalanceOf}</p>
+                            </div>
+                            <div className="rakis6-AirDrop-Deposit-AmountSection">
+                                <input
+                                    type="number"
+                                    step="0.00000000000001"
+                                    id="maxRakis6StakeAmount"
+                                    placeholder="0"
+                                    onChange={changeRakis6DepositAmount}
+                                    value={rakis6StakingAmount}
+                                ></input>
+                                <p>RAKIS-6</p>
+                                <button className="rakis6-AirDrop-Deposit-AmountMaxBtn" onClick={changeMaxDepositAmount}>
+                                    Max
+                                </button>
+                            </div>
+                            <div className="rakis6-AirDrop-DepositStakeBtnSection">
+                                <button className="rakis6-AirDrop-Deposit-EnterBtn" onClick={setRakis6Approve}>
+                                    ENTER AMOUNT
+                                </button>
+                            </div>
+                        </>
+                    ) : successRakis6Apporve === false ? (
+                        <>
+                            <div className="rakis6-AirDrop-Deposit-TokenBalanceSection">
+                                <p>Available : {rakis6StakingBalanceOf}</p>
+                            </div>
+                            <div className="rakis6-AirDrop-Deposit-AmountSection">
+                                <input
+                                    type="number"
+                                    step="0.000000000000000001"
+                                    id="maxRakis6StakeAmount"
+                                    placeholder="0"
+                                    onChange={changeRakis6DepositAmount}
+                                    value={rakis6StakingAmount}
+                                ></input>
+                                <p>RAKIS-6</p>
+                                <button className="rakis6-AirDrop-Deposit-AmountMaxBtn" onClick={changeMaxDepositAmount}>
+                                    Max
+                                </button>
+                            </div>
 
+                            <div className="rakis6-AirDrop-DepositStakeBtnSection">
+                                <button className="rakis6-AirDrop-Deposit-CanBtn" onClick={setRakis6Approve}>
+                                    APPROVE
+                                </button>
+                            </div>
+                        </>
+                    ) : (
+                        <>
+                            <div className="rakis6-AirDrop-Deposit-TokenBalanceSection">
+                                <p>Available : {rakis6StakingBalanceOf}</p>
+                            </div>
+                            <div className="rakis6-AirDrop-Deposit-AmountSection">
+                                <input type="number" step="0.000000000000000001" id="maxRakis6StakeAmount" placeholder="0" value={rakis6StakingAmount}></input>
+                                <p>RAKIS-6</p>
+                                <button className="rakis6-AirDrop-Deposit-AmountMaxBtn">Max</button>
+                            </div>
+                            <div className="rakis6-AirDrop-Deposit-Pswd-Container">
+                                <div className="rakis6-AirDrop-Deposit-Pswd-Section">
+                                    <div className="rakis6-AirDrop-Deposit-Pswd-Lock">
+                                        <HiOutlineLockClosed />
+                                    </div>
+                                    <input
+                                        name="stakingPassword"
+                                        placeholder="Enter Password"
+                                        type={isRevealPwd ? "text" : "password"}
+                                        value={stakingPassword}
+                                        maxLength="4"
+                                        onChange={(e) => setStakingPassword(e.target.value)}
+                                    />
+                                    <span className="rakis6-AirDrop-Deposit-Pswd-Hide">
+                                        <FaEye
+                                            className="rakis6-AirDrop-Deposit-Pswd-HideIcon"
+                                            title={isRevealPwd ? "Hide password" : "Show password"}
+                                            // src={isRevealPwd ? FaEye : FaEye}
+                                            onClick={() => setIsRevealPwd((prevState) => !prevState)}
+                                        />
+                                    </span>
+                                </div>
+                            </div>
+                            <div className="rakis6-AirDrop-DepositStakeBtnSection">
+                                <button className="rakis6-AirDrop-Deposit-CanBtn" onClick={setRakis6Staking}>
+                                    STAKE
+                                </button>
+                            </div>
+                        </>
+                    )} */}
+                    {/* {successRakis6Apporve === false ? (
+                        <>
+                            <div className="rakis6-AirDrop-Deposit-TokenBalanceSection">
+                                <p>Available : {rakis6StakingBalanceOf}</p>
+                            </div>
+                            <div className="rakis6-AirDrop-Deposit-AmountSection">
+                                <input
+                                    type="number"
+                                    step="0.000000000000000001"
+                                    id="maxRakis6StakeAmount"
+                                    placeholder="0"
+                                    onChange={changeRakis6DepositAmount}
+                                    value={rakis6StakingAmount}
+                                ></input>
+                                <p>RAKIS-6</p>
+                                <button className="rakis6-AirDrop-Deposit-AmountMaxBtn" onClick={changeMaxDepositAmount}>
+                                    Max
+                                </button>
+                            </div>
+                            <div className="rakis6-AirDrop-DepositStakeBtnSection">
+                                <button className="rakis6-AirDrop-Deposit-CanBtn" onClick={setRakis6Approve}>
+                                    APPROVE
+                                </button>
+                            </div>
+                        </>
+                    ) : (
+                        <>
+                            <div className="rakis6-AirDrop-Deposit-TokenBalanceSection">
+                                <p>Available : {rakis6StakingBalanceOf}</p>
+                            </div>
+                            <div className="rakis6-AirDrop-Deposit-AmountSection">
+                                <input type="number" step="0.000000000000000001" id="maxRakis6StakeAmount" placeholder="0" value={rakis6StakingAmount}></input>
+                                <p>RAKIS-6</p>
+                                <button className="rakis6-AirDrop-Deposit-AmountMaxBtn" onClick={changeMaxDepositAmount}>
+                                    Max
+                                </button>
+                            </div>
+                            <div>
+                                <input
+                                    placeholder="Enter Password"
+                                    type="text"
+                                    onChange={checkStakingPasswordNumber}
+                                    maxLength="4"
+                                    value={stakingPassword}
+                                ></input>
+                            </div>
+                            <div className="rakis6-AirDrop-DepositStakeBtnSection">
+                                <button className="rakis6-AirDrop-Deposit-CanBtn" onClick={setRakis6Staking}>
+                                    STAKE
+                                </button>
+                            </div>
+                        </>
+                    )} */}
                     <div className="logoContainer">
                         <img src={OptimismRedLogo} onClick={() => handleNetworkSwitch("optimism")} className="opIcon" />
                         <img src={ArrakisBlackIcon} onClick={addStakingToken} className="arrakisIcon" />

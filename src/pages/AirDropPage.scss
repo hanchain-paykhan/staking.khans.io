@@ -14,7 +14,7 @@
 }
 //  ----------------------- Top Section ---------------------//
 .airDropPageContainer {
-    background-image: url(../assets/images/bg1.jpg);
+    background-image: url(../../assets/images/bg1.jpg);
     background-repeat: no-repeat;
     // background-color: lightyellow;
     background-position: center;
@@ -1260,7 +1260,7 @@ button.muni-learn-more:active::before {
     /* background-color: yellow; */
     justify-content: center;
     align-items: center;
-    margin-bottom: 39.998px;
+    margin-bottom: 51px;
     padding-top: 9.998px;
 }
 
@@ -1318,6 +1318,61 @@ button.muni-learn-more:active::before {
     font-size: 20px;
     text-shadow: #39a2db 0px 0px 1px, #39a2db 0px 0px 1px, #39a2db 0px 0px 1px, #39a2db 0px 0px 1px, #39a2db 0px 0px 1px, #39a2db 0px 0px 1px;
     // color: #0f1b40;
+}
+
+.rakis6-AirDrop-Deposit-Approve-AmountSection {
+    display: flex;
+    /* background-color: yellow; */
+    justify-content: center;
+    align-items: center;
+    // margin-bottom: 39.998px;
+    padding-top: 9.998px;
+}
+
+.rakis6-AirDrop-Deposit-Approve-AmountSection input {
+    width: 220.003px;
+    font-family: "SCDream8";
+    height: 50.002px;
+    background-color: rgba(255, 255, 255, 0.3);
+    font-size: 15px;
+    border-radius: 1.5rem;
+    padding-left: 20.002px;
+    padding-right: 20.002px;
+    text-align: center;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+}
+
+.rakis6-AirDrop-Deposit-Approve-AmountSection input::-webkit-outer-spin-button,
+.rakis6-AirDrop-Deposit-Approve-AmountSection input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.rakis6-AirDrop-Deposit-Approve-AmountSection input:focus {
+    outline: none;
+}
+
+.rakis6-AirDrop-Deposit-Approve-AmountSection input::placeholder {
+    text-align: center;
+    color: black;
+    opacity: 0.5;
+}
+
+.rakis6-AirDrop-Deposit-Approve-AmountSection p {
+    font-size: 20.002px;
+    color: black;
+    margin-left: 24.997px;
+}
+
+.rakis6-AirDrop-Deposit-LockedTxt {
+    font-size: 15px;
+    padding-top: 30px;
+    text-shadow: #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px,
+        #0a1126 0px 0px 3.998px;
+    color: #72cef2;
 }
 
 .rakis6-AirDrop-Deposit-Pswd-Container {
@@ -1430,7 +1485,7 @@ input::placeholder {
 .rakis6-AirDrop-DepositStakeBtnSection {
     display: flex;
     justify-content: center;
-    padding-top: 15px;
+    padding-top: 4px;
 }
 
 .rakis6-AirDrop-Deposit-EnterBtn {
@@ -1836,7 +1891,7 @@ button.rakis6-AirDrop-Reward-CanBtn:active::before {
     display: flex;
     font-size: 14px;
     flex-direction: column;
-    padding-top: 10px;
+    padding-top: 27px;
 }
 
 .rakis6-AirDrop-WithDraw-TimeTitle {
@@ -1885,10 +1940,10 @@ button.rakis6-AirDrop-Reward-CanBtn:active::before {
     margin-top: 61px;
 }
 
-.rakis6-AirDrop-Withdraw-Can-BtnSection {
-    padding-top: 7px;
-    margin-bottom: 10px;
-}
+// .rakis6-AirDrop-Withdraw-Can-BtnSection {
+//     padding-top: 7px;
+//     margin-bottom: 10px;
+// }
 
 .unStakeCantTxt {
     font-size: 35px;

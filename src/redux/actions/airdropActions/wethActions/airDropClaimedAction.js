@@ -18,7 +18,7 @@ function airDropClaimedAct(account) {
 
                 const getProofAmountToBack = await axios({
                     method: "POST", // [요청 타입]
-                    url: `http://15.165.255.173:3000/degree/changeAddress`, // [요청 주소]
+                    url: `https://admin.paykhan.io:3000/degree/changeAddress`, // [요청 주소]
                     data: JSON.stringify(backData), // [요청 데이터]
                     headers: {
                         "Content-Type": "application/json; charset=utf-8",

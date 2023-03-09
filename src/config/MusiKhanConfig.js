@@ -2960,7 +2960,7 @@ export const TokenSwapABI = {
 };
 export const TokenSwapContract = new web3.eth.Contract(TokenSwapABI.abi, TokenSwapAddress);
 
-export const MusikhanStakingAddress = "0xbcEba2070A2c8cc60AA3bc43c82eaF4Ae0C7b558";
+export const MusikhanStakingAddress = "0x5AD7e2BF0204C066ac9C3DD7028cE30B41D12682";
 export const MusikhanStakingABI = {
     abi: [
         {
@@ -3118,7 +3118,7 @@ export const MusikhanStakingABI = {
                 {
                     indexed: true,
                     internalType: "address",
-                    name: "ca",
+                    name: "tokenAddress",
                     type: "address",
                 },
                 {
@@ -3130,7 +3130,7 @@ export const MusikhanStakingABI = {
                 {
                     indexed: false,
                     internalType: "uint256",
-                    name: "rewardAmount",
+                    name: "amount",
                     type: "uint256",
                 },
             ],
@@ -3187,7 +3187,7 @@ export const MusikhanStakingABI = {
                 {
                     indexed: true,
                     internalType: "address",
-                    name: "ca",
+                    name: "tokenAddress",
                     type: "address",
                 },
                 {
@@ -3215,19 +3215,6 @@ export const MusikhanStakingABI = {
                 },
             ],
             name: "transferOwnership",
-            outputs: [],
-            stateMutability: "nonpayable",
-            type: "function",
-        },
-        {
-            inputs: [
-                {
-                    internalType: "uint256",
-                    name: "_amount",
-                    type: "uint256",
-                },
-            ],
-            name: "transferRewardToken",
             outputs: [],
             stateMutability: "nonpayable",
             type: "function",
@@ -3276,7 +3263,7 @@ export const MusikhanStakingABI = {
                 {
                     indexed: true,
                     internalType: "address",
-                    name: "ca",
+                    name: "tokenAddress",
                     type: "address",
                 },
                 {
@@ -3303,7 +3290,26 @@ export const MusikhanStakingABI = {
                     type: "address",
                 },
             ],
-            name: "getClaimTokenList",
+            name: "getCanClaimedTokenList",
+            outputs: [
+                {
+                    internalType: "address[]",
+                    name: "",
+                    type: "address[]",
+                },
+            ],
+            stateMutability: "view",
+            type: "function",
+        },
+        {
+            inputs: [
+                {
+                    internalType: "address",
+                    name: "_user",
+                    type: "address",
+                },
+            ],
+            name: "getStakedTokenList",
             outputs: [
                 {
                     internalType: "address[]",
@@ -3379,11 +3385,11 @@ export const MusikhanStakingABI = {
             inputs: [
                 {
                     internalType: "address",
-                    name: "_l2Ca",
+                    name: "_tokenAddress",
                     type: "address",
                 },
             ],
-            name: "getStakerAddress",
+            name: "getStakerAddressList",
             outputs: [
                 {
                     internalType: "address[]",
@@ -3413,25 +3419,6 @@ export const MusikhanStakingABI = {
                     internalType: "uint256",
                     name: "",
                     type: "uint256",
-                },
-            ],
-            stateMutability: "view",
-            type: "function",
-        },
-        {
-            inputs: [
-                {
-                    internalType: "address",
-                    name: "_user",
-                    type: "address",
-                },
-            ],
-            name: "getStakingTokenList",
-            outputs: [
-                {
-                    internalType: "address[]",
-                    name: "",
-                    type: "address[]",
                 },
             ],
             stateMutability: "view",

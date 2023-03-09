@@ -4,7 +4,7 @@ import { MusikhanStakingContract } from "../../../../config/MusikhanConfig";
 function L2WithdrawTokenListAct(account) {
     return async (dispatch) => {
         try {
-            const getMyStakingTokenListApi = await MusikhanStakingContract.methods.getStakingTokenList(account).call();
+            const getMyStakingTokenListApi = await MusikhanStakingContract.methods.getStakedTokenList(account).call();
 
             const withdrawTokenArray = [];
 
