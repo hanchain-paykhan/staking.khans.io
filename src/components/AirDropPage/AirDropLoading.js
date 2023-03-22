@@ -1,6 +1,6 @@
 import React from "react";
 import MoonLoader from "react-spinners/BounceLoader";
-import "./AirDropLoading.css";
+import "./AirDropLoading.scss";
 
 const AirDropLoading = () => {
     return (
@@ -10,7 +10,7 @@ const AirDropLoading = () => {
                 //  color="#1299FF"
                 //  color="#39A2DB"
                 //  color="#0A1126"
-                size={85}
+                size={65}
             />
         </div>
     );

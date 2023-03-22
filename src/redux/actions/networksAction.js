@@ -9,7 +9,8 @@ const networksAct = () => {
                     symbol: "ETH",
                     decimals: 18,
                 },
-                rpcUrls: ["https://mainnet.optimism.io"],
+                rpcUrls: ["https://optimism-mainnet.infura.io"],
+                // rpcUrls: ["https://mainnet.optimism.io"],
                 blockExplorerUrls: ["https://optimistic.etherscan.io"],
             },
         };

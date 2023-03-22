@@ -28,6 +28,9 @@ import rakis6AirDropViewReducer from "./airDropReducer/rakis6AirDrop/rakis6AirDr
 import rakis6AirDropTimeStampReducer from "./airDropReducer/rakis6AirDrop/rakis6AirDropTimeStampReducer";
 import rakis6AirDropRewardReducer from "./airDropReducer/rakis6AirDrop/rakis6AirDropRewardReducer";
 import rakis6AirDropTotalRewardReducer from "./airDropReducer/rakis6AirDrop/rakis6AirDropTotalRewardReducer";
+import signUpReducer from "./airDropReducer/login/signUpReducer";
+import hanAirDropViewReducer from "./airDropReducer/hanAirDrop/hanAirDropViewReducer";
+import emailEffectReducer from "./airDropReducer/login/emailEffectReducer";
 
 export default combineReducers({
     stakingView: stakingViewReducer,
@@ -59,4 +62,7 @@ export default combineReducers({
     rakis6AirDropTimeStamp: rakis6AirDropTimeStampReducer,
     rakis6AirDropReward: rakis6AirDropRewardReducer,
     rakis6AirDropTotalRewardView: rakis6AirDropTotalRewardReducer,
+    signUp: signUpReducer,
+    hanAirDropView: hanAirDropViewReducer,
+    signUpEmail: emailEffectReducer,
 });

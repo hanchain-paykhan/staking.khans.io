@@ -8,6 +8,13 @@ import L2WithdrawModal from "./MusiKhanStakingPage/L2WithdrawModal";
 import MusiTokenListModal from "./AirDropPage/MusiTokenListModal";
 import L2SwapModal from "./MusiKhanStakingPage/L2SwapModal";
 import AirDropLoading from "./AirDropPage/AirDropLoading";
+import AirDropAgreeTerm from "./AirDropPage/AirDropAgreeTerm";
+import AirDropSignEmail from "./AirDropPage/AirDropSignEmail";
+import AirDropSignComplete from "./AirDropPage/AirDropSignComplete";
+import SwitchChainModal from "./Global/SwitchChainModal";
+import LoginTermsModal from "./AirDropPage/Login/LoginTermsModal";
+import LoginPrivacyModal from "./AirDropPage/Login/LoginPrivacyModal";
+import LoginFooter from "./AirDropPage/Login/LoginFooter";
 
 export {
     // Navbar,
@@ -20,4 +27,11 @@ export {
     MusiTokenListModal,
     L2SwapModal,
     AirDropLoading,
+    AirDropAgreeTerm,
+    AirDropSignEmail,
+    AirDropSignComplete,
+    SwitchChainModal,
+    LoginTermsModal,
+    LoginPrivacyModal,
+    LoginFooter,
 };

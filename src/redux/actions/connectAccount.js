@@ -1,10 +1,11 @@
 function getAccount() {
     return async (dispatch) => {
         try {
-            const accounts = await window.ethereum.request({
+            const accounts = await window.ethereum?.request({
                 method: "eth_requestAccounts",
             });
             let account = accounts[0];
+            console.log(account, "getAccount Act");
             dispatch({ type: "GET_ACCOUNT", payload: { account } });
         } catch (error) {
             console.error(error);

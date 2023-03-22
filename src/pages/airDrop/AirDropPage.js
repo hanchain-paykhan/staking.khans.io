@@ -12,7 +12,7 @@ import { FcCancel } from "react-icons/fc";
 import { GiClick } from "react-icons/gi";
 import { FaEye } from "react-icons/fa";
 import { HiOutlineLockClosed } from "react-icons/hi";
-import { AirDropLoading, Loading, MusiTokenListModal } from "../../components";
+import { AirDropLoading, Loading, MusiTokenListModal, SwitchChainModal } from "../../components";
 import { airDropClaimAction } from "../../redux/actions/airdropActions/wethActions/airDropClaimAction";
 import { airDropViewAction } from "../../redux/actions/airdropActions/wethActions/airDropViewAction";
 import { airDropClaimedAction } from "../../redux/actions/airdropActions/wethActions/airDropClaimedAction";
@@ -33,7 +33,13 @@ import { rakis6AirDropRewardViewAcion } from "../../redux/actions/airdropActions
 import { rakis6AirDropClaimAction } from "../../redux/actions/airdropActions/rakis6Actions/rakis6AirDropClaimAction";
 import { rakis6TotalRewardViewAction } from "../../redux/actions/airdropActions/rakis6Actions/rakis6TotalRewardViewAction";
 import { rakis6AirDropAprAction } from "../../redux/actions/airdropActions/rakis6Actions/rakis6AirDropAprAction";
+import { hanAirDropTimeStampAction } from "../../redux/actions/airdropActions/hanActions/hanAirDropTimeStampAction";
+import { hanAirDropViewAction } from "../../redux/actions/airdropActions/hanActions/hanAirDropViewAction";
+import { hanAirDropClaimAction } from "../../redux/actions/airdropActions/hanActions/hanAirDropClaimAction";
+import { hanAirDropClaimedAction } from "../../redux/actions/airdropActions/hanActions/hanAirDropClaimedAction";
 import { musiAirDropClaimedAction } from "../../redux/actions/airdropActions/musiActions/musiAirDropClaimedAction";
+import Swal from "sweetalert2";
+import { signUpAction } from "../../redux/actions/airdropActions/signUpActions/signUpAction";
 
 const AirDropPage = () => {
     const dispatch = useDispatch();
@@ -41,13 +47,18 @@ const AirDropPage = () => {
     const [web3, setWeb3] = useState(null);
     const [error, setError] = useState();
     const [musiTokenListModal, setMusiTokenListModal] = useState(false);
+    const [switchNetModal, setSwitchNetModal] = useState(false);
     const [rakis6WithdrawModal, setRakis6WithdrawModal] = useState(false);
     const [rakis6StakingAmount, setRakis6StakingAmount] = useState("");
     const [checkChainId, setCheckChainId] = useState("");
     const [stakingPassword, setStakingPassword] = useState("");
     const [isRevealPwd, setIsRevealPwd] = useState(false);
     const [loading, setLoading] = useState(true);
+    const [userEmail, setUserEmail] = useState("");
+    const [loginState, setLoginState] = useState(false);
+
     const { account } = useSelector((state) => state.account);
+    const { login, email } = useSelector((state) => state.signUpEmail);
 
     const { successAirDropClaim, canClaim, getProofToBack, getAmountToBack, claimed, claimDayDate, claimHoursDate, claimMinDate, successMusiAirDropClaim } =
         useSelector((state) => state.airDropView);
@@ -70,8 +81,8 @@ const AirDropPage = () => {
         getmusiAmountToBack,
         musiCanClaim,
         musiClaimed,
+        timeStampErrorState,
     } = useSelector((state) => state.musiAirDropView);
-
     // Rakis6
     const {
         rakis6StakingBalanceOf,
@@ -86,8 +97,33 @@ const AirDropPage = () => {
     const { rakis6UnClaimedReward, rakis6UnClaimedRewardToEth, rakis6TotalRewardReceived, rakis6TotalRewardReceivedToEth, rakis6TotalRewardAmount } =
         useSelector((state) => state.rakis6AirDropReward);
     const { totalRewardView } = useSelector((state) => state.rakis6AirDropTotalRewardView);
-
+    // hanAirDrop
+    const { hanAirDropCanClaim, getHanProofToBack, getHanAmountToBack, hanClaimDayDate, hanClaimHoursDate, hanClaimMinDate, hanClaimed } = useSelector(
+        (state) => state.hanAirDropView
+    );
+    //---------------- Optimism Network Switching ---------------- //
+    const changeOpNetwork = async () => {
+        try {
+            await window.ethereum?.request({
+                method: "wallet_switchEthereumChain",
+                params: [{ chainId: "0xa" }],
+            });
+        } catch (switchError) {
+            if (switchError.code === 4902) {
+                try {
+                    Swal.fire({
+                        title: "Switch Network",
+                        html: "Project requires that you switch your wallet to the Optimism network to continue.",
+                        showConfirmButton: false,
+                    });
+                } catch (addError) {
+                    console.log(addError);
+                }
+            }
+        }
+    };
     //---------------- Ethereum Network Switching ---------------- //
+
     const networks = {
         optimismTestNet: {
             chainId: `0x${Number(420).toString(16)}`,
@@ -108,7 +144,7 @@ const AirDropPage = () => {
                 symbol: "ETH",
                 decimals: 18,
             },
-            rpcUrls: ["https://mainnet.optimism.io"],
+            rpcUrls: ["https://optimism-mainnet.infura.io"],
             blockExplorerUrls: ["https://optimistic.etherscan.io"],
         },
     };
@@ -241,9 +277,10 @@ const AirDropPage = () => {
             });
             window.ethereum?.on("accountsChanged", () => {
                 window.location.reload();
+                setup();
             });
         }
-    });
+    }, []);
 
     useEffect(() => {
         if (window.ethereum?.chainId === "0x1") {
@@ -262,15 +299,26 @@ const AirDropPage = () => {
         dispatch(airDropTimeStampAction.airDropTimeStampAct());
     };
 
+    const changeHanTimeStampState = () => {
+        dispatch(hanAirDropTimeStampAction.hanAirDropTimeStampAct());
+    };
+
     useEffect(() => {
         dispatch(airDropPriceAction.airDropPriceAct(account));
         dispatch(airDropViewAction.airDropViewAct(account));
         dispatch(airDropTimeStampAction.airDropTimeStampAct());
+        dispatch(hanAirDropViewAction.hanAirDropViewAct(account));
     }, [account]);
 
     useEffect(() => {
         dispatch(airDropClaimedAction.airDropClaimedAct(account));
+        dispatch(hanAirDropClaimedAction.hanAirDropClaimedAct(account));
     }, [account]);
+
+    // HanClaim
+    const hanAirDropClaim = () => {
+        dispatch(hanAirDropClaimAction.hanAirDropClaimAct(getHanProofToBack, getHanAmountToBack, account));
+    };
     // WethClaim
     const airDropClaim = () => {
         dispatch(airDropClaimAction.airDropClaimAct(account, getProofToBack, getAmountToBack, gasPriceResult));
@@ -326,6 +374,8 @@ const AirDropPage = () => {
         dispatch(rakis6AirDropApproveAction.rakis6AirDropApproveAct(account, rakis6Stakingnum));
     };
 
+    // console.log(stakingPassword);
+
     const setRakis6Staking = () => {
         let rakis6StakingAmount = document.getElementById("maxRakis6StakeAmount").value;
         const rakis6Stakingnum = Web3.utils.toWei(String(rakis6StakingAmount), "ether");
@@ -350,6 +400,7 @@ const AirDropPage = () => {
 
     useEffect(() => {
         dispatch(musiAirDropTimeStampAction.musiAirDropTimeStampAct());
+        dispatch(hanAirDropTimeStampAction.hanAirDropTimeStampAct());
     }, []);
 
     useEffect(() => {
@@ -381,6 +432,22 @@ const AirDropPage = () => {
         dispatch(musiAirDropBackDataInfoAction.musiAirDropBackDataInfoAct(account, musiKhanNewRoot));
     }, [account, musiKhanNewRoot]);
 
+    useEffect(() => {
+        getEmail();
+        dispatch(signUpAction.loginAct(account));
+        dispatch(signUpAction.getEmailAct(account));
+        verification();
+    }, [login, email, userEmail, account, loginState]);
+
+    const getEmail = () => {
+        setUserEmail(sessionStorage.getItem(account));
+    };
+    const verification = () => {
+        if (email === userEmail) {
+            setLoginState(true);
+        } else setLoginState(false);
+    };
+
     return (
         <div className="airDropPageContainer">
             <div className="airDropPageLogoContainer">
@@ -393,7 +460,6 @@ const AirDropPage = () => {
                         {/* <div className="airDropAmountTxt">
               <a>1 WETH = {getLatestPrice} USD</a>
             </div> */}
-
                         {/* <div className="tooltip-container">
               <i className="info-icon material-icons">
                 <HelpIcon />
@@ -419,6 +485,25 @@ const AirDropPage = () => {
                 </div>
             </div>
             <Tabs className="Tabs">
+                {loginState === true ? (
+                    <div className="airDropSignEmailContinaer">
+                        <div className="airDropSignIn-Email-Section">
+                            <a>{userEmail}</a>
+                        </div>
+                    </div>
+                ) : (
+                    <div className="airDropSignInUpContinaer">
+                        <div className="airDropSignIn-BtnSection">
+                            <a href="/airdrop/signin" target="_parent">
+                                Log in
+                            </a>
+                        </div>
+                        <div className="airDropSignUp-BtnSection">
+                            <a href="/airdrop/signup">Sign up</a>
+                        </div>
+                    </div>
+                )}
+
                 {/* <div className="stakedSprCanAmountSection">
           <p>STAKED : {getAmountStaked} </p>
         </div> */}
@@ -465,70 +550,69 @@ const AirDropPage = () => {
                     <Tab>AIRDROP</Tab>
                     <Tab>DEPOSIT</Tab>
                     <Tab>REWARDS</Tab>
-                    <Tab>WTIHDRAW</Tab>
+                    <Tab>WITHDRAW</Tab>
                 </TabList>
                 <TabPanel>
                     <div className="airDropTabContainer">
                         {/* {getLatestPrice ? ( */}
                         <div className="airDropTabSection">
-                            {getLatestPrice ? (
-                                <div className="airDropWethSection">
-                                    <div className="airDropWethLogoSection">
-                                        <img src={WETHLogo} />
+                            <div className="airDrop-Han-Section">
+                                <div className="airDrop-Han-LogoSection">
+                                    <img src={HanLogo} />
+                                </div>
+                                <div className="airDrop-Han-Txt">
+                                    <a>HAN</a>
+                                </div>
+                                {/* {checkChainId === "Oxa" ? (
+                                    hanAirDropCanClaim === true? ( */}
+                                {hanAirDropCanClaim === true ? (
+                                    <div className="airDrop-Han-Btn">
+                                        <button className="han-learn-more" onClick={hanAirDropClaim}>
+                                            Claim
+                                        </button>
                                     </div>
-                                    <div className="airDropWethTxt">
-                                        <p>WETH</p>
+                                ) : hanClaimed === true ? (
+                                    <div className="airDrop-Han-Btn">
+                                        <button className="cant-han-learn-more" disabled={true}>
+                                            Already Claim
+                                        </button>
                                     </div>
-                                    {checkChainId === "Oxa" ? (
-                                        canClaim === true ? (
-                                            <div className="airDropWethBtn">
-                                                <button className="weth-learn-more" onClick={airDropClaim}>
-                                                    Claim
-                                                </button>
-                                            </div>
-                                        ) : claimed === true ? (
-                                            <div className="airDropWethBtn">
-                                                <button className="cant-weth-learn-more" disabled={true}>
-                                                    Already Claimed
-                                                </button>
-                                            </div>
-                                        ) : (
-                                            <div className="airDropWethBtn">
-                                                <button className="cant-weth-learn-more" disabled={true}>
-                                                    Nothing to Claim
-                                                </button>
-                                            </div>
-                                        )
-                                    ) : (
-                                        <div className="airDropWethBtn">
+                                ) : (
+                                    <div className="airDrop-Han-Btn">
+                                        <button className="cant-han-learn-more" disabled={true}>
+                                            Nothing to Claim
+                                        </button>
+                                    </div>
+                                )}
+                                {/* ):(
+                                    <div className="airDrop-Han-Btn">
                                             <button className="switch-weth-learn-more" disabled={true}>
                                                 Switch to Optimism
                                             </button>
                                         </div>
-                                    )}
-                                    <div className="airDropWethTimeStampSection">
-                                        <div className="airDropWethTimeStampTitle">
-                                            <a>Remaining Duration</a>
-                                        </div>
-                                        <div className="airDropWethTimeStampInfo">
-                                            <a className="wethDayDate">{claimDayDate}D</a>
-                                            <a className="wethHoursDate">{claimHoursDate}H</a>
-                                            <a className="wethMinDate">{claimMinDate}M</a>
-                                            {/* <a> */}
-                                            <FiRefreshCcw className="airDropWethReFreshTimeStamp" onClick={changeTimeStampState} />
-                                            {/* </a> */}
-                                        </div>
-                                        <p></p>
+                                )} */}
+
+                                <div className="airDrop-Han-TimeStampSection">
+                                    <div className="airDrop-Han-TimeStampTitle">
+                                        <a>Remaining Duration</a>
                                     </div>
-                                    <div className="airDropWethPriceSection">
-                                        <a>1 WETH = {getLatestPrice} USD</a>
+                                    <div className="airDrop-Han-TimeStampInfo">
+                                        <a className="han-DayDate">{hanClaimDayDate}D</a>
+                                        <a className="han-HoursDate">{hanClaimHoursDate}H</a>
+                                        <a className="han-MinDate">{hanClaimMinDate}M</a>
+                                        {/* <a> */}
+                                        <FiRefreshCcw className="airDrop-Han-ReFreshTimeStamp" onClick={changeHanTimeStampState} />
+                                        {/* </a> */}
                                     </div>
+                                    <p></p>
                                 </div>
-                            ) : (
-                                <div className="airDropWethLoadingSection">
+                            </div>
+                            {/* ):(
+                                <div className="airDropHanLoadingSection">
                                     <AirDropLoading />
                                 </div>
-                            )}
+                            )} */}
+
                             {getLatestPrice ? (
                                 <div className="airDropMusikhanSection">
                                     <div className="airDropMusiKhanLogoSection">
@@ -540,7 +624,7 @@ const AirDropPage = () => {
                                         </div>
                                     ) : (
                                         <div className="airDropMusiTxt">
-                                            <p>MusiKhan</p>
+                                            <a>MusiKhan</a>
                                         </div>
                                     )}
 
@@ -603,7 +687,7 @@ const AirDropPage = () => {
                                         <div className="airDropMusiTimeStampTitle">
                                             <a>Remaining Duration</a>
                                         </div>
-                                        {musiClaimDayDate ? (
+                                        {musiClaimMinDate > 0 ? (
                                             <div className="airDropMusiTimeStampInfo">
                                                 <a className="musiDayDate">{musiClaimDayDate}D</a>
                                                 <a className="musiHoursDate">{musiClaimHoursDate}H</a>
@@ -628,13 +712,71 @@ const AirDropPage = () => {
                                     <AirDropLoading />
                                 </div>
                             )}
+                            {getLatestPrice ? (
+                                <div className="airDropWethSection">
+                                    <div className="airDropWethLogoSection">
+                                        <img src={WETHLogo} />
+                                    </div>
+                                    <div className="airDropWethTxt">
+                                        <a>WETH</a>
+                                    </div>
+                                    {checkChainId === "Oxa" ? (
+                                        canClaim === true ? (
+                                            <div className="airDropWethBtn">
+                                                <button className="weth-learn-more" onClick={airDropClaim}>
+                                                    Claim
+                                                </button>
+                                            </div>
+                                        ) : claimed === true ? (
+                                            <div className="airDropWethBtn">
+                                                <button className="cant-weth-learn-more" disabled={true}>
+                                                    Already Claimed
+                                                </button>
+                                            </div>
+                                        ) : (
+                                            <div className="airDropWethBtn">
+                                                <button className="cant-weth-learn-more" disabled={true}>
+                                                    Nothing to Claim
+                                                </button>
+                                            </div>
+                                        )
+                                    ) : (
+                                        <div className="airDropWethBtn">
+                                            <button className="switch-weth-learn-more" disabled={true}>
+                                                Switch to Optimism
+                                            </button>
+                                        </div>
+                                    )}
+                                    <div className="airDropWethTimeStampSection">
+                                        <div className="airDropWethTimeStampTitle">
+                                            <a>Remaining Duration</a>
+                                        </div>
+                                        <div className="airDropWethTimeStampInfo">
+                                            <a className="wethDayDate">{claimDayDate}D</a>
+                                            <a className="wethHoursDate">{claimHoursDate}H</a>
+                                            <a className="wethMinDate">{claimMinDate}M</a>
+                                            {/* <a> */}
+                                            <FiRefreshCcw className="airDropWethReFreshTimeStamp" onClick={changeTimeStampState} />
+                                            {/* </a> */}
+                                        </div>
+                                        <p></p>
+                                    </div>
+                                    <div className="airDropWethPriceSection">
+                                        <a>1 WETH = {getLatestPrice} USD</a>
+                                    </div>
+                                </div>
+                            ) : (
+                                <div className="airDropWethLoadingSection">
+                                    <AirDropLoading />
+                                </div>
+                            )}
 
                             <div className="airDropMuniSection">
                                 <div className="airDropMunieLogoSection">
                                     <img src={MunieLogoBackX} />
                                 </div>
                                 <div className="airDropMuniTxt">
-                                    <p>NFT Munie</p>
+                                    <a>NFT Munie</a>
                                 </div>
 
                                 <div className="airDropMuniBtn">
@@ -658,14 +800,6 @@ const AirDropPage = () => {
                                 </div>
                             </div>
                         </div>
-                        {/* ) : (
-              <div className="airDropLoadingSection">
-                <Loading />
-              </div>
-            )} */}
-                        {/* <div className="airDropBottomLineSection">
-                            <hr className="bottomHr"></hr>
-                        </div> */}
                     </div>
                     <div className="logoContainer">
                         <img
@@ -673,7 +807,8 @@ const AirDropPage = () => {
                             onClick={changeEthereumNetWork}
                             className="opIcon"
                         />
-                        <img src={OptimismRedLogo} onClick={() => handleNetworkSwitch("optimism")} className="opIcon" />
+                        <img src={OptimismRedLogo} onClick={changeOpNetwork} className="opIcon" />
+                        {/* <img src={OptimismRedLogo} onClick={() => handleNetworkSwitch("optimism")} className="opIcon" /> */}
                         <img src={HanLogo} onClick={addRewardToken} className="hanIcon" />
                     </div>
                 </TabPanel>
@@ -871,152 +1006,9 @@ const AirDropPage = () => {
                             <Loading />
                         </div>
                     )}
-                    {/* {rakis6StakingAmount === "" ? (
-                        <>
-                            <div className="rakis6-AirDrop-Deposit-TokenBalanceSection">
-                                <p>Available : {rakis6StakingBalanceOf}</p>
-                            </div>
-                            <div className="rakis6-AirDrop-Deposit-AmountSection">
-                                <input
-                                    type="number"
-                                    step="0.00000000000001"
-                                    id="maxRakis6StakeAmount"
-                                    placeholder="0"
-                                    onChange={changeRakis6DepositAmount}
-                                    value={rakis6StakingAmount}
-                                ></input>
-                                <p>RAKIS-6</p>
-                                <button className="rakis6-AirDrop-Deposit-AmountMaxBtn" onClick={changeMaxDepositAmount}>
-                                    Max
-                                </button>
-                            </div>
-                            <div className="rakis6-AirDrop-DepositStakeBtnSection">
-                                <button className="rakis6-AirDrop-Deposit-EnterBtn" onClick={setRakis6Approve}>
-                                    ENTER AMOUNT
-                                </button>
-                            </div>
-                        </>
-                    ) : successRakis6Apporve === false ? (
-                        <>
-                            <div className="rakis6-AirDrop-Deposit-TokenBalanceSection">
-                                <p>Available : {rakis6StakingBalanceOf}</p>
-                            </div>
-                            <div className="rakis6-AirDrop-Deposit-AmountSection">
-                                <input
-                                    type="number"
-                                    step="0.000000000000000001"
-                                    id="maxRakis6StakeAmount"
-                                    placeholder="0"
-                                    onChange={changeRakis6DepositAmount}
-                                    value={rakis6StakingAmount}
-                                ></input>
-                                <p>RAKIS-6</p>
-                                <button className="rakis6-AirDrop-Deposit-AmountMaxBtn" onClick={changeMaxDepositAmount}>
-                                    Max
-                                </button>
-                            </div>
-
-                            <div className="rakis6-AirDrop-DepositStakeBtnSection">
-                                <button className="rakis6-AirDrop-Deposit-CanBtn" onClick={setRakis6Approve}>
-                                    APPROVE
-                                </button>
-                            </div>
-                        </>
-                    ) : (
-                        <>
-                            <div className="rakis6-AirDrop-Deposit-TokenBalanceSection">
-                                <p>Available : {rakis6StakingBalanceOf}</p>
-                            </div>
-                            <div className="rakis6-AirDrop-Deposit-AmountSection">
-                                <input type="number" step="0.000000000000000001" id="maxRakis6StakeAmount" placeholder="0" value={rakis6StakingAmount}></input>
-                                <p>RAKIS-6</p>
-                                <button className="rakis6-AirDrop-Deposit-AmountMaxBtn">Max</button>
-                            </div>
-                            <div className="rakis6-AirDrop-Deposit-Pswd-Container">
-                                <div className="rakis6-AirDrop-Deposit-Pswd-Section">
-                                    <div className="rakis6-AirDrop-Deposit-Pswd-Lock">
-                                        <HiOutlineLockClosed />
-                                    </div>
-                                    <input
-                                        name="stakingPassword"
-                                        placeholder="Enter Password"
-                                        type={isRevealPwd ? "text" : "password"}
-                                        value={stakingPassword}
-                                        maxLength="4"
-                                        onChange={(e) => setStakingPassword(e.target.value)}
-                                    />
-                                    <span className="rakis6-AirDrop-Deposit-Pswd-Hide">
-                                        <FaEye
-                                            className="rakis6-AirDrop-Deposit-Pswd-HideIcon"
-                                            title={isRevealPwd ? "Hide password" : "Show password"}
-                                            // src={isRevealPwd ? FaEye : FaEye}
-                                            onClick={() => setIsRevealPwd((prevState) => !prevState)}
-                                        />
-                                    </span>
-                                </div>
-                            </div>
-                            <div className="rakis6-AirDrop-DepositStakeBtnSection">
-                                <button className="rakis6-AirDrop-Deposit-CanBtn" onClick={setRakis6Staking}>
-                                    STAKE
-                                </button>
-                            </div>
-                        </>
-                    )} */}
-                    {/* {successRakis6Apporve === false ? (
-                        <>
-                            <div className="rakis6-AirDrop-Deposit-TokenBalanceSection">
-                                <p>Available : {rakis6StakingBalanceOf}</p>
-                            </div>
-                            <div className="rakis6-AirDrop-Deposit-AmountSection">
-                                <input
-                                    type="number"
-                                    step="0.000000000000000001"
-                                    id="maxRakis6StakeAmount"
-                                    placeholder="0"
-                                    onChange={changeRakis6DepositAmount}
-                                    value={rakis6StakingAmount}
-                                ></input>
-                                <p>RAKIS-6</p>
-                                <button className="rakis6-AirDrop-Deposit-AmountMaxBtn" onClick={changeMaxDepositAmount}>
-                                    Max
-                                </button>
-                            </div>
-                            <div className="rakis6-AirDrop-DepositStakeBtnSection">
-                                <button className="rakis6-AirDrop-Deposit-CanBtn" onClick={setRakis6Approve}>
-                                    APPROVE
-                                </button>
-                            </div>
-                        </>
-                    ) : (
-                        <>
-                            <div className="rakis6-AirDrop-Deposit-TokenBalanceSection">
-                                <p>Available : {rakis6StakingBalanceOf}</p>
-                            </div>
-                            <div className="rakis6-AirDrop-Deposit-AmountSection">
-                                <input type="number" step="0.000000000000000001" id="maxRakis6StakeAmount" placeholder="0" value={rakis6StakingAmount}></input>
-                                <p>RAKIS-6</p>
-                                <button className="rakis6-AirDrop-Deposit-AmountMaxBtn" onClick={changeMaxDepositAmount}>
-                                    Max
-                                </button>
-                            </div>
-                            <div>
-                                <input
-                                    placeholder="Enter Password"
-                                    type="text"
-                                    onChange={checkStakingPasswordNumber}
-                                    maxLength="4"
-                                    value={stakingPassword}
-                                ></input>
-                            </div>
-                            <div className="rakis6-AirDrop-DepositStakeBtnSection">
-                                <button className="rakis6-AirDrop-Deposit-CanBtn" onClick={setRakis6Staking}>
-                                    STAKE
-                                </button>
-                            </div>
-                        </>
-                    )} */}
                     <div className="logoContainer">
-                        <img src={OptimismRedLogo} onClick={() => handleNetworkSwitch("optimism")} className="opIcon" />
+                        <img src={OptimismRedLogo} onClick={changeOpNetwork} className="opIcon" />
+                        {/* <img src={OptimismRedLogo} onClick={() => handleNetworkSwitch("optimism")} className="opIcon" /> */}
                         <img src={ArrakisBlackIcon} onClick={addStakingToken} className="arrakisIcon" />
                         <img src={HanLogo} onClick={addRewardToken} className="hanIcon" />
                     </div>
@@ -1066,7 +1058,8 @@ const AirDropPage = () => {
                         )}
                     </>
                     <div className="logoContainer">
-                        <img src={OptimismRedLogo} onClick={() => handleNetworkSwitch("optimism")} className="opIcon" />
+                        <img src={OptimismRedLogo} onClick={changeOpNetwork} className="opIcon" />
+                        {/* <img src={OptimismRedLogo} onClick={() => handleNetworkSwitch("optimism")} className="opIcon" /> */}
                         <img src={ArrakisBlackIcon} onClick={addStakingToken} className="arrakisIcon" />
                         <img src={HanLogo} onClick={addRewardToken} className="hanIcon" />
                     </div>
@@ -1147,7 +1140,8 @@ const AirDropPage = () => {
                         )}
                     </div>
                     <div className="logoContainer">
-                        <img src={OptimismRedLogo} onClick={() => handleNetworkSwitch("optimism")} className="opIcon" />
+                        <img src={OptimismRedLogo} onClick={changeOpNetwork} className="opIcon" />
+                        {/* <img src={OptimismRedLogo} onClick={() => handleNetworkSwitch("optimism")} className="opIcon" /> */}
                         <img src={ArrakisBlackIcon} onClick={addStakingToken} className="arrakisIcon" />
                         <img src={HanLogo} onClick={addRewardToken} className="hanIcon" />
                     </div>
