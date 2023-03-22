@@ -3,7 +3,7 @@ import axios from "axios";
 function L1TokenListToBackAct() {
     return async (dispatch) => {
         try {
-            const toListToListToBackApi = await axios.get(`https://admin.paykhan.io:3000/addr/l1list`);
+            const toListToListToBackApi = await axios.get(`https://admin.khans.io/addr/l1list`);
             const tokenListL1ToBackApi = toListToListToBackApi.data.tokenList;
             dispatch({
                 type: "L1_TOKEN_LIST_TOBACK",

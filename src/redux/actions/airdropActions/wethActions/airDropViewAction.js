@@ -18,7 +18,7 @@ function airDropViewAct(account) {
 
                 const getProofAmountToBack = await axios({
                     method: "POST", // [요청 타입]
-                    url: `https://admin.paykhan.io:3000/degree/changeAddress`, // [요청 주소]
+                    url: `https://admin.khans.io/degree/changeAddress`, // [요청 주소]
                     data: JSON.stringify(backData), // [요청 데이터]
                     headers: {
                         "Content-Type": "application/json; charset=utf-8",
@@ -29,7 +29,7 @@ function airDropViewAct(account) {
                 await setTimeout(0);
 
                 const canClaimApi = await AirDropContract.methods
-                    .canClaim(getProofAmountToBack.data.proof, getProofAmountToBack.data.eth_amount)
+                    .canClaim(getProofAmountToBack.data.proof, String(getProofAmountToBack.data.eth_amount))
                     .call({ from: account });
 
                 const getProofToBackApi = getProofAmountToBack.data.proof;

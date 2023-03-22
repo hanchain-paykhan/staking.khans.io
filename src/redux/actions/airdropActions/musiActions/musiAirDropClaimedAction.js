@@ -11,7 +11,7 @@ function musiAirDropClaimedAct(account, musiKhanNewRoot) {
 
             const getMusiProofAmountTokenToBack = await axios({
                 method: "POST", // [요청 타입]
-                url: `https://admin.paykhan.io:3000/music/changeAddress`, // [요청 주소]
+                url: `https://admin.khans.io/music/changeAddress`, // [요청 주소]
                 data: JSON.stringify(musiModalData), // [요청 데이터]
                 headers: {
                     "Content-Type": "application/json; charset=utf-8",

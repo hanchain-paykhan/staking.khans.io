@@ -3,7 +3,7 @@ import axios from "axios";
 function L2SwapTokenListToBackAct() {
     return async (dispatch) => {
         try {
-            const l2TokenListToBackApi = await axios.get(`https://admin.paykhan.io:3000/addr/l2list`);
+            const l2TokenListToBackApi = await axios.get(`https://admin.khans.io/addr/l2list`);
             const l2TokenListToBack = l2TokenListToBackApi.data.tokenList;
 
             dispatch({

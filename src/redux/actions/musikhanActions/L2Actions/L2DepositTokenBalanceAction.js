@@ -9,8 +9,9 @@ function L2DepositTokenBalanceAct(account, L2TokenContract) {
             const L2DepositBalanceStringApi = Web3.utils.fromWei(String(L2DepositBalanceOfApi), "ether");
 
             const musiAllowanceToContract = await L2TokenContract.methods.allowance(account, MusikhanStakingAddress).call();
+            console.log(musiAllowanceToContract);
             const musiAllowanceApi = Web3.utils.fromWei(String(musiAllowanceToContract), "ether");
-
+            console.log(musiAllowanceApi);
             dispatch({
                 type: "L2_DEPOSIT_BALANCE",
                 payload: {

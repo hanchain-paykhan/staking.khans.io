@@ -23,7 +23,6 @@ const L1BridgeTimerModal = (props) => {
 
     useEffect(() => {
         if (time.current <= 0) {
-            console.log("타임아웃");
             clearInterval(timerId.current);
         }
     }, [sec]);

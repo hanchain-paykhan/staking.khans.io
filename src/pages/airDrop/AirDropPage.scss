@@ -70,6 +70,97 @@
 .airDropAmountTitle a {
     font-size: 30px;
 }
+//.
+.airDropSignEmailContinaer {
+    position: absolute;
+    display: flex;
+    top: 2%;
+    right: 3%;
+}
+
+.airDropSignIn-Email-Section {
+    width: 100%;
+    height: 30px;
+    border-radius: 0.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #39a2db;
+    // opacity: 0.4;
+    margin-right: 10px;
+}
+
+// .airDropSignIn-BtnSection:hover {
+//     opacity: 0.8;
+// }
+
+.airDropSignIn-Email-Section a {
+    color: black;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.airDropSignIn-Email-Section a:hover {
+    color: #24b5ee;
+}
+
+.airDropSignInUpContinaer {
+    position: absolute;
+    display: flex;
+    top: 2%;
+    right: 3%;
+}
+
+.airDropSignIn-BtnSection {
+    width: 80px;
+    height: 30px;
+    border-radius: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: lightgray;
+    // opacity: 0.4;
+    margin-right: 10px;
+}
+
+// .airDropSignIn-BtnSection:hover {
+//     opacity: 0.8;
+// }
+
+.airDropSignIn-BtnSection a {
+    color: black;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.airDropSignIn-BtnSection a:hover {
+    color: #24b5ee;
+}
+
+.airDropSignUp-BtnSection {
+    width: 80px;
+    height: 30px;
+    border-radius: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #39a2db;
+}
+
+// .airDropSignUp-BtnSection:hover {
+//     opacity: 0.5;
+//     color: black;
+// }
+
+.airDropSignUp-BtnSection a {
+    color: black;
+    font-size: 15px;
+    text-decoration: none;
+}
+
+// .airDropSignUp-BtnSection a:hover {
+//     color: #0a1126;
+// }
 
 .airDropAmountTxt {
     text-shadow: #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px,
@@ -566,9 +657,9 @@ $social-list: (
     //   background-color: red;
 }
 
-// ----------------------- AirDrop WETH SECTION ----------------------- //
+// ----------------------- AirDrop Han SECTION ----------------------- //
 
-.airDropWethSection {
+.airDrop-Han-Section {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -576,7 +667,7 @@ $social-list: (
     // flex-direction: column;
 }
 
-.airDropWethLoadingSection {
+.airDrop-Han-LoadingSection {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -584,7 +675,7 @@ $social-list: (
     // height: 30px;
 }
 
-.airDropWethLogoSection {
+.airDrop-Han-LogoSection {
     display: flex;
     // width: 100%;
     height: 100%;
@@ -593,77 +684,77 @@ $social-list: (
     margin-right: 10px;
 }
 
-.airDropWethLogoSection img {
+.airDrop-Han-LogoSection img {
     width: 40px;
     height: 40px;
 }
 
-.airDropWethTxt {
+.airDrop-Han-Txt {
     font-size: 25px;
-    margin-right: 110px;
+    margin-right: 136px;
 }
 
-.airDropWethBtn {
+.airDrop-Han-Btn {
     // display: flex;
     // justify-content: flex-end;
     margin-bottom: 10px;
 }
 
-.airDropWethTimeStampSection {
+.airDrop-Han-TimeStampSection {
     position: absolute;
     display: flex;
     font-size: 14px;
     flex-direction: column;
     right: 19%;
-    top: 31%;
+    top: 27.5%;
 }
 
-.airDropWethTimeStampTitle {
+.airDrop-Han-TimeStampTitle {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.airDropWethTimeStampInfo {
+.airDrop-Han-TimeStampInfo {
     display: flex;
     justify-content: flex-start;
     align-items: center;
     flex-direction: row;
 }
-.airDropWethTimeStampInfo a {
+.airDrop-Han-TimeStampInfo a {
     color: #47fac2;
     // box-shadow: #0a1126;
 }
-.wethDayDate {
+.han-DayDate {
     margin-right: 10px;
 }
-.wethHoursDate {
-    margin-right: 10px;
-}
-
-.wethMinDate {
+.han-HoursDate {
     margin-right: 10px;
 }
 
-.airDropWethReFreshTimeStamp {
+.han-MinDate {
+    margin-right: 10px;
+}
+
+.airDrop-Han-ReFreshTimeStamp {
     // margin-left: 5px;
     cursor: pointer;
 }
 
-.airDropWethPriceSection {
-    position: absolute;
-    padding: 0;
-    bottom: 58%;
-    right: 57%;
-}
+// .airDrop-Han-PriceSection {
+//     position: absolute;
+//     padding: 0;
+//     bottom: 56%;
+//     right: 58.5%;
+// }
 
-.airDropWethPriceSection a {
-    font-size: 14px;
-}
+// .airDrop-Han-PriceSection a {
+//     font-size: 14px;
+// }
 
-/* --------------------Weth Button -------------------------- */
-button.weth-learn-more {
-    margin-top: 13px;
+/* --------------------Han Button -------------------------- */
+button.han-learn-more {
+    // margin-top: 13px;
     width: 200px;
     font-weight: 600;
     font-family: "SCDream8";
@@ -678,7 +769,7 @@ button.weth-learn-more {
     transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), background 150ms cubic-bezier(0, 0, 0.58, 1);
     transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), background 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
 }
-button.weth-learn-more::before {
+button.han-learn-more::before {
     position: absolute;
     content: "";
     width: 100%;
@@ -695,28 +786,28 @@ button.weth-learn-more::before {
     transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), box-shadow 150ms cubic-bezier(0, 0, 0.58, 1);
     transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), box-shadow 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
 }
-button.weth-learn-more:hover {
+button.han-learn-more:hover {
     background: lightgray;
     -webkit-transform: translate(0, 0.25em);
     transform: translate(0, 0.25em);
 }
-button.weth-learn-more:hover::before {
+button.han-learn-more:hover::before {
     -webkit-transform: translate3d(0, 0.5em, -1em);
     transform: translate3d(0, 0.5em, -1em);
 }
-button.weth-learn-more:active {
+button.han-learn-more:active {
     background: rgba(255, 255, 255, 0.3);
     -webkit-transform: translate(0em, 0.75em);
     transform: translate(0em, 0.75em);
 }
-button.weth-learn-more:active::before {
+button.han-learn-more:active::before {
     -webkit-transform: translate3d(0, 0, -1em);
     transform: translate3d(0, 0, -1em);
 }
 
 /* --------------------Weth Cant Button -------------------------- */
-.cant-weth-learn-more {
-    margin-top: 13px;
+.cant-han-learn-more {
+    // margin-top: 13px;
     font-weight: 600;
     width: 200px;
     height: 50.002px;
@@ -729,7 +820,7 @@ button.weth-learn-more:active::before {
 }
 
 /* --------------------Weth Cant Button -------------------------- */
-.switch-weth-learn-more {
+.switch-han-learn-more {
     margin-top: 13px;
     font-weight: 600;
     width: 200px;
@@ -780,7 +871,7 @@ button.weth-learn-more:active::before {
     font-size: 14px;
     flex-direction: column;
     right: 19%;
-    top: 48.5%;
+    top: 42%;
 }
 
 .airDropMusiTimeStampTitle {
@@ -976,8 +1067,184 @@ button.musi-learn-more:active::before {
     border-radius: 0.75em;
 }
 
-/* --------------------Weth Cant Button -------------------------- */
+/* --------------------Musi Cant Button -------------------------- */
 .switch-musi-learn-more {
+    margin-top: 13px;
+    font-weight: 600;
+    width: 200px;
+    height: 50.002px;
+    font-size: 15px;
+    font-family: "SCDream8";
+    color: black;
+    cursor: not-allowed;
+    border: 0.104vw solid rgba(0, 0, 0, 0.3);
+    border-radius: 0.75em;
+}
+
+// ----------------------- AirDrop WETH SECTION ----------------------- //
+
+.airDropWethSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 150px;
+    // flex-direction: column;
+}
+
+.airDropWethLoadingSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // margin-right: 150px;
+    // height: 30px;
+}
+
+.airDropWethLogoSection {
+    display: flex;
+    // width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.airDropWethLogoSection img {
+    width: 40px;
+    height: 40px;
+}
+
+.airDropWethTxt {
+    font-size: 25px;
+    margin-right: 110px;
+}
+
+.airDropWethBtn {
+    // display: flex;
+    // justify-content: flex-end;
+    margin-bottom: 10px;
+}
+
+.airDropWethTimeStampSection {
+    position: absolute;
+    display: flex;
+    font-size: 14px;
+    flex-direction: column;
+    right: 19%;
+    top: 55%;
+}
+
+.airDropWethTimeStampTitle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.airDropWethTimeStampInfo {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+}
+.airDropWethTimeStampInfo a {
+    color: #47fac2;
+    // box-shadow: #0a1126;
+}
+.wethDayDate {
+    margin-right: 10px;
+}
+.wethHoursDate {
+    margin-right: 10px;
+}
+
+.wethMinDate {
+    margin-right: 10px;
+}
+
+.airDropWethReFreshTimeStamp {
+    // margin-left: 5px;
+    cursor: pointer;
+}
+
+.airDropWethPriceSection {
+    position: absolute;
+    padding: 0;
+    bottom: 33%;
+    right: 58.5%;
+}
+
+.airDropWethPriceSection a {
+    font-size: 14px;
+}
+
+/* --------------------Weth Button -------------------------- */
+button.weth-learn-more {
+    // margin-top: 13px;
+    width: 200px;
+    font-weight: 600;
+    font-family: "SCDream8";
+    color: black;
+    text-transform: uppercase;
+    padding: 1.25em 2em;
+    border: 0.104vw solid rgba(0, 0, 0, 0.3);
+    border-radius: 0.75em;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    transition: background 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
+    transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), background 150ms cubic-bezier(0, 0, 0.58, 1);
+    transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), background 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
+}
+button.weth-learn-more::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 1;
+    border-radius: inherit;
+    -webkit-transform: translate3d(0, 0.75em, -1em);
+    transform: translate3d(0, 0.75em, -1em);
+    transition: box-shadow 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
+    transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), box-shadow 150ms cubic-bezier(0, 0, 0.58, 1);
+    transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), box-shadow 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
+}
+button.weth-learn-more:hover {
+    background: lightgray;
+    -webkit-transform: translate(0, 0.25em);
+    transform: translate(0, 0.25em);
+}
+button.weth-learn-more:hover::before {
+    -webkit-transform: translate3d(0, 0.5em, -1em);
+    transform: translate3d(0, 0.5em, -1em);
+}
+button.weth-learn-more:active {
+    background: rgba(255, 255, 255, 0.3);
+    -webkit-transform: translate(0em, 0.75em);
+    transform: translate(0em, 0.75em);
+}
+button.weth-learn-more:active::before {
+    -webkit-transform: translate3d(0, 0, -1em);
+    transform: translate3d(0, 0, -1em);
+}
+
+/* --------------------Weth Cant Button -------------------------- */
+.cant-weth-learn-more {
+    // margin-top: 13px;
+    font-weight: 600;
+    width: 200px;
+    height: 50.002px;
+    font-size: 15px;
+    font-family: "SCDream8";
+    color: black;
+    cursor: not-allowed;
+    border: 0.104vw solid rgba(0, 0, 0, 0.3);
+    border-radius: 0.75em;
+}
+
+/* --------------------Weth Cant Button -------------------------- */
+.switch-weth-learn-more {
     margin-top: 13px;
     font-weight: 600;
     width: 200px;
@@ -1028,7 +1295,7 @@ button.musi-learn-more:active::before {
     font-size: 14px;
     flex-direction: column;
     right: 19%;
-    top: 65.5%;
+    top: 68.5%;
 }
 
 .airDropMuniTimeStampTitle {
@@ -1119,7 +1386,7 @@ button.muni-learn-more:active::before {
 
 /* --------------------Muni Cant Button -------------------------- */
 .cant-muni-learn-more {
-    margin-top: 13px;
+    // margin-top: 13px;
     font-weight: 600;
     width: 200px;
     height: 50.002px;

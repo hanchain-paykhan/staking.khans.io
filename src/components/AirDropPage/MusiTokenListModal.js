@@ -7,8 +7,8 @@ import { MusiKhanLogo } from "../../img/_index";
 import { musiAirDropTokenListAction } from "../../redux/actions/airdropActions/musiActions/musiAirDropTokenListAction";
 import { musiAirDropViewAction } from "../../redux/actions/airdropActions/musiActions/musiAirDropVeiwAction";
 import { musiAirDropTimeStampAction } from "../../redux/actions/airdropActions/musiActions/musiAirDropTimeStampAction";
-import { musiAirDropClaimedAction } from "../../redux/actions/airdropActions/musiActions/musiAirDropClaimedAction";
-import { musiAirDropBackDataInfoAction } from "../../redux/actions/airdropActions/musiActions/musiAirDropBackDataInfoAction";
+// import { musiAirDropClaimedAction } from "../../redux/actions/airdropActions/musiActions/musiAirDropClaimedAction";
+// import { musiAirDropBackDataInfoAction } from "../../redux/actions/airdropActions/musiActions/musiAirDropBackDataInfoAction";
 
 const MusiTokenListModal = (props) => {
     const { open, close, header } = props;
@@ -29,8 +29,8 @@ const MusiTokenListModal = (props) => {
         // dispatch(musiAirDropClaimedAction.musiAirDropClaimedAct(account, musiTokenRoot));
     };
     useEffect(() => {
-        dispatch(musiAirDropTokenListAction.musiAirDropTokenListAct());
-    }, []);
+        dispatch(musiAirDropTokenListAction.musiAirDropTokenListAct(account));
+    }, [account]);
 
     // useEffect(() => {
     //     dispatch(musiAirDropBackDataInfoAction.musiAirDropBackDataInfoAct(account));

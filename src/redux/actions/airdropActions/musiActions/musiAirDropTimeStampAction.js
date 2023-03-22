@@ -21,6 +21,7 @@ function musiAirDropTimeStampAct(musiTokenl2Ca) {
 
             const musiClaimMinDateApi = Number(String(Math.floor((remainDuration / (1000 * 60)) % 60)).padStart(2, "0"));
             const musiKhanNewRootApi = musiTimeStampToContractAPi.root;
+
             let [musiClaimDayDate, musiClaimHoursDate, musiClaimMinDate, musiKhanNewRoot] = await Promise.all([
                 musiClaimDayDateApi,
                 musiClaimHoursDateApi,
