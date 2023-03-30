@@ -7,3 +7,7 @@ Contract Information
 # PrivateStaking [Rakis6] Locked 365 Day - Optimistic Ethereum Network
 
 0xd6D4eAAeD79f618Bcd0EA12DBdf45BB654287415
+
+# AirDrop [HAN] - Optimistic Ethereum Network
+
+0xB3FC457e336dBE18f79D602942F372A6130Fd115
