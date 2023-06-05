@@ -11,3 +11,7 @@ Contract Information
 # AirDrop [USDC] - Ethereum Mainnet
 
 0xF75924cad3001a837bbda7927BE5f3FBc6da9A92
+
+# AirDrop [Munie] - Ethereum Mainnet
+
+0x467953F60DE44cc625B54Cd9C92D529bA9d26e03
