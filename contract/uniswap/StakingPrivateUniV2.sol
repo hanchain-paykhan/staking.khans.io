@@ -8,8 +8,8 @@ import "@openzeppelin/contracts/token/ERC721/IERC721.sol";
 import "@openzeppelin/contracts/security/Pausable.sol";
 
 contract StakingPrivateUniV2 is ReentrancyGuard, Ownable, Pausable {
-    IERC20Metadata private stakingToken;
-    IERC20Metadata private rewardToken;
+    IERC20Metadata public stakingToken;
+    IERC20Metadata public rewardToken;
     uint32 private participationCode;
 
     constructor(address _stakingToken, address _rewardToken, uint32 _participationCode) onlyOwner {
@@ -45,10 +45,8 @@ contract StakingPrivateUniV2 is ReentrancyGuard, Ownable, Pausable {
         totalStakedAmount[msg.sender] += _amount;
         staker.amount = _amount;
         staker.startTime = block.timestamp;
-        // staker.withdrawalTime = block.timestamp + 365 days;
-        // staker.totalRewardAmount = amount * hanTokenPerLpToken * 365 days / 10**18;
-        staker.withdrawalTime = block.timestamp + 60;
-        staker.totalRewardAmount = _amount * hanTokenPerLpToken * 60 / 10**18;
+        staker.withdrawalTime = block.timestamp + 365 days;
+        staker.totalRewardAmount = _amount * hanTokenPerLpToken * 365 days / 10**18;
         stakerArray[msg.sender].push(staker);
         stakingToken.transferFrom(msg.sender, address(this), _amount);
         emit Staked(msg.sender, _amount);
