@@ -6,4 +6,4 @@ Contract Information
 
 # StakingPrivateUniV2 Locked 365 Day - Ethereum Mainnet
 
-0x9E27DE7c61Af23cAcA7b099eA83F8f8a4a0d542f
+0xb365bB98c1469732eab3b2Ed7f6c8fc494A27977
