@@ -8,5 +8,5 @@ contract HanTimelockController is TimelockController {
         uint256 minDelay,
         address[] memory proposers,
         address[] memory executors
-    ) TimelockController(minDelay, proposers, executors, msg.sender) {}
+    ) TimelockController(minDelay, proposers, executors, address(0)) {}
 }
