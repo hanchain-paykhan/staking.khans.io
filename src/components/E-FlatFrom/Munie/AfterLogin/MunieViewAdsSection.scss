@@ -1,0 +1,102 @@
+/* ------------------- View Section -------------------*/
+.munieAllStakingArrowUpSection {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    color: #1e62d0;
+    cursor: pointer;
+}
+
+.munieStakingCantViewContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 330px;
+}
+
+.munieAllStakingArrowUpSection:hover {
+    opacity: 0.4;
+}
+
+.munieAllStakingArrowDownSection {
+    position: absolute;
+    left: 50%;
+    top: 90%;
+    color: #1e62d0;
+    cursor: pointer;
+}
+
+.munieAllStakingArrowDownSection:hover {
+    opacity: 0.4;
+}
+
+.munieAllStakingContainer {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    margin-top: 47px;
+}
+
+.munieAllStakingImgSection {
+    position: relative;
+    background-color: blue;
+    width: 100%;
+    height: 400px;
+    cursor: pointer;
+}
+
+.allMunieStakingInfoImgContainer {
+    font-family: sans-serif;
+    text-align: center;
+    position: relative;
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+/* Element scroll */
+.munieScrollBox {
+    position: relative;
+    margin-left: 50px;
+    width: 100%;
+    height: 280px;
+    color: black;
+    overflow: hidden;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.munieScrollBox .munieScrollBoxInner {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+.munieScrollBox .munieScrollBoxInner::-webkit-scrollbar {
+    display: none;
+}
+
+.allMunieStakingInfoSection {
+    display: inline-block;
+
+    float: left;
+}
+
+.allMunieStakingInfoImgSection {
+    width: 150px;
+    height: 150px;
+    margin-left: 10px;
+    margin-right: 10px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: all 0.2s linear;
+    cursor: pointer;
+}
+
+.allMunieStakingInfoImgSection:hover {
+    transform: scale(1.1);
+}
+.allMunieStakingInfoNameSection p {
+    font-family: "SCDream8";
+    font-size: 15px;
+}

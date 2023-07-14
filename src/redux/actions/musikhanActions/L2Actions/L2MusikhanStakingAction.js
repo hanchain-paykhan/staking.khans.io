@@ -1,12 +1,11 @@
-import { MusikhanStakingContract } from "../../../../config/MusikhanConfig";
+import { MusikhanStakingContract, web3 } from "../../../../config/MusikhanConfig";
 // import { MusikhanStakingContract } from "../../../../config/MusikhanConfigTest";
 import Swal from "sweetalert2";
-import Web3 from "web3";
 
 function L2MusikhanStakingAct(account, L2DepositTokenCa, stakingnum) {
     return async (dispatch) => {
         try {
-            const stakingNum2 = Web3.utils.toWei(String(stakingnum), "ether");
+            const stakingNum2 = web3.utils.toWei(String(stakingnum), "ether");
             const stake = await MusikhanStakingContract.methods.stake(L2DepositTokenCa, stakingNum2).send({ from: account });
             Swal.fire({
                 title: "Success",

@@ -5,7 +5,6 @@ function getAccount() {
                 method: "eth_requestAccounts",
             });
             let account = accounts[0];
-            console.log(account, "getAccount Act");
             dispatch({ type: "GET_ACCOUNT", payload: { account } });
         } catch (error) {
             console.error(error);

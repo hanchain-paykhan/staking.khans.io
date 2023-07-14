@@ -1,31 +1,30 @@
-import { PrivateStakingContract } from "../../../../config/PrivateStakingRakis6Config";
-// import { PrivateStakingContract } from "../../../../config/PrivateStakingRakis6ConfigTest";
+import axios from "axios";
 
 function rakis6AirDropRemainingAct(account, index) {
     return async (dispatch) => {
         try {
-            const remainingDurationApi = await PrivateStakingContract.methods.remainingDuration(account, index).call();
+            if (account) {
+                const getRemainingDurationApi = await axios.post(`https://back.khans.io/block/pvtRemainingDuration`, {
+                    account,
+                    index,
+                });
+                const rakis6ClaimDayDateApi = getRemainingDurationApi.data[0];
+                const rakis6ClaimHoursDateApi = getRemainingDurationApi.data[1];
+                const rakis6ClaimMinDateApi = getRemainingDurationApi.data[2];
 
-            const rakis6ReMainDurationtoContract = remainingDurationApi * 1000;
+                let [rakis6ClaimDayDate, rakis6ClaimHoursDate, rakis6ClaimMinDate] = await Promise.all([rakis6ClaimDayDateApi, rakis6ClaimHoursDateApi, rakis6ClaimMinDateApi]);
 
-            const rakis6ClaimDayDateApi = String(Math.floor(rakis6ReMainDurationtoContract / (1000 * 60 * 60 * 24))).padStart(2, "0");
-            const rakis6ClaimHoursDateApi = String(Math.floor(rakis6ReMainDurationtoContract / (1000 * 60 * 60)) % 24).padStart(2, "0");
-            const rakis6ClaimMinDateApi = String(Math.floor((rakis6ReMainDurationtoContract / (1000 * 60)) % 60)).padStart(2, "0");
-
-            let [rakis6ClaimDayDate, rakis6ClaimHoursDate, rakis6ClaimMinDate] = await Promise.all([
-                rakis6ClaimDayDateApi,
-                rakis6ClaimHoursDateApi,
-                rakis6ClaimMinDateApi,
-            ]);
-
-            dispatch({
-                type: "RAKIS6_AIRDROP_TIMESTAMP",
-                payload: {
-                    rakis6ClaimDayDate: rakis6ClaimDayDate,
-                    rakis6ClaimHoursDate: rakis6ClaimHoursDate,
-                    rakis6ClaimMinDate: rakis6ClaimMinDate,
-                },
-            });
+                dispatch({
+                    type: "RAKIS6_AIRDROP_TIMESTAMP",
+                    payload: {
+                        rakis6ClaimDayDate: rakis6ClaimDayDate,
+                        rakis6ClaimHoursDate: rakis6ClaimHoursDate,
+                        rakis6ClaimMinDate: rakis6ClaimMinDate,
+                    },
+                });
+            } else {
+                return null;
+            }
         } catch (error) {
             console.error(error);
         }

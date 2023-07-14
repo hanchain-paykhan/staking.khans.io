@@ -1,6 +1,7 @@
 const initialState = {
     getMyMintingTokenList: "",
     l2DepositTokenList: [],
+    l2AllTokenList: [],
 };
 
 const musikhanCaViewReducer = (state = initialState, action) => {
@@ -12,6 +13,7 @@ const musikhanCaViewReducer = (state = initialState, action) => {
                 ...state,
                 getMyMintingTokenList: payload.getMyMintingTokenList,
                 l2DepositTokenList: payload.l2DepositTokenList,
+                l2AllTokenList: payload.l2AllTokenList,
             };
         default:
             return { ...state };

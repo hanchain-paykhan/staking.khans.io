@@ -1,0 +1,90 @@
+.airDrop-SignUp-Wrap-Step3 {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    color: #fff;
+}
+
+.airDrop-SignUp-Wrap-Step3-Section {
+    width: 720px;
+    padding: 0 40px;
+}
+
+.airDrop-SignUp-ComPlete-Message-Section {
+    display: flex;
+    justify-content: center;
+}
+
+.airDrop-SignUp-Complete-Message-Section2 {
+    display: flex;
+    justify-content: center;
+}
+
+.airDrop-SignUp-Complete-Message-Section3 {
+    display: flex;
+    justify-content: center;
+    color: lightgray;
+}
+.airDrop-SignUp-Complete-BtnSection {
+    display: flex;
+    margin-top: 50px;
+    justify-content: center;
+}
+
+.airDrop-SignUp-Go-AirDrop-Btn {
+    display: inline-block;
+    display: flex;
+    justify-content: center;
+    background-color: #39a2db;
+    color: black;
+    align-items: center;
+    text-decoration: none;
+    padding: 0 30px;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: -0.05em;
+    border-style: solid;
+    border-width: 2px;
+    transition: all 0.25s ease-in;
+    font-family: inherit;
+    flex-shrink: 0;
+}
+
+.airDrop-SignUp-Go-AirDrop-Btn-Icon {
+    margin-right: 10px;
+}
+
+.airDrop-SignUp-Go-AirDrop-Btn:hover {
+    opacity: 0.5;
+}
+
+.airDrop-SignUp-Login-Btn {
+    display: inline-block;
+    display: flex;
+    justify-content: center;
+    background-color: #39a2db;
+    color: black;
+    align-items: center;
+    text-decoration: none;
+    height: 80px;
+    padding: 0 30px;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: -0.05em;
+    border-style: solid;
+    border-width: 2px;
+    transition: all 0.25s ease-in;
+    font-family: inherit;
+    flex-shrink: 0;
+}
+
+.airDrop-SignUp-Login-Btn:hover {
+    opacity: 0.5;
+}
+
+.airDrop-SignUp-Login-Btn a {
+    text-decoration: none;
+    color: black;
+}

@@ -1,5 +1,5 @@
 import axios from "axios";
-import { AirDropAddress, AirDropContract, web3 } from "../../../../config/AirDropConfig";
+import { AirDropContract } from "../../../../config/AirDropConfig";
 // import {
 //   AirDropAddress,
 //   AirDropContract,
@@ -10,27 +10,13 @@ function airDropClaimedAct(account) {
     return async (dispatch) => {
         try {
             if (account !== "") {
-                const airDropRootApi = await AirDropContract.methods.root().call();
+                const getProofAmountToBack = await axios.post(`https://back.khans.io/block/wethAirdrop`, { account });
 
-                let backData = {};
-                backData.account = account;
-                backData.c_root = airDropRootApi;
+                if (!getProofAmountToBack.data.proof) {
+                    return;
+                }
 
-                const getProofAmountToBack = await axios({
-                    method: "POST", // [요청 타입]
-                    url: `https://admin.khans.io/degree/changeAddress`, // [요청 주소]
-                    data: JSON.stringify(backData), // [요청 데이터]
-                    headers: {
-                        "Content-Type": "application/json; charset=utf-8",
-                    },
-                    timeout: 3000,
-                });
-
-                await setTimeout(0);
-
-                const claimedApi = await AirDropContract.methods
-                    .claimed(getProofAmountToBack.data.proof, String(getProofAmountToBack.data.eth_amount))
-                    .call({ from: account });
+                const claimedApi = await AirDropContract.methods.claimed(getProofAmountToBack.data.proof, String(getProofAmountToBack.data.eth_amount)).call({ from: account });
 
                 let [claimed] = await Promise.all([claimedApi]);
 

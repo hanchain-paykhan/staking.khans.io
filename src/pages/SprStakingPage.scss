@@ -1,1476 +1,286 @@
+.Tabs {
+    position: relative;
+    width: 65%;
+    height: auto;
+    background: rgba(255, 255, 255, 0.47);
+    margin: 2rem auto 1.5rem;
+    padding: 2rem 1rem;
+    border-radius: 2rem;
+}
+
+.react-tabs {
+    -webkit-tap-highlight-color: transparent;
+}
+
+.react-tabs__tab-list {
+    width: 55%;
+    margin: 0 auto 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 0.998px solid rgba(255, 255, 255, 0.3);
+    border-radius: 2rem;
+    padding-left: 0px;
+}
+
+.react-tabs__tab {
+    width: 40%;
+    padding: 1rem;
+    list-style: none;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.7s;
+}
+
+.react-tabs__tab--selected {
+    background: rgba(57, 162, 219, 0.5);
+}
+
+.react-tabs__tab--disabled {
+    color: GrayText;
+    cursor: default;
+}
+
+.react-tabs__tab:hover {
+    background: rgba(50, 224, 196, 0.15);
+}
+
+.react-tabs__tab:first-child {
+    border-bottom-left-radius: 2rem;
+    border-top-left-radius: 2rem;
+}
+
+.react-tabs__tab:last-child {
+    border-bottom-right-radius: 2rem;
+    border-top-right-radius: 2rem;
+}
+
+.react-tabs__tab-panel {
+    display: none;
+}
+
+.react-tabs__tab-panel--selected {
+    display: block;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.react-tabs {
+    -webkit-tap-highlight-color: transparent;
+}
+
+.react-tabs__tab-list {
+    width: 55%;
+    margin: 0 auto 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 0.998px solid #39a2db;
+    border-radius: 2rem;
+    padding-left: 0px;
+}
+
+.react-tabs__tab {
+    width: 40%;
+    padding: 1rem;
+    list-style: none;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.7s;
+}
+
+.react-tabs__tab--selected {
+    background: #39a2db;
+}
+
+.react-tabs__tab--disabled {
+    color: GrayText;
+    cursor: default;
+}
+
+.react-tabs__tab:hover {
+    background: rgba(50, 224, 196, 0.15);
+}
+
+.react-tabs__tab:first-child {
+    border-bottom-left-radius: 2rem;
+    border-top-left-radius: 2rem;
+}
+
+.react-tabs__tab:last-child {
+    border-bottom-right-radius: 2rem;
+    border-top-right-radius: 2rem;
+}
+
+.react-tabs__tab-panel {
+    display: none;
+}
+
+.react-tabs__tab-panel--selected {
+    display: block;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.react-tabs {
+    -webkit-tap-highlight-color: transparent;
+}
+
+.react-tabs__tab-list {
+    width: 60%;
+    margin: 0 auto 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 0.998px solid #39a2db;
+    border-radius: 2rem;
+    padding-left: 0px;
+}
+
+.react-tabs__tab {
+    width: 50%;
+    padding: 1rem;
+    list-style: none;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.7s;
+}
+
+.react-tabs__tab--selected {
+    background: #39a2db;
+}
+
+.react-tabs__tab--disabled {
+    color: GrayText;
+    cursor: default;
+}
+
+.react-tabs__tab:hover {
+    background: rgba(50, 224, 196, 0.15);
+}
+
+.react-tabs__tab:first-child {
+    border-bottom-left-radius: 2rem;
+    border-top-left-radius: 2rem;
+}
+
+.react-tabs__tab:last-child {
+    border-bottom-right-radius: 2rem;
+    border-top-right-radius: 2rem;
+}
+
+.react-tabs__tab-panel {
+    display: none;
+}
+
+.react-tabs__tab-panel--selected {
+    display: block;
+    font-size: 2rem;
+    text-align: center;
+}
+
 /* --------------------Can Button -------------------------- */
 button.spr-learn-more {
-  margin-top: 13px;
-  width: 300px;
-  font-weight: 600;
-  font-family: "SCDream8";
-  color: black;
-  text-transform: uppercase;
-  padding: 1.25em 2em;
-  border: 0.104vw solid rgba(0, 0, 0, 0.3);
-  border-radius: 0.75em;
-  -webkit-transform-style: preserve-3d;
-  transform-style: preserve-3d;
-  transition: background 150ms cubic-bezier(0, 0, 0.58, 1),
-    -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
-  transition: transform 150ms cubic-bezier(0, 0, 0.58, 1),
-    background 150ms cubic-bezier(0, 0, 0.58, 1);
-  transition: transform 150ms cubic-bezier(0, 0, 0.58, 1),
-    background 150ms cubic-bezier(0, 0, 0.58, 1),
-    -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
+    margin-top: 13px;
+    width: 300px;
+    font-weight: 600;
+    font-family: "SCDream8";
+    color: black;
+    text-transform: uppercase;
+    padding: 1.25em 2em;
+    border: 0.104vw solid rgba(0, 0, 0, 0.3);
+    border-radius: 0.75em;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    transition: background 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
+    transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), background 150ms cubic-bezier(0, 0, 0.58, 1);
+    transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), background 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
 }
 button.spr-learn-more::before {
-  position: absolute;
-  content: "";
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  opacity: 1;
-  border-radius: inherit;
-  -webkit-transform: translate3d(0, 0.75em, -1em);
-  transform: translate3d(0, 0.75em, -1em);
-  transition: box-shadow 150ms cubic-bezier(0, 0, 0.58, 1),
-    -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
-  transition: transform 150ms cubic-bezier(0, 0, 0.58, 1),
-    box-shadow 150ms cubic-bezier(0, 0, 0.58, 1);
-  transition: transform 150ms cubic-bezier(0, 0, 0.58, 1),
-    box-shadow 150ms cubic-bezier(0, 0, 0.58, 1),
-    -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 1;
+    border-radius: inherit;
+    -webkit-transform: translate3d(0, 0.75em, -1em);
+    transform: translate3d(0, 0.75em, -1em);
+    transition: box-shadow 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
+    transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), box-shadow 150ms cubic-bezier(0, 0, 0.58, 1);
+    transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), box-shadow 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
 }
 button.spr-learn-more:hover {
-  background: lightgray;
-  -webkit-transform: translate(0, 0.25em);
-  transform: translate(0, 0.25em);
+    background: lightgray;
+    -webkit-transform: translate(0, 0.25em);
+    transform: translate(0, 0.25em);
 }
 button.spr-learn-more:hover::before {
-  -webkit-transform: translate3d(0, 0.5em, -1em);
-  transform: translate3d(0, 0.5em, -1em);
+    -webkit-transform: translate3d(0, 0.5em, -1em);
+    transform: translate3d(0, 0.5em, -1em);
 }
 button.spr-learn-more:active {
-  background: rgba(255, 255, 255, 0.3);
-  -webkit-transform: translate(0em, 0.75em);
-  transform: translate(0em, 0.75em);
+    background: rgba(255, 255, 255, 0.3);
+    -webkit-transform: translate(0em, 0.75em);
+    transform: translate(0em, 0.75em);
 }
 button.spr-learn-more:active::before {
-  -webkit-transform: translate3d(0, 0, -1em);
-  transform: translate3d(0, 0, -1em);
+    -webkit-transform: translate3d(0, 0, -1em);
+    transform: translate3d(0, 0, -1em);
 }
 
 /* --------------------Can't Button -------------------------- */
 
 .cant-spr-learn-more {
-  margin-top: 13px;
-  font-weight: 600;
-  width: 300px;
-  height: 50.002px;
-  font-size: 15px;
-  font-family: "SCDream8";
-  color: black;
-  cursor: not-allowed;
-  border: 0.104vw solid rgba(0, 0, 0, 0.3);
-  border-radius: 0.75em;
+    margin-top: 13px;
+    font-weight: 600;
+    width: 300px;
+    height: 50.002px;
+    font-size: 15px;
+    font-family: "SCDream8";
+    color: black;
+    cursor: not-allowed;
+    border: 0.104vw solid rgba(0, 0, 0, 0.3);
+    border-radius: 0.75em;
 }
 //  ----------------------- Top Section ---------------------//
 .stakingSprPageContainer {
-  background-image: url(../assets/images/bg1.jpg);
-  background-repeat: no-repeat;
-  // background-color: lightyellow;
-  background-position: center;
-  background-size: cover;
-  width: 100%;
-  height: 100vh;
-  font-family: "SCDream8";
-  // background-attachment: fixed;
-  overflow-x: hidden;
-  overflow-y: hidden;
-}
-
-.stakingPageSprLogoContainer {
-  display: flex;
-  padding: 1rem;
-  justify-content: center;
-  align-items: center;
-}
-
-.stakingPageSprLogoContainer a {
-  text-shadow: #24b5ee 0px 0px 3.998px, #24b5ee 0px 0px 3.998px,
-    #24b5ee 0px 0px 3.998px, #24b5ee 0px 0px 3.998px, #24b5ee 0px 0px 3.998px,
-    #24b5ee 0px 0px 3.998px;
-  color: #0a1126;
-  margin-left: 20.002px;
-  padding-right: 60px;
-  font-size: 60px;
-}
-
-.stakingSprLogo {
-  width: 99.998px;
-  height: 99.998px;
-  filter: drop-shadow(5.003px 9.998px 9.998px #24b5ee);
-}
-
-.stakingSprAllAmountContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 69.998px;
-}
-
-.stakingSprAmountContainer {
-  color: #72cef2;
-}
-
-.stakingSprAmountTitle {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.stakingSprAmountTitle a {
-  font-size: 30px;
-}
-
-.stakingSprAmountTxt {
-  text-shadow: #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px,
-    #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px,
-    #0a1126 0px 0px 3.998px;
-}
-
-.stakingSprAmountNum {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.stakingSprAmountNum a {
-  font-size: 24.997px;
-}
-
-// .stakedSprCanAmountSection {
-//   position: absolute;
-//   top: -9%;
-//   left: 2%;
-//   text-shadow: #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px,
-//     #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px,
-//     #0a1126 0px 0px 3.998px;
-//   color: #72cef2;
-// }
-
-// ------------------------ Connect Wallet Btn Section ---------------------- //
-// Success
-.connectSprWalletSection {
-  position: absolute;
-  display: flex;
-  align-items: center;
-  top: -7%;
-  right: 2%;
-}
-
-.connectSprWalletSection a {
-  font-size: 9.998px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.connectSprWalletSection a img {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-// Cant
-
-.cantConnectSprWalletSection {
-  position: absolute;
-  display: flex;
-  align-items: center;
-  top: -11%;
-  right: 2%;
-}
-
-.cantConnetSprTxt {
-  border-radius: 2rem;
-  // background-color: #00a4ef;
-  color: yellow;
-  font-size: 18px;
-  margin-right: 10px;
-}
-
-.cantConnectSprWalletSection a {
-  font-size: 9.998px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.cantConnectSprWalletSection a img {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-// ------------------ ether --------- //
-.connectSprComWalletSection {
-  position: absolute;
-  top: -7%;
-  right: 2%;
-}
-
-.connectSprComWalletSection a {
-  font-size: 9.998px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.connectSprComWalletSection a img {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-$base-spacing-unit: 20.002px;
-$half-spacing-unit: 3px;
-$border-radius-global: 2rem;
-$button-width: auto;
-$button-height: 18px;
-$button-text-color: white;
-
-$social-list: (
-  facebook #4b70ab,
-  linkedin #0087be,
-  google #4285f4,
-  twitter #3b94d9,
-  yahoo #500095,
-  openid #f78c40,
-  googleplus #4285f4,
-  dropbox #007de1,
-  github #333,
-  bitbucket #205081,
-  soundcloud #ff5500,
-  spotify #2ebd59,
-  microsoft #00a4ef,
-  flickr #ff0084,
-  twitch #4b367c,
-  razer #44d62c
-);
-
-%social-button,
-.social-button {
-  width: $button-width;
-  display: inline-block;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-right: 9.998px;
-  border: 0 none;
-  border-radius: $border-radius-global;
-  text-decoration: none;
-  transition: all 250ms linear;
-
-  &:hover {
-    text-decoration: none;
-  }
-}
-
-.button--social-login {
-  margin-bottom: $half-spacing-unit;
-  margin-right: $half-spacing-unit;
-  color: $button-text-color;
-  height: $button-height;
-  line-height: $button-height - 4;
-  position: relative;
-  text-align: left;
-  display: block;
-  // width: 150px;
-
-  .social-icon {
-    margin-right: 5.003px;
-    margin-left: 5.003px;
-    font-size: $base-spacing-unit;
-    line-height: $base-spacing-unit;
-    width: 20.002px;
-    height: $base-spacing-unit;
-    text-align: center;
-    display: inline-block;
-    // position: relative;
-    top: 3.998px;
-
-    &:before {
-      display: inline-block;
-      width: ($base-spacing-unit * 2) - ($half-spacing-unit / 2) - 2;
-    }
-
-    &:after {
-      content: "";
-    }
-  }
-}
-
-@each $name, $color in $social-list {
-  .button--#{$name} {
-    background-color: $color;
-    border: 0.998px solid darken($color, 10%);
-
-    .social-icon {
-      border-right: 0.998px solid darken($color, 10%);
-      color: red;
-
-      &:after {
-        border-right: 0.998px solid lighten($color, 10%);
-      }
-    }
-
-    &:hover {
-      background-color: darken($color, 5%);
-    }
-  }
-}
-// ------------------ ether section -------------------//@
-%social-button,
-.social-button {
-  width: $button-width;
-  display: inline-block;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-right: 9.998px;
-  border: 0 none;
-  border-radius: $border-radius-global;
-  text-decoration: none;
-  transition: all 250ms linear;
-
-  &:hover {
-    text-decoration: none;
-  }
-}
-
-.button--social-login {
-  margin-bottom: $half-spacing-unit;
-  margin-right: $half-spacing-unit;
-  color: $button-text-color;
-  height: $button-height;
-  line-height: $button-height - 4;
-  position: relative;
-  text-align: left;
-  display: block;
-  // width: 150px;
-
-  .social-icon {
-    margin-right: 5.003px;
-    margin-left: 5.003px;
-    font-size: $base-spacing-unit;
-    line-height: $base-spacing-unit;
-    width: 20.002px;
-    height: $base-spacing-unit;
-    text-align: center;
-    display: inline-block;
-    // position: relative;
-    top: 3.998px;
-
-    &:before {
-      display: inline-block;
-      width: ($base-spacing-unit * 2) - ($half-spacing-unit / 2) - 2;
-    }
-
-    &:after {
-      content: "";
-    }
-  }
-}
-
-@each $name, $color in $social-list {
-  .button--#{$name} {
-    background-color: $color;
-    border: 0.998px solid darken($color, 10%);
-
-    .social-icon {
-      border-right: 0.998px solid darken($color, 10%);
-      color: red;
-
-      &:after {
-        border-right: 0.998px solid lighten($color, 10%);
-      }
-    }
-
-    &:hover {
-      background-color: darken($color, 5%);
-    }
-  }
-}
-
-// ------------------------ Tab Section ---------------------- //
-
-.Tabs {
-  position: relative;
-  width: 65%;
-  // height: 100%;
-  height: auto;
-  background: rgba(255, 255, 255, 0.47);
-  margin: 2rem auto 1.5rem;
-  padding: 2rem 1rem;
-  border-radius: 2rem;
-}
-
-.react-tabs {
-  -webkit-tap-highlight-color: transparent;
-}
-
-.react-tabs__tab-list {
-  width: 55%;
-  margin: 0 auto 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border: 0.998px solid rgba(255, 255, 255, 0.3);
-  border-radius: 2rem;
-  padding-left: 0px;
-}
-
-.react-tabs__tab {
-  width: 40%;
-  padding: 1rem;
-  list-style: none;
-  text-align: center;
-  cursor: pointer;
-  transition: all 0.7s;
-}
-
-.react-tabs__tab--selected {
-  background: rgba(57, 162, 219, 0.5);
-}
-
-.react-tabs__tab--disabled {
-  color: GrayText;
-  cursor: default;
-}
-
-.react-tabs__tab:hover {
-  background: rgba(50, 224, 196, 0.15);
-}
-
-.react-tabs__tab:first-child {
-  border-bottom-left-radius: 2rem;
-  border-top-left-radius: 2rem;
-}
-
-.react-tabs__tab:last-child {
-  border-bottom-right-radius: 2rem;
-  border-top-right-radius: 2rem;
-}
-
-.react-tabs__tab-panel {
-  display: none;
-}
-
-.react-tabs__tab-panel--selected {
-  display: block;
-  font-size: 2rem;
-  text-align: center;
-}
-
-.react-tabs {
-  -webkit-tap-highlight-color: transparent;
-}
-
-.react-tabs__tab-list {
-  width: 55%;
-  margin: 0 auto 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border: 0.998px solid #39a2db;
-  border-radius: 2rem;
-  padding-left: 0px;
-}
-
-.react-tabs__tab {
-  width: 40%;
-  padding: 1rem;
-  list-style: none;
-  text-align: center;
-  cursor: pointer;
-  transition: all 0.7s;
-}
-
-.react-tabs__tab--selected {
-  background: #39a2db;
-}
-
-.react-tabs__tab--disabled {
-  color: GrayText;
-  cursor: default;
-}
-
-.react-tabs__tab:hover {
-  background: rgba(50, 224, 196, 0.15);
-}
-
-.react-tabs__tab:first-child {
-  border-bottom-left-radius: 2rem;
-  border-top-left-radius: 2rem;
-}
-
-.react-tabs__tab:last-child {
-  border-bottom-right-radius: 2rem;
-  border-top-right-radius: 2rem;
-}
-
-.react-tabs__tab-panel {
-  display: none;
-}
-
-.react-tabs__tab-panel--selected {
-  display: block;
-  font-size: 2rem;
-  text-align: center;
-}
-
-.react-tabs {
-  -webkit-tap-highlight-color: transparent;
-}
-
-.react-tabs__tab-list {
-  width: 60%;
-  margin: 0 auto 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border: 0.998px solid #39a2db;
-  border-radius: 2rem;
-  padding-left: 0px;
-}
-
-.react-tabs__tab {
-  width: 50%;
-  padding: 1rem;
-  list-style: none;
-  text-align: center;
-  cursor: pointer;
-  transition: all 0.7s;
-}
-
-.react-tabs__tab--selected {
-  background: #39a2db;
-}
-
-.react-tabs__tab--disabled {
-  color: GrayText;
-  cursor: default;
-}
-
-.react-tabs__tab:hover {
-  background: rgba(50, 224, 196, 0.15);
-}
-
-.react-tabs__tab:first-child {
-  border-bottom-left-radius: 2rem;
-  border-top-left-radius: 2rem;
-}
-
-.react-tabs__tab:last-child {
-  border-bottom-right-radius: 2rem;
-  border-top-right-radius: 2rem;
-}
-
-.react-tabs__tab-panel {
-  display: none;
-}
-
-.react-tabs__tab-panel--selected {
-  display: block;
-  font-size: 2rem;
-  text-align: center;
-}
-
-// ----------------------- DEPOSIT SECTION ----------------------- //
-.stakedSprCanAmountSection {
-  position: absolute;
-  top: 1%;
-  right: 4%;
-  text-shadow: #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px,
-    #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px,
-    #0a1126 0px 0px 3.998px;
-  color: #72cef2;
-  font-size: 15px;
-}
-.sprStakingCantChoiceImgContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding-top: 67px;
-  padding-bottom: 67px;
-}
-
-.sprStakingCantChoiceImgSection {
-  width: 150px;
-  height: 150px;
-  background: url("../assets/images/sheeprilogo.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  display: flex;
-  align-items: center;
-  // border: 3px solid black;
-  cursor: not-allowed;
-}
-.cantStakingSprBtn {
-  text-shadow: #24b5ee 0px 0px 1.5px, #24b5ee 0px 0px 1.5px,
-    #24b5ee 0px 0px 1.5px, #24b5ee 0px 0px 1.5px, #24b5ee 0px 0px 1.5px,
-    #24b5ee 0px 0px 1.5px;
-  color: #0a1126;
-  font-size: 20px;
-}
-
-//  -----------------Deposit Slider Section -------------------- //
-// .mainSlider {
-//   width: 100%;
-// }
-
-.sprSlider {
-  // width: 200px;
-  // height: 150px;
-  // position: relative;
-}
-
-.sprStakingImgContainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 200px;
-}
-.sprStakingImgCard {
-  width: 150px;
-  height: 150px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  // border: 3px solid black;
-}
-
-.alice-carousel__prev-btn,
-.alice-carousel__next-btn {
-  position: absolute;
-  top: 45px;
-  width: auto;
-  font-size: 35px;
-}
-
-.alice-carousel__prev-btn {
-  left: -48%;
-}
-
-.alice-carousel__next-btn {
-  right: -48%;
-}
-
-.sprStakingImgTokenId {
-  font-size: 15px;
-}
-
-.modalTitleTxt p {
-  color: #0a1126;
-}
-
-.modalMainContainer p {
-  color: #0a1126;
-}
-
-.sprStakingImgCard {
-  width: 150px;
-  height: 150px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  // border: 3px solid black;
-}
-
-.alice-carousel__prev-btn {
-  text-align: none;
-}
-
-.alice-carousel__next-btn {
-  text-align: left;
-}
-
-/* ------------------- Check Box -------------------*/
-.imgCheckBox {
-  position: relative;
-  top: -40%;
-  right: -37%;
-  width: 10px;
-  height: 10px;
-}
-
-.sprStakingImgCard input {
-  zoom: 2;
-}
-
-.sprStakingChoiceImgSection {
-  width: 150px;
-  height: 150px;
-  color: white;
-  background-size: cover;
-  background-repeat: no-repeat;
-  // border: 3px solid black;
-}
-
-.sprStakingBeforeChoiceImgSection:hover {
-  opacity: 0.5;
-}
-
-// ----------------------- Choose Nft Big Btn ------------------------- //
-.myButton {
-  box-shadow: inset 0px 0.998px 0px 0px #97c4fe;
-  background: linear-gradient(to bottom, #3d94f6 5%, #1e62d0 100%);
-  background-color: #3d94f6;
-  border-radius: 6px;
-  border: 0.998px solid #337fed;
-  display: inline-block;
-  cursor: pointer;
-  color: #ffffff;
-  // height: 99.998px;
-  font-family: Arial;
-  font-size: 15px;
-  font-weight: bold;
-  padding: 57px 23.003px;
-  text-decoration: none;
-  text-shadow: 0px 0px 0px #1570cd;
-}
-.myButton:hover {
-  background: linear-gradient(to bottom, #1e62d0 5%, #3d94f6 100%);
-  background-color: #1e62d0;
-}
-.myButton:active {
-  position: relative;
-  top: 0.998px;
-}
-
-.choose-BigBtn {
-  width: 129.998px;
-  height: 99.998px;
-  color: #fff;
-  border-radius: 5.003px;
-  padding: 9.998px 24.997px;
-  font-family: "Lato", sans-serif;
-  font-weight: 500;
-  background: transparent;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  position: relative;
-  display: inline-block;
-  box-shadow: inset 2.002px 2.002px 2.002px 0px rgba(255, 255, 255, 0.5),
-    6.997px 6.997px 20.002px 0px rgba(0, 0, 0, 0.1),
-    3.998px 3.998px 5.003px 0px rgba(0, 0, 0, 0.1);
-  outline: none;
-}
-.btn-10 {
-  position: relative;
-  right: 20.002px;
-  bottom: 20.002px;
-  border: none;
-  box-shadow: none;
-  width: 129.998px;
-  height: 99.998px;
-  line-height: 42px;
-  -webkit-perspective: 230.002px;
-  perspective: 230.002px;
-}
-.btn-10 span {
-  background: rgb(0, 172, 238);
-  background: linear-gradient(
-    0deg,
-    rgba(0, 172, 238, 1) 0%,
-    rgba(2, 126, 251, 1) 100%
-  );
-  display: block;
-  position: absolute;
-  width: 129.998px;
-  height: 99.998px;
-  box-shadow: inset 2.002px 2.002px 2.002px 0px rgba(255, 255, 255, 0.5),
-    6.997px 6.997px 20.002px 0px rgba(0, 0, 0, 0.1),
-    3.998px 3.998px 5.003px 0px rgba(0, 0, 0, 0.1);
-  border-radius: 5.003px;
-  margin: 0;
-  text-align: center;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-}
-.btn-10 span:nth-child(1) {
-  box-shadow: -6.997px -6.997px 20.002px 0px #fff9,
-    -3.998px -3.998px 5.003px 0px #fff9, 6.997px 6.997px 20.002px 0px #0002,
-    3.998px 3.998px 5.003px 0px #0001;
-  -webkit-transform: rotateX(90deg);
-  -moz-transform: rotateX(90deg);
-  transform: rotateX(90deg);
-  -webkit-transform-origin: 50% 50% -20.002px;
-  -moz-transform-origin: 50% 50% -20.002px;
-  transform-origin: 50% 50% -20.002px;
-}
-.btn-10 span:nth-child(2) {
-  -webkit-transform: rotateX(0deg);
-  -moz-transform: rotateX(0deg);
-  transform: rotateX(0deg);
-  -webkit-transform-origin: 50% 50% -20.002px;
-  -moz-transform-origin: 50% 50% -20.002px;
-  transform-origin: 50% 50% -20.002px;
-}
-.btn-10:hover span:nth-child(1) {
-  box-shadow: inset 2.002px 2.002px 2.002px 0px rgba(255, 255, 255, 0.5),
-    6.997px 6.997px 20.002px 0px rgba(0, 0, 0, 0.1),
-    3.998px 3.998px 5.003px 0px rgba(0, 0, 0, 0.1);
-  -webkit-transform: rotateX(0deg);
-  -moz-transform: rotateX(0deg);
-  transform: rotateX(0deg);
-}
-.btn-10:hover span:nth-child(2) {
-  box-shadow: inset 2.002px 2.002px 2.002px 0px rgba(255, 255, 255, 0.5),
-    6.997px 6.997px 20.002px 0px rgba(0, 0, 0, 0.1),
-    3.998px 3.998px 5.003px 0px rgba(0, 0, 0, 0.1);
-  color: transparent;
-  -webkit-transform: rotateX(-90deg);
-  -moz-transform: rotateX(-90deg);
-  transform: rotateX(-90deg);
-}
-// ----------------------- Choose Nft Btn ------------------------- //
-
-.custom-btn {
-  width: 129.998px;
-  height: 39.998px;
-  color: #fff;
-  border-radius: 5.003px;
-  padding: 9.998px 24.997px;
-  font-family: "Lato", sans-serif;
-  font-weight: 500;
-  background: transparent;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  position: relative;
-  display: inline-block;
-  box-shadow: inset 2.002px 2.002px 2.002px 0px rgba(255, 255, 255, 0.5),
-    6.997px 6.997px 20.002px 0px rgba(0, 0, 0, 0.1),
-    3.998px 3.998px 5.003px 0px rgba(0, 0, 0, 0.1);
-  outline: none;
-}
-.btn-12 {
-  position: relative;
-  right: 20.002px;
-  bottom: 20.002px;
-  border: none;
-  box-shadow: none;
-  width: 129.998px;
-  height: 39.998px;
-  line-height: 42px;
-  -webkit-perspective: 230.002px;
-  perspective: 230.002px;
-}
-.btn-12 span {
-  background: rgb(0, 172, 238);
-  background: linear-gradient(
-    0deg,
-    rgba(0, 172, 238, 1) 0%,
-    rgba(2, 126, 251, 1) 100%
-  );
-  display: block;
-  position: absolute;
-  width: 129.998px;
-  height: 39.998px;
-  box-shadow: inset 2.002px 2.002px 2.002px 0px rgba(255, 255, 255, 0.5),
-    6.997px 6.997px 20.002px 0px rgba(0, 0, 0, 0.1),
-    3.998px 3.998px 5.003px 0px rgba(0, 0, 0, 0.1);
-  border-radius: 5.003px;
-  margin: 0;
-  text-align: center;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-}
-.btn-12 span:nth-child(1) {
-  box-shadow: -6.997px -6.997px 20.002px 0px #fff9,
-    -3.998px -3.998px 5.003px 0px #fff9, 6.997px 6.997px 20.002px 0px #0002,
-    3.998px 3.998px 5.003px 0px #0001;
-  -webkit-transform: rotateX(90deg);
-  -moz-transform: rotateX(90deg);
-  transform: rotateX(90deg);
-  -webkit-transform-origin: 50% 50% -20.002px;
-  -moz-transform-origin: 50% 50% -20.002px;
-  transform-origin: 50% 50% -20.002px;
-}
-.btn-12 span:nth-child(2) {
-  -webkit-transform: rotateX(0deg);
-  -moz-transform: rotateX(0deg);
-  transform: rotateX(0deg);
-  -webkit-transform-origin: 50% 50% -20.002px;
-  -moz-transform-origin: 50% 50% -20.002px;
-  transform-origin: 50% 50% -20.002px;
-}
-.btn-12:hover span:nth-child(1) {
-  box-shadow: inset 2.002px 2.002px 2.002px 0px rgba(255, 255, 255, 0.5),
-    6.997px 6.997px 20.002px 0px rgba(0, 0, 0, 0.1),
-    3.998px 3.998px 5.003px 0px rgba(0, 0, 0, 0.1);
-  -webkit-transform: rotateX(0deg);
-  -moz-transform: rotateX(0deg);
-  transform: rotateX(0deg);
-}
-.btn-12:hover span:nth-child(2) {
-  box-shadow: inset 2.002px 2.002px 2.002px 0px rgba(255, 255, 255, 0.5),
-    6.997px 6.997px 20.002px 0px rgba(0, 0, 0, 0.1),
-    3.998px 3.998px 5.003px 0px rgba(0, 0, 0, 0.1);
-  color: transparent;
-  -webkit-transform: rotateX(-90deg);
-  -moz-transform: rotateX(-90deg);
-  transform: rotateX(-90deg);
-}
-
-.rewardsClaimSprBtnSection button {
-  height: 50.002px;
-}
-
-.sprUnStakeBtnSection button {
-  height: 50.002px;
-}
-
-.depositSprStakeBtnSection {
-  display: flex;
-  justify-content: center;
-  padding-top: 11px;
-}
-
-.depositSprStakeBtnSection button {
-  height: 50.002px;
-}
-
-// ------------------ Rewards  ------------------ //
-.allTokenSprRewardsContainer {
-  // position: relative;
-  // left: 50%;
-  // top: 50%;
-  // transform: translate(-50%, 0%);
-  // width: 100vh;
-}
-
-.allRewardsSprCumulativeSection {
-  display: flex;
-  color: black;
-  justify-content: center;
-}
-
-.allRewardsSprCumulativeSection p {
-  font-size: 20.002px;
-  margin-right: 10.005px;
-}
-
-.allRefreshSprClaimIcon {
-  cursor: pointer;
-}
-
-.amountTokenSprRewardAccSection {
-  display: flex;
-  // position: relative;
-  // width: 100vh;
-  // margin-right: -99.998px;
-  justify-content: center;
-}
-.amountTokenRewardSection p {
-  font-size: 20.002px;
-}
-
-.amountTokenSprRewardAccSection P {
-  font-size: 20.002px;
-}
-
-.amountTokenRewardSprTxtSection {
-  display: flex;
-  justify-content: center;
-}
-
-.amountTokenRewardSprTxtSection p {
-  font-size: 20.002px;
-}
-
-.rewardsClaimSprBtnSection {
-  margin-top: 30px;
-  display: flex;
-  justify-content: center;
-}
-
-// ------------------- Reward Logo Section ---------------//
-.logoRewardContainer {
-  display: flex;
-  justify-content: flex-end;
-  // justify-content: right;
-  // margin-left: 40px;
-  margin-right: 39.998px;
-}
-
-.opIcon {
-  width: 30px;
-  height: 30px;
-  margin-right: 20.002px;
-  cursor: pointer;
-}
-
-.arrakisIcon {
-  width: 30px;
-  height: 30px;
-  margin-right: 20.002px;
-  cursor: pointer;
-}
-
-.hanIcon {
-  width: 30px;
-  height: 30px;
-  cursor: pointer;
-}
-
-// ----------------------- WITHDRAW SECTION ----------------------- //
-
-// -------------- UnStake INSUFFICIENT --------------- //
-
-.sprStakingCantChoiceContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding-top: 72px;
-  padding-bottom: 72px;
-}
-
-.sprStakingCantChoiceSection {
-  width: 150px;
-  height: 150px;
-  background: url("../assets/images/sheeprilogo.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  display: flex;
-  align-items: center;
-  // border: 3px solid black;
-  cursor: not-allowed;
-}
-
-.cantStakingSprBtn {
-  text-shadow: #24b5ee 0px 0px 1.5px, #24b5ee 0px 0px 1.5px,
-    #24b5ee 0px 0px 1.5px, #24b5ee 0px 0px 1.5px, #24b5ee 0px 0px 1.5px,
-    #24b5ee 0px 0px 1.5px;
-  color: #0a1126;
-  font-size: 20px;
-}
-
-// .sprUnStakingChoiceImgContainer {
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   flex-direction: column;
-// }
-
-.sprUnStakingChoiceImgSection {
-  width: 150px;
-  height: 150px;
-  // border: 3px solid black;
-}
-
-.sprBeforeSelectButton {
-  box-shadow: inset 0px 0.998px 0px 0px #97c4fe;
-  background: linear-gradient(to bottom, #3d94f6 5%, #1e62d0 100%);
-  background-color: #3d94f6;
-  border-radius: 6px;
-  border: 0.998px solid #337fed;
-  display: inline-block;
-  cursor: pointer;
-  color: #ffffff;
-  // height: 99.998px;
-  font-family: Arial;
-  font-size: 15px;
-  font-weight: bold;
-  padding: 57px 33px;
-  text-decoration: none;
-}
-
-.sprUnStakingComImgContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding-bottom: 6px;
-}
-
-.mySelectEndButton {
-  box-shadow: inset 0px 0.998px 0px 0px #97c4fe;
-  background: linear-gradient(to bottom, #3d94f6 5%, #1e62d0 100%);
-  background-color: #3d94f6;
-  border-radius: 6px;
-  border: 0.998px solid #337fed;
-  display: inline-block;
-  cursor: pointer;
-  color: #ffffff;
-  // height: 99.998px;
-  font-family: Arial;
-  font-size: 15px;
-  font-weight: bold;
-  padding: 9.998px 35.002px;
-  text-decoration: none;
-  text-shadow: 0px 0px 0px #1570cd;
-  margin-bottom: 15px;
-}
-
-.sprUnStakingComImgSection {
-  width: 150px;
-  height: 150px;
-  // border: 3px solid black;
-}
-
-.sprUnStakeComBtnSection {
-  margin-top: 14.002px;
-}
-
-.sprUnStakeBtnSection {
-  margin-top: 10px;
-}
-
-.unStakeCantTxt {
-  font-size: 35.002px;
-}
-
-// ------------------ Slider Section ---------------//
-.mainUnSlider {
-  width: 100%;
-  /* margin-right: 100px; */
-  // margin-left: 10%;
-}
-
-.sprUnSlider {
-  width: 150px;
-  height: 150px;
-  position: relative;
-}
-
-#sprUnStakingImgIdCardContainer {
-  // padding-left: 50px;
-  display: inline-block;
-  // width: 150px;
-  // height: 150px;
-}
-
-.sprUnStakingImgContainer {
-  // display: flex;
-  // width: 150px;
-  // flex-direction: column;
-  // justify-content: center;
-  // align-items: center;
-  // height: 200px;
-}
-
-.sprUnStakingImgCard {
-  width: 150px;
-  height: 150px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  // border: 3px solid black;
-}
-
-.modalTitleTxt p {
-  color: #0a1126;
-}
-
-.unStakingModalMainContainer p {
-  color: #0a1126;
-}
-
-/* ------------------- Check Box -------------------*/
-.imgUnCheckBox {
-  position: relative;
-  top: -40%;
-  right: -37%;
-  width: 10px;
-  height: 10px;
-}
-
-.sprUnStakingImgCard input {
-  zoom: 2;
-}
-
-/* ------------------- View Section -------------------*/
-.sprAllStakingArrowUpSection {
-  position: absolute;
-  top: 20%;
-  left: 50%;
-  color: #1e62d0;
-  cursor: pointer;
-}
-
-.sprStakingCantViewContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 320px;
-}
-
-.sprAllStakingArrowUpSection:hover {
-  opacity: 0.4;
-}
-
-.sprAllStakingArrowDownSection {
-  position: absolute;
-  left: 50%;
-  top: 90%;
-  color: #1e62d0;
-  cursor: pointer;
-}
-
-.sprAllStakingArrowDownSection:hover {
-  opacity: 0.4;
-}
-
-.sprAllStakingContainer {
-  width: 100%;
-  height: 100%;
-  position: relative;
-}
-
-.sprAllStakingImgSection {
-  position: relative;
-  background-color: blue;
-  width: 100%;
-  height: 400px;
-  cursor: pointer;
-}
-
-.allStakingInfoImgContainer {
-  font-family: sans-serif;
-  text-align: center;
-  position: relative;
-  margin-top: 50px;
-  margin-bottom: 30px;
-}
-
-/* Element scroll */
-.scrollBox {
-  position: relative;
-  margin-left: 50px;
-  width: 100%;
-  height: 280px;
-  color: black;
-  overflow: hidden;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-
-.scrollBox .scrollBoxInner {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  overflow-y: auto;
-}
-
-.scrollBox .scrollBoxInner::-webkit-scrollbar {
-  display: none;
-}
-
-.allStakingInfoSection {
-  display: inline-block;
-
-  float: left;
-}
-
-.allStakingInfoImgSection {
-  width: 150px;
-  height: 150px;
-  margin-left: 10px;
-  margin-right: 10px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  transition: all 0.2s linear;
-  cursor: pointer;
-  // border: 3px solid black;
-}
-
-.allStakingInfoImgSection:hover {
-  transform: scale(1.1);
-}
-.allStakingInfoNameSection p {
-  font-family: "SCDream8";
-  font-size: 15px;
-}
-
-/* ------------------- footer Logo Section -------------------*/
-
-.logoContainer {
-  display: flex;
-  justify-content: right;
-  margin-right: 39.998px;
-}
-
-.opIcon {
-  width: 30px;
-  height: 30px;
-  margin-right: 20.002px;
-  cursor: pointer;
-}
-
-.arrakisIcon {
-  width: 30px;
-  height: 30px;
-  margin-right: 20.002px;
-  cursor: pointer;
-}
-
-.hanIcon {
-  width: 30px;
-  height: 30px;
-  cursor: pointer;
-}
-
-.material-icons {
-  font-family: "Material Icons";
-  font-weight: normal;
-  font-style: normal;
-  font-size: 24px; /* Preferred icon size */
-  display: inline-block;
-  line-height: 1;
-  text-transform: none;
-  letter-spacing: normal;
-  word-wrap: normal;
-  white-space: nowrap;
-  color: white;
-  direction: ltr;
-
-  /* Support for all WebKit browsers. */
-  -webkit-font-smoothing: antialiased;
-  /* Support for Safari and Chrome. */
-  text-rendering: optimizeLegibility;
-
-  /* Support for Firefox. */
-  -moz-osx-font-smoothing: grayscale;
-
-  /* Support for IE. */
-  font-feature-settings: "liga";
-}
-
-.material-icons:hover {
-  opacity: 0.4;
-}
-
-.tooltip-container {
-  font-family: sans-serif;
-  margin-left: 9.998px;
-  position: relative;
-  font-size: 12.998px;
-  &:hover {
-    .tooltip-content {
-      visibility: visible;
-      font-family: sans-serif;
-      opacity: 1;
-      transition: 0.25s all ease;
-      transition-delay: 0s;
-      top: 0px;
-      // right: 200.003px;
-      width: 300px;
-      height: 100px;
-      font-size: 12.998px;
-    }
-  }
-}
-.tooltip-content {
-  visibility: hidden;
-  font-family: sans-serif;
-  opacity: 0;
-  position: absolute;
-  background: #646fd4;
-  display: flex;
-  flex-direction: column;
-  left: 10%;
-  top: -129.998px;
-  // right: 99.998px;
-  // align-items: center;
-  justify-content: center;
-  padding: 0 15px;
-  margin: 15.998px;
-  font-size: 15px;
-  width: 249.997px;
-  transition: 0.25s all ease;
-  transition-delay: 0.25s;
-  z-index: 2;
-  font-size: 12.998px;
-
-  color: #ffffff;
-  .align-right {
-    text-align: left;
-    a {
-      font-size: 12.998px;
-
-      color: yellow;
-      text-decoration: none;
-      &:hover {
-        text-decoration: underline;
-      }
-    }
-  }
-  &:after {
-  }
-}
-
-.test1 {
-  position: unset;
-  .react-multiple-carousel__arrow {
-    position: absolute;
-  }
-
-  .react-multiple-carousel__arrow--left {
-    left: calc(0% + 1px);
-  }
-
-  .react-multiple-carousel__arrow--right {
-    right: calc(1% + 1px);
-  }
-}
-
-.react-multi-carousel-list {
-  justify-content: center;
-  display: flex;
-}
-
-#arrow {
-  position: absolute;
-  top: 35%;
-  cursor: pointer;
+    background-image: url(../assets/images/bg1.jpg);
+    background-repeat: no-repeat;
+    // background-color: lightyellow;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    font-family: "SCDream8";
+    // background-attachment: fixed;
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 #sliderLeftBtn {
-  position: absolute;
-  top: 40%;
-  cursor: pointer;
-  left: 0;
-  color: #1e62d0;
+    position: absolute;
+    top: 40%;
+    cursor: pointer;
+    left: 0;
+    color: #1e62d0;
 }
 
 #sliderRightBtn:hover {
-  opacity: 0.4;
+    opacity: 0.4;
 }
 
 #sliderRightBtn {
-  position: absolute;
-  top: 40%;
-  cursor: pointer;
-  right: 0;
-  color: #1e62d0;
+    position: absolute;
+    top: 40%;
+    cursor: pointer;
+    right: 0;
+    color: #1e62d0;
 }
 
 #sliderLeftBtn:hover {
-  opacity: 0.4;
+    opacity: 0.4;
 }

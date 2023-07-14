@@ -1,0 +1,24 @@
+.airDrop-SignIn-Footer {
+    position: absolute;
+    bottom: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-item-align: center;
+    align-self: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    padding: 50px 0;
+    color: #39a2db;
+}
+
+.airDrop-SignIn-Footer span {
+    cursor: pointer;
+}
+
+.airDrop-SignIn-Footer a {
+    margin-right: 10px;
+    padding-left: 10px;
+    border-right: 1px solid #cccccc;
+}

@@ -1,0 +1,73 @@
+.airDropSignEmailContinaer {
+    z-index: 50;
+    position: absolute;
+    display: flex;
+    top: 18%;
+    right: 11%;
+}
+
+.airDropSignIn-Email-Section {
+    width: 100%;
+    height: 30px;
+    border-radius: 0.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #39a2db;
+    margin-right: 10px;
+}
+
+.airDropSignIn-Email-Section a {
+    color: black;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.airDropSignIn-Email-Section a:hover {
+    color: #24b5ee;
+}
+
+.airDropSignInUpContinaer {
+    z-index: 50;
+    position: absolute;
+    display: flex;
+    top: 18%;
+    right: 11%;
+}
+
+.airDropSignIn-BtnSection {
+    width: 80px;
+    height: 30px;
+    border-radius: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: lightgray;
+    margin-right: 10px;
+}
+
+.airDropSignIn-BtnSection a {
+    color: black;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.airDropSignIn-BtnSection a:hover {
+    color: #24b5ee;
+}
+
+.airDropSignUp-BtnSection {
+    width: 80px;
+    height: 30px;
+    border-radius: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #39a2db;
+}
+
+.airDropSignUp-BtnSection a {
+    color: black;
+    font-size: 15px;
+    text-decoration: none;
+}

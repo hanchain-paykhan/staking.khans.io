@@ -1,0 +1,77 @@
+.musikhan-SignIn-ModalTopTitleSection {
+  font-size: 24px;
+  justify-content: space-between;
+  display: flex;
+  padding: 32px 36px 0;
+  padding-bottom: 32px;
+  color: black;
+}
+
+.musikhan-SignIn-ModalTokenInfoContainer {
+  padding-left: 8px;
+  padding-right: 8px;
+  border-top: 1px solid #dee2e6;
+}
+
+// Personal Section
+.airDrop-SignUp-Agree-Personal-Section {
+  display: flex;
+  align-items: center;
+}
+
+.airDrop-SignUp-Agree-Personal-CheckBox {
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  background-color: #fff;
+  margin-right: 10px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.close {
+  cursor: pointer;
+}
+
+.close:after {
+  //   display: inline-block;
+  content: "\00d7";
+  font-size: 30px;
+}
+
+// Scroll Box
+
+/* Element scroll */
+.airDrop-SignIn-Modal-Agree-Personal-scrollBox {
+  position: relative;
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 95%;
+  height: 440px;
+  color: black;
+  border: 3px solid #fff;
+  overflow: hidden;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.airDrop-SignIn-Modal-Agree-Personal-scrollBox .airDrop-SignIn-Modal-Agree-Personal-scrollBoxInner {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.airDrop-SignIn-Modal-Agree-Personal-scrollBox .airDrop-SignIn-Modal-Agree-Personal-scrollBoxInner::-webkit-scrollbar {
+  display: none;
+}
+
+.airDrop-SignIn-Modal-Agree-Personal-scrollBoxInner h1 {
+  font-size: 18px;
+}
+
+.airDrop-SignIn-Modal-Personal-Content h2 {
+  font-size: 16px;
+}
+
+.airDrop-SignIn-Modal-Personal-Content b {
+  font-size: 14px;
+}

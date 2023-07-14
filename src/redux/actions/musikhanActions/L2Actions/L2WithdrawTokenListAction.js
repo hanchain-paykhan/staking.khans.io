@@ -1,28 +1,22 @@
-import { MusikhanStakingContract } from "../../../../config/MusikhanConfig";
-// import { MusikhanStakingContract } from "../../../../config/MusikhanConfigTest";
+import axios from "axios";
 
 function L2WithdrawTokenListAct(account) {
-    return async (dispatch) => {
-        try {
-            const getMyStakingTokenListApi = await MusikhanStakingContract.methods.getStakedTokenList(account).call();
+  return async (dispatch) => {
+    try {
+      const getMyStakingTokenListToBack = await axios.post(`https://back.khans.io/block/l2WithdrawTokenList`, {
+        account,
+      });
 
-            const withdrawTokenArray = [];
-
-            for (let i = 0; i < getMyStakingTokenListApi.length; i++) {
-                const getStaker = await MusikhanStakingContract.methods.getStaker(getMyStakingTokenListApi[i], account).call();
-                withdrawTokenArray.push(getStaker);
-            }
-
-            dispatch({
-                type: "L2_WITHDRAW_TOKEN_LIST",
-                payload: {
-                    withdrawTokenList: withdrawTokenArray,
-                },
-            });
-        } catch (error) {
-            console.error(error);
-        }
-    };
+      dispatch({
+        type: "L2_WITHDRAW_TOKEN_LIST",
+        payload: {
+          withdrawTokenList: getMyStakingTokenListToBack.data,
+        },
+      });
+    } catch (error) {
+      console.error(error);
+    }
+  };
 }
 
 export const L2WithdrawTokenListAction = { L2WithdrawTokenListAct };

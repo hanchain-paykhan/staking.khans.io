@@ -1,0 +1,92 @@
+// ------------------ Optimsim Bridge Section --------------------- //
+.musiStakingL2BridgeContainer {
+    width: 100%;
+    display: flex;
+    height: 300px;
+    justify-content: center;
+    align-items: center;
+}
+
+.musiStakingL2BridgeSection {
+    width: 600px;
+    padding: 16px 20px;
+    border-radius: 2rem;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+.musiStakingL2BridgeTokenTitleSection {
+    display: flex;
+    font-size: 20px;
+    flex-direction: column;
+}
+
+.musiStakingL2BridgeTokenTitleSection a {
+    margin-bottom: 30px;
+}
+
+// L2 Bridge CAN SWITCH BUTTON SECTION
+button.musi-L2Bridge-learn-more {
+    margin-top: 13px;
+    width: 460px;
+    font-weight: 600;
+    font-family: "SCDream8";
+    color: black;
+    padding: 1.25em 2em;
+    border: 0.104vw solid rgba(0, 0, 0, 0.3);
+    border-radius: 0.75em;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    transition: background 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
+    transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), background 150ms cubic-bezier(0, 0, 0.58, 1);
+    transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), background 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
+}
+button.musi-L2Bridge-learn-more::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 1;
+    border-radius: inherit;
+    -webkit-transform: translate3d(0, 0.75em, -1em);
+    transform: translate3d(0, 0.75em, -1em);
+    transition: box-shadow 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
+    transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), box-shadow 150ms cubic-bezier(0, 0, 0.58, 1);
+    transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), box-shadow 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
+}
+button.musi-L2Bridge-learn-more:hover {
+    background: lightgray;
+    -webkit-transform: translate(0, 0.25em);
+    transform: translate(0, 0.25em);
+}
+button.musi-L2Bridge-learn-more:hover::before {
+    -webkit-transform: translate3d(0, 0.5em, -1em);
+    transform: translate3d(0, 0.5em, -1em);
+}
+button.musi-L2Bridge-learn-more:active {
+    background: rgba(255, 255, 255, 0.3);
+    -webkit-transform: translate(0em, 0.75em);
+    transform: translate(0em, 0.75em);
+}
+button.musi-L2Bridge-learn-more:active::before {
+    -webkit-transform: translate3d(0, 0, -1em);
+    transform: translate3d(0, 0, -1em);
+}
+
+// L2 Bridge CANT SWITCH BUTTON SECTION
+.cant-Musi-L2Bridge-learn-more {
+    margin-top: 13px;
+    font-weight: 600;
+    width: 460px;
+    height: 50.002px;
+    font-size: 15px;
+    font-family: "SCDream8";
+    color: black;
+    cursor: not-allowed;
+    border: 0.104vw solid rgba(0, 0, 0, 0.3);
+    border-radius: 0.75em;
+}

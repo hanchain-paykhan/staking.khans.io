@@ -1,0 +1,497 @@
+// ----------------------- BRIDGE SECTION ----------------------- //
+// -- Ethereum Bridge Section -- //
+
+.musiStakingBridgeContainer {
+    width: 100%;
+    display: flex;
+    height: 305px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.musiStakingBridgeSection {
+    width: 600px;
+    margin-top: 20px;
+    padding: 16px 20px;
+    border-radius: 2rem;
+    margin-bottom: 10px;
+}
+.musiStakingBirdgeTitleSection {
+    display: flex;
+    align-items: center;
+}
+
+.musiStakingTitleTxt {
+    font-size: 16px;
+}
+
+.musiStakingMainTxt {
+    font-size: 16px;
+}
+
+.musiStakingMainNetImg {
+    width: 30px;
+    height: 30px;
+}
+
+.musiStakingBridgeAmountSection {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin: 12px 0;
+    border-radius: 12px;
+}
+
+.musiStakingBridgeAmountSection input {
+    background-color: #fff;
+    height: 56px;
+    border-radius: 12px 0 0 12px;
+    border: none;
+    min-width: 150px;
+    width: 400px;
+    font-size: 20px;
+    font-weight: 600px;
+    color: black;
+    padding: 0 16px;
+}
+
+.musiStakingBridgeAmountSection input::-webkit-outer-spin-button,
+.musiStakingBridgeAmountSection input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.musiStakingBridgePickerSection {
+    align-items: center;
+    background-color: #39a2db;
+    border-radius: 0 12px 12px 0;
+    display: flex;
+    font-size: 20px;
+    height: 56px;
+    justify-content: center;
+    padding: 0 16px;
+}
+
+.musiStakingBridgePicker_SelectBtn {
+    align-items: center;
+    border: none;
+    background-color: initial;
+    border-radius: 0 12px 12px 0;
+    cursor: pointer;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    width: 100%;
+}
+
+.musiStakingBridgePicker_SelectBtn img {
+    height: 30px;
+    margin-right: 12px;
+    width: 30px;
+}
+.musiStakingBridgePicker_SelectBtn span {
+    font-size: 18px;
+    margin-right: 8px;
+}
+
+.musiStakingBridgePicker_2SelectBtn {
+    align-items: center;
+    border: none;
+    background-color: initial;
+    border-radius: 0 12px 12px 0;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    width: 100%;
+}
+
+.musiStakingBridgePicker_2SelectBtn img {
+    height: 30px;
+    margin-right: 12px;
+    width: 30px;
+}
+.musiStakingBridgePicker_2SelectBtn span {
+    font-size: 18px;
+    margin-right: 8px;
+}
+
+.musiPickerArrowDown {
+    font-size: 12px;
+    margin-top: 2px;
+}
+
+.musiStakingBirdgeOpTitleSection {
+    display: flex;
+    align-items: center;
+}
+
+.musiStakingOpTitleTxt {
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.musiStakingOpTxt {
+    font-size: 16px;
+}
+
+.musiStakingOpImg {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.musiStakingEthBottomLineSection {
+    position: absolute;
+    bottom: 13%;
+    width: 60%;
+}
+
+.ethBottomHr {
+    border: 0.998px solid #39a2db;
+}
+// L1 Bridge CAN SECLECT TOKEN BUTTON SECTION
+.can-Musi-mainEth-learn-more {
+    margin-top: 13px;
+    font-weight: 600;
+    width: 460px;
+    height: 50.002px;
+    font-size: 15px;
+    font-family: "SCDream8";
+    color: black;
+    border: 0.104vw solid rgba(0, 0, 0, 0.3);
+    border-radius: 0.75em;
+}
+
+// L1 Bridge CAN SWITCH BUTTON SECTION
+button.musi-mainEth-learn-more {
+    margin-top: 13px;
+    width: 460px;
+    font-weight: 600;
+    font-family: "SCDream8";
+    color: black;
+    padding: 1.25em 2em;
+    border: 0.104vw solid rgba(0, 0, 0, 0.3);
+    border-radius: 0.75em;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    transition: background 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
+    transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), background 150ms cubic-bezier(0, 0, 0.58, 1);
+    transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), background 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
+}
+button.musi-mainEth-learn-more::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 1;
+    border-radius: inherit;
+    -webkit-transform: translate3d(0, 0.75em, -1em);
+    transform: translate3d(0, 0.75em, -1em);
+    transition: box-shadow 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
+    transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), box-shadow 150ms cubic-bezier(0, 0, 0.58, 1);
+    transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), box-shadow 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
+}
+button.musi-mainEth-learn-more:hover {
+    background: lightgray;
+    -webkit-transform: translate(0, 0.25em);
+    transform: translate(0, 0.25em);
+}
+button.musi-mainEth-learn-more:hover::before {
+    -webkit-transform: translate3d(0, 0.5em, -1em);
+    transform: translate3d(0, 0.5em, -1em);
+}
+button.musi-mainEth-learn-more:active {
+    background: rgba(255, 255, 255, 0.3);
+    -webkit-transform: translate(0em, 0.75em);
+    transform: translate(0em, 0.75em);
+}
+button.musi-mainEth-learn-more:active::before {
+    -webkit-transform: translate3d(0, 0, -1em);
+    transform: translate3d(0, 0, -1em);
+}
+
+// L1 Bridge CANT MAINNET BUTTON SECTION
+.cant-Musi-mainEth-learn-more {
+    margin-top: 13px;
+    font-weight: 600;
+    width: 460px;
+    height: 50.002px;
+    font-size: 15px;
+    font-family: "SCDream8";
+    color: black;
+    cursor: not-allowed;
+    border: 0.104vw solid rgba(0, 0, 0, 0.3);
+    border-radius: 0.75em;
+}
+
+// ----------------------- DEPOSIT SECTION ----------------------- //
+// ------------------ Optimsim DEPOSIT Section --------------------- //
+.musiStakingL2DepositContainer {
+    width: 100%;
+    display: flex;
+    height: 300px;
+    justify-content: center;
+    align-items: center;
+}
+
+.musiStakingL2DepositSection {
+    width: 600px;
+    padding: 16px 20px;
+    border-radius: 2rem;
+    margin-bottom: 10px;
+}
+.musiStakingL2DepositTitleSection {
+    display: flex;
+    align-items: center;
+}
+
+.musiStakingL2DepositTitleTxt {
+    font-size: 16px;
+}
+
+.musiStakingL2DepositTxt {
+    font-size: 16px;
+}
+
+.musiStakingL2DepositImg {
+    width: 30px;
+    height: 30px;
+}
+
+.amountMusiMaxBtn {
+    font-family: "SCDream8";
+    background-color: transparent;
+    margin-left: 9.998px;
+    width: 60px;
+    height: 54.998px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    border-radius: 1.5em;
+    cursor: pointer;
+    font-size: 20px;
+    text-shadow: #24b5ee 0px 0px 1px, #24b5ee 0px 0px 1px, #24b5ee 0px 0px 1px, #24b5ee 0px 0px 1px, #24b5ee 0px 0px 1px, #24b5ee 0px 0px 1px;
+    color: #0f1b40;
+}
+
+.amountCantMusiMaxBtn {
+    font-family: "SCDream8";
+    background-color: transparent;
+    margin-left: 9.998px;
+    width: 60px;
+    height: 54.998px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    border-radius: 1.5em;
+    font-size: 20px;
+    text-shadow: #24b5ee 0px 0px 1px, #24b5ee 0px 0px 1px, #24b5ee 0px 0px 1px, #24b5ee 0px 0px 1px, #24b5ee 0px 0px 1px, #24b5ee 0px 0px 1px;
+    color: #0f1b40;
+}
+
+.musiStakingL2DepositAmountSection {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin: 12px 0;
+    border-radius: 12px;
+    margin-bottom: 80px;
+}
+
+.musiStakingL2DepositAmountTitleSection {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 21%;
+    left: 22%;
+}
+
+.musiStakingL2DepositAmountTitleSection p {
+    font-size: 18px;
+}
+
+.musiStakingL2DepositAmountSection input {
+    height: 56px;
+    border-radius: 12px 0 0 12px;
+    min-width: 150px;
+    border: none;
+    width: 400px;
+    font-size: 20px;
+    font-weight: 600px;
+    color: black;
+    padding: 0 16px;
+}
+
+.musiStakingL2DepositAmountSection input::-webkit-outer-spin-button,
+.musiStakingL2DepositAmountSection input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.musiStakingL2DepositPickerSection {
+    background-color: #39a2db;
+    border-radius: 0 12px 12px 0;
+    display: flex;
+    font-size: 20px;
+    height: 56px;
+    align-items: center;
+    justify-content: center;
+    padding: 0 16px;
+}
+
+.musiStakingL2DepositPicker_SelectBtn {
+    align-items: center;
+    border: none;
+    background-color: initial;
+    border-radius: 0 12px 12px 0;
+    cursor: pointer;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    font-family: "SCDream8";
+}
+
+.musiStakingL2DepositPicker_SelectBtn img {
+    height: 30px;
+    margin-right: 12px;
+    width: 30px;
+}
+.musiStakingL2DepositPicker_SelectBtn span {
+    font-size: 18px;
+    margin-right: 8px;
+}
+
+.musiStakingCantL2DepositPicker_SelectBtn {
+    align-items: center;
+    border: none;
+    background-color: initial;
+    border-radius: 0 12px 12px 0;
+    cursor: pointer;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    font-family: "SCDream8";
+}
+
+.musiStakingCantL2DepositPicker_SelectBtn img {
+    height: 30px;
+    margin-right: 12px;
+    width: 30px;
+}
+.musiStakingCantL2DepositPicker_SelectBtn span {
+    font-size: 18px;
+    margin-right: 8px;
+}
+
+.musiStakingMaxAmountBtnSection {
+    position: absolute;
+}
+.musiStakingL2DepositArrowSection {
+    font-size: 12px;
+    margin-top: 2px;
+}
+
+.musiStakingL2DepositOpTitleSection {
+    display: flex;
+    align-items: center;
+}
+
+.musiStakingL2DepositTitleTxt {
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.musiStakingL2DepositTxt {
+    font-size: 16px;
+}
+
+.musiStakingL2DepositImg {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+// L2 DEPOSIT Select Token ENTER AMOUNT BUTTON
+.musi-L2Deposit-Enter-learn-more {
+    font-weight: 600;
+    width: 460px;
+    height: 50.002px;
+    font-family: "SCDream8";
+    color: black;
+    border: 0.104vw solid rgba(0, 0, 0, 0.3);
+    border-radius: 0.75em;
+}
+
+// L2 DEPOSIT CANT BUTTON
+button.musi-L2Deposit-learn-more {
+    margin-top: 13px;
+    width: 460px;
+    font-weight: 600;
+    font-family: "SCDream8";
+    color: black;
+    padding: 1.25em 2em;
+    border: 0.104vw solid rgba(0, 0, 0, 0.3);
+    border-radius: 0.75em;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    transition: background 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
+    transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), background 150ms cubic-bezier(0, 0, 0.58, 1);
+    transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), background 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
+}
+button.musi-L2Deposit-learn-more::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 1;
+    border-radius: inherit;
+    -webkit-transform: translate3d(0, 0.75em, -1em);
+    transform: translate3d(0, 0.75em, -1em);
+    transition: box-shadow 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
+    transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), box-shadow 150ms cubic-bezier(0, 0, 0.58, 1);
+    transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), box-shadow 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
+}
+button.musi-L2Deposit-learn-more:hover {
+    background: lightgray;
+    -webkit-transform: translate(0, 0.25em);
+    transform: translate(0, 0.25em);
+}
+button.musi-L2Deposit-learn-more:hover::before {
+    -webkit-transform: translate3d(0, 0.5em, -1em);
+    transform: translate3d(0, 0.5em, -1em);
+}
+button.musi-L2Deposit-learn-more:active {
+    background: rgba(255, 255, 255, 0.3);
+    -webkit-transform: translate(0em, 0.75em);
+    transform: translate(0em, 0.75em);
+}
+button.musi-L2Deposit-learn-more:active::before {
+    -webkit-transform: translate3d(0, 0, -1em);
+    transform: translate3d(0, 0, -1em);
+}
+
+// L2 DEPOSIT CANT BUTTON
+.cant-Musi-L2Deposit-learn-more {
+    margin-top: 13px;
+    font-weight: 600;
+    width: 580px;
+    height: 50.002px;
+    font-size: 15px;
+    font-family: "SCDream8";
+    color: black;
+    cursor: not-allowed;
+    border: 0.104vw solid rgba(0, 0, 0, 0.3);
+    border-radius: 0.75em;
+}

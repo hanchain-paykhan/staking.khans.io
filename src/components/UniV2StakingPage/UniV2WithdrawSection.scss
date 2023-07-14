@@ -1,0 +1,243 @@
+// ----------------------- WITHDRAW SECTION ----------------------- //
+.uniV2-Staking-Withdraw-Quaota-Section {
+    position: absolute;
+    top: -10%;
+    left: 2%;
+    text-shadow: #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px;
+    color: #72cef2;
+    font-size: 16px;
+}
+
+.uniV2-Staking-Withdraw-StakeAmount-Section {
+    position: absolute;
+    top: -3%;
+    left: 2%;
+    text-shadow: #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px;
+    color: #72cef2;
+    font-size: 16px;
+}
+
+.uniV2-Staking-Withdraw-APR-Container {
+    position: absolute;
+    color: #72cef2;
+    left: 50%;
+    top: -30%;
+    transform: translate(-50%, -50%);
+}
+
+.uniV2-Staking-Withdraw-APR-Title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-shadow: #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px;
+}
+
+.uniV2-Staking-Withdraw-APR-Title a {
+    font-size: 30px;
+}
+
+.uniV2-Staking-Withdraw-APR-Info {
+    display: flex;
+    align-items: center;
+    padding-left: 5px;
+    justify-content: center;
+    text-shadow: #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px;
+}
+
+.uniV2-Staking-Withdraw-APR-Info a {
+    font-size: 24.997px;
+}
+
+.uniV2-Staking-Withdraw-AmountSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 82px;
+    margin-bottom: 82px;
+    color: black;
+}
+
+.uniV2-Staking-Withdraw-AmountSection input {
+    font-family: "SCDream8";
+    width: 220.003px;
+    height: 50.002px;
+    background-color: rgba(255, 255, 255, 0.3);
+    font-size: 15px;
+    text-align: center;
+    border-radius: 1.5rem;
+    padding-left: 20.002px;
+    padding-right: 20.002px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+}
+
+.uniV2-Staking-Withdraw-AmountSection input::-webkit-outer-spin-button,
+.uniV2-Staking-Withdraw-AmountSection input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.uniV2-Staking-Withdraw-AmountSection input:focus {
+    outline: none;
+}
+
+.uniV2-Staking-Withdraw-AmountSection input::placeholder {
+    text-align: center;
+    color: black;
+    opacity: 0.5;
+}
+.uniV2-Staking-Withdraw-AmountSection p {
+    font-size: 20.002px;
+    color: black;
+    margin-left: 24.997px;
+    margin-right: 15px;
+}
+
+.uniV2-Staking-Withdraw-AmountMaxBtn {
+    font-family: "SCDream8";
+    background-color: transparent;
+    margin-left: 9.998px;
+    width: 60px;
+    height: 54.998px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    border-radius: 1.5em;
+    cursor: pointer;
+    font-size: 20px;
+    text-shadow: #24b5ee 0px 0px 1px, #24b5ee 0px 0px 1px, #24b5ee 0px 0px 1px, #24b5ee 0px 0px 1px, #24b5ee 0px 0px 1px, #24b5ee 0px 0px 1px;
+    color: #0f1b40;
+}
+
+.uniV2-Staking-WithDraw-ReFreshIcon {
+    cursor: pointer;
+}
+
+.uniV2-Staking-WithDraw-CantReFreshIcon {
+    cursor: not-allowed;
+}
+.uniV2-Staking-WithDraw-BtnContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 2px;
+}
+
+.uniV2-Staking-WithDraw-BtnContainer button {
+    height: 50.002px;
+}
+
+.unStakeCantBtnSection {
+    margin-top: 61px;
+}
+
+.unStakeCantTxt {
+    font-size: 35px;
+}
+
+.uniV2-Staking-Withdraw-SelectBtn {
+    font-weight: 600;
+    width: 300px;
+    font-family: "SCDream8";
+    color: black;
+    border: 0.104vw solid rgba(0, 0, 0, 0.3);
+    border-radius: 0.75em;
+    cursor: not-allowed;
+}
+
+button.uniV2-Staking-Withdraw-CanBtn {
+    width: 300px;
+    font-weight: 600;
+    font-family: "SCDream8";
+    color: black;
+    text-transform: uppercase;
+    padding: 1.25em 2em;
+    border: 0.104vw solid rgba(0, 0, 0, 0.3);
+    border-radius: 0.75em;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    transition: background 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
+    transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), background 150ms cubic-bezier(0, 0, 0.58, 1);
+    transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), background 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
+}
+button.uniV2-Staking-Withdraw-CanBtn::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 1;
+    border-radius: inherit;
+    -webkit-transform: translate3d(0, 0.75em, -1em);
+    transform: translate3d(0, 0.75em, -1em);
+    transition: box-shadow 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
+    transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), box-shadow 150ms cubic-bezier(0, 0, 0.58, 1);
+    transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), box-shadow 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
+}
+button.uniV2-Staking-Withdraw-CanBtn:hover {
+    background: lightgray;
+    -webkit-transform: translate(0, 0.25em);
+    transform: translate(0, 0.25em);
+}
+button.uniV2-Staking-Withdraw-CanBtn:hover::before {
+    -webkit-transform: translate3d(0, 0.5em, -1em);
+    transform: translate3d(0, 0.5em, -1em);
+}
+button.uniV2-Staking-Withdraw-CanBtn:active {
+    background: rgba(255, 255, 255, 0.3);
+    -webkit-transform: translate(0em, 0.75em);
+    transform: translate(0em, 0.75em);
+}
+button.uniV2-Staking-Withdraw-CanBtn:active::before {
+    -webkit-transform: translate3d(0, 0, -1em);
+    transform: translate3d(0, 0, -1em);
+}
+
+// Time Section
+.uniV2-Staking-WithDraw-TimeContainer {
+    display: flex;
+    font-size: 14px;
+    flex-direction: column;
+    padding-top: 27px;
+}
+
+.uniV2-Staking-WithDraw-TimeTitle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.uniV2-Staking-WithDraw-TimeSection {
+    font-size: 14px;
+}
+.uniV2-Staking-WithDraw-TimeSection a {
+    color: #47fac2;
+}
+
+.uniV2-Staking-DayDate {
+    margin-right: 10px;
+}
+
+.uniV2-Staking-HoursDate {
+    margin-right: 10px;
+}
+
+.uniV2-Staking-MinDate {
+    margin-right: 10px;
+}
+.uniV2-Staking-SecDate {
+    margin-right: 10px;
+}
+
+.uniV2-Staking-WithDraw-ReFreshIcon {
+    cursor: pointer;
+}
+
+.uniV2-Staking-WithDraw-CantReFreshIcon {
+    cursor: not-allowed;
+}

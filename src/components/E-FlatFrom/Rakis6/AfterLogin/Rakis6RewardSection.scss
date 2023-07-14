@@ -1,0 +1,171 @@
+// ----------------------- REWARDS SECTION ----------------------- //
+.rakis6-AirDrop-Reward-Container {
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, 0%);
+}
+
+.rakis6-AirDrop-Reward-Quaota-Section {
+    position: absolute;
+    top: -3%;
+    left: 2%;
+    text-shadow: #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px;
+    color: #72cef2;
+    font-size: 16px;
+}
+
+.rakis6-AirDrop-Reward-StakeAmount-Section {
+    position: absolute;
+    top: -9%;
+    left: 2%;
+    text-shadow: #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px;
+    color: #72cef2;
+    font-size: 16px;
+}
+
+.rakis6-AirDrop-Reward-APR-Container {
+    position: absolute;
+    color: #72cef2;
+    left: 50%;
+    top: -30%;
+    transform: translate(-50%, -50%);
+}
+
+.rakis6-AirDrop-Reward-APR-Title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-shadow: #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px;
+}
+
+.rakis6-AirDrop-Reward-APR-Title a {
+    font-size: 30px;
+}
+
+.rakis6-AirDrop-Reward-APR-Info {
+    display: flex;
+    align-items: center;
+    padding-left: 5px;
+    justify-content: center;
+    text-shadow: #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px;
+}
+
+.rakis6-AirDrop-Reward-APR-Info a {
+    font-size: 24.997px;
+}
+
+.rakis6-AirDrop-Reward-EstSection {
+    display: flex;
+    width: 100%;
+    position: relative;
+    justify-content: center;
+    color: black;
+    padding-left: 1.3%;
+    margin-top: 13px;
+}
+
+.rakis6-AirDrop-Reward-EstSection p {
+    font-size: 20.002px;
+    margin-right: 10.002px;
+}
+
+.rakis6-AirDrop-Reward-RefreshIcon {
+    cursor: pointer;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.rewardRefreshIcon {
+    color: black;
+}
+
+.rakis6-AirDrop-Reward-AccSection {
+    position: relative;
+    padding-right: 2.5%;
+    margin-bottom: 40px;
+}
+.rakis6-AirDrop-Reward-AccSection P {
+    font-size: 20px;
+}
+
+.rakis6-AirDrop-Reward-InterSection {
+    position: relative;
+}
+
+.rakis6-AirDrop-Reward-InterSection p {
+    font-size: 20px;
+}
+
+.rakis6-AirDrop-Rewards-ClaimBtnSection {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 23px;
+}
+
+.rakis6-AirDrop-Rewards-ClaimBtnSection button {
+    height: 50.002px;
+}
+
+button.rakis6-AirDrop-Reward-CanBtn {
+    width: 300px;
+    font-weight: 600;
+    font-family: "SCDream8";
+    color: black;
+    text-transform: uppercase;
+    padding: 1.25em 2em;
+    border: 0.104vw solid rgba(0, 0, 0, 0.3);
+    border-radius: 0.75em;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    transition: background 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
+    transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), background 150ms cubic-bezier(0, 0, 0.58, 1);
+    transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), background 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
+}
+button.rakis6-AirDrop-Reward-CanBtn::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 1;
+    border-radius: inherit;
+    -webkit-transform: translate3d(0, 0.75em, -1em);
+    transform: translate3d(0, 0.75em, -1em);
+    transition: box-shadow 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
+    transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), box-shadow 150ms cubic-bezier(0, 0, 0.58, 1);
+    transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), box-shadow 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
+}
+button.rakis6-AirDrop-Reward-CanBtn:hover {
+    background: lightgray;
+    -webkit-transform: translate(0, 0.25em);
+    transform: translate(0, 0.25em);
+}
+button.rakis6-AirDrop-Reward-CanBtn:hover::before {
+    -webkit-transform: translate3d(0, 0.5em, -1em);
+    transform: translate3d(0, 0.5em, -1em);
+}
+button.rakis6-AirDrop-Reward-CanBtn:active {
+    background: rgba(255, 255, 255, 0.3);
+    -webkit-transform: translate(0em, 0.75em);
+    transform: translate(0em, 0.75em);
+}
+button.rakis6-AirDrop-Reward-CanBtn:active::before {
+    -webkit-transform: translate3d(0, 0, -1em);
+    transform: translate3d(0, 0, -1em);
+}
+
+.rakis6-AirDrop-Reward-CantBtn {
+    font-weight: 600;
+    width: 300px;
+    font-size: 15px;
+    font-family: "SCDream8";
+    color: black;
+    cursor: not-allowed;
+    border: 0.104vw solid rgba(0, 0, 0, 0.3);
+    border-radius: 0.75em;
+}

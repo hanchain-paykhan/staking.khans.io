@@ -1,0 +1,167 @@
+// ----------------------- AirDrop USDC SECTION ----------------------- //
+
+.airDrop-USDC-Section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 150px;
+}
+
+.airDrop-USDC-LoadingSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.airDrop-USDC-LogoSection {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.airDrop-USDC-LogoSection img {
+  width: 40px;
+  height: 40px;
+}
+
+.airDrop-USDC-Txt {
+  font-size: 25px;
+  margin-right: 115px;
+}
+
+.airDrop-USDC-Btn {
+  margin-bottom: 10px;
+}
+
+.airDrop-USDC-TimeStampSection {
+  position: absolute;
+  display: flex;
+  font-size: 14px;
+  flex-direction: column;
+  right: 24%;
+  top: 43%;
+}
+
+.airDrop-USDC-TimeStampTitle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.airDrop-USDC-TimeStampInfo {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+}
+.airDrop-USDC-TimeStampInfo a {
+  color: #47fac2;
+}
+.USDC-DayDate {
+  margin-right: 10px;
+}
+.USDC-HoursDate {
+  margin-right: 10px;
+}
+
+.USDC-MinDate {
+  margin-right: 10px;
+}
+
+.airDrop-USDC-ReFreshTimeStamp {
+  cursor: pointer;
+}
+
+.airDrop-USDC-PriceSection {
+  position: absolute;
+  padding: 0;
+  bottom: 40%;
+  right: 57.5%;
+}
+
+.airDrop-USDC-PriceSection a {
+  font-size: 14px;
+}
+
+/* ---------------------USDC- Button -------------------------- */
+button.USDC-can-learn-more {
+  width: 200px;
+  font-weight: 600;
+  font-family: "SCDream8";
+  color: black;
+  text-transform: uppercase;
+  padding: 1.25em 2em;
+  border: 0.104vw solid rgba(0, 0, 0, 0.3);
+  border-radius: 0.75em;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  transition: background 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
+  transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), background 150ms cubic-bezier(0, 0, 0.58, 1);
+  transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), background 150ms cubic-bezier(0, 0, 0.58, 1),
+    -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
+}
+button.USDC-can-learn-more::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 1;
+  border-radius: inherit;
+  -webkit-transform: translate3d(0, 0.75em, -1em);
+  transform: translate3d(0, 0.75em, -1em);
+  transition: box-shadow 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
+  transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), box-shadow 150ms cubic-bezier(0, 0, 0.58, 1);
+  transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), box-shadow 150ms cubic-bezier(0, 0, 0.58, 1),
+    -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
+}
+button.USDC-can-learn-more:hover {
+  background: lightgray;
+  -webkit-transform: translate(0, 0.25em);
+  transform: translate(0, 0.25em);
+}
+button.USDC-can-learn-more:hover::before {
+  -webkit-transform: translate3d(0, 0.5em, -1em);
+  transform: translate3d(0, 0.5em, -1em);
+}
+button.USDC-can-learn-more:active {
+  background: rgba(255, 255, 255, 0.3);
+  -webkit-transform: translate(0em, 0.75em);
+  transform: translate(0em, 0.75em);
+}
+button.USDC-can-learn-more:active::before {
+  -webkit-transform: translate3d(0, 0, -1em);
+  transform: translate3d(0, 0, -1em);
+}
+
+/* ---------------------USDC- Cant Button -------------------------- */
+.cant-USDC-learn-more {
+  font-weight: 600;
+  width: 200px;
+  height: 50.002px;
+  font-size: 15px;
+  font-family: "SCDream8";
+  color: black;
+  cursor: not-allowed;
+  border: 0.104vw solid rgba(0, 0, 0, 0.3);
+  border-radius: 0.75em;
+}
+
+/* --------------------Weth Cant Button -------------------------- */
+.switch-Usdc-learn-more {
+  margin-top: 13px;
+  font-weight: 600;
+  width: 200px;
+  height: 50.002px;
+  font-size: 15px;
+  font-family: "SCDream8";
+  color: black;
+  cursor: not-allowed;
+  border: 0.104vw solid rgba(0, 0, 0, 0.3);
+  border-radius: 0.75em;
+}

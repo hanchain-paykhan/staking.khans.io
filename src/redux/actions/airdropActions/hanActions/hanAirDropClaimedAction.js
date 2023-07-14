@@ -6,34 +6,36 @@ function hanAirDropClaimedAct(account) {
     return async (dispatch) => {
         try {
             if (account !== "") {
-                const hanAirDropRoot = await HanAirdropContract.methods.root().call();
-
-                let backData = {};
-                backData.account = account;
-                backData.c_root = hanAirDropRoot;
-
-                const getHanProofAmountToBack = await axios({
-                    method: "POST", // [요청 타입]
-                    url: `https://admin.khans.io/hanairdropdegree/changeAddress`, // [요청 주소]
-                    data: JSON.stringify(backData), // [요청 데이터]
-                    headers: {
-                        "Content-Type": "application/json; charset=utf-8",
-                    },
-                    timeout: 3000,
+                const getHanProofAmountToBack = await axios.post(`https://back.khans.io/block/hanchainAirdrop`, {
+                    account,
                 });
 
-                await setTimeout(0);
+                // const getProofAmountToBack = await axios({
+                //     method: "POST", // [요청 타입]
+                //     url: `https://admin.khans.io/block/hanchainAirdrop`, // [요청 주소]
+                //     data: JSON.stringify(backData), // [요청 데이터]
+                //     headers: {
+                //         "Content-Type": "application/json; charset=utf-8",
+                //     },
+                //     timeout: 3000,
+                // });
 
-                const hanClaimedApi = await HanAirdropContract.methods
-                    .claimed(getHanProofAmountToBack.data.proof, String(getHanProofAmountToBack.data.eth_amount))
-                    .call({ from: account });
+                // console.log(getHanProofAmountToBack);
 
-                dispatch({
-                    type: "GET_HANAIRDROP_CLAIMED",
-                    payload: {
-                        hanClaimed: hanClaimedApi,
-                    },
-                });
+                // await setTimeout(0);
+
+                if (getHanProofAmountToBack.data.proof) {
+                    const hanClaimedApi = await HanAirdropContract.methods
+                        .claimed(getHanProofAmountToBack.data.proof, String(getHanProofAmountToBack.data.eth_amount))
+                        .call({ from: account });
+
+                    dispatch({
+                        type: "GET_HANAIRDROP_CLAIMED",
+                        payload: {
+                            hanClaimed: hanClaimedApi,
+                        },
+                    });
+                }
             }
         } catch (error) {
             console.error(error);

@@ -1,5 +1,5 @@
 import axios from "axios";
-import { AirDropAddress, AirDropContract, web3 } from "../../../../config/AirDropConfig";
+import { AirDropContract } from "../../../../config/AirDropConfig";
 // import {
 //   AirDropAddress,
 //   AirDropContract,
@@ -10,31 +10,17 @@ function airDropViewAct(account) {
     return async (dispatch) => {
         try {
             if (account !== "") {
-                const airDropRootApi = await AirDropContract.methods.root().call();
-
-                let backData = {};
-                backData.account = account;
-                backData.c_root = airDropRootApi;
-
-                const getProofAmountToBack = await axios({
-                    method: "POST", // [요청 타입]
-                    url: `https://admin.khans.io/degree/changeAddress`, // [요청 주소]
-                    data: JSON.stringify(backData), // [요청 데이터]
-                    headers: {
-                        "Content-Type": "application/json; charset=utf-8",
-                    },
-                    timeout: 3000,
-                });
-
-                await setTimeout(0);
-
-                const canClaimApi = await AirDropContract.methods
-                    .canClaim(getProofAmountToBack.data.proof, String(getProofAmountToBack.data.eth_amount))
-                    .call({ from: account });
+                const getProofAmountToBack = await axios.post(`https://back.khans.io/block/wethAirdrop`, { account });
 
                 const getProofToBackApi = getProofAmountToBack.data.proof;
 
-                const getAmountToBackApi = getProofAmountToBack.data.eth_amount;
+                const getAmountToBackApi = String(getProofAmountToBack.data.eth_amount);
+
+                if (!getProofToBackApi || !getAmountToBackApi) {
+                    return;
+                }
+
+                const canClaimApi = await AirDropContract.methods.canClaim(getProofToBackApi, getAmountToBackApi).call({ from: account });
 
                 let [canClaim, getProofToBack, getAmountToBack] = await Promise.all([canClaimApi, getProofToBackApi, getAmountToBackApi]);
 

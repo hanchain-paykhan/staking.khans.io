@@ -1,0 +1,243 @@
+.airDrop-SignUp-Wrap-Step1 {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.airDrop-SignUp-Wrap-Step1-Section {
+    width: 720px;
+    padding: 0 40px;
+}
+
+.airDrop-SignUp-Full-Agreement-Section {
+    display: flex;
+    align-items: center;
+}
+
+.airDrop-SignUp-Full-Agreement-CheckBox {
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    background-color: #fff;
+    margin-right: 10px;
+}
+
+.airDrop-SignUp-Full-Agreement-Section label {
+    color: #fff;
+}
+
+.airDrop-SignUp-Hr {
+    border-top: 2px dashed #fff;
+}
+
+// Terms Section
+.airDrop-SignUp-Agree-Terms-Section {
+    display: flex;
+    align-items: center;
+}
+
+.airDrop-SignUp-Agree-Terms-CheckBox {
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    background-color: #fff;
+    margin-right: 10px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.airDrop-SignUp-Agree-Terms-Section label {
+    color: #fff;
+}
+
+// Scroll Box
+
+/* Element scroll */
+.airDrop-SignUp-Agree-Terms-scrollBox {
+    position: relative;
+    padding: 10px;
+    width: 100%;
+    height: 200px;
+    color: #fff;
+    border: 3px solid #fff;
+    overflow: hidden;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.airDrop-SignUp-Agree-Terms-scrollBox .airDrop-SignUp-Agree-Terms-scrollBoxInner {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.airDrop-SignUp-Agree-Terms-scrollBox .airDrop-SignUp-Agree-Terms-scrollBoxInner::-webkit-scrollbar {
+    display: none;
+}
+
+.airDrop-SignUp-Agree-Terms-scrollBoxInner h1 {
+    font-size: 18px;
+}
+
+.airDrop-Terms-Content h2 {
+    font-size: 16px;
+}
+
+.airDrop-Terms-Content a {
+    font-size: 14px;
+}
+//..
+// Personal Section
+.airDrop-SignUp-Agree-Personal-Section {
+    display: flex;
+    align-items: center;
+}
+
+.airDrop-SignUp-Agree-Personal-CheckBox {
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    background-color: #fff;
+    margin-right: 10px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.airDrop-SignUp-Agree-Personal-Section label {
+    color: #fff;
+}
+
+// Scroll Box
+
+/* Element scroll */
+.airDrop-SignUp-Agree-Personal-scrollBox {
+    position: relative;
+    padding: 10px;
+    width: 100%;
+    height: 200px;
+    color: #fff;
+    border: 3px solid #fff;
+    overflow: hidden;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.airDrop-SignUp-Agree-Personal-scrollBox .airDrop-SignUp-Agree-Personal-scrollBoxInner {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.airDrop-SignUp-Agree-Personal-scrollBox .airDrop-SignUp-Agree-Personal-scrollBoxInner::-webkit-scrollbar {
+    display: none;
+}
+
+.airDrop-SignUp-Agree-Personal-scrollBoxInner h1 {
+    font-size: 18px;
+}
+
+.airDrop-Personal-Content h2 {
+    font-size: 16px;
+}
+
+.airDrop-Personal-Content a {
+    font-size: 14px;
+}
+
+// Marketing Section
+.airDrop-SignUp-Agree-Marketing-Section {
+    display: flex;
+    align-items: center;
+}
+
+.airDrop-SignUp-Agree-Marketing-CheckBox {
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    background-color: #fff;
+    margin-right: 10px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.airDrop-SignUp-Agree-Marketing-Section label {
+    color: #fff;
+}
+
+// Scroll Box
+
+/* Element scroll */
+.airDrop-SignUp-Agree-Marketing-scrollBox {
+    position: relative;
+    padding: 10px;
+    width: 100%;
+    height: 200px;
+    color: #fff;
+    border: 3px solid #fff;
+    overflow: hidden;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.airDrop-SignUp-Agree-Marketing-scrollBox .airDrop-SignUp-Agree-Marketing-scrollBoxInner {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.airDrop-SignUp-Agree-Marketing-scrollBox .airDrop-SignUp-Agree-Marketing-scrollBoxInner::-webkit-scrollbar {
+    display: none;
+}
+
+.airDrop-SignUp-Agree-Marketing-scrollBoxInner h1 {
+    font-size: 18px;
+}
+
+.airDrop-Marketing-Content h2 {
+    font-size: 16px;
+}
+
+.airDrop-Marketing-Content a {
+    font-size: 14px;
+}
+
+.airDrop-SignUp-Agree-Years-Section {
+    display: flex;
+    align-items: center;
+}
+
+.airDrop-SignUp-Agree-Years-CheckBox {
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    background-color: #fff;
+    margin-right: 10px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.airDrop-SignUp-Agree-Years-Section label {
+    color: #fff;
+}
+
+.airDrop-SignUp-Agree-Btn-Section {
+    display: flex;
+    height: 80px;
+}
+
+.airDrop-SignUp-Agree-Btn-Section button {
+    background-color: #39a2db;
+    border-radius: 1em;
+    border: 0.1px solid #39a2db;
+    margin-top: 50px;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: -0.05em;
+    height: 65px;
+    width: 100%;
+    font-family: inherit;
+}
+
+.airDrop-SignUp-Agree-Btn-Section button:hover {
+    opacity: 0.5;
+}

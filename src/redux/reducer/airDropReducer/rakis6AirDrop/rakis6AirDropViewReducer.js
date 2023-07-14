@@ -1,7 +1,7 @@
 let initialState = {
-    rakis6StakingBalanceOf: "",
+    rakis6StakingBalanceOf: 0,
     canStakedQuatoAmount: "",
-    allowance: "",
+    allowance: 0,
     successRakis6Apporve: false,
     stakerDataArray: "",
     rakis6WithdrawAmount: "",

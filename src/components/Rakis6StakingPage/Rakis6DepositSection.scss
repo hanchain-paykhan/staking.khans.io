@@ -1,0 +1,93 @@
+.stakingTokenBalanceSection {
+  padding-top: 9.998px;
+}
+
+.stakingTokenBalanceSection p {
+  font-size: 24.997px;
+}
+
+.amountTxt {
+  font-size: 9.998px;
+}
+
+.depositAmountSection {
+  display: flex;
+  /* background-color: yellow; */
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 39.998px;
+  padding-top: 9.998px;
+}
+
+.depositAmountSection input {
+  width: 220.003px;
+  font-family: "SCDream8";
+  height: 50.002px;
+  background-color: rgba(255, 255, 255, 0.3);
+  font-size: 15px;
+  border-radius: 1.5rem;
+  padding-left: 20.002px;
+  padding-right: 20.002px;
+  text-align: center;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+}
+
+.depositAmountSection input::-webkit-outer-spin-button,
+.depositAmountSection input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.depositAmountSection input:focus {
+  outline: none;
+}
+
+.depositAmountSection input::placeholder {
+  text-align: center;
+  color: black;
+  opacity: 0.5;
+}
+
+.amountMaxBtn {
+  font-family: "SCDream8";
+  background-color: transparent;
+  margin-left: 9.998px;
+  width: 60px;
+  height: 54.998px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+  border-radius: 1.5em;
+  cursor: pointer;
+  /* color: #72CEF2; */
+  font-size: 20px;
+  text-shadow: #24b5ee 0px 0px 1px, #24b5ee 0px 0px 1px, #24b5ee 0px 0px 1px, #24b5ee 0px 0px 1px, #24b5ee 0px 0px 1px, #24b5ee 0px 0px 1px;
+  color: #0f1b40;
+}
+
+.depositAmountSection p {
+  font-size: 20.002px;
+  color: black;
+  margin-left: 24.997px;
+}
+
+.depositStakeBtnSection {
+  display: flex;
+  justify-content: center;
+  padding-top: 15px;
+}
+
+.depositStakeBtnSection button {
+  height: 50.002px;
+}
+// ------------------ Loading Section  ------------------//
+.depositLoadingAmountSection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 269px;
+}

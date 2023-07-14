@@ -1,0 +1,201 @@
+.stakingPageHanLogoContainer {
+  display: flex;
+  // padding: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.stakingPageHanLogoContainer a {
+  text-shadow: #24b5ee 0px 0px 3.998px, #24b5ee 0px 0px 3.998px, #24b5ee 0px 0px 3.998px, #24b5ee 0px 0px 3.998px, #24b5ee 0px 0px 3.998px,
+    #24b5ee 0px 0px 3.998px;
+  color: #0a1126;
+  margin-left: 20.002px;
+  padding-right: 60px;
+  font-size: 60px;
+  margin-top: 40px;
+}
+
+.stakingHanLogo {
+  width: 99.998px;
+  margin-top: 40px;
+  height: 99.998px;
+  filter: drop-shadow(5.003px 9.998px 9.998px #24b5ee);
+}
+
+.stakingAllAmountContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // margin-bottom: 70px;
+}
+
+.stakingAmountContainer {
+  text-shadow: #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px,
+    #0a1126 0px 0px 3.998px;
+  color: #72cef2;
+}
+
+.stakingAmountTitle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stakingAmountTitle a {
+  font-size: 30px;
+}
+
+.stakingAmountNum {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stakingAmountNum p {
+  font-size: 24.997px;
+}
+
+.stakingAprAmountContainer {
+  color: #72cef2;
+}
+
+.stakingAprAmountTitle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stakingAprAmountTxt {
+  text-shadow: #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px,
+    #0a1126 0px 0px 3.998px;
+}
+
+.stakingAprAmountTitle a {
+  font-size: 30px;
+}
+
+.stakingAprAmountNum {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-shadow: #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px,
+    #0a1126 0px 0px 3.998px;
+}
+
+.stakingAprAmountNum a {
+  font-size: 24.997px;
+}
+
+.material-icons {
+  font-family: "Material Icons";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px; /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  color: white;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: "liga";
+}
+
+.material-icons:hover {
+  opacity: 0.4;
+}
+
+.tooltip-container {
+  font-family: sans-serif;
+  margin-left: 10px;
+  position: relative;
+  font-size: 13px;
+  &:hover {
+    .tooltip-content {
+      visibility: visible;
+      font-family: sans-serif;
+      opacity: 1;
+      transition: 0.25s all ease;
+      transition-delay: 0s;
+      top: 0px;
+      // right: 200px;
+      width: 300px;
+      height: 150px;
+      font-size: 13px;
+    }
+  }
+}
+.tooltip-content {
+  visibility: hidden;
+  font-family: sans-serif;
+  opacity: 0;
+  position: absolute;
+  background: #646fd4;
+  display: flex;
+  flex-direction: column;
+  left: 10%;
+  top: -130px;
+  // right: 100px;
+  // align-items: center;
+  justify-content: center;
+  padding: 0 15px;
+  margin: 16px;
+  font-size: 15px;
+  width: 250px;
+  transition: 0.25s all ease;
+  transition-delay: 0.25s;
+  z-index: 2;
+  font-size: 13px;
+
+  color: #ffffff;
+  .align-right {
+    text-align: left;
+    a {
+      font-size: 13px;
+
+      color: yellow;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  &:after {
+  }
+}
+
+.stakingPageNewChange {
+  position: absolute;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  font-size: 15px;
+  background-color: #0f1b40;
+  color: #24b5ee;
+  font-family: "SCDream8";
+  text-shadow: #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px,
+    #0a1126 0px 0px 3.998px;
+}
+
+.stakingPageNewChange button {
+  margin-left: 20px;
+  height: 30px;
+  border-radius: 2rem;
+  background-color: #39a2db;
+  color: 0f1b40;
+  font-family: "SCDream8";
+}

@@ -1,6 +1,7 @@
 const initialState = {
     networks: "",
     networkName: "",
+    mainTabArr: 0,
 };
 
 const networksReducer = (state = initialState, action) => {
@@ -12,6 +13,9 @@ const networksReducer = (state = initialState, action) => {
             return { ...state, networkName: payload.networkName };
         case "ETH_MAINNET":
             return { ...state };
+
+        case "MAIN_TAB_CHANGE":
+            return { ...state, mainTabArr: payload };
         default:
             return { ...state };
     }

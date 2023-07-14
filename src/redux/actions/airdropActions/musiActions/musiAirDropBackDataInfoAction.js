@@ -1,49 +1,43 @@
-import axios from "axios";
-import { MusikhanAirdropContract } from "../../../../config/MusikhanConfig";
+import axios from 'axios';
+import { MusikhanAirdropContract } from '../../../../config/MusikhanConfig';
 // import { MusikhanAirdropContract } from "../../../../config/MusikhanConfigTest";
 
-function musiAirDropBackDataInfoAct(account, musiKhanNewRoot) {
+function musiAirDropBackDataInfoAct(account, musiKhanNewRoot, musiTokenl2Ca) {
     return async (dispatch) => {
         try {
-            let musiBackData = {};
-            musiBackData.account = account;
-            musiBackData.c_root = musiKhanNewRoot;
-
-            const getMusiProofAmountToBack = await axios({
-                method: "POST", // [요청 타입]
-                url: `https://admin.khans.io/music/changeAddress`, // [요청 주소]
-                data: JSON.stringify(musiBackData), // [요청 데이터]
-                headers: {
-                    "Content-Type": "application/json; charset=utf-8",
-                },
-                timeout: 3000,
+            // const getMusiProofAmountToBack = await axios.post(`https://localhost:4000/block/musikhanAirdrop`, {
+            const getMusiProofAmountToBack = await axios.post(`https://back.khans.io/block/musikhanAirdrop`, {
+                account,
+                musikhanTokenAddress: musiTokenl2Ca,
             });
-
-            await setTimeout(0);
-
-            const musiCanClaimApi = await MusikhanAirdropContract.methods
-                .canClaim(getMusiProofAmountToBack.data.proof, getMusiProofAmountToBack.data.eth_amount, getMusiProofAmountToBack.data.contract_address)
-                .call({ from: account });
 
             const getmusiProofToBackAPi = getMusiProofAmountToBack.data.proof;
-            const getmusiTokenCaToBackApi = getMusiProofAmountToBack.data.contract_address;
             const getmusiAmountToBackApi = getMusiProofAmountToBack.data.eth_amount;
+            const getmusiTokenCaToBackApi = getMusiProofAmountToBack.data.contract_address;
 
-            let [getmusiProofToBack, getmusiTokenCaToBack, getmusiAmountToBack] = await Promise.all([
-                getmusiProofToBackAPi,
-                getmusiTokenCaToBackApi,
-                getmusiAmountToBackApi,
-            ]);
+            if (getmusiProofToBackAPi && getmusiTokenCaToBackApi && getmusiAmountToBackApi) {
+                const musiCanClaimApi = await MusikhanAirdropContract.methods
+                    .canClaim(getmusiProofToBackAPi, getmusiAmountToBackApi, getmusiTokenCaToBackApi)
+                    .call({ from: account });
 
-            dispatch({
-                type: "AIRDROP_MUSI_BACK_DATA_SUCCESS",
-                payload: {
-                    getmusiProofToBack: getmusiProofToBack,
-                    getmusiTokenCaToBack: getmusiTokenCaToBack,
-                    getmusiAmountToBack: getmusiAmountToBack,
-                    musiCanClaim: musiCanClaimApi,
-                },
-            });
+                let [getmusiProofToBack, getmusiTokenCaToBack, getmusiAmountToBack] = await Promise.all([
+                    getmusiProofToBackAPi,
+                    getmusiTokenCaToBackApi,
+                    getmusiAmountToBackApi,
+                ]);
+
+                dispatch({
+                    type: 'AIRDROP_MUSI_BACK_DATA_SUCCESS',
+                    payload: {
+                        getmusiProofToBack: getmusiProofToBack,
+                        getmusiTokenCaToBack: getmusiTokenCaToBack,
+                        getmusiAmountToBack: getmusiAmountToBack,
+                        musiCanClaim: musiCanClaimApi,
+                    },
+                });
+            } else {
+                return null;
+            }
         } catch (error) {
             console.error(error);
         }

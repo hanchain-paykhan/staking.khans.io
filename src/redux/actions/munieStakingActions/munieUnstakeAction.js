@@ -1,10 +1,10 @@
-import { MunieStakingContract } from "../../../config/MunieConfigTest";
 import Swal from "sweetalert2";
+import { MunieV2StakingContract } from "../../../config/new/StakingMunieV2Config";
 
-function munieUnstakeAct(tokenId, account) {
+function munieUnstakeAct(myStakedMunieTokenId, account) {
     return async (dispatch) => {
         try {
-            const unStake = await MunieStakingContract.methods.unStake(tokenId).send({ from: account });
+            const unStake = await MunieV2StakingContract.methods.unStake(myStakedMunieTokenId).send({ from: account });
             Swal.fire({
                 title: "Success",
                 text: "UnStake was successful!",

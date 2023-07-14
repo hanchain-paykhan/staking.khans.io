@@ -1,25 +1,17 @@
-import { MusikhanContract } from "../../../../config/MusikhanConfig";
-// import { MusikhanContract } from "../../../../config/MusikhanConfigTest";
+import axios from "axios";
 
-function L2MusikhanMintingCaAct(account) {
+function L2MusikhanMintingCaAct() {
     return async (dispatch) => {
         try {
-            const getMyMintingTokenListApi = await MusikhanContract.methods.getMyTokenList(account).call();
-            const dePositTokenListArray = [];
+            const l2TokenAllListToBack = await axios.get(`https://back.khans.io/block/l2TokenList`);
 
-            for (let i = 0; i < getMyMintingTokenListApi.length; i++) {
-                const getL2TokenInfo = await MusikhanContract.methods.getL2TokenInfo(getMyMintingTokenListApi[i]).call();
-                dePositTokenListArray.push(getL2TokenInfo);
-            }
+            const l2AllTokenListApi = l2TokenAllListToBack.data;
 
-            const l2DepositTokenListApi = dePositTokenListArray;
-
-            let [getMyMintingTokenList, l2DepositTokenList] = await Promise.all([getMyMintingTokenListApi, l2DepositTokenListApi]);
+            let [l2AllTokenList] = await Promise.all([l2AllTokenListApi]);
             dispatch({
                 type: "GET_MY_MINTING_TOKENCA",
                 payload: {
-                    getMyMintingTokenList: getMyMintingTokenList,
-                    l2DepositTokenList: l2DepositTokenList,
+                    l2AllTokenList: l2AllTokenList,
                 },
             });
         } catch (error) {

@@ -6,6 +6,9 @@ const initialState = {
     login: false,
     code: "",
     email: "",
+    captcha: false,
+    find: false,
+    checkEmail: false,
 };
 
 const emailEffectReducer = (state = initialState, action) => {
@@ -25,6 +28,12 @@ const emailEffectReducer = (state = initialState, action) => {
             return { ...state, code: payload.code };
         case "EMAIL":
             return { ...state, email: payload.email };
+        case "CAPTCHA":
+            return { ...state, captcha: payload.captcha };
+        case "FIND":
+            return { ...state, find: payload.find };
+        case "CHECK_EMAIL":
+            return { ...state, checkEmail: payload.checkEmail };
         default:
             return { ...state };
     }

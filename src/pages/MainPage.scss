@@ -1,1390 +1,1148 @@
 .mainPageTestContainer {
-    font-weight: 400;
-    font-size: 14px;
-    -webkit-font-smoothing: antialiased;
-    width: 100%;
-    height: 100vh;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-    overflow-y: hidden;
-    background-image: url(../img/1.jpg);
-    background-repeat: no-repeat;
-    background-position: top center;
-    background-size: cover;
-    // font-family: "SCDream";
-    font-weight: bold;
+  font-weight: 400;
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  background-image: url(../assets/images/mainImg/MainBG.jpg);
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+  font-weight: bold;
 }
 
 .mainPageTopPaddingSection {
-    padding-top: 100px;
+  padding-top: 100px;
 }
 
 .mainPageLogoTitleContainer {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    font-weight: bold;
-    font-size: 65px;
-    border-left: 5px solid #0a93eb;
-    padding-left: 15px;
-    margin-left: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  font-weight: bold;
+  font-size: 65px;
+  border-left: 5px solid #0a93eb;
+  padding-left: 15px;
+  margin-left: 50px;
 }
 
 .mainPageLogoSection img {
-    width: 80px;
-    height: 80px;
+  width: 80px;
+  height: 80px;
 }
 
 .mainPageTitleTxtSection {
-    color: #fff;
-    font-size: 50px;
+  color: #fff;
+  font-size: 50px;
 }
 
 // ------------------- HanChainPrice Container ------------------- //
 .hanChainPriceContainer {
-    position: absolute;
-    width: 200px;
-    height: 120px;
-    right: 4%;
-    top: 16%;
-    border-radius: 1rem;
-    background-color: rgba(255, 255, 255, 0.6);
+  position: absolute;
+  width: 200px;
+  height: 120px;
+  right: 4%;
+  top: 6%;
+  border-radius: 1rem;
+  background-color: rgba(255, 255, 255, 0.6);
 }
 
 .hanChainPriceSection {
-    width: 100%;
-    height: 56px;
-    display: flex;
-    display: flex;
-    padding: 12px 0px;
-    border-radius: 1rem;
-    // background-color: red;
+  width: 100%;
+  height: 56px;
+  display: flex;
+  display: flex;
+  padding: 12px 0px;
+  border-radius: 1rem;
 }
 
 .hanChainPriceLogoSection {
-    width: 33%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 33%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .hanChainPricTextSection {
-    width: 100%;
-    border: none;
-    align-items: center;
-    text-align: center;
-    line-height: 1.4;
+  width: 100%;
+  border: none;
+  align-items: center;
+  text-align: center;
+  line-height: 1.4;
 }
 
 .hanChainPriceLogoSection img {
-    width: 46px;
-    height: 46px;
+  width: 46px;
+  height: 46px;
 }
 
 .test2 {
-    width: 100%;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-top: 1px solid #e1e5ea;
-    text-align: center;
-    clear: both;
-    font-size: 12px;
-    // padding: 8px 0;
-    // background-color: yellow;
+  width: 100%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid #e1e5ea;
+  text-align: center;
+  clear: both;
+  font-size: 12px;
 }
 
 .test2 a {
-    text-decoration: none;
-    color: rgb(16, 112, 224);
+  text-decoration: none;
+  color: rgb(16, 112, 224);
 }
 
 .hanChainPriceTitleSection {
-    font-size: 18px;
+  font-size: 18px;
 }
 
 .hanChainPriceTitleSection a {
-    text-decoration-line: none;
-    color: rgb(16, 112, 224);
+  text-decoration-line: none;
+  color: rgb(16, 112, 224);
 }
 .hanChainPriceAmountSection {
-    font-size: 20px;
-    margin-left: 6px;
+  font-size: 20px;
+  margin-left: 6px;
 }
 
 .hanChainPriceUnitSection {
-    font-size: 14px;
-    margin-left: 6px;
+  font-size: 14px;
+  margin-left: 6px;
 }
 
 .hanChainPrice24hPercentageInSection {
-    font-size: 16px;
-    margin-left: 10px;
-    color: #009e73;
+  font-size: 16px;
+  margin-left: 10px;
+  color: #009e73;
 }
 
 .hanChainPrice24HPercentageDeSection {
-    font-size: 16px;
-    margin-left: 10px;
-    color: #d94040;
+  font-size: 16px;
+  margin-left: 10px;
+  color: #d94040;
 }
 
 // -------------------AirDrop Section ------------------- //
 .airDropSection {
-    position: absolute;
-    right: 4%;
-    top: 33%;
-    height: 30px;
-    border-radius: 10px;
-    width: 200px;
-    background-color: rgba(255, 255, 255, 0.6);
-    font-size: 13px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    // top: 0;
+  position: absolute;
+  right: 4%;
+  top: 23%;
+  height: 50px;
+  border-radius: 10px;
+  width: 200px;
+  background-color: rgba(255, 255, 255, 0.6);
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .airDropSection a {
-    text-decoration-line: none;
-    // color: black;
+  text-decoration-line: none;
 }
 
 .airDropTxt1 {
-    color: rgb(16, 112, 224);
+  color: rgb(16, 112, 224);
 }
 .airDropTxt2 {
-    color: black;
-    margin-left: 5px;
+  color: black;
+  margin-left: 5px;
 }
 
 // ------------------- StakingPool Container ------------------- //
 
 .mainPageStakingPoolContainer {
-    display: flex;
-    margin-top: 170px;
-    justify-content: center;
-    // align-items: center;
+  display: flex;
+  margin-top: 90px;
+  justify-content: center;
 }
 
 // ------------------- ARRAKIS SHEEPOORI Container ------------------- //
 .mainPageStakingContainer {
-    position: relative;
-    margin-right: 30px;
+  position: relative;
+  margin-right: 30px;
 }
 
 .mainPageStakingTitleSection {
-    font-size: 25px;
-    color: #fff;
-    position: absolute;
-    top: -21%;
-    left: 2%;
+  font-size: 25px;
+  color: #fff;
+  position: absolute;
+  top: -15%;
+  left: 2%;
 }
 
 .mainPageStakingBoxSection {
-    padding-top: 3%;
-    padding-left: 3%;
-    padding-bottom: 3%;
-    border-radius: 30px;
-    background-color: rgba(255, 255, 255, 0.3);
-    width: 630px;
-    height: 280px;
-    box-sizing: border-box;
+  padding-top: 3%;
+  padding-left: 3%;
+  padding-bottom: 3%;
+  border-radius: 30px;
+  background-color: rgba(255, 255, 255, 0.3);
+  width: 630px;
+  height: 350px;
+  box-sizing: border-box;
+}
+
+// ------------------- HanEpLP SECTION ------------------- //
+.stakingBoxHanepSection {
+  width: 95%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+}
+
+.stakingBoxHanepLogoSection img {
+  width: 70px;
+  height: 70px;
+}
+.stakingBoxHanepTxtSection {
+  color: #fff;
+  margin-left: 10px;
+  font-size: 28px;
+}
+
+.stakingBoxHanepBtnSection {
+  padding-left: 5.5%;
+}
+
+.stakingBoxHanepBtnSection a {
+  color: #fff;
+  width: 99.994px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 9.994px;
+  text-align: center;
+  padding: 20.002px 0;
+  font-size: 15.998px;
+  display: block;
+  text-decoration: none;
+}
+
+.material-main-icons {
+  font-family: "Material Icons";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px; /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  color: white;
+  direction: ltr;
+
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+
+  -moz-osx-font-smoothing: grayscale;
+
+  font-feature-settings: "liga";
+}
+
+.material-Hanep-main-icons:hover {
+  opacity: 0.4;
+}
+
+.tooltip-Hanep-main-container {
+  position: relative;
+  padding-top: 5px;
+  font-size: 13px;
+  font-family: sans-serif;
+  &:hover {
+    .tooltip-Hanep-main-content {
+      visibility: visible;
+      opacity: 1;
+      transition: 0.25s all ease;
+      transition-delay: 0s;
+      top: -200px;
+      left: -20%;
+      width: 300px;
+      height: 150px;
+      font-size: 13px;
+    }
+  }
+}
+.tooltip-Hanep-main-content {
+  font-family: sans-serif;
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  background: #646fd4;
+  display: flex;
+  flex-direction: column;
+  left: 100px;
+  top: -300px;
+  padding: 0 15px;
+  margin: 10px;
+  font-size: 15px;
+  width: 250px;
+  transition: 0.25s all ease;
+  transition-delay: 0.25s;
+  z-index: 2;
+  font-size: 13px;
+  color: #ffffff;
+
+  .tooltip-Hanep-main-content a {
+    text-decoration: underline;
+  }
+
+  .align-Hanep-main-right {
+    text-decoration: underline;
+    color: yellow;
+  }
+
+  &:after {
+  }
 }
 
 // ------------------- ARRAKIS SECTION ------------------- //
 .stakingBoxArrakisSection {
-    width: 95%;
-    height: 80px;
-    display: flex;
-    align-items: center;
-    // background-color: red;
+  width: 95%;
+  height: 80px;
+  display: flex;
+  align-items: center;
 }
 
 .stakingBoxArrakisLogoSection img {
-    width: 70px;
-    height: 70px;
+  width: 70px;
+  height: 70px;
 }
 .stakingBoxArrakisTxtSection {
-    color: #fff;
-    margin-left: 10px;
-    font-size: 28px;
+  color: #fff;
+  margin-left: 10px;
+  font-size: 28px;
 }
 
 .stakingBoxArrakisBtnSection {
-    padding-left: 3.5%;
+  padding-left: 3.5%;
 }
 
 .stakingBoxArrakisBtnSection a {
-    color: #fff;
-    width: 100px;
-    background-color: rgba(255, 255, 255, 0.3);
-    border-radius: 10px;
-    text-align: center;
-    padding: 20px 0;
-    font-size: 16px;
-    display: block;
-    text-decoration: none;
+  color: #fff;
+  width: 99.994px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 9.994px;
+  text-align: center;
+  padding: 20.002px 0;
+  font-size: 15.998px;
+  display: block;
+  text-decoration: none;
 }
 
 .material-main-icons {
-    font-family: "Material Icons";
-    font-weight: normal;
-    font-style: normal;
-    font-size: 24px; /* Preferred icon size */
-    display: inline-block;
-    line-height: 1;
-    text-transform: none;
-    letter-spacing: normal;
-    word-wrap: normal;
-    white-space: nowrap;
-    color: white;
-    direction: ltr;
+  font-family: "Material Icons";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px; /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  color: white;
+  direction: ltr;
 
-    /* Support for all WebKit browsers. */
-    -webkit-font-smoothing: antialiased;
-    /* Support for Safari and Chrome. */
-    text-rendering: optimizeLegibility;
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
 
-    /* Support for Firefox. */
-    -moz-osx-font-smoothing: grayscale;
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
 
-    /* Support for IE. */
-    font-feature-settings: "liga";
+  /* Support for IE. */
+  font-feature-settings: "liga";
 }
 
 .material-rakis6-main-icons:hover {
-    opacity: 0.4;
+  opacity: 0.4;
 }
 
 .tooltip-rakis6-main-container {
-    position: relative;
-    padding-top: 5px;
-    font-size: 13px;
-    font-family: sans-serif;
-    &:hover {
-        .tooltip-rakis6-main-content {
-            visibility: visible;
-            opacity: 1;
-            transition: 0.25s all ease;
-            transition-delay: 0s;
-            top: -200px;
-            left: -20%;
-            // right: 200px;
+  position: relative;
+  padding-top: 5px;
+  font-size: 13px;
+  font-family: sans-serif;
+  &:hover {
+    .tooltip-rakis6-main-content {
+      visibility: visible;
+      opacity: 1;
+      transition: 0.25s all ease;
+      transition-delay: 0s;
+      top: -200px;
+      left: -20%;
+      // right: 200px;
 
-            width: 300px;
-            height: 150px;
-            font-size: 13px;
-        }
+      width: 300px;
+      height: 150px;
+      font-size: 13px;
     }
+  }
 }
 .tooltip-rakis6-main-content {
-    font-family: sans-serif;
-    visibility: hidden;
-    opacity: 0;
-    position: absolute;
-    background: #646fd4;
-    display: flex;
-    flex-direction: column;
-    left: 100px;
-    top: -300px;
-    padding: 0 15px;
-    margin: 10px;
-    font-size: 15px;
-    width: 250px;
-    transition: 0.25s all ease;
-    transition-delay: 0.25s;
-    z-index: 2;
-    font-size: 13px;
-    color: #ffffff;
+  font-family: sans-serif;
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  background: #646fd4;
+  display: flex;
+  flex-direction: column;
+  left: 100px;
+  top: -300px;
+  padding: 0 15px;
+  margin: 10px;
+  font-size: 15px;
+  width: 250px;
+  transition: 0.25s all ease;
+  transition-delay: 0.25s;
+  z-index: 2;
+  font-size: 13px;
+  color: #ffffff;
 
-    .tooltip-rakis6-main-content a {
-        text-decoration: underline;
-    }
+  .tooltip-rakis6-main-content a {
+    text-decoration: underline;
+  }
 
-    .align-rakis6-main-right {
-        text-decoration: underline;
-        color: yellow;
-    }
-    //   .align-main-right {
-    //     text-align: left;
-    //     a {
-    //       font-size: 13px;
+  .align-rakis6-main-right {
+    text-decoration: underline;
+    color: yellow;
+  }
+  //   .align-main-right {
+  //     text-align: left;
+  //     a {
+  //       font-size: 13px;
 
-    //       color: yellow;
-    //       text-decoration: none;
-    //       &:hover {
-    //         text-decoration: underline;
-    //       }
-    //     }
-    //   }
-    &:after {
-    }
+  //       color: yellow;
+  //       text-decoration: none;
+  //       &:hover {
+  //         text-decoration: underline;
+  //       }
+  //     }
+  //   }
+  &:after {
+  }
 }
-
+//12312412
 // ------------------- SHEEPOORI SECTION ------------------- //
 
 .stakingBoxSpriSection {
-    width: 95%;
-    height: 80px;
-    display: flex;
-    align-items: center;
-    // background-color: red;
+  width: 95%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  // background-color: red;
 }
 
 .stakingBoxSpriLogoSection img {
-    width: 70px;
-    height: 70px;
+  width: 70px;
+  height: 70px;
 }
 .stakingBoxSpriTxtSection {
-    color: #fff;
-    // margin: 0 2.5% 0 10px;
-    margin-left: 10px;
-    font-size: 28px;
+  color: #fff;
+  // margin: 0 2.5% 0 10px;
+  margin-left: 10px;
+  font-size: 28px;
 }
 
 .stakingBoxSpriBtnSection {
-    padding-left: 17%;
+  padding-left: 17%;
 }
 
 .stakingBoxSpriBtnSection a {
-    color: #fff;
-    width: 100px;
-    background-color: rgba(255, 255, 255, 0.3);
-    border-radius: 10px;
-    text-align: center;
-    padding: 20px 0;
-    font-size: 16px;
-    display: block;
-    text-decoration: none;
+  color: #fff;
+  width: 100px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 16px;
+  display: block;
+  text-decoration: none;
 }
 
 .material-main-spri-icons {
-    font-family: "Material Icons";
-    font-weight: normal;
-    font-style: normal;
-    font-size: 24px; /* Preferred icon size */
-    display: inline-block;
-    line-height: 1;
-    text-transform: none;
-    letter-spacing: normal;
-    word-wrap: normal;
-    white-space: nowrap;
-    color: white;
-    direction: ltr;
-
-    /* Support for all WebKit browsers. */
-    -webkit-font-smoothing: antialiased;
-    /* Support for Safari and Chrome. */
-    text-rendering: optimizeLegibility;
-
-    /* Support for Firefox. */
-    -moz-osx-font-smoothing: grayscale;
-
-    /* Support for IE. */
-    font-feature-settings: "liga";
+  font-family: "Material Icons";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px; /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  color: white;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "liga";
 }
 .material-main-spri-icons:hover {
-    opacity: 0.4;
+  opacity: 0.4;
 }
 
 .tooltip-main-spri-container {
-    // margin-right: 10px;
-    position: relative;
-    padding-top: 5px;
-    font-size: 13px;
-    font-family: sans-serif;
-    &:hover {
-        .tooltip-main-spri-content {
-            visibility: visible;
-            opacity: 1;
-            transition: 0.25s all ease;
-            transition-delay: 0s;
-            top: -110px;
-            left: -20%;
-            // right: 200px;
-
-            width: 300px;
-            height: 100px;
-            font-size: 13px;
-        }
+  position: relative;
+  padding-top: 5px;
+  font-size: 13px;
+  font-family: sans-serif;
+  &:hover {
+    .tooltip-main-spri-content {
+      visibility: visible;
+      opacity: 1;
+      transition: 0.25s all ease;
+      transition-delay: 0s;
+      top: -110px;
+      left: -20%;
+      width: 300px;
+      height: 100px;
+      font-size: 13px;
     }
+  }
 }
 .tooltip-main-spri-content {
-    font-family: sans-serif;
-    visibility: hidden;
-    opacity: 0;
-    position: absolute;
-    background: #646fd4;
-    display: flex;
-    flex-direction: column;
-    left: 100px;
-    top: -300px;
-    padding: 0 15px;
-    margin: 10px;
-    font-size: 15px;
-    width: 250px;
-    transition: 0.25s all ease;
-    transition-delay: 0.25s;
-    z-index: 2;
-    font-size: 13px;
-    color: #ffffff;
+  font-family: sans-serif;
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  background: #646fd4;
+  display: flex;
+  flex-direction: column;
+  left: 100px;
+  top: -300px;
+  padding: 0 15px;
+  margin: 10px;
+  font-size: 15px;
+  width: 250px;
+  transition: 0.25s all ease;
+  transition-delay: 0.25s;
+  z-index: 2;
+  font-size: 13px;
+  color: #ffffff;
 
-    .tooltip-main-spri-content a {
-        text-decoration: underline;
+  .tooltip-main-spri-content a {
+    text-decoration: underline;
+  }
+
+  .align-main-spri-right {
+    text-decoration: underline;
+    color: yellow;
+  }
+  &:after {
+  }
+}
+
+// ------------------- HANCHAIN STAKING SECTION ------------------- //
+
+.stakingBoxHanSection {
+  width: 95%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+}
+
+.stakingBoxHanLogoSection img {
+  width: 70px;
+  height: 70px;
+}
+.stakingBoxHanTxtSection {
+  color: #fff;
+  margin-left: 10px;
+  font-size: 28px;
+}
+
+.stakingBoxHanBtnSection {
+  padding-left: 36.5%;
+}
+
+.stakingBoxHanBtnSection a {
+  color: #fff;
+  width: 100px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 16px;
+  display: block;
+  text-decoration: none;
+}
+
+.material-main-han-icons {
+  font-family: "Material Icons";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px; /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  color: white;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "liga";
+}
+.material-main-han-icons:hover {
+  opacity: 0.4;
+}
+
+.tooltip-main-han-container {
+  position: relative;
+  padding-top: 5px;
+  font-size: 13px;
+  font-family: sans-serif;
+  &:hover {
+    .tooltip-main-han-content {
+      visibility: visible;
+      opacity: 1;
+      transition: 0.25s all ease;
+      transition-delay: 0s;
+      top: -110px;
+      left: -20%;
+      width: 300px;
+      height: 100px;
+      font-size: 13px;
     }
-
-    .align-main-spri-right {
-        text-decoration: underline;
-        color: yellow;
-    }
-    //   .align-main-right {
-    //     text-align: left;
-    //     a {
-    //       font-size: 13px;
-
-    //       color: yellow;
-    //       text-decoration: none;
-    //       &:hover {
-    //         text-decoration: underline;
-    //       }
-    //     }
-    //   }
-    &:after {
-    }
+  }
 }
+.tooltip-main-han-content {
+  font-family: sans-serif;
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  background: #646fd4;
+  display: flex;
+  flex-direction: column;
+  left: 100px;
+  top: -300px;
+  padding: 0 15px;
+  margin: 10px;
+  font-size: 15px;
+  width: 250px;
+  transition: 0.25s all ease;
+  transition-delay: 0.25s;
+  z-index: 2;
+  font-size: 13px;
+  color: #ffffff;
 
-// ------------------- MUSIKHAN SECTION ------------------- //
+  .tooltip-main-han-content a {
+    text-decoration: underline;
+  }
 
-.stakingBoxMusiSection {
-    width: 95%;
-    height: 80px;
-    display: flex;
-    align-items: center;
-    // background-color: red;
-}
-
-.stakingBoxMusiLogoSection img {
-    width: 70px;
-    height: 70px;
-}
-.stakingBoxMusiTxtSection {
-    color: #fff;
-    // margin: 0 2.5% 0 10px;
-    margin-left: 10px;
-    font-size: 28px;
-}
-
-.stakingBoxMusiBtnSection {
-    padding-left: 26.5%;
-}
-
-.stakingBoxMusiBtnSection a {
-    color: #fff;
-    width: 100px;
-    background-color: rgba(255, 255, 255, 0.3);
-    border-radius: 10px;
-    text-align: center;
-    padding: 20px 0;
-    font-size: 16px;
-    display: block;
-    text-decoration: none;
-}
-
-.material-main-musi-icons {
-    font-family: "Material Icons";
-    font-weight: normal;
-    font-style: normal;
-    font-size: 24px; /* Preferred icon size */
-    display: inline-block;
-    line-height: 1;
-    text-transform: none;
-    letter-spacing: normal;
-    word-wrap: normal;
-    white-space: nowrap;
-    color: white;
-    direction: ltr;
-
-    /* Support for all WebKit browsers. */
-    -webkit-font-smoothing: antialiased;
-    /* Support for Safari and Chrome. */
-    text-rendering: optimizeLegibility;
-
-    /* Support for Firefox. */
-    -moz-osx-font-smoothing: grayscale;
-
-    /* Support for IE. */
-    font-feature-settings: "liga";
-}
-.material-main-musi-icons:hover {
-    opacity: 0.4;
-}
-
-.tooltip-main-musi-container {
-    // margin-right: 10px;
-    position: relative;
-    padding-top: 5px;
-    font-size: 13px;
-    font-family: sans-serif;
-    &:hover {
-        .tooltip-main-musi-content {
-            visibility: visible;
-            opacity: 1;
-            transition: 0.25s all ease;
-            transition-delay: 0s;
-            top: -110px;
-            left: -20%;
-            // right: 200px;
-
-            width: 300px;
-            height: 100px;
-            font-size: 13px;
-        }
-    }
-}
-.tooltip-main-musi-content {
-    font-family: sans-serif;
-    visibility: hidden;
-    opacity: 0;
-    position: absolute;
-    background: #646fd4;
-    display: flex;
-    flex-direction: column;
-    left: 100px;
-    top: -300px;
-    padding: 0 15px;
-    margin: 10px;
-    font-size: 15px;
-    width: 250px;
-    transition: 0.25s all ease;
-    transition-delay: 0.25s;
-    z-index: 2;
-    font-size: 13px;
-    color: #ffffff;
-
-    .tooltip-main-musi-content a {
-        text-decoration: underline;
-    }
-
-    .align-main-musi-right {
-        text-decoration: underline;
-        color: yellow;
-    }
-    //   .align-main-right {
-    //     text-align: left;
-    //     a {
-    //       font-size: 13px;
-
-    //       color: yellow;
-    //       text-decoration: none;
-    //       &:hover {
-    //         text-decoration: underline;
-    //       }
-    //     }
-    //   }
-    &:after {
-    }
+  .align-main-han-right {
+    text-decoration: underline;
+    color: yellow;
+  }
+  &:after {
+  }
 }
 
 // ------------------- POOL Container ------------------- //
 
 .mainPagePoolContainer {
-    position: relative;
-    margin-left: 30px;
+  position: relative;
+  margin-left: 30px;
 }
 
 .mainPagePoolTitleSection {
-    font-size: 25px;
-    color: #fff;
-    position: absolute;
-    top: -21%;
-    left: 2%;
+  font-size: 25px;
+  color: #fff;
+  position: absolute;
+  top: -15%;
+  left: 2%;
 }
 
 .mainPagePoolBoxSection {
-    padding-top: 3%;
-    padding-left: 5%;
-    padding-bottom: 3%;
-    border-radius: 30px;
-    background-color: rgba(255, 255, 255, 0.3);
-    width: 630px;
-    height: 280px;
-    box-sizing: border-box;
+  padding-top: 3%;
+  padding-left: 5%;
+  padding-bottom: 3%;
+  border-radius: 30px;
+  background-color: rgba(255, 255, 255, 0.3);
+  width: 630px;
+  height: 430px;
+  box-sizing: border-box;
 }
+// ------------------- POOL USDC-V2-HANep Section ------------------- //
+
+.poolBoxHanEpSection {
+  width: 95%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+}
+
+.poolBoxHanEpLogoSection img {
+  width: 70px;
+  height: 70px;
+}
+.poolBoxHanEpTxtSection {
+  color: #fff;
+  margin: 0 2.5% 0 10px;
+  font-size: 28px;
+}
+
+.poolBoxHanEpBtnSection {
+  padding-left: 25%;
+}
+
+.poolBoxHanEpBtnSection a {
+  color: #fff;
+  width: 99.994px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 9.994px;
+  text-align: center;
+  padding: 20.002px 0;
+  font-size: 15.998px;
+  display: block;
+  text-decoration: none;
+}
+
 // ------------------- POOL WETH Section ------------------- //
 
 .poolBoxWethSection {
-    width: 95%;
-    height: 80px;
-    display: flex;
-    align-items: center;
-    // background-color: red;
+  width: 95%;
+  height: 80px;
+  display: flex;
+  align-items: center;
 }
 
 .poolBoxWethLogoSection img {
-    width: 70px;
-    height: 70px;
+  width: 70px;
+  height: 70px;
 }
 .poolBoxWethTxtSection {
-    color: #fff;
-    margin: 0 2.5% 0 10px;
-    font-size: 32px;
+  color: #fff;
+  margin: 0 2.5% 0 10px;
+  font-size: 32px;
 }
 
 .poolBoxWethBtnSection {
-    padding-left: 25%;
+  padding-left: 25%;
 }
 
 .poolBoxWethBtnSection a {
-    color: #fff;
-    width: 100px;
-    background-color: rgba(255, 255, 255, 0.3);
-    border-radius: 10px;
-    text-align: center;
-    padding: 20px 0;
-    font-size: 16px;
-    display: block;
-    text-decoration: none;
+  color: #fff;
+  width: 99.994px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 9.994px;
+  text-align: center;
+  padding: 20.002px 0;
+  font-size: 15.998px;
+  display: block;
+  text-decoration: none;
 }
 
 // ------------------- POOL USDC Section ------------------- //
 
 .poolBoxUsdcSection {
-    width: 95%;
-    height: 80px;
-    display: flex;
-    align-items: center;
-    // background-color: red;
+  width: 95%;
+  height: 80px;
+  display: flex;
+  align-items: center;
 }
 
 .poolBoxUsdcLogoSection img {
-    width: 70px;
-    height: 70px;
+  width: 70px;
+  height: 70px;
 }
 .poolBoxUsdcTxtSection {
-    color: #fff;
-    margin: 0 2.5% 0 10px;
-    font-size: 32px;
+  color: #fff;
+  margin: 0 2.5% 0 10px;
+  font-size: 32px;
 }
 
 .poolBoxUsdcBtnSection {
-    padding-left: 26%;
+  padding-left: 26%;
 }
 
 .poolBoxUsdcBtnSection a {
-    color: #fff;
-    width: 100px;
-    background-color: rgba(255, 255, 255, 0.3);
-    border-radius: 10px;
-    text-align: center;
-    padding: 20px 0;
-    font-size: 16px;
-    display: block;
-    text-decoration: none;
+  color: #fff;
+  width: 100px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 16px;
+  display: block;
+  text-decoration: none;
 }
 
 // ------------------- POOL SHEEPOORI Section ------------------- //
 .poolBoxSpriSection {
-    width: 95%;
-    height: 80px;
-    display: flex;
-    align-items: center;
-    // background-color: red;
+  width: 95%;
+  height: 80px;
+  display: flex;
+  align-items: center;
 }
 
 .poolBoxSpriLogoSection img {
-    width: 70px;
-    height: 70px;
+  width: 70px;
+  height: 70px;
 }
 .poolBoxSpriTxtSection {
-    color: #fff;
-    margin: 0 2.5% 0 10px;
-    font-size: 32px;
+  color: #fff;
+  margin: 0 2.5% 0 10px;
+  font-size: 32px;
 }
 
 .poolBoxSpriBtnSection {
-    padding-left: 13%;
+  padding-left: 13%;
 }
 
 .poolBoxSpriBtnSection a {
-    color: #fff;
-    width: 100px;
-    background-color: rgba(255, 255, 255, 0.3);
-    border-radius: 10px;
-    text-align: center;
-    padding: 20px 0;
-    font-size: 16px;
-    display: block;
-    text-decoration: none;
+  color: #fff;
+  width: 100px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 16px;
+  display: block;
+  text-decoration: none;
+}
+
+// ------------------- POOL MUNIE Section ------------------- //
+.poolBoxMunieSection {
+  width: 95%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+}
+
+.poolBoxMunieLogoSection img {
+  width: 70px;
+  height: 70px;
+}
+.poolBoxMunieTxtSection {
+  color: #fff;
+  margin: 0 2.5% 0 10px;
+  font-size: 32px;
+}
+
+.poolBoxMunieBtnSection {
+  padding-left: 35.5%;
+}
+
+.poolBoxMunieBtnSection a {
+  color: #fff;
+  width: 100px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 16px;
+  display: block;
+  text-decoration: none;
 }
 
 // ------------------- Footer Container ------------------- //
 
 .mainPageFooterContainer {
-    display: flex;
-    flex-wrap: wrap;
-    position: fixed;
-    align-items: center;
-    justify-content: flex-end;
-    bottom: 0;
-    width: 100%;
-    height: 50px;
-    /* background-color: white; */
+  display: flex;
+  flex-wrap: wrap;
+  position: fixed;
+  align-items: center;
+  justify-content: flex-end;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
 }
 
 .home-eth {
-    margin-top: 200px;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin-bottom: 10%;
-    justify-content: center;
+  margin-top: 200px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-bottom: 10%;
+  justify-content: center;
 }
 
 .eth-box {
-    margin-right: 4%;
-    position: relative;
+  margin-right: 4%;
+  position: relative;
 }
 
 .eth-txt {
-    position: absolute;
-    font-size: 25px;
-    top: -30%;
+  position: absolute;
+  font-size: 25px;
+  top: -30%;
 }
 
 .home-eth #pool .home-2:first-child {
-    margin-bottom: 3%;
+  margin-bottom: 3%;
 }
 
 .home-2 {
-    color: #fff;
-    display: flex;
-    flex-direction: row;
-    // flex-wrap: wrap;
-    align-items: center;
-    width: 100%;
-    // margin-top: 10px;
+  color: #fff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
 }
 .home-2Spr {
-    color: #fff;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    width: 100%;
+  color: #fff;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 100%;
 }
 
 /*-------------------------*/
 .home-footer-logo {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .home-footer {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-    align-items: center;
-    position: absolute;
-    /*    width: 100%;*/
-    bottom: 0;
-    right: 0;
-    margin: 0 30px 20px 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 0 30px 20px 0;
 }
 
 .home-footer .logoimg {
-    align-self: center;
-    opacity: 0.6;
-    margin-left: 8px;
+  align-self: center;
+  opacity: 0.6;
+  margin-left: 8px;
 }
 
 .home-footer .logoimg a img {
-    width: 30px;
+  width: 30px;
 }
 
 .home-footer .logoimg:hover {
-    opacity: 1;
-    transition-duration: 0.5s;
-    /*    box-shadow: 0 4px 11px rgba(248 249 250 / 35%);*/
+  opacity: 1;
+  transition-duration: 0.5s;
 }
 
 .ether {
-    margin-right: 10px;
-    color: #212529;
-    background-color: rgba(255, 255, 255, 0.3);
-    border-radius: 10px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    padding: 2px 8px;
+  margin-right: 10px;
+  color: #212529;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 2px 8px;
 }
 
 .ether .ether_txt {
-    width: 80px;
-    font-weight: bold;
-    text-overflow: ellipsis;
-    overflow: hidden;
+  width: 80px;
+  font-weight: bold;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .ether .ether_copy {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .tooltip {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .tooltip,
 .tooltip2 {
-    position: relative;
-    display: inline-block;
+  position: relative;
+  display: inline-block;
 }
 
 .tooltip .tooltiptext {
-    visibility: hidden;
-    width: 140px;
-    background-color: #555;
-    color: #fff;
-    text-align: center;
-    border-radius: 6px;
-    padding: 5px;
-    position: absolute;
-    z-index: 1;
-    bottom: 150%;
-    left: 50%;
-    margin-left: -75px;
-    opacity: 0;
-    transition: opacity 0.3s;
-    text-overflow: ellipsis;
-    overflow: hidden;
+  visibility: hidden;
+  width: 140px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 150%;
+  left: 50%;
+  margin-left: -75px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .tooltip2 .tooltiptext2 {
-    visibility: hidden;
-    background-color: rgba(255, 255, 255, 0.3);
-    color: #fff;
-    text-align: center;
-    border-radius: 6px;
-    padding: 5px;
-    position: absolute;
-    z-index: 1;
-    bottom: 110%;
-    left: 0;
-    margin-left: -20px;
-    opacity: 0;
-    transition: opacity 0.3s;
-    text-overflow: ellipsis;
-    overflow: hidden;
+  visibility: hidden;
+  background-color: rgba(255, 255, 255, 0.3);
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 110%;
+  left: 0;
+  margin-left: -20px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .tooltip .tooltiptext::after {
-    content: "";
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    margin-left: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: #555 transparent transparent transparent;
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
 }
 
 .tooltip:hover .tooltiptext,
 .tooltip2:hover .tooltiptext2 {
-    visibility: visible;
-    opacity: 1;
+  visibility: visible;
+  opacity: 1;
 }
 
 #metamask_txt {
-    font-weight: normal;
+  font-weight: normal;
 }
 
 .material-main-spr-icons {
-    font-family: "Material Icons";
-    font-weight: normal;
-    font-style: normal;
-    font-size: 24px; /* Preferred icon size */
-    display: inline-block;
-    line-height: 1;
-    text-transform: none;
-    letter-spacing: normal;
-    word-wrap: normal;
-    white-space: nowrap;
-    color: white;
-    direction: ltr;
-
-    /* Support for all WebKit browsers. */
-    -webkit-font-smoothing: antialiased;
-    /* Support for Safari and Chrome. */
-    text-rendering: optimizeLegibility;
-
-    /* Support for Firefox. */
-    -moz-osx-font-smoothing: grayscale;
-
-    /* Support for IE. */
-    font-feature-settings: "liga";
+  font-family: "Material Icons";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px; /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  color: white;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "liga";
 }
 .material-main-spr-icons:hover {
-    opacity: 0.4;
+  opacity: 0.4;
 }
 
 .tooltip-main-spr-container {
-    margin-right: 10px;
-    position: relative;
-    font-size: 13px;
-    font-family: sans-serif;
-    &:hover {
-        .tooltip-main-spr-content {
-            visibility: visible;
-            opacity: 1;
-            transition: 0.25s all ease;
-            transition-delay: 0s;
-            top: -110px;
-            left: -20%;
-            // right: 200px;
-
-            width: 300px;
-            height: 100px;
-            font-size: 13px;
-        }
+  margin-right: 10px;
+  position: relative;
+  font-size: 13px;
+  font-family: sans-serif;
+  &:hover {
+    .tooltip-main-spr-content {
+      visibility: visible;
+      opacity: 1;
+      transition: 0.25s all ease;
+      transition-delay: 0s;
+      top: -110px;
+      left: -20%;
+      width: 300px;
+      height: 100px;
+      font-size: 13px;
     }
+  }
 }
 .tooltip-main-spr-content {
-    font-family: sans-serif;
-    visibility: hidden;
-    opacity: 0;
-    position: absolute;
-    background: #646fd4;
-    display: flex;
-    flex-direction: column;
-    left: 100px;
-    top: -300px;
-    padding: 0 15px;
-    margin: 10px;
-    font-size: 15px;
-    width: 250px;
-    transition: 0.25s all ease;
-    transition-delay: 0.25s;
-    z-index: 2;
-    font-size: 13px;
-    color: #ffffff;
+  font-family: sans-serif;
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  background: #646fd4;
+  display: flex;
+  flex-direction: column;
+  left: 100px;
+  top: -300px;
+  padding: 0 15px;
+  margin: 10px;
+  font-size: 15px;
+  width: 250px;
+  transition: 0.25s all ease;
+  transition-delay: 0.25s;
+  z-index: 2;
+  font-size: 13px;
+  color: #ffffff;
 
-    .tooltip-main-spr-content a {
-        text-decoration: underline;
-    }
+  .tooltip-main-spr-content a {
+    text-decoration: underline;
+  }
 
-    .align-main-spr-right {
-        text-decoration: underline;
-        color: yellow;
-    }
-    //   .align-main-right {
-    //     text-align: left;
-    //     a {
-    //       font-size: 13px;
-
-    //       color: yellow;
-    //       text-decoration: none;
-    //       &:hover {
-    //         text-decoration: underline;
-    //       }
-    //     }
-    //   }
-    &:after {
-    }
+  .align-main-spr-right {
+    text-decoration: underline;
+    color: yellow;
+  }
+  &:after {
+  }
 }
-//  ------------------- 반응형 ------------------- //
-// @media only screen and (max-width: 1335px) {
-//   // ------------------- StakingPool Container ------------------- //
+.tokenomics-Section {
+  display: flex;
+  position: absolute;
+  bottom: 3%;
+  left: 2%;
+}
 
-//   .mainPageStakingPoolContainer {
-//     display: flex;
-//     margin-top: 170px;
-//     justify-content: center;
-//     align-items: center;
-//   }
+.hanTokenomicsSection {
+  margin-right: 10px;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  height: 21px;
+  align-items: center;
+  padding: 2px 8px;
+}
+.hanTokenomicsSection a {
+  text-decoration: none;
+  color: rgb(0 88 255);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-//   // ------------------- ARRAKIS SHEEPOORI Container ------------------- //
-//   .mainPageStakingContainer {
-//     margin-right: 2.083vw;
-//   }
+.hanTokenomicsSection a img {
+  margin-right: 8px;
+}
 
-//   .mainPageStakingTitleSection {
-//     font-size: 22px;
-//     color: #fff;
-//     position: absolute;
-//     top: 43%;
-//     left: 5%;
-//   }
+.hanEpTokenomicsSection {
+  margin-right: 10px;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  height: 21px;
+  align-items: center;
+  padding: 2px 8px;
+}
 
-//   .mainPageStakingBoxSection {
-//     padding-top: 3%;
-//     padding-left: 3%;
-//     padding-bottom: 3%;
-//     border-radius: 2.083vw;
-//     background-color: rgba(255, 255, 255, 0.3);
-//     width: 580px;
-//     height: 185px;
-//     box-sizing: border-box;
-//   }
+.hanEpTokenomicsSection a {
+  text-decoration: none;
+  color: rgb(0 88 255);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-//   // ------------------- ARRAKIS SECTION ------------------- //
-//   .poolBoxArrakisSection {
-//     width: 95%;
-//     height: 74px;
-//     display: flex;
-//     align-items: center;
-//     // background-color: red;
-//   }
-
-//   .poolBoxArrakisLogoSection img {
-//     width: 64px;
-//     height: 64px;
-//   }
-//   .poolBoxArrakisTxtSection {
-//     color: #fff;
-//     margin-left: 0.694vw;
-//     font-size: 29px;
-//   }
-
-//   .poolBoxArrakisBtnSection {
-//     padding-left: 0.5%;
-//   }
-
-//   .poolBoxArrakisBtnSection a {
-//     color: #fff;
-//     width: 112px;
-//     background-color: rgba(255, 255, 255, 0.3);
-//     border-radius: 9px;
-//     text-align: center;
-//     padding: 20px 0;
-//     font-size: 23px;
-//     display: block;
-//     text-decoration: none;
-//   }
-
-//   .material-main-icons {
-//     font-family: "Material Icons";
-//     font-weight: normal;
-//     font-style: normal;
-//     font-size: 1.667vw; /* Preferred icon size */
-//     display: inline-block;
-//     line-height: 1;
-//     text-transform: none;
-//     letter-spacing: normal;
-//     word-wrap: normal;
-//     white-space: nowrap;
-//     color: white;
-//     direction: ltr;
-
-//     /* Support for all WebKit browsers. */
-//     -webkit-font-smoothing: antialiased;
-//     /* Support for Safari and Chrome. */
-//     text-rendering: optimizeLegibility;
-
-//     /* Support for Firefox. */
-//     -moz-osx-font-smoothing: grayscale;
-
-//     /* Support for IE. */
-//     font-feature-settings: "liga";
-//   }
-
-//   .material-rakis6-main-icons:hover {
-//     opacity: 0.4;
-//   }
-
-//   .tooltip-rakis6-main-container {
-//     position: relative;
-//     font-size: 0.903vw;
-//     font-family: sans-serif;
-//     &:hover {
-//       .tooltip-rakis6-main-content {
-//         visibility: visible;
-//         opacity: 1;
-//         transition: 0.25s all ease;
-//         transition-delay: 0s;
-//         top: -13.889vw;
-//         left: -20%;
-//         // right: 13.889vw;
-
-//         width: 20.833vw;
-//         height: 10.417vw;
-//         font-size: 0.903vw;
-//       }
-//     }
-//   }
-//   .tooltip-rakis6-main-content {
-//     font-family: sans-serif;
-//     visibility: hidden;
-//     opacity: 0;
-//     position: absolute;
-//     background: #646fd4;
-//     display: flex;
-//     flex-direction: column;
-//     left: 6.944vw;
-//     top: -20.833vw;
-//     padding: 0 1.042vw;
-//     margin: 0.694vw;
-//     font-size: 1.042vw;
-//     width: 17.361vw;
-//     transition: 0.25s all ease;
-//     transition-delay: 0.25s;
-//     z-index: 2;
-//     font-size: 0.903vw;
-//     color: #ffffff;
-
-//     .tooltip-rakis6-main-content a {
-//       text-decoration: underline;
-//     }
-
-//     .align-rakis6-main-right {
-//       text-decoration: underline;
-//       color: yellow;
-//     }
-//     //   .align-main-right {
-//     //     text-align: left;
-//     //     a {
-//     //       font-size: 0.903vw;
-
-//     //       color: yellow;
-//     //       text-decoration: none;
-//     //       &:hover {
-//     //         text-decoration: underline;
-//     //       }
-//     //     }
-//     //   }
-//     &:after {
-//     }
-//   }
-
-//   // ------------------- SHEEPOORI SECTION ------------------- //
-
-//   .poolBoxSpriSection {
-//     width: 95%;
-//     height: 74px;
-//     display: flex;
-//     align-items: center;
-//     // background-color: red;
-//   }
-
-//   .poolBoxSpriLogoSection img {
-//     width: 64px;
-//     height: 64px;
-//   }
-//   .poolBoxSpriTxtSection {
-//     color: #fff;
-//     margin-left: 0.694vw;
-//     font-size: 29px;
-//   }
-
-//   .poolBoxSpriBtnSection {
-//     padding-left: 11.5%;
-//   }
-
-//   .poolBoxSpriBtnSection a {
-//     color: #fff;
-//     width: 112px;
-//     background-color: rgba(255, 255, 255, 0.3);
-//     border-radius: 9px;
-//     text-align: center;
-//     padding: 20px 0;
-//     font-size: 23px;
-//     display: block;
-//     text-decoration: none;
-//   }
-
-//   .material-main-spri-icons {
-//     font-family: "Material Icons";
-//     font-weight: normal;
-//     font-style: normal;
-//     font-size: 1.667vw; /* Preferred icon size */
-//     display: inline-block;
-//     line-height: 1;
-//     text-transform: none;
-//     letter-spacing: normal;
-//     word-wrap: normal;
-//     white-space: nowrap;
-//     color: white;
-//     direction: ltr;
-
-//     /* Support for all WebKit browsers. */
-//     -webkit-font-smoothing: antialiased;
-//     /* Support for Safari and Chrome. */
-//     text-rendering: optimizeLegibility;
-
-//     /* Support for Firefox. */
-//     -moz-osx-font-smoothing: grayscale;
-
-//     /* Support for IE. */
-//     font-feature-settings: "liga";
-//   }
-//   .material-main-spri-icons:hover {
-//     opacity: 0.4;
-//   }
-
-//   .tooltip-main-spri-container {
-//     // margin-right: 0.694vw;
-//     position: relative;
-//     font-size: 0.903vw;
-//     font-family: sans-serif;
-//     &:hover {
-//       .tooltip-main-spri-content {
-//         visibility: visible;
-//         opacity: 1;
-//         transition: 0.25s all ease;
-//         transition-delay: 0s;
-//         top: -7.639vw;
-//         left: -20%;
-//         // right: 13.889vw;
-
-//         width: 20.833vw;
-//         height: 6.944vw;
-//         font-size: 0.903vw;
-//       }
-//     }
-//   }
-//   .tooltip-main-spri-content {
-//     font-family: sans-serif;
-//     visibility: hidden;
-//     opacity: 0;
-//     position: absolute;
-//     background: #646fd4;
-//     display: flex;
-//     flex-direction: column;
-//     left: 6.944vw;
-//     top: -20.833vw;
-//     padding: 0 1.042vw;
-//     margin: 0.694vw;
-//     font-size: 1.042vw;
-//     width: 17.361vw;
-//     transition: 0.25s all ease;
-//     transition-delay: 0.25s;
-//     z-index: 2;
-//     font-size: 0.903vw;
-//     color: #ffffff;
-
-//     .tooltip-main-spri-content a {
-//       text-decoration: underline;
-//     }
-
-//     .align-main-spri-right {
-//       text-decoration: underline;
-//       color: yellow;
-//     }
-//     //   .align-main-right {
-//     //     text-align: left;
-//     //     a {
-//     //       font-size: 0.903vw;
-
-//     //       color: yellow;
-//     //       text-decoration: none;
-//     //       &:hover {
-//     //         text-decoration: underline;
-//     //       }
-//     //     }
-//     //   }
-//     &:after {
-//     }
-//   }
-
-//   // ------------------- POOL Container ------------------- //
-
-//   .mainPagePoolContainer {
-//     margin-left: 2.083vw;
-//   }
-
-//   .mainPagePoolTitleSection {
-//     font-size: 1.736vw;
-//     color: #fff;
-//     position: absolute;
-//     top: 42%;
-//     left: 53%;
-//   }
-
-//   .mainPagePoolBoxSection {
-//     padding-top: 3%;
-//     padding-left: 5%;
-//     padding-bottom: 3%;
-//     border-radius: 2.083vw;
-//     background-color: rgba(255, 255, 255, 0.3);
-//     width: 43.75vw;
-//     height: 13.889vw;
-//     box-sizing: border-box;
-//   }
-//   // ------------------- POOL WETH Section ------------------- //
-
-//   .poolBoxWethSection {
-//     width: 95%;
-//     height: 5.556vw;
-//     display: flex;
-//     align-items: center;
-//     // background-color: red;
-//   }
-
-//   .poolBoxWethLogoSection img {
-//     width: 4.861vw;
-//     height: 4.861vw;
-//   }
-//   .poolBoxWethTxtSection {
-//     color: #fff;
-//     margin: 0 2.5% 0 0.694vw;
-//     font-size: 2.222vw;
-//   }
-
-//   .poolBoxWethBtnSection {
-//     padding-left: 23.3%;
-//   }
-
-//   .poolBoxWethBtnSection a {
-//     color: #fff;
-//     width: 8.333vw;
-//     background-color: rgba(255, 255, 255, 0.3);
-//     border-radius: 0.694vw;
-//     text-align: center;
-//     padding: 1.389vw 0;
-//     font-size: 1.736vw;
-//     display: block;
-//     text-decoration: none;
-//   }
-
-//   // ------------------- POOL USDC Section ------------------- //
-
-//   .poolBoxUsdcSection {
-//     width: 95%;
-//     height: 5.556vw;
-//     display: flex;
-//     align-items: center;
-//     // background-color: red;
-//   }
-
-//   .poolBoxUsdcLogoSection img {
-//     width: 4.861vw;
-//     height: 4.861vw;
-//   }
-//   .poolBoxUsdcTxtSection {
-//     color: #fff;
-//     margin: 0 2.5% 0 0.694vw;
-//     font-size: 2.222vw;
-//   }
-
-//   .poolBoxUsdcBtnSection {
-//     padding-left: 25%;
-//   }
-
-//   .poolBoxUsdcBtnSection a {
-//     color: #fff;
-//     width: 8.333vw;
-//     background-color: rgba(255, 255, 255, 0.3);
-//     border-radius: 0.694vw;
-//     text-align: center;
-//     padding: 1.389vw 0;
-//     font-size: 1.736vw;
-//     display: block;
-//     text-decoration: none;
-//   }
-// }
+.hanEpTokenomicsSection a img {
+  margin-right: 8px;
+}

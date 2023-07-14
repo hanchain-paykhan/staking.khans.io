@@ -1,0 +1,283 @@
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 99;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.modal button {
+  outline: none;
+  border: 0;
+}
+
+.close {
+  cursor: pointer;
+}
+
+.close:after {
+  //   display: inline-block;
+  content: "\00d7";
+  font-size: 30px;
+}
+
+.han-Staking-ModalTopTitleSection svg {
+  cursor: pointer;
+}
+.modal > section {
+  width: 90%;
+  border-radius: 12px;
+  position: absolute;
+  top: 5%;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  max-width: 450px;
+  max-height: 600px;
+  margin: 60px auto;
+  background-color: #fff;
+  /* 팝업이 열릴때 스르륵 열리는 효과 */
+  animation: modal-show 0.3s;
+  overflow: hidden;
+}
+.modal > section > header {
+  background-color: #f1f1f1;
+}
+.modal > section > header button {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 30px;
+  font-size: 21px;
+  font-weight: 700;
+  text-align: center;
+  color: #999;
+  background-color: transparent;
+}
+.han-Staking-ModalTopTitleSection {
+  font-size: 24px;
+  justify-content: space-between;
+  display: flex;
+  padding: 32px 36px 0;
+  padding-bottom: 32px;
+}
+
+.modal > section > main {
+  padding: 16px;
+  border-bottom: 1px solid #dee2e6;
+  border-top: 1px solid #dee2e6;
+}
+
+.han-Staking-ModalTokenInfoContainer {
+  padding: 16px;
+  border-top: 1px solid #dee2e6;
+}
+
+.han-Staking-ModalTokensSearchInputSection {
+  align-items: center;
+  display: flex;
+  border-radius: 12px;
+  height: 30px;
+  border: 1px solid black;
+  font-size: 14px;
+  padding: 10px 12px;
+}
+
+.han-Staking-ModalSearchIcon {
+  position: absolute;
+}
+
+.han-Staking-ModalTokensSearchInput {
+  background-color: inherit;
+  border: none;
+  margin-left: 15px;
+  outline: none;
+  max-width: 400px;
+  width: 80%;
+  font-size: 20px;
+}
+
+.modal.openModal {
+  display: flex;
+  align-items: center;
+  /* 팝업이 열릴때 스르륵 열리는 효과 */
+  animation: modal-bg-show 0.3s;
+}
+@keyframes modal-show {
+  from {
+    opacity: 0;
+    margin-top: -50px;
+  }
+  to {
+    opacity: 1;
+    margin-top: 0;
+  }
+}
+@keyframes modal-bg-show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+// ---------------------------- Scroll Box -----------------------------------//
+.han-Staking-ModalTokenListSection {
+  width: 100%;
+  height: 400px;
+  margin-top: 10px;
+}
+
+.han-Staking-Modal-Title {
+  display: flex;
+  flex-direction: row;
+}
+
+.han-Staking-Modal-Title a {
+  font-size: 15px;
+}
+
+.han-Staking-Modal-Title-Num {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.han-Staking-Modal-Title-Amount {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 130px;
+}
+
+.han-Staking-Modal-Title-Date {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 72px;
+}
+
+.han-Staking-TokenList_PickerToken {
+  list-style: none;
+  margin: 0;
+  height: 100%;
+  overflow-y: scroll;
+  padding: 0 0 12px;
+}
+
+.musikhan-TokenList_PickerToken li {
+  display: flex;
+  align-items: center;
+  height: 60px;
+  justify-content: space-between;
+  margin: 0 8px;
+  padding-right: 12px;
+}
+
+.musikhan-TokenList_PickerToken li:hover {
+  cursor: pointer;
+  background-color: #21262c5d;
+}
+
+.han-Staking-TokenListTokenImgTextSection {
+  align-items: center;
+  display: flex;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.han-Staking-TokenListTokenImgTextSection Img {
+  margin-right: 30px;
+  width: 35px;
+  height: 35px;
+}
+
+.han-Staking-TokenListNameSymbolSection {
+  display: flex;
+  flex: 100%;
+}
+.han-Staking-TokenListIndexNum h2 {
+  font-size: 15px;
+}
+
+.han-Staking-TokenListNameSection {
+  flex: 50%;
+  width: 140px;
+  line-height: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.han-Staking-TokenListNameSection h2 {
+  display: flex;
+  font-size: 15px;
+  margin: 0;
+}
+
+.han-Staking-TokenListSymbolSection {
+  width: 140px;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 12px;
+  align-items: center;
+}
+
+.han-Staking-TokenListSymbolSection h2 {
+  display: flex;
+  font-size: 15px;
+  margin: 0;
+}
+
+.han-Staking-TokenListTokenImgTextSection {
+  align-items: center;
+  display: flex;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.han-Staking-TokenListTokenImgTextSection Img {
+  margin-right: 30px;
+  width: 35px;
+  height: 35px;
+}
+
+.han-Staking-TokenListNameSymbolSection {
+  display: flex;
+  flex: 100%;
+}
+.han-Staking-TokenListIndexNum h2 {
+  font-size: 15px;
+}
+
+.han-Staking-TokenListNameSection {
+  flex: 50%;
+  width: 140px;
+  line-height: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.han-Staking-TokenListNameSection h2 {
+  display: flex;
+  font-size: 15px;
+  margin: 0;
+}
+
+.han-Staking-TokenListSymbolSection {
+  width: 140px;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 12px;
+  align-items: center;
+}
+
+.han-Staking-TokenListSymbolSection h2 {
+  display: flex;
+  font-size: 15px;
+  margin: 0;
+}

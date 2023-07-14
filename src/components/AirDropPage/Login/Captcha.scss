@@ -1,0 +1,233 @@
+.catpcath {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 99;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.catpcath button {
+  outline: none;
+  border: 0;
+}
+
+.close {
+  cursor: pointer;
+}
+
+.close:after {
+  //   display: inline-block;
+  content: "\00d7";
+  font-size: 30px;
+}
+.catpcath > section {
+  width: 90%;
+  border-radius: 12px;
+  position: absolute;
+  top: 5%;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  max-width: 420px;
+  max-height: 510px;
+  margin: 60px auto;
+  background-color: #fff;
+  /* 팝업이 열릴때 스르륵 열리는 효과 */
+  animation: modal-show 0.3s;
+  overflow: hidden;
+}
+.catpcath > section > header {
+  background-color: #f1f1f1;
+}
+.catpcath > section > header button {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 30px;
+  font-size: 21px;
+  font-weight: 700;
+  text-align: center;
+  color: black;
+  background-color: transparent;
+}
+.checkId-ModalTopTitleSection {
+  font-size: 24px;
+  justify-content: space-between;
+  display: flex;
+  padding: 32px 36px 0;
+  padding-bottom: 32px;
+  color: black;
+}
+.checkId-ModalTokensTxtSection {
+  display: flex;
+  padding-left: 40px;
+  margin-top: 8px;
+}
+
+.catpcath > section > main {
+  padding: 16px;
+  border-bottom: 1px solid #dee2e6;
+  border-top: 1px solid #dee2e6;
+}
+
+.catpcath.openModal {
+  display: flex;
+  align-items: center;
+  /* 팝업이 열릴때 스르륵 열리는 효과 */
+  animation: modal-bg-show 0.3s;
+}
+@keyframes modal-show {
+  from {
+    opacity: 0;
+    margin-top: -50px;
+  }
+  to {
+    opacity: 1;
+    margin-top: 0;
+  }
+}
+@keyframes modal-bg-show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.captchaEmailContainer {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.captchaCanvas {
+  width: 10px;
+  height: 10px;
+}
+
+.captchaEmailSection h3 {
+  color: black;
+  margin-left: 10px;
+  padding-top: 10px;
+}
+
+.checkId-captchaSection-Txt {
+  margin-left: 10px;
+  padding-top: 20px;
+  margin-top: 20px;
+}
+.checkId-captchaSection-Txt a {
+  color: black;
+}
+
+#canv {
+  width: 150px;
+  height: 80px;
+}
+
+.checkId-captcahRefreshIconSection {
+  display: flex;
+  margin-right: 10px;
+  margin-top: 30px;
+}
+#reload_href {
+  display: flex;
+  position: absolute;
+  right: 54%;
+  bottom: 40%;
+  background-color: #fff;
+  width: 40px;
+  height: 40px;
+  margin-left: 10px;
+  background-image: url("../../../assets/images/refresh2.png");
+  background-size: cover;
+}
+
+#reload_href:hover {
+  opacity: 0.6;
+}
+
+.checkId-ModalTokensSearchInputSection {
+  align-items: center;
+  display: flex;
+  border-radius: 12px;
+  height: 30px;
+  border: 1px solid black;
+  font-size: 20px;
+  margin-top: 10px;
+  padding: 10px 12px;
+  width: 85%;
+  margin-left: 20px;
+}
+
+.checkId-ModalSearchIcon {
+  position: absolute;
+  color: black;
+  margin-right: 30px;
+}
+
+.checkId-ModalTokensSearchInput {
+  background-color: inherit;
+  border: none;
+  margin-left: 30px;
+  font-size: 20px;
+  outline: none;
+  max-width: 400px;
+  width: 90%;
+}
+
+.checkId-captchaInputSection {
+  align-items: center;
+  display: flex;
+  border-radius: 12px;
+  height: 30px;
+  border: 1px solid black;
+  font-size: 20px;
+  padding: 10px 12px;
+  width: 85%;
+  margin-left: 20px;
+}
+
+.checkId-captchaIcon {
+  position: absolute;
+  color: black;
+  margin-right: 30px;
+}
+
+.checkId-captchaInput {
+  background-color: inherit;
+  border: none;
+  margin-left: 30px;
+  font-size: 20px;
+  outline: none;
+  max-width: 400px;
+  width: 85%;
+}
+
+.captchaSendBtnSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.captchaSendBtnSection button {
+  font-family: "SCDream8";
+  cursor: pointer;
+  background-color: #39a2db;
+  border-radius: 12px;
+  border: 0.1px solid #39a2db;
+  width: 91%;
+  margin-top: 50px;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: -0.05em;
+  height: 52px;
+  font-family: inherit;
+}
+
+.captchaSendBtnSection button:hover {
+  opacity: 0.5;
+}
