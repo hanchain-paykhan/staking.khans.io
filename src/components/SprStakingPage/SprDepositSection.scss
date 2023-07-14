@@ -1,0 +1,239 @@
+// ----------------------- DEPOSIT SECTION ----------------------- //
+.stakedSprCanAmountSection {
+  position: absolute;
+  top: 1%;
+  text-shadow: #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px,
+    #0a1126 0px 0px 3.998px;
+  color: #72cef2;
+  font-size: 15px;
+}
+.sprStakingCantChoiceImgContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 75px;
+  padding-bottom: 75px;
+}
+
+.sprStakingCantChoiceImgSection {
+  width: 150px;
+  height: 150px;
+  background: url("../../assets/images/sheeprilogo.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  cursor: not-allowed;
+}
+.cantStakingSprBtn {
+  text-shadow: #24b5ee 0px 0px 1.5px, #24b5ee 0px 0px 1.5px, #24b5ee 0px 0px 1.5px, #24b5ee 0px 0px 1.5px, #24b5ee 0px 0px 1.5px,
+    #24b5ee 0px 0px 1.5px;
+  color: #0a1126;
+  font-size: 20px;
+}
+
+//  -----------------Deposit Slider Section -------------------- //
+.sprStakingImgContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+.sprStakingImgCard {
+  width: 150px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.alice-carousel__prev-btn,
+.alice-carousel__next-btn {
+  position: absolute;
+  top: 45px;
+  width: auto;
+  font-size: 35px;
+}
+
+.alice-carousel__prev-btn {
+  left: -48%;
+}
+
+.alice-carousel__next-btn {
+  right: -48%;
+}
+
+.sprStakingImgTokenId {
+  font-size: 15px;
+}
+
+.modalTitleTxt p {
+  color: #0a1126;
+}
+
+.modalMainContainer p {
+  color: #0a1126;
+}
+
+.sprStakingImgCard {
+  width: 150px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.alice-carousel__prev-btn {
+  text-align: none;
+}
+
+.alice-carousel__next-btn {
+  text-align: left;
+}
+
+/* ------------------- Check Box -------------------*/
+.imgCheckBox {
+  position: relative;
+  top: -40%;
+  right: -37%;
+  width: 10px;
+  height: 10px;
+}
+
+.sprStakingImgCard input {
+  zoom: 2;
+}
+
+.sprStakingChoiceImgSection {
+  width: 150px;
+  height: 150px;
+  color: white;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.sprStakingBeforeChoiceImgSection:hover {
+  opacity: 0.5;
+}
+
+.rewardsClaimSprBtnSection button {
+  height: 50.002px;
+}
+
+.sprUnStakeBtnSection button {
+  height: 50.002px;
+}
+
+.depositSprStakeBtnSection {
+  display: flex;
+  justify-content: center;
+  padding-top: 11px;
+}
+
+.depositSprStakeBtnSection button {
+  height: 50.002px;
+}
+
+.logoContainer {
+  display: flex;
+  justify-content: right;
+  margin-right: 39.998px;
+}
+
+.HanEpTxtContinaer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.HanEpTxt {
+  cursor: pointer;
+  font-size: 17px;
+  color: #39a2db;
+  text-shadow: #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px,
+    #0a1126 0px 0px 3.998px;
+}
+
+.sliderLeftBtn svg {
+  position: absolute;
+  top: 40%;
+  cursor: pointer;
+  left: 0;
+  color: #1e62d0;
+}
+
+.sliderRightBtn svg:hover {
+  opacity: 0.4;
+}
+
+.sliderRightBtn svg {
+  position: absolute;
+  top: 40%;
+  cursor: pointer;
+  right: 0;
+  color: #1e62d0;
+}
+
+.sliderLeftBtn svg:hover {
+  opacity: 0.4;
+}
+
+button.spr-learn-more {
+  margin-top: 13px;
+  width: 300px;
+  font-weight: 600;
+  font-family: "SCDream8";
+  color: black;
+  text-transform: uppercase;
+  padding: 1.25em 2em;
+  border: 0.104vw solid rgba(0, 0, 0, 0.3);
+  border-radius: 0.75em;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  transition: background 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
+  transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), background 150ms cubic-bezier(0, 0, 0.58, 1);
+  transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), background 150ms cubic-bezier(0, 0, 0.58, 1),
+    -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
+}
+button.spr-learn-more::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 1;
+  border-radius: inherit;
+  -webkit-transform: translate3d(0, 0.75em, -1em);
+  transform: translate3d(0, 0.75em, -1em);
+  transition: box-shadow 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
+  transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), box-shadow 150ms cubic-bezier(0, 0, 0.58, 1);
+  transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), box-shadow 150ms cubic-bezier(0, 0, 0.58, 1),
+    -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
+}
+button.spr-learn-more:hover {
+  background: lightgray;
+  -webkit-transform: translate(0, 0.25em);
+  transform: translate(0, 0.25em);
+}
+button.spr-learn-more:hover::before {
+  -webkit-transform: translate3d(0, 0.5em, -1em);
+  transform: translate3d(0, 0.5em, -1em);
+}
+button.spr-learn-more:active {
+  background: rgba(255, 255, 255, 0.3);
+  -webkit-transform: translate(0em, 0.75em);
+  transform: translate(0em, 0.75em);
+}
+button.spr-learn-more:active::before {
+  -webkit-transform: translate3d(0, 0, -1em);
+  transform: translate3d(0, 0, -1em);
+}

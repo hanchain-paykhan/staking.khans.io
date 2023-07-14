@@ -2,37 +2,32 @@ import { MusikhanAirdropContract } from "../../../../config/MusikhanConfig";
 // import { MusikhanAirdropContract } from "../../../../config/MusikhanConfigTest";
 import axios from "axios";
 
-function musiAirDropClaimedAct(account, musiKhanNewRoot) {
+function musiAirDropClaimedAct(account, musiKhanNewRoot, musiTokenl2Ca) {
     return async (dispatch) => {
         try {
-            let musiModalData = {};
-            musiModalData.account = account;
-            musiModalData.c_root = musiKhanNewRoot;
-
-            const getMusiProofAmountTokenToBack = await axios({
-                method: "POST", // [요청 타입]
-                url: `https://admin.khans.io/music/changeAddress`, // [요청 주소]
-                data: JSON.stringify(musiModalData), // [요청 데이터]
-                headers: {
-                    "Content-Type": "application/json; charset=utf-8",
-                },
-                timeout: 3000,
+            const getMusiProofAmountTokenToBack = await axios.post(`https://back.khans.io/block/musikhanAirdrop`, {
+                // const getMusiProofAmountTokenToBack = await axios.post(`https://localhost:4000/block/musikhanAirdrop`, {
+                account,
+                musikhanTokenAddress: musiTokenl2Ca,
             });
 
-            const musiClaimedApi = await MusikhanAirdropContract.methods
-                .claimed(
-                    getMusiProofAmountTokenToBack.data.proof,
-                    getMusiProofAmountTokenToBack.data.eth_amount,
-                    getMusiProofAmountTokenToBack.data.contract_address
-                )
-                .call({ from: account });
+            const getmusiProofToBack = getMusiProofAmountTokenToBack.data.proof;
+            const getmusiAmountToBack = getMusiProofAmountTokenToBack.data.eth_amount;
+            const getmusiTokenCaToBack = getMusiProofAmountTokenToBack.data.contract_address;
 
-            dispatch({
-                type: "MUSI_AIRDROP_CLAIMED_STATE",
-                payload: {
-                    musiClaimed: musiClaimedApi,
-                },
-            });
+            // console.log(getmusiProofToBack);
+            if (getmusiProofToBack && getmusiAmountToBack && getmusiTokenCaToBack) {
+                const musiClaimedApi = await MusikhanAirdropContract.methods.claimed(getmusiProofToBack, getmusiAmountToBack, getmusiTokenCaToBack).call({ from: account });
+
+                dispatch({
+                    type: "MUSI_AIRDROP_CLAIMED_STATE",
+                    payload: {
+                        musiClaimed: musiClaimedApi,
+                    },
+                });
+            } else {
+                return null;
+            }
         } catch (error) {
             console.error(error);
         }

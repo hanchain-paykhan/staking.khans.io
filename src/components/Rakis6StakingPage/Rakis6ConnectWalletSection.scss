@@ -1,0 +1,154 @@
+.stakingCanAmountSection {
+  position: absolute;
+  top: -10%;
+  left: 2%;
+  text-shadow: #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px,
+    #0a1126 0px 0px 3.998px;
+  color: #72cef2;
+}
+
+.stakedCanAmountSection {
+  position: absolute;
+  top: -2%;
+  left: 2%;
+  text-shadow: #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px,
+    #0a1126 0px 0px 3.998px;
+  color: #72cef2;
+}
+
+// ------------------------ Connect Wallet Btn Section ---------------------- //
+
+.connectRakis6WalletSection {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  top: -7%;
+  right: 2%;
+}
+
+.cantConnetRakis6Txt {
+  border-radius: 2rem;
+  color: yellow;
+  font-size: 18px;
+  margin-right: 10px;
+}
+
+.connectRakis6WalletSection a {
+  font-size: 9.998px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.connectRakis6WalletSection a img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// ------------------------ Cant Connect Wallet Btn Section ---------------------- //
+
+.connectRakis6CantWalletSection {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  top: -10%;
+  right: 2%;
+}
+
+.cantConnetRakis6Txt {
+  border-radius: 2rem;
+  color: yellow;
+  font-size: 18px;
+  margin-right: 10px;
+}
+
+.connectRakis6CantWalletSection a {
+  font-size: 9.998px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.connectRakis6CantWalletSection a img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// ------------------ Optimism --------- //
+.connectRakis6ComWalletSection {
+  position: absolute;
+  top: -7%;
+  right: 2%;
+}
+
+.connectRakis6ComWalletSection a {
+  font-size: 9.998px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.connectRakis6ComWalletSection a img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.connectWalletSection {
+  position: absolute;
+  top: -10%;
+  right: 2%;
+  display: flex;
+}
+
+.connectWalletSection button {
+  background: #39a2db;
+  border-radius: 1rem;
+  height: 30px;
+}
+
+.connectWalletSection button:hover {
+  opacity: 0.5;
+}
+
+.connectWalletComSection {
+  position: absolute;
+  top: -10%;
+  right: 2%;
+  display: flex;
+  align-items: center;
+}
+
+.cantWalletTxt {
+  margin-right: 10px;
+  color: red;
+  font-size: 18px;
+}
+
+.connectWalletComSection button {
+  background: #39a2db;
+  border-radius: 1rem;
+  height: 30px;
+  font-weight: bold;
+  color: black;
+}
+
+.connectOtpImg {
+  width: 30px;
+  height: 30px;
+}
+
+.connectWalletComSection {
+  display: flex;
+  position: absolute;
+  top: -10%;
+  right: 2%;
+  height: 30px;
+}
+
+.connectWalletComSection button {
+  background: #39a2db;
+  border-radius: 1rem;
+}

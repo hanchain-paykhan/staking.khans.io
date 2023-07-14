@@ -1,0 +1,68 @@
+// ------------------ Withdraw  ------------------
+
+.withdrawAmountSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 81.998px;
+  margin-bottom: 39.998px;
+  color: black;
+}
+
+.withdrawAmountSection input {
+  font-family: "SCDream8";
+  width: 220.003px;
+  height: 50.002px;
+  background-color: rgba(255, 255, 255, 0.3);
+  font-size: 15px;
+  text-align: center;
+  border-radius: 1.5rem;
+  padding-left: 20.002px;
+  padding-right: 20.002px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+}
+
+.withdrawAmountSection input::-webkit-outer-spin-button,
+.withdrawAmountSection input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.withdrawAmountSection input:focus {
+  outline: none;
+}
+
+.withdrawAmountSection input::placeholder {
+  text-align: center;
+  color: black;
+  opacity: 0.5;
+}
+.withdrawAmountSection p {
+  font-size: 20.002px;
+  color: black;
+  margin-left: 24.997px;
+}
+
+.withdrawUnstakeBtnSection {
+  display: flex;
+  justify-content: center;
+}
+
+.withdrawUnstakeBtnSection button {
+  height: 50.002px;
+}
+
+.unStakeCantBtnSection {
+  margin-top: 61px;
+}
+
+.unStakeBtnSection {
+  padding-top: 61px;
+}
+
+.unStakeCantTxt {
+  font-size: 35px;
+}

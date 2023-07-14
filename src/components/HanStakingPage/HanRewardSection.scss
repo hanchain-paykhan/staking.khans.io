@@ -1,0 +1,148 @@
+// ----------------------- REWARDS SECTION ----------------------- //
+.rakis6-AirDrop-Reward-Container {
+  position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, 0%);
+}
+
+.han-Staking-Reward-Quaota-Section {
+  position: absolute;
+  top: -10%;
+  left: 2%;
+  text-shadow: #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px,
+    #0a1126 0px 0px 3.998px;
+  color: #72cef2;
+  font-size: 16px;
+}
+
+.han-Staking-Reward-StakeAmount-Section {
+  position: absolute;
+  top: -3%;
+  left: 2%;
+  text-shadow: #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px,
+    #0a1126 0px 0px 3.998px;
+  color: #72cef2;
+  font-size: 16px;
+}
+
+.han-Staking-Reward-EstSection {
+  display: flex;
+  width: 100%;
+  position: relative;
+  justify-content: center;
+  color: black;
+  padding-left: 1.3%;
+  margin-top: 40px;
+}
+
+.han-Staking-Reward-EstSection p {
+  font-size: 20.002px;
+  margin-right: 10.002px;
+}
+
+.han-Staking-Reward-RefreshIcon {
+  cursor: pointer;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.rewardRefreshIcon {
+  color: black;
+}
+
+.han-Staking-Reward-AccSection {
+  position: relative;
+  padding-right: 2.5%;
+  margin-bottom: 40px;
+}
+.han-Staking-Reward-AccSection P {
+  font-size: 20px;
+}
+
+.han-Staking-Reward-InterSection {
+  display: flex;
+  width: 100%;
+  position: relative;
+  justify-content: center;
+  color: black;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.han-Staking-Reward-InterSection p {
+  font-size: 20px;
+}
+
+.han-Staking-Rewards-ClaimBtnSection {
+  display: flex;
+  justify-content: center;
+}
+
+.han-Staking-Rewards-ClaimBtnSection button {
+  height: 50.002px;
+}
+
+button.han-Staking-Reward-CanBtn {
+  width: 300px;
+  font-weight: 600;
+  font-family: "SCDream8";
+  color: black;
+  text-transform: uppercase;
+  padding: 1.25em 2em;
+  border: 0.104vw solid rgba(0, 0, 0, 0.3);
+  border-radius: 0.75em;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  transition: background 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
+  transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), background 150ms cubic-bezier(0, 0, 0.58, 1);
+  transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), background 150ms cubic-bezier(0, 0, 0.58, 1),
+    -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
+}
+button.han-Staking-Reward-CanBtn::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 1;
+  border-radius: inherit;
+  -webkit-transform: translate3d(0, 0.75em, -1em);
+  transform: translate3d(0, 0.75em, -1em);
+  transition: box-shadow 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
+  transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), box-shadow 150ms cubic-bezier(0, 0, 0.58, 1);
+  transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), box-shadow 150ms cubic-bezier(0, 0, 0.58, 1),
+    -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
+}
+button.han-Staking-Reward-CanBtn:hover {
+  background: lightgray;
+  -webkit-transform: translate(0, 0.25em);
+  transform: translate(0, 0.25em);
+}
+button.han-Staking-Reward-CanBtn:hover::before {
+  -webkit-transform: translate3d(0, 0.5em, -1em);
+  transform: translate3d(0, 0.5em, -1em);
+}
+button.han-Staking-Reward-CanBtn:active {
+  background: rgba(255, 255, 255, 0.3);
+  -webkit-transform: translate(0em, 0.75em);
+  transform: translate(0em, 0.75em);
+}
+button.han-Staking-Reward-CanBtn:active::before {
+  -webkit-transform: translate3d(0, 0, -1em);
+  transform: translate3d(0, 0, -1em);
+}
+
+.han-Staking-Reward-CantBtn {
+  font-weight: 600;
+  width: 300px;
+  font-size: 15px;
+  font-family: "SCDream8";
+  color: black;
+  cursor: not-allowed;
+  border: 0.104vw solid rgba(0, 0, 0, 0.3);
+  border-radius: 0.75em;
+}

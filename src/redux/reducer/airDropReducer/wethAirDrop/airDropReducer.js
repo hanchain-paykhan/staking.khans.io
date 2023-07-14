@@ -2,24 +2,24 @@ let initialState = {
     successAirDropClaim: false,
     canClaim: false,
     claimed: false,
-    getProofToBack: "",
-    getAmountToBack: "",
-    claimDayDate: "",
-    claimHoursDate: "",
-    claimMinDate: "",
+    getProofToBack: '',
+    getAmountToBack: '',
+    claimDayDate: '',
+    claimHoursDate: '',
+    claimMinDate: '',
 };
 
 function airDropReducer(state = initialState, action) {
     let { type, payload } = action;
 
     switch (type) {
-        case "SUCCESS_AIRDROP_CLAIM":
+        case 'SUCCESS_AIRDROP_CLAIM':
             return {
                 ...state,
                 successAirDropClaim: payload.successAirDropClaim,
             };
 
-        case "GET_AIRDROP_VIEW_SUCCESS":
+        case 'GET_AIRDROP_VIEW_SUCCESS':
             return {
                 ...state,
                 canClaim: payload.canClaim,
@@ -27,13 +27,13 @@ function airDropReducer(state = initialState, action) {
                 getAmountToBack: payload.getAmountToBack,
             };
 
-        case "GET_AIRDROP_CLAIMED_SUCCESS":
+        case 'GET_AIRDROP_CLAIMED_SUCCESS':
             return {
                 ...state,
                 claimed: payload.claimed,
             };
 
-        case "GET_AIRDROP_SUCCESS_TIMESTAMP":
+        case 'GET_AIRDROP_SUCCESS_TIMESTAMP':
             return {
                 ...state,
                 claimDayDate: payload.claimDayDate,

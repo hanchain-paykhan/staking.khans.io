@@ -1271,7 +1271,7 @@ export const IMusikhanABI = {
     ],
 };
 
-export const MusikhanAddress = "0x3766f88c307B14040fcEa6ddEb173ADAea902CCA";
+export const MusikhanAddress = "0x89e0C6e6F642eEc0DEA26EB285286d6D95EAA3e6";
 export const MusikhanABI = {
     abi: [
         {
@@ -2043,6 +2043,19 @@ export const MusikhanABI = {
                 },
             ],
             name: "setUser",
+            outputs: [],
+            stateMutability: "nonpayable",
+            type: "function",
+        },
+        {
+            inputs: [
+                {
+                    internalType: "address",
+                    name: "_tokenAddress",
+                    type: "address",
+                },
+            ],
+            name: "testAdd",
             outputs: [],
             stateMutability: "nonpayable",
             type: "function",
@@ -2985,7 +2998,7 @@ export const TokenSwapABI = {
 };
 export const TokenSwapContract = new web3.eth.Contract(TokenSwapABI.abi, TokenSwapAddress);
 
-export const MusikhanStakingAddress = "0x2E31446eC9654E9AfDD7B2Ecd99960501761D16B";
+export const MusikhanStakingAddress = "0xE4CF13348C3c96e8dF6E8A1509940ad9f465C0fe";
 export const MusikhanStakingABI = {
     abi: [
         {
@@ -3183,7 +3196,26 @@ export const MusikhanStakingABI = {
                     type: "address",
                 },
             ],
-            name: "getClaimTokenList",
+            name: "getCanClaimedTokenList",
+            outputs: [
+                {
+                    internalType: "address[]",
+                    name: "",
+                    type: "address[]",
+                },
+            ],
+            stateMutability: "view",
+            type: "function",
+        },
+        {
+            inputs: [
+                {
+                    internalType: "address",
+                    name: "_user",
+                    type: "address",
+                },
+            ],
+            name: "getStakedTokenList",
             outputs: [
                 {
                     internalType: "address[]",
@@ -3259,11 +3291,11 @@ export const MusikhanStakingABI = {
             inputs: [
                 {
                     internalType: "address",
-                    name: "_l2Ca",
+                    name: "_tokenAddress",
                     type: "address",
                 },
             ],
-            name: "getStakerAddress",
+            name: "getStakerAddressList",
             outputs: [
                 {
                     internalType: "address[]",
@@ -3293,25 +3325,6 @@ export const MusikhanStakingABI = {
                     internalType: "uint256",
                     name: "",
                     type: "uint256",
-                },
-            ],
-            stateMutability: "view",
-            type: "function",
-        },
-        {
-            inputs: [
-                {
-                    internalType: "address",
-                    name: "_user",
-                    type: "address",
-                },
-            ],
-            name: "getStakingTokenList",
-            outputs: [
-                {
-                    internalType: "address[]",
-                    name: "",
-                    type: "address[]",
                 },
             ],
             stateMutability: "view",
@@ -3464,6 +3477,60 @@ export const MusikhanStakingABI = {
             type: "function",
         },
         {
+            inputs: [
+                {
+                    internalType: "address",
+                    name: "",
+                    type: "address",
+                },
+                {
+                    internalType: "address",
+                    name: "",
+                    type: "address",
+                },
+            ],
+            name: "stakers",
+            outputs: [
+                {
+                    internalType: "string",
+                    name: "name",
+                    type: "string",
+                },
+                {
+                    internalType: "string",
+                    name: "symbol",
+                    type: "string",
+                },
+                {
+                    internalType: "address",
+                    name: "l2Ca",
+                    type: "address",
+                },
+                {
+                    internalType: "uint256",
+                    name: "amountStaked",
+                    type: "uint256",
+                },
+                {
+                    internalType: "uint256",
+                    name: "claimedReward",
+                    type: "uint256",
+                },
+                {
+                    internalType: "uint256",
+                    name: "timeOfLastUpdate",
+                    type: "uint256",
+                },
+                {
+                    internalType: "uint256",
+                    name: "unclaimedRewards",
+                    type: "uint256",
+                },
+            ],
+            stateMutability: "view",
+            type: "function",
+        },
+        {
             inputs: [],
             name: "tokenQuota",
             outputs: [
@@ -3522,19 +3589,6 @@ export const MusikhanStakingABI = {
             type: "function",
         },
         {
-            inputs: [
-                {
-                    internalType: "uint256",
-                    name: "_amount",
-                    type: "uint256",
-                },
-            ],
-            name: "transferRewardToken",
-            outputs: [],
-            stateMutability: "nonpayable",
-            type: "function",
-        },
-        {
             inputs: [],
             name: "unpause",
             outputs: [],
@@ -3563,7 +3617,7 @@ export const MusikhanStakingABI = {
 };
 export const MusikhanStakingContract = new web3.eth.Contract(MusikhanStakingABI.abi, MusikhanStakingAddress);
 
-export const MusikhanRewardTokenAddress = "0xd3e0f18D221CBe28D10F4178De5cdF67d53d5969";
+export const MusikhanRewardTokenAddress = "0x2Fcc778d02A76f76E660103Cedb0A3dA30f25a92";
 export const MusikhanRewardTokenABI = {
     abi: [
         {

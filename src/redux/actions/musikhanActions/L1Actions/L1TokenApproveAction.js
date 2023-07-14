@@ -1,11 +1,10 @@
-import { BridgeAddress } from "../../../../config/MusikhanConfig";
+import { BridgeAddress, web3 } from "../../../../config/MusikhanConfig";
 // import { BridgeAddress } from "../../../../config/MusikhanConfigTest";
 import Swal from "sweetalert2";
-import Web3 from "web3";
 
 function L1TokenApproveAct(account, L1TokenBalanceOf, L1Contract) {
     return async (dispatch) => {
-        const L1TokenBalance = Web3.utils.toWei(String(L1TokenBalanceOf), "ether");
+        const L1TokenBalance = web3.utils.toWei(String(L1TokenBalanceOf), "ether");
         try {
             // TokenApporve함수 200개
             const qwerApprove = await L1Contract.methods.approve(BridgeAddress, L1TokenBalance).send({ from: account });

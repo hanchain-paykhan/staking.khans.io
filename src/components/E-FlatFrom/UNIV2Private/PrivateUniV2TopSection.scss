@@ -1,0 +1,37 @@
+.stakingMusiAllAmountContainer {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 50%;
+    top: -31%;
+    transform: translate(-50%, -50%);
+}
+
+.stakingMusiAmountContainer {
+    color: #72cef2;
+}
+
+.stakingMusiAmountTitle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.stakingMusiAmountTitle a {
+    font-size: 30px;
+}
+
+.stakingMusiAmountTxt {
+    text-shadow: #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px;
+}
+
+.stakingMusiAmountNum {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.stakingMusiAmountNum a {
+    font-size: 24.997px;
+}

@@ -1,28 +1,33 @@
-import { MusikhanStakingAddress } from "../../../../config/MusikhanConfig";
-// import { MusikhanStakingAddress } from "../../../../config/MusikhanConfigTest";
+import axios from "axios";
 
-import Web3 from "web3";
-function L2DepositTokenBalanceAct(account, L2TokenContract) {
-    return async (dispatch) => {
-        try {
-            const L2DepositBalanceOfApi = await L2TokenContract.methods.balanceOf(account).call();
-            const L2DepositBalanceStringApi = Web3.utils.fromWei(String(L2DepositBalanceOfApi), "ether");
+function L2DepositTokenBalanceAct(account, l2TokenAddress) {
+  return async (dispatch) => {
+    try {
+      if (account) {
+        const L2DepositBalanceStringApiToback = await axios.post(`https://back.khans.io/block/l2DepositTokenBalance`, {
+          account,
+          l2TokenAddress,
+        });
 
-            const musiAllowanceToContract = await L2TokenContract.methods.allowance(account, MusikhanStakingAddress).call();
-            console.log(musiAllowanceToContract);
-            const musiAllowanceApi = Web3.utils.fromWei(String(musiAllowanceToContract), "ether");
-            console.log(musiAllowanceApi);
-            dispatch({
-                type: "L2_DEPOSIT_BALANCE",
-                payload: {
-                    L2DepositBalance: L2DepositBalanceStringApi,
-                    musiAllowance: musiAllowanceApi,
-                },
-            });
-        } catch (error) {
-            console.error(error);
-        }
-    };
+        const musiAllowanceApi = await axios.post(`https://back.khans.io/block/l2DepositAllowance`, {
+          account,
+          l2TokenAddress,
+        });
+
+        dispatch({
+          type: "L2_DEPOSIT_BALANCE",
+          payload: {
+            L2DepositBalance: L2DepositBalanceStringApiToback.data,
+            musiAllowance: musiAllowanceApi.data,
+          },
+        });
+      } else {
+        return null;
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
 }
 
 export const L2DepositTokenBalanceAction = { L2DepositTokenBalanceAct };

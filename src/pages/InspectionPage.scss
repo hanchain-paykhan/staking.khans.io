@@ -1,0 +1,51 @@
+.inspectionPageContainer {
+    background-image: url(../assets/images/bg1.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    font-family: "SCDream8";
+    overflow-x: hidden;
+    overflow-y: hidden;
+    color: #fff;
+}
+
+#dapp {
+    font-family: "SCDream6", sans-serif;
+    padding: 2%;
+}
+
+.section-padding {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.breadcrumb-section {
+    padding: 50px 50px;
+    margin: 0 auto;
+    border-radius: 0;
+    text-align: center;
+    width: 80%;
+}
+.section-1 {
+    padding-bottom: 30px;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 150px;
+}
+.logo-img {
+    display: inline-block;
+}
+.logo-img a img {
+    width: 150px;
+    height: 150px;
+}
+
+@media only screen and (max-width: 415px) {
+    .breadcrumb-section {
+        width: 90%;
+        padding-left: 0;
+        padding-right: 0;
+    }
+}

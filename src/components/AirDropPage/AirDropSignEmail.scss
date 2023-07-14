@@ -1,0 +1,172 @@
+.airDrop-SignUp-Wrap-Step2 {
+    font-family: "SCDream8";
+
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    color: #fff;
+}
+
+.airDrop-SignUp-Wrap-Step2-Section {
+    width: 720px;
+    padding: 0 40px;
+}
+
+.airDrop-SignUp-Email-Title-Section label {
+    font-size: 20px;
+    letter-spacing: -0.025em;
+    font-weight: 700;
+    margin: 0 0 10px;
+}
+
+.airDrop-SignUp-Email-Enter-Section {
+    display: flex;
+    margin: 10px 0;
+}
+
+.airDrop-SignUp-Email-Enter-Section input {
+    font-family: "SCDream8";
+
+    display: block;
+    width: 100%;
+    width: 520px;
+    height: 80px;
+    box-sizing: border-box;
+    border: none;
+    padding: 0 25px;
+    font-size: 20px;
+    letter-spacing: -0.025em;
+    color: #1e1e1e;
+    font-weight: 600;
+}
+
+.airDrop-SignUp-Email-Enter-Section button {
+    cursor: pointer;
+    font-family: "SCDream8";
+    background-color: #39a2db;
+    border: none;
+    box-sizing: border-box;
+    color: black;
+    font-weight: 500;
+    font-size: 20px;
+    letter-spacing: -0.025em;
+    padding: 0 25px;
+    height: 80px;
+    border-radius: 0;
+    min-width: 200px;
+    width: 200px;
+    margin-top: 0;
+}
+
+.airDrop-SignUp-Email-Enter-Section button:hover {
+    opacity: 0.5;
+}
+
+.airDrop-SignUp-Code-Check-Container {
+    position: relative;
+}
+
+.airDrop-SignUp-Code-Check-Section {
+    display: flex;
+    margin: 10px 0;
+}
+
+.airDrop-SignUp-Code-Check-Section input {
+    font-family: "SCDream8";
+    display: block;
+    width: 100%;
+    height: 80px;
+    box-sizing: border-box;
+    border: none;
+    padding: 0 25px;
+    font-size: 20px;
+    letter-spacing: -0.025em;
+    color: #1e1e1e;
+    font-weight: 600;
+}
+
+.airDrop-SignUp-Code-Check-Section button {
+    font-family: "SCDream8";
+    cursor: pointer;
+    background-color: #39a2db;
+    color: black;
+    font-weight: 500;
+    font-size: 20px;
+    border: none;
+    letter-spacing: -0.025em;
+    padding: 0 20px;
+    height: 80px;
+    border-radius: 0;
+    min-width: 200px;
+    margin-top: 0;
+}
+
+.airDrop-SignUp-Code-Check-Section button:hover {
+    opacity: 0.5;
+}
+
+.airDrop-SignUp-Email-Timer-Section {
+    font-family: "SCDream8";
+    position: absolute;
+    top: 15%;
+    right: 30%;
+}
+
+.airDrop-SignUp-Email-Timer-Section p {
+    color: black;
+}
+
+.airDrop-SignUp-Metamask-Account-Section {
+    position: relative;
+    width: 100%;
+}
+
+.airDrop-SignUp-Metamask-Account-Section p {
+    font-family: "SCDream8";
+    background: #f2f2f2;
+    color: #999999;
+    padding: 20px 30px;
+    font-size: 18px;
+    font-weight: 700;
+    margin-top: 30px;
+}
+
+.airDrop-SignUp-Email-CompelteBtn-Section {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.airDrop-SignUp-CheckId-Section {
+    color: #39a2db;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    position: absolute;
+    right: 0%;
+    bottom: -66%;
+}
+
+.airDrop-SignUp-CheckId-Section:hover {
+    opacity: 0.6;
+}
+
+.airDrop-SignUp-Email-CompelteBtn-Section button {
+    font-family: "SCDream8";
+    cursor: pointer;
+    background-color: #39a2db;
+    border-radius: 1em;
+    border: 0.1px solid #39a2db;
+    width: 100%;
+    margin-top: 50px;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: -0.05em;
+    height: 65px;
+    font-family: inherit;
+}
+
+.airDrop-SignUp-Email-CompelteBtn-Section button:hover {
+    opacity: 0.5;
+}

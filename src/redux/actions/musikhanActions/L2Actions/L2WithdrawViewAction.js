@@ -1,11 +1,11 @@
-import Web3 from "web3";
+import { web3 } from "../../../../config/MusikhanConfig";
 
 function L2WithdrawViewAct(l2WithdrawSymbol, l2WithdrawAmountStaked, l2WithdrawTokenCa) {
     return async (dispatch) => {
         try {
             const getL2WithdrawTokenSymbolToModalApi = l2WithdrawSymbol;
             const getL2WithdrawAmountStakedToModalApi = l2WithdrawAmountStaked;
-            const getL2WithdrawAmountStakedStringApi = Web3.utils.fromWei(String(getL2WithdrawAmountStakedToModalApi), "ether");
+            const getL2WithdrawAmountStakedStringApi = web3.utils.fromWei(String(getL2WithdrawAmountStakedToModalApi), "ether");
             const getL2WithdrawTokenCaToModalApi = l2WithdrawTokenCa;
 
             let [getL2WithdrawTokenSymbolToModal, getL2WithdrawAmountStakedString, getL2WithdrawTokenCaToModal] = await Promise.all([

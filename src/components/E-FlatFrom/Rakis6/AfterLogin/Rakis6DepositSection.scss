@@ -1,0 +1,357 @@
+// ----------------------- DEPOSIT SECTION ----------------------- //
+.rakis6-AirDrop-Deposit-Quaota-Section {
+    position: absolute;
+    top: -3%;
+    left: 2%;
+    text-shadow: #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px;
+    color: #72cef2;
+    font-size: 16px;
+}
+
+.rakis6-AirDrop-Deposit-StakeAmount-Section {
+    position: absolute;
+    top: -9%;
+    left: 2%;
+    text-shadow: #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px;
+    color: #72cef2;
+    font-size: 16px;
+}
+.rakis6-AirDrop-Deposit-TokenBalanceSection {
+    padding-top: 10px;
+}
+
+.rakis6-AirDrop-Deposit-APR-Container {
+    position: absolute;
+    color: #72cef2;
+    left: 50%;
+    top: -30%;
+    transform: translate(-50%, -50%);
+}
+
+.rakis6-AirDrop-Deposit-APR-Title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-shadow: #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px;
+}
+
+.rakis6-AirDrop-Deposit-APR-Title a {
+    font-size: 30px;
+}
+
+.rakis6-AirDrop-Deposit-APR-Info {
+    display: flex;
+    align-items: center;
+    padding-left: 5px;
+    justify-content: center;
+    text-shadow: #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px;
+}
+
+.rakis6-AirDrop-Deposit-APR-Info a {
+    font-size: 24.997px;
+}
+
+.rakis6-AirDrop-Deposit-TokenBalanceSection p {
+    font-size: 24.997px;
+}
+.rakis6-AirDrop-Deposit-StakedAmountSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    padding-top: 9.998px;
+}
+
+.rakis6-AirDrop-Deposit-StakedAmountSection input {
+    width: 220.003px;
+    font-family: "SCDream8";
+    height: 50.002px;
+    background-color: rgba(255, 255, 255, 0.3);
+    font-size: 15px;
+    border-radius: 1.5rem;
+    padding-left: 20.002px;
+    padding-right: 20.002px;
+    text-align: center;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+}
+
+.rakis6-AirDrop-Deposit-StakedAmountSection input::-webkit-outer-spin-button,
+.rakis6-AirDrop-Deposit-StakedAmountSection input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.rakis6-AirDrop-Deposit-StakedAmountSection input:focus {
+    outline: none;
+}
+
+.rakis6-AirDrop-Deposit-StakedAmountSection input::placeholder {
+    text-align: center;
+    color: black;
+    opacity: 0.5;
+}
+
+.rakis6-AirDrop-Deposit-StakedAmountSection p {
+    font-size: 20.002px;
+    color: black;
+    margin-left: 24.997px;
+}
+
+.rakis6-AirDrop-Deposit-AmountSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 51px;
+    padding-top: 9.998px;
+}
+
+.rakis6-AirDrop-Deposit-AmountSection input {
+    width: 220.003px;
+    font-family: "SCDream8";
+    height: 50.002px;
+    background-color: rgba(255, 255, 255, 0.3);
+    font-size: 15px;
+    border-radius: 1.5rem;
+    padding-left: 20.002px;
+    padding-right: 20.002px;
+    text-align: center;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+}
+
+.rakis6-AirDrop-Deposit-AmountSection input::-webkit-outer-spin-button,
+.rakis6-AirDrop-Deposit-AmountSection input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.rakis6-AirDrop-Deposit-AmountSection input:focus {
+    outline: none;
+}
+
+.rakis6-AirDrop-Deposit-AmountSection input::placeholder {
+    text-align: center;
+    color: black;
+    opacity: 0.5;
+}
+
+.rakis6-AirDrop-Deposit-AmountSection p {
+    font-size: 20.002px;
+    color: black;
+    margin-left: 24.997px;
+}
+
+.rakis6-AirDrop-Deposit-AmountMaxBtn {
+    font-family: "SCDream8";
+    background-color: transparent;
+    margin-left: 9.998px;
+    width: 60px;
+    height: 54.998px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    border-radius: 1.5em;
+    cursor: pointer;
+    font-size: 20px;
+    text-shadow: #39a2db 0px 0px 1px, #39a2db 0px 0px 1px, #39a2db 0px 0px 1px, #39a2db 0px 0px 1px, #39a2db 0px 0px 1px, #39a2db 0px 0px 1px;
+}
+
+.rakis6-AirDrop-Deposit-Approve-AmountSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 9.998px;
+}
+
+.rakis6-AirDrop-Deposit-Approve-AmountSection input {
+    width: 220.003px;
+    font-family: "SCDream8";
+    height: 50.002px;
+    background-color: rgba(255, 255, 255, 0.3);
+    font-size: 15px;
+    border-radius: 1.5rem;
+    padding-left: 20.002px;
+    padding-right: 20.002px;
+    text-align: center;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+}
+
+.rakis6-AirDrop-Deposit-Approve-AmountSection input::-webkit-outer-spin-button,
+.rakis6-AirDrop-Deposit-Approve-AmountSection input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.rakis6-AirDrop-Deposit-Approve-AmountSection input:focus {
+    outline: none;
+}
+
+.rakis6-AirDrop-Deposit-Approve-AmountSection input::placeholder {
+    text-align: center;
+    color: black;
+    opacity: 0.5;
+}
+
+.rakis6-AirDrop-Deposit-Approve-AmountSection p {
+    font-size: 20.002px;
+    color: black;
+    margin-left: 24.997px;
+}
+
+.rakis6-AirDrop-Deposit-LockedTxt {
+    font-size: 15px;
+    padding-top: 30px;
+    text-shadow: #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px;
+    color: #72cef2;
+}
+
+.rakis6-AirDrop-Deposit-Pswd-Container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rakis6-AirDrop-Deposit-Pswd-Section {
+    height: 30px;
+    width: 200px;
+    border-radius: 0.75em;
+    display: flex;
+    position: relative;
+}
+.rakis6-AirDrop-Deposit-Pswd-Lock {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 31px;
+    width: 30px;
+    background: #39a2db;
+    color: #fff;
+    line-height: 48px;
+    font-size: 20px;
+    border-radius: 3px 0 0 3px;
+    border: 1px solid #39a2db;
+}
+.rakis6-AirDrop-Deposit-Pswd-Section input {
+    height: 100%;
+    width: 100%;
+    border-radius: 3px;
+    border: 1px solid #39a2db;
+    padding-left: 50px;
+    font-size: 14px;
+    outline: none;
+    color: #39a2db;
+    font-family: "Poppins", sans-serif;
+}
+
+input::placeholder {
+    color: #a6a6a6;
+}
+.rakis6-AirDrop-Deposit-Pswd-Hide {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.rakis6-AirDrop-Deposit-Pswd-HideIcon {
+    font-size: 19px;
+    color: #39a2db;
+    cursor: pointer;
+}
+
+.rakis6-AirDrop-DepositStakeBtnSection {
+    display: flex;
+    justify-content: center;
+    padding-top: 4px;
+    margin-bottom: 23px;
+}
+
+.rakis6-AirDrop-Deposit-EnterBtn {
+    font-weight: 600;
+    width: 300px;
+    font-family: "SCDream8";
+    color: black;
+    border: 0.104vw solid rgba(0, 0, 0, 0.3);
+    border-radius: 0.75em;
+}
+
+.rakis6-AirDrop-Deposit-CantBtn {
+    font-weight: 600;
+    width: 300px;
+    font-size: 15px;
+    font-family: "SCDream8";
+    color: black;
+    cursor: not-allowed;
+    border: 0.104vw solid rgba(0, 0, 0, 0.3);
+    border-radius: 0.75em;
+}
+
+.rakis6-AirDrop-DepositStakeBtnSection button {
+    height: 50.002px;
+}
+
+button.rakis6-AirDrop-Deposit-CanBtn {
+    width: 300px;
+    font-weight: 600;
+    font-family: "SCDream8";
+    color: black;
+    text-transform: uppercase;
+    padding: 1.25em 2em;
+    border: 0.104vw solid rgba(0, 0, 0, 0.3);
+    border-radius: 0.75em;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    transition: background 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
+    transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), background 150ms cubic-bezier(0, 0, 0.58, 1);
+    transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), background 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
+}
+button.rakis6-AirDrop-Deposit-CanBtn::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 1;
+    border-radius: inherit;
+    -webkit-transform: translate3d(0, 0.75em, -1em);
+    transform: translate3d(0, 0.75em, -1em);
+    transition: box-shadow 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
+    transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), box-shadow 150ms cubic-bezier(0, 0, 0.58, 1);
+    transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), box-shadow 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
+}
+button.rakis6-AirDrop-Deposit-CanBtn:hover {
+    background: lightgray;
+    -webkit-transform: translate(0, 0.25em);
+    transform: translate(0, 0.25em);
+}
+button.rakis6-AirDrop-Deposit-CanBtn:hover::before {
+    -webkit-transform: translate3d(0, 0.5em, -1em);
+    transform: translate3d(0, 0.5em, -1em);
+}
+button.rakis6-AirDrop-Deposit-CanBtn:active {
+    background: rgba(255, 255, 255, 0.3);
+    -webkit-transform: translate(0em, 0.75em);
+    transform: translate(0em, 0.75em);
+}
+button.rakis6-AirDrop-Deposit-CanBtn:active::before {
+    -webkit-transform: translate3d(0, 0, -1em);
+    transform: translate3d(0, 0, -1em);
+}
+.rakis6-AirDrop-Deposit-LoadingContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 96px;
+    margin-bottom: 96px;
+}

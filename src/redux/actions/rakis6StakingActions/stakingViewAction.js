@@ -1,122 +1,79 @@
-import { StakingContract, StakingTokenContract, RewardTokenContract, StakingAddress, WETHContract, ArrakisContract } from "../../../config/StakingRakis6Config";
-// import {
-//   StakingContract,
-//   StakingTokenContract,
-//   RewardTokenContract,
-//   StakingAddress,
-//   WETHContract,
-//   ArrakisContract,
-// } from "../../../config/StakingRakis6ConfigTest";
-import web3 from "web3";
-import BigNumber from "bignumber.js";
+import axios from "axios";
+import { StakingAddress } from "../../../config/StakingRakis6Config";
 
 function stakingViewAct(account) {
-    const AmountBN = new BigNumber("1000000000000000000");
+  return async (dispatch) => {
+    try {
+      if (account) {
+        const getStakedAmountApi = await axios.post(`https://back.khans.io/block/rakis6GetAmount`, {
+          account,
+        });
 
-    return async (dispatch) => {
-        try {
-            if (account !== "") {
-                const getAmountApi = await StakingContract.methods.getAmount(account).call();
+        const getAmountApi = getStakedAmountApi.data;
 
-                const getRewardReleasedApi = await StakingContract.methods.getRewardReleased(account).call();
+        // 스테이킹 할 수 있는 토큰
+        const getStakingTokenBalanceApi = await axios.post(`https://back.khans.io/block/rakis6StakedTokenAmount`, {
+          account,
+        });
 
-                const getBalanceApi = await StakingContract.methods.getBalance(account).call();
+        const stakingTokenBalanceApi = getStakingTokenBalanceApi.data;
 
-                const possibleRewardTokenApi = await RewardTokenContract.methods.balanceOf(StakingAddress).call();
+        const getHanTokenPerLpTokenApi = await axios.get(`https://back.khans.io/block/rakis6HanTokenPerLp`);
 
-                // 스테이킹 할 수 있는 토큰
-                const stakingTokenBalanceApi = await StakingTokenContract.methods.balanceOf(account).call();
+        const hanTokenPerLpTokenApi = getHanTokenPerLpTokenApi.data;
 
-                // const allowanceRakis6Api = await StakingTokenContract.methods.allowance(account, StakingAddress).call();
+        const getTokenVolumeApi = await axios.get(`https://back.khans.io/block/rakis6TokenVolume`);
 
-                const rewardTokenBalanceApi = await RewardTokenContract.methods.balanceOf(account).call();
+        const tokenVolumeFromWei = getTokenVolumeApi.data;
 
-                const hanTokenPerLpTokenApi = await StakingContract.methods.hanTokenPerLpToken().call();
+        const getTotalSupplyApi = await axios.get(`https://back.khans.io/block/rakis6TotalSupply`);
 
-                const tokenVolumeApi = await StakingContract.methods.tokenVolume().call();
+        const totalSupplyFromWei = getTotalSupplyApi.data;
 
-                const totalSupplyApi = await StakingContract.methods.totalSupply().call();
+        const getAllowanceAmountApi = await axios.post(`https://back.khans.io/block/rakis6AllowanceState`, {
+          account,
+          StakingAddress,
+        });
 
-                const stakingTokenAmountApi = await StakingTokenContract.methods.balanceOf(account).call();
+        const allowanceAmountApi = getAllowanceAmountApi.data;
 
-                const getWithdrawAmountApi = await StakingContract.methods.getAmount(account).call();
+        const getHanQuantityLpQuantityPerYear1HanValueApi = await axios.get(`https://back.khans.io/block/rakis6Apr`);
+        const HanQuantityLpQuantityPerYear1HanValueApi = getHanQuantityLpQuantityPerYear1HanValueApi.data;
 
-                const allowanceAmountApi = await StakingTokenContract.methods.allowance(account, StakingAddress).call();
+        const canAmountStakeApi = tokenVolumeFromWei - totalSupplyFromWei;
+        // console.log("canAmount", canAmountStakeApi);
 
-                const WETHBalanceOfApi = await WETHContract.methods.balanceOf("0x5b42A63d6741416CE9a7B9f4f16d8c9231CcdDd4").call();
+        let [getAmount, stakingTokenBalance, canAmountStake, hanTokenPerLpToken, allowanceAmount, HanQuantityLpQuantityPerYear1HanValue] =
+          await Promise.all([
+            getAmountApi,
+            stakingTokenBalanceApi,
+            canAmountStakeApi,
+            hanTokenPerLpTokenApi,
+            allowanceAmountApi,
+            HanQuantityLpQuantityPerYear1HanValueApi,
+          ]);
 
-                const HanBalanceOfApi = await RewardTokenContract.methods.balanceOf("0x5b42A63d6741416CE9a7B9f4f16d8c9231CcdDd4").call();
-
-                // // 1항
-                const QuantityOfWethEqualTo1Han = web3.utils.toWei(String((WETHBalanceOfApi / HanBalanceOfApi) * AmountBN), "ether");
-
-                const getMintAmountsApi = await ArrakisContract.methods.getMintAmounts(QuantityOfWethEqualTo1Han, AmountBN).call();
-
-                // // // 2항
-                const AmountOfLpTokenWorth1Han = getMintAmountsApi.mintAmount / 2;
-
-                const HanQuantityLpQuantityPerYear1HanValueApi = web3.utils.fromWei(
-                    String(0.000000274959775134 * 60 * 60 * 24 * 365 * AmountOfLpTokenWorth1Han),
-                    "ether"
-                );
-
-                const canAmountStakeApi = tokenVolumeApi - totalSupplyApi;
-
-                let [
-                    getAmount,
-                    stakingTokenBalance,
-                    tokenVolume,
-                    totalSupply,
-                    canAmountStake,
-                    stakingTokenAmount,
-                    getWithdrawAmount,
-                    hanTokenPerLpToken,
-                    WETHBalanceOf,
-                    HanBalanceOf,
-                    allowanceAmount,
-                    getMintAmounts,
-                    HanQuantityLpQuantityPerYear1HanValue,
-                    // allowanceRakis6,
-                ] = await Promise.all([
-                    getAmountApi,
-                    stakingTokenBalanceApi,
-                    tokenVolumeApi,
-                    totalSupplyApi,
-                    canAmountStakeApi,
-                    stakingTokenAmountApi,
-                    getWithdrawAmountApi,
-                    hanTokenPerLpTokenApi,
-                    WETHBalanceOfApi,
-                    HanBalanceOfApi,
-                    allowanceAmountApi,
-                    getMintAmountsApi,
-                    HanQuantityLpQuantityPerYear1HanValueApi,
-                    // allowanceRakis6Api,
-                ]);
-
-                dispatch({
-                    type: "GET_STAKING_VIEW_SUCCESS",
-                    payload: {
-                        getAmount: Math.floor((getAmount / 10 ** 18) * 100000000000000) / 100000000000000,
-                        stakingTokenBalance: Math.floor((stakingTokenBalance / 10 ** 18) * 100000000000000) / 100000000000000,
-                        tokenVolume: (tokenVolume / 10 ** 18).toFixed(8),
-                        totalSupply: (totalSupply / 10 ** 18).toFixed(8),
-                        canAmountStake: Math.floor((canAmountStake / 10 ** 18) * 100000000000000) / 100000000000000,
-                        stakingTokenAmount: web3.utils.fromWei(String(stakingTokenAmount), "ether"),
-                        getWithdrawAmount: web3.utils.fromWei(String(getWithdrawAmount), "ether"),
-                        hanTokenPerLpToken: hanTokenPerLpToken,
-                        WETHBalanceOf: (WETHBalanceOf / 10 ** 18).toFixed(8),
-                        HanBalanceOf: (HanBalanceOf / 10 ** 18).toFixed(8),
-                        allowanceAmount: web3.utils.fromWei(allowanceAmount, "ether"),
-                        getMintAmounts: (getMintAmounts / 10 ** 18).toFixed(8),
-                        HanQuantityLpQuantityPerYear1HanValue: (HanQuantityLpQuantityPerYear1HanValue * 100).toFixed(2),
-                    },
-                });
-            }
-        } catch (error) {
-            console.error(error);
-        }
-    };
+        dispatch({
+          type: "GET_STAKING_VIEW_SUCCESS",
+          payload: {
+            // getAmount: Math.floor((getAmount / 10 ** 18) * 100000000000000) / 100000000000000,
+            getAmount: getAmount,
+            stakingTokenBalance: stakingTokenBalance,
+            // stakingTokenBalance: Math.floor((stakingTokenBalance / 10 ** 18) * 100000000000000) / 100000000000000,
+            // canAmountStake: Math.floor((canAmountStake / 10 ** 18) * 100000000000000) / 100000000000000,
+            canAmountStake: canAmountStake,
+            hanTokenPerLpToken: hanTokenPerLpToken,
+            allowanceAmount: allowanceAmount,
+            HanQuantityLpQuantityPerYear1HanValue: HanQuantityLpQuantityPerYear1HanValue,
+          },
+        });
+      } else {
+        return null;
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
 }
 
 export const stakingViewAction = { stakingViewAct };

@@ -1,0 +1,32 @@
+.mainUnSlider {
+  width: 100%;
+}
+
+.munieUnSlider {
+  width: 150px;
+  height: 150px;
+  position: relative;
+}
+
+.sliderLeftBtn svg {
+  position: absolute;
+  top: 40%;
+  cursor: pointer;
+  left: 0;
+  color: #1e62d0;
+}
+.sliderLeftBtn svg:hover {
+  opacity: 0.4;
+}
+
+.sliderRightBtn svg:hover {
+  opacity: 0.4;
+}
+
+.sliderRightBtn svg {
+  position: absolute;
+  top: 40%;
+  cursor: pointer;
+  right: 0;
+  color: #1e62d0;
+}

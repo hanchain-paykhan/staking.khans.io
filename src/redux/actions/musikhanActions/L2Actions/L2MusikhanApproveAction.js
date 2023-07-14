@@ -1,12 +1,11 @@
-import { MusikhanStakingAddress } from "../../../../config/MusikhanConfig";
+import { MusikhanStakingAddress, web3 } from "../../../../config/MusikhanConfig";
 // import { MusikhanStakingAddress } from "../../../../config/MusikhanConfigTest";
 import Swal from "sweetalert2";
-import Web3 from "web3";
 
 function L2MusikhanApproveAct(account, L2DepositBalance, L2Contract) {
     return async (dispatch) => {
         try {
-            const L2DepositB = Web3.utils.toWei(String(L2DepositBalance), "ether");
+            const L2DepositB = web3.utils.toWei(String(L2DepositBalance), "ether");
             const approve = await L2Contract.methods.approve(MusikhanStakingAddress, L2DepositB).send({ from: account });
             Swal.fire({
                 text: "Approve was successful!",

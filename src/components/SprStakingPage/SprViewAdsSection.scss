@@ -1,0 +1,155 @@
+/* ------------------- View Section -------------------*/
+.sprAllStakingArrowUpSection {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    color: #1e62d0;
+    cursor: pointer;
+}
+
+.sprStakingCantViewContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 320px;
+}
+
+.sprAllStakingArrowUpSection:hover {
+    opacity: 0.4;
+}
+
+.sprAllStakingArrowDownSection {
+    position: absolute;
+    left: 50%;
+    top: 90%;
+    color: #1e62d0;
+    cursor: pointer;
+}
+
+.sprAllStakingArrowDownSection:hover {
+    opacity: 0.4;
+}
+
+.sprAllStakingContainer {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.sprAllStakingImgSection {
+    position: relative;
+    background-color: blue;
+    width: 100%;
+    height: 400px;
+    cursor: pointer;
+}
+
+.allStakingInfoImgContainer {
+    font-family: sans-serif;
+    text-align: center;
+    position: relative;
+    margin-top: 35px;
+    margin-bottom: 15px;
+}
+
+/* Element scroll */
+.scrollBox {
+    position: relative;
+    margin-left: 50px;
+    width: 100%;
+    height: 280px;
+    color: black;
+    overflow: hidden;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.scrollBox .scrollBoxInner {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+.scrollBox .scrollBoxInner::-webkit-scrollbar {
+    display: none;
+}
+
+.allStakingInfoSection {
+    display: inline-block;
+
+    float: left;
+}
+
+.allStakingInfoImgSection {
+    width: 150px;
+    height: 150px;
+    margin-left: 10px;
+    margin-right: 10px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: all 0.2s linear;
+    cursor: pointer;
+}
+
+.allStakingInfoImgSection:hover {
+    transform: scale(1.1);
+}
+.allStakingInfoNameSection p {
+    font-family: "SCDream8";
+    font-size: 15px;
+}
+
+/* ------------------- footer Logo Section -------------------*/
+
+.logoContainer {
+    display: flex;
+    justify-content: right;
+    margin-right: 39.998px;
+}
+
+.opIcon {
+    width: 30px;
+    height: 30px;
+    margin-right: 20.002px;
+    cursor: pointer;
+}
+
+.arrakisIcon {
+    width: 30px;
+    height: 30px;
+    margin-right: 20.002px;
+    cursor: pointer;
+}
+
+.hanIcon {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.test1 {
+    position: unset;
+    .react-multiple-carousel__arrow {
+        position: absolute;
+    }
+
+    .react-multiple-carousel__arrow--left {
+        left: calc(0% + 1px);
+    }
+
+    .react-multiple-carousel__arrow--right {
+        right: calc(1% + 1px);
+    }
+}
+
+.react-multi-carousel-list {
+    justify-content: center;
+    display: flex;
+}
+
+#arrow {
+    position: absolute;
+    top: 35%;
+    cursor: pointer;
+}

@@ -1,0 +1,96 @@
+// ------------------ Rewards  ------------------ //
+.allRewardsMunieCumulativeSection {
+  display: flex;
+  color: black;
+  justify-content: center;
+  align-items: center;
+  margin-top: 26px;
+}
+
+.allRewardsMunieCumulativeSection p {
+  font-size: 20.002px;
+  margin-right: 10.005px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.allRefreshMunieClaimIcon {
+  cursor: pointer;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.amountTokenMunieRewardAccSection {
+  display: flex;
+  justify-content: center;
+}
+.amountTokenRewardSection p {
+  font-size: 20.002px;
+}
+
+.amountTokenMunieRewardAccSection P {
+  font-size: 20.002px;
+}
+
+.amountTokenRewardMunieTxtSection {
+  display: flex;
+  justify-content: center;
+}
+
+.amountTokenRewardMunieTxtSection p {
+  font-size: 20.002px;
+}
+
+.rewardsClaimMunieBtnSection {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+// ------------------- Reward Logo Section ---------------//
+.stakedMunieCanAmountSection {
+  position: absolute;
+  top: 1%;
+  text-shadow: #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px,
+    #0a1126 0px 0px 3.998px;
+  color: #72cef2;
+  font-size: 15px;
+}
+.logoRewardContainer {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 39.998px;
+}
+
+.opIcon {
+  width: 30px;
+  height: 30px;
+  margin-right: 20.002px;
+  cursor: pointer;
+}
+
+.arrakisIcon {
+  width: 30px;
+  height: 30px;
+  margin-right: 20.002px;
+  cursor: pointer;
+}
+
+.hanIcon {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.cant-munie-learn-more {
+  font-weight: 600;
+  width: 300px;
+  height: 50.002px;
+  font-size: 15px;
+  font-family: "SCDream8";
+  color: black;
+  cursor: not-allowed;
+  border: 0.104vw solid rgba(0, 0, 0, 0.3);
+  border-radius: 0.75em;
+}

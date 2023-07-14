@@ -1,0 +1,101 @@
+// ------------------ Rewards  ------------------ //
+.allRewardsSPRV2CumulativeSection {
+  display: flex;
+  color: black;
+  justify-content: center;
+  margin-top: 52px;
+}
+
+.allRewardsSPRV2CumulativeSection p {
+  font-size: 20.002px;
+  margin-right: 10.005px;
+}
+.allRewardsSprCumulativeSection {
+  display: flex;
+  color: black;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.allRewardsSprCumulativeSection p {
+  font-size: 20.002px;
+  margin-right: 10.005px;
+}
+
+.allRefreshSprClaimIcon {
+  cursor: pointer;
+}
+
+.amountTokenSprRewardAccSection {
+  display: flex;
+  justify-content: center;
+}
+.amountTokenRewardSection p {
+  font-size: 20.002px;
+}
+
+.amountTokenSprRewardAccSection P {
+  font-size: 20.002px;
+}
+
+.amountTokenRewardSprTxtSection {
+  display: flex;
+  justify-content: center;
+}
+
+.amountTokenRewardSprTxtSection p {
+  font-size: 20.002px;
+}
+
+.rewardsClaimSprBtnSection {
+  margin-top: 13px;
+  display: flex;
+  justify-content: center;
+}
+
+// ------------------- Reward Logo Section ---------------//
+.logoRewardContainer {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 39.998px;
+}
+
+.opIcon {
+  width: 30px;
+  height: 30px;
+  margin-right: 20.002px;
+  cursor: pointer;
+}
+
+.arrakisIcon {
+  width: 30px;
+  height: 30px;
+  margin-right: 20.002px;
+  cursor: pointer;
+}
+
+.hanIcon {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.logoContainer {
+  display: flex;
+  justify-content: right;
+  margin-right: 39.998px;
+}
+
+.HanEpTxtContinaer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.HanEpTxt {
+  cursor: pointer;
+  font-size: 17px;
+  color: #39a2db;
+  text-shadow: #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px,
+    #0a1126 0px 0px 3.998px;
+}

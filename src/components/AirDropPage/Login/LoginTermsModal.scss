@@ -1,0 +1,9 @@
+.close:after {
+  //   display: inline-block;
+  content: "\00d7";
+  font-size: 30px;
+}
+
+.close {
+  cursor: pointer;
+}

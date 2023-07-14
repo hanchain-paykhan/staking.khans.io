@@ -1,0 +1,428 @@
+// ----------------------- DEPOSIT SECTION ----------------------- //
+.eplat-PrUni-Deposit-Quaota-Section {
+    position: absolute;
+    top: -9%;
+    left: 2%;
+    text-shadow: #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px;
+    color: #72cef2;
+    font-size: 16px;
+}
+
+.eplat-PrUni-Deposit-StakeAmount-Section {
+    position: absolute;
+    top: -3%;
+    left: 2%;
+    text-shadow: #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px;
+    color: #72cef2;
+    font-size: 16px;
+}
+
+.eplat-PrUni-Deposit-APR-Container {
+    position: absolute;
+    color: #72cef2;
+    left: 50%;
+    top: -30%;
+    transform: translate(-50%, -50%);
+}
+
+.eplat-PrUni-Deposit-APR-Title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-shadow: #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px;
+}
+
+.eplat-PrUni-Deposit-APR-Title a {
+    font-size: 30px;
+}
+
+.eplat-PrUni-Deposit-APR-Info {
+    display: flex;
+    align-items: center;
+    padding-left: 5px;
+    justify-content: center;
+    text-shadow: #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px;
+}
+
+.eplat-PrUni-Deposit-APR-Info a {
+    font-size: 24.997px;
+}
+
+.eplat-PrUni-Deposit-TokenBalanceSection p {
+    font-size: 24.997px;
+}
+.eplat-PrUni-Deposit-StakedAmountSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    padding-top: 9.998px;
+}
+
+.eplat-PrUni-Deposit-StakedAmountSection input {
+    width: 220.003px;
+    font-family: "SCDream8";
+    height: 50.002px;
+    background-color: rgba(255, 255, 255, 0.3);
+    font-size: 15px;
+    border-radius: 1.5rem;
+    padding-left: 20.002px;
+    padding-right: 20.002px;
+    text-align: center;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+}
+
+.eplat-PrUni-Deposit-StakedAmountSection input::-webkit-outer-spin-button,
+.eplat-PrUni-Deposit-StakedAmountSection input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.eplat-PrUni-Deposit-StakedAmountSection input:focus {
+    outline: none;
+}
+
+.eplat-PrUni-Deposit-StakedAmountSection input::placeholder {
+    text-align: center;
+    color: black;
+    opacity: 0.5;
+}
+
+.eplat-PrUni-Deposit-StakedAmountSection p {
+    font-size: 20.002px;
+    color: black;
+    margin-left: 24.997px;
+}
+
+.eplat-PrUni-Deposit-AmountSection {
+    display: flex;
+    /* background-color: yellow; */
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 54px;
+    padding-top: 40px;
+}
+
+.eplat-PrUni-Deposit-AmountSection input {
+    width: 220.003px;
+    font-family: "SCDream8";
+    height: 50.002px;
+    background-color: rgba(255, 255, 255, 0.3);
+    font-size: 15px;
+    border-radius: 1.5rem;
+    padding-left: 20.002px;
+    padding-right: 20.002px;
+    text-align: center;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+}
+
+.eplat-PrUni-Deposit-AmountSection input::-webkit-outer-spin-button,
+.eplat-PrUni-Deposit-AmountSection input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.eplat-PrUni-Deposit-AmountSection input:focus {
+    outline: none;
+}
+
+.eplat-PrUni-Deposit-AmountSection input::placeholder {
+    text-align: center;
+    color: black;
+    opacity: 0.5;
+}
+
+.eplat-PrUni-Deposit-AmountSection p {
+    font-size: 20.002px;
+    color: black;
+    margin-left: 24.997px;
+}
+
+.eplat-PrUni-Deposit-AmountMaxBtn {
+    font-family: "SCDream8";
+    background-color: transparent;
+    margin-left: 9.998px;
+    width: 60px;
+    height: 54.998px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    border-radius: 1.5em;
+    cursor: pointer;
+    /* color: #72CEF2; */
+    font-size: 20px;
+    text-shadow: #39a2db 0px 0px 1px, #39a2db 0px 0px 1px, #39a2db 0px 0px 1px, #39a2db 0px 0px 1px, #39a2db 0px 0px 1px, #39a2db 0px 0px 1px;
+    // color: #0f1b40;
+}
+
+.eplat-PrUni-Deposit-Approve-AmountSection {
+    display: flex;
+    /* background-color: yellow; */
+    justify-content: center;
+    align-items: center;
+    // margin-bottom: 39.998px;
+    padding-top: 9.998px;
+}
+
+.eplat-PrUni-Deposit-Approve-AmountSection input {
+    width: 220.003px;
+    font-family: "SCDream8";
+    height: 50.002px;
+    background-color: rgba(255, 255, 255, 0.3);
+    font-size: 15px;
+    border-radius: 1.5rem;
+    padding-left: 20.002px;
+    padding-right: 20.002px;
+    text-align: center;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+}
+
+.eplat-PrUni-Deposit-Approve-AmountSection input::-webkit-outer-spin-button,
+.eplat-PrUni-Deposit-Approve-AmountSection input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.eplat-PrUni-Deposit-Approve-AmountSection input:focus {
+    outline: none;
+}
+
+.eplat-PrUni-Deposit-Approve-AmountSection input::placeholder {
+    text-align: center;
+    color: black;
+    opacity: 0.5;
+}
+
+.eplat-PrUni-Deposit-Approve-AmountSection p {
+    font-size: 20.002px;
+    color: black;
+    margin-left: 24.997px;
+}
+
+.eplat-PrUni-Deposit-LockedTxt {
+    font-size: 15px;
+    padding-top: 30px;
+    text-shadow: #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px;
+    color: #72cef2;
+}
+
+.eplat-PrUni-Deposit-Pswd-Container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 14px;
+}
+
+.eplat-PrUni-Deposit-Pswd-Section {
+    height: 30px;
+    width: 200px;
+    border-radius: 0.75em;
+    display: flex;
+    position: relative;
+}
+.eplat-PrUni-Deposit-Pswd-Lock {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 31px;
+    width: 30px;
+    background: #39a2db;
+    color: #fff;
+    line-height: 48px;
+    font-size: 20px;
+    border-radius: 3px 0 0 3px;
+    border: 1px solid #39a2db;
+}
+.eplat-PrUni-Deposit-Pswd-Section input {
+    height: 100%;
+    width: 100%;
+    border-radius: 3px;
+    border: 1px solid #39a2db;
+    padding-left: 50px;
+    font-size: 14px;
+    outline: none;
+    color: #39a2db;
+    font-family: "Poppins", sans-serif;
+}
+
+input::placeholder {
+    color: #a6a6a6;
+}
+.eplat-PrUni-Deposit-Pswd-Hide {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.eplat-PrUni-Deposit-Pswd-HideIcon {
+    font-size: 19px;
+    color: #39a2db;
+    cursor: pointer;
+}
+
+.eplat-PrUni-DepositStakeBtnSection {
+    display: flex;
+    justify-content: center;
+    padding-top: 4px;
+}
+
+.eplat-PrUni-Deposit-EnterBtn {
+    font-weight: 600;
+    width: 300px;
+    font-family: "SCDream8";
+    color: black;
+    border: 0.104vw solid rgba(0, 0, 0, 0.3);
+    border-radius: 0.75em;
+}
+
+.eplat-PrUni-Deposit-CantBtn {
+    font-weight: 600;
+    width: 300px;
+    font-size: 15px;
+    font-family: "SCDream8";
+    color: black;
+    cursor: not-allowed;
+    border: 0.104vw solid rgba(0, 0, 0, 0.3);
+    border-radius: 0.75em;
+}
+
+.eplat-PrUni-DepositStakeBtnSection button {
+    height: 50.002px;
+}
+
+button.eplat-PrUni-Deposit-CanBtn {
+    width: 300px;
+    font-weight: 600;
+    font-family: "SCDream8";
+    color: black;
+    text-transform: uppercase;
+    padding: 1.25em 2em;
+    border: 0.104vw solid rgba(0, 0, 0, 0.3);
+    border-radius: 0.75em;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    transition: background 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
+    transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), background 150ms cubic-bezier(0, 0, 0.58, 1);
+    transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), background 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
+}
+button.eplat-PrUni-Deposit-CanBtn::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 1;
+    border-radius: inherit;
+    -webkit-transform: translate3d(0, 0.75em, -1em);
+    transform: translate3d(0, 0.75em, -1em);
+    transition: box-shadow 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
+    transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), box-shadow 150ms cubic-bezier(0, 0, 0.58, 1);
+    transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), box-shadow 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
+}
+button.eplat-PrUni-Deposit-CanBtn:hover {
+    background: lightgray;
+    -webkit-transform: translate(0, 0.25em);
+    transform: translate(0, 0.25em);
+}
+button.eplat-PrUni-Deposit-CanBtn:hover::before {
+    -webkit-transform: translate3d(0, 0.5em, -1em);
+    transform: translate3d(0, 0.5em, -1em);
+}
+button.eplat-PrUni-Deposit-CanBtn:active {
+    background: rgba(255, 255, 255, 0.3);
+    -webkit-transform: translate(0em, 0.75em);
+    transform: translate(0em, 0.75em);
+}
+button.eplat-PrUni-Deposit-CanBtn:active::before {
+    -webkit-transform: translate3d(0, 0, -1em);
+    transform: translate3d(0, 0, -1em);
+}
+.eplat-PrUni-Deposit-LoadingContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 96px;
+    margin-bottom: 96px;
+}
+
+//Locked
+
+.eplat-PrUni-Deposit-Pswd-Container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.eplat-PrUni-Deposit-Pswd-Section {
+    height: 30px;
+    width: 200px;
+    border-radius: 0.75em;
+    display: flex;
+    position: relative;
+}
+.eplat-PrUni-Deposit-Pswd-Lock {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 31px;
+    width: 30px;
+    background: #39a2db;
+    color: #fff;
+    line-height: 48px;
+    font-size: 20px;
+    border-radius: 3px 0 0 3px;
+    border: 1px solid #39a2db;
+}
+.eplat-PrUni-Deposit-Pswd-Section input {
+    height: 100%;
+    width: 100%;
+    border-radius: 3px;
+    border: 1px solid #39a2db;
+    padding-left: 50px;
+    font-size: 14px;
+    outline: none;
+    color: #39a2db;
+    font-family: "Poppins", sans-serif;
+}
+
+input::placeholder {
+    color: #a6a6a6;
+}
+.eplat-PrUni-Deposit-Pswd-Hide {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.eplat-PrUni-Deposit-Pswd-HideIcon {
+    font-size: 19px;
+    color: #39a2db;
+    cursor: pointer;
+}
+
+.HanEpTxtContinaer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.HanEpTxt {
+    cursor: pointer;
+    font-size: 17px;
+    color: #39a2db;
+    text-shadow: #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px;
+}

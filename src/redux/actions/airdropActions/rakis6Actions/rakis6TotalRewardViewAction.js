@@ -1,19 +1,25 @@
-import { PrivateStakingContract } from "../../../../config/PrivateStakingRakis6Config";
-// import { PrivateStakingContract } from "../../../../config/PrivateStakingRakis6ConfigTest";
-import Web3 from "web3";
+import axios from "axios";
 
 function rakis6TotalRewardViewAct(account) {
     return async (dispatch) => {
         try {
-            const totalRewardViewApi = await PrivateStakingContract.methods.rewardView(account).call();
-            const totalRewardView = Web3.utils.fromWei(String(totalRewardViewApi), "ether");
+            if (account) {
+                const getTotalRewardView = await axios.post(`https://back.khans.io/block/pvtRakis6ToTalRewardView`, {
+                    account,
+                });
+                const totalRewardViewApi = getTotalRewardView.data;
 
-            dispatch({
-                type: "RAKIS6_AIRDROP_TOTAL_REWARD_VIEW",
-                payload: {
-                    totalRewardView: totalRewardView,
-                },
-            });
+                let [totalRewardView] = await Promise.all([totalRewardViewApi]);
+
+                dispatch({
+                    type: "RAKIS6_AIRDROP_TOTAL_REWARD_VIEW",
+                    payload: {
+                        totalRewardView: totalRewardView,
+                    },
+                });
+            } else {
+                return null;
+            }
         } catch (error) {
             console.error(error);
         }

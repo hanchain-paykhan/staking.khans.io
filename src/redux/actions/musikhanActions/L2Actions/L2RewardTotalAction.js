@@ -1,23 +1,25 @@
-import Web3 from "web3";
-
-import { MusikhanStakingContract } from "../../../../config/MusikhanConfig";
-// import { MusikhanStakingContract } from "../../../../config/MusikhanConfigTest";
+import axios from "axios";
 
 function L2RewardTotalAct(account) {
-    return async (dispatch) => {
-        try {
-            const totalRewardApi = await MusikhanStakingContract.methods.totalReward(account).call();
-            const totalReward = Web3.utils.fromWei(String(totalRewardApi), "ether");
-            dispatch({
-                type: "L2_TOTAL_REWARD_TOKEN",
-                payload: {
-                    totalRewardToken: totalReward,
-                },
-            });
-        } catch (error) {
-            console.error(error);
-        }
-    };
+  return async (dispatch) => {
+    try {
+      if (account) {
+        const musiL2TotalRewardApi = await axios.post(`https://back.khans.io/block/l2TotalReward`, {
+          account,
+        });
+        dispatch({
+          type: "L2_TOTAL_REWARD_TOKEN",
+          payload: {
+            totalRewardToken: musiL2TotalRewardApi.data,
+          },
+        });
+      } else {
+        return null;
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
 }
 
 export const L2RewardTotalAction = { L2RewardTotalAct };

@@ -1,19 +1,12 @@
 let initialState = {
   getAmount: "",
   getRewardReleased: "",
-  stakingTokenBalance: "",
+  stakingTokenBalance: 0,
   resultValue: "",
-  stakingTokenAmount: "",
-  getWithdrawAmount: "",
   getBalance: "",
-  tokenVolume: "",
-  totalSupply: "",
   canAmountStake: "",
   hanTokenPerLpToken: "",
-  // WETHBalanceOf: "" ,
-  // HanBalanceOf : "",
-  // getMintAmounts : "",
-  allowanceAmount : "",
+  allowanceAmount: 0,
   HanQuantityLpQuantityPerYear1HanValue: "",
   successStaking: false,
   succuessClaim: false,
@@ -33,18 +26,10 @@ function stakingViewReducer(state = initialState, action) {
         stakingTokenBalance: payload.stakingTokenBalance,
         resultValue: payload.resultValue,
         getBalance: payload.getBalance,
-        tokenVolume: payload.tokenVolume,
-        totalSupply: payload.totalSupply,
         canAmountStake: payload.canAmountStake,
-        stakingTokenAmount: payload.stakingTokenAmount,
-        getWithdrawAmount: payload.getWithdrawAmount,
         hanTokenPerLpToken: payload.hanTokenPerLpToken,
-        allowanceAmount : payload.allowanceAmount,
-        // WETHBalanceOf : payload.WETHBalanceOf,
-        // HanBalanceOf : payload.HanBalanceOf,
-        // getMintAmounts : payload.getMintAmounts,
-        HanQuantityLpQuantityPerYear1HanValue:
-          payload.HanQuantityLpQuantityPerYear1HanValue,
+        allowanceAmount: payload.allowanceAmount,
+        HanQuantityLpQuantityPerYear1HanValue: payload.HanQuantityLpQuantityPerYear1HanValue,
       };
 
     case "SUCCESS_STAKING":
@@ -58,8 +43,6 @@ function stakingViewReducer(state = initialState, action) {
 
     case "SUCCESS_APPORVE":
       return { ...state, successApprove: payload.successApprove };
-    
-    
 
     default:
       return { ...state };

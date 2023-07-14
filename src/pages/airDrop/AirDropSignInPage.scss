@@ -1,0 +1,100 @@
+.airDrop-SignIn-Page-Background {
+    background-image: url(../../assets/images/bg1.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    flex-direction: column;
+    font-family: "SCDream8";
+}
+.airDrop-SignIn-All-Container {
+    display: flex;
+    flex-direction: column;
+    font-family: "SCDream8";
+}
+
+.airDrop-SignIn-Logo-Section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 32px 0px 24px;
+}
+
+.airDrop-SignIn-Logo-Section img {
+    margin-right: 30px;
+    width: 100px;
+    height: 100px;
+}
+
+.airDrop-SignIn-Logo-Section h1 {
+    font-size: 60px;
+    text-shadow: #24b5ee 0px 0px 3.998px, #24b5ee 0px 0px 3.998px, #24b5ee 0px 0px 3.998px, #24b5ee 0px 0px 3.998px, #24b5ee 0px 0px 3.998px, #24b5ee 0px 0px 3.998px;
+    color: #0a1126;
+}
+
+.airDrop-SignIn-Title-Section {
+    display: flex;
+    justify-content: center;
+}
+
+.airDrop-SignIn-Title-Section h1 {
+    font-size: 24px;
+    text-shadow: #24b5ee 0px 0px 3.998px, #24b5ee 0px 0px 3.998px, #24b5ee 0px 0px 3.998px, #24b5ee 0px 0px 3.998px, #24b5ee 0px 0px 3.998px, #24b5ee 0px 0px 3.998px;
+    color: #0a1126;
+}
+
+.airDrop-SignIn-SingInTitle-Section {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 30px;
+}
+
+.airDrop-SignIn-SingInTitle-Section h1 {
+    font-size: 50px;
+    color: lightgray;
+    text-shadow: #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px, #0a1126 0px 0px 3.998px;
+}
+.airDrop-SignIn-Connect-Metamask-Section {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.airDrop-SignIn-Connect-Metamask-Section:hover {
+    opacity: 0.8;
+}
+
+.airDrop-SignIn-Connect-Metamask-Section button {
+    border-radius: 10px;
+}
+
+.airDrop-SignIn-Connect-Metamask-Section a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+    border-radius: 10px;
+    border-width: 2px;
+    height: 80px;
+    width: 400px;
+}
+.airDrop-SignIn-Connect-Metamask-Section a img {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left: 38%;
+}
+
+.airDrop-SignIn-Connect-Metamask-Section a span {
+    font-family: "SCDream8";
+    padding-left: 45px;
+    font-size: 20px;
+    color: black;
+}

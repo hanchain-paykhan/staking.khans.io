@@ -1,0 +1,258 @@
+// ------------------ ether --------- //
+.connectHanEpL2MetaWalletSection {
+    position: absolute;
+    top: -6%;
+    right: 2%;
+}
+
+.connectHanEpL2MetaWalletSection a {
+    font-size: 9.998px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.connectHanEpL2MetaWalletSection a img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// ------------------ ether --------- //
+.connectHanEpL2EtherWalletSection {
+    position: absolute;
+    top: -6%;
+    right: 2%;
+}
+
+.connectHanEpL2EtherWalletSection a {
+    font-size: 9.998px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.connectHanEpL2EtherWalletSection a img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// ------------------ optimism ----------//
+.connectHanEpL2OptiComWalletSection {
+    position: absolute;
+    top: -6%;
+    right: 2%;
+}
+
+.connectHanEpL2OptiComWalletSection a {
+    font-size: 9.998px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.connectHanEpL2OptiComWalletSection a img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// ------------ cant connect Wallet --------------//
+.cantConnectHanEpL2WalletSection {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    top: -10%;
+    right: 2%;
+}
+
+.cantConnectHanEpL2Txt {
+    border-radius: 2rem;
+    color: yellow;
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+.cantConnectHanEpL2WalletSection a {
+    font-size: 9.998px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cantConnectHanEpL2WalletSection a img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+$base-spacing-unit: 20.002px;
+$half-spacing-unit: 3px;
+$border-radius-global: 2rem;
+$button-width: auto;
+$button-height: 18px;
+$button-text-color: white;
+
+$social-list: (
+    facebook #4b70ab,
+    linkedin #0087be,
+    google #4285f4,
+    twitter #3b94d9,
+    yahoo #500095,
+    openid #f78c40,
+    googleplus #4285f4,
+    dropbox #007de1,
+    github #333,
+    bitbucket #205081,
+    soundcloud #ff5500,
+    spotify #2ebd59,
+    microsoft #00a4ef,
+    flickr #ff0084,
+    twitch #4b367c,
+    razer #44d62c
+);
+
+%social-button,
+.social-button {
+    width: $button-width;
+    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 9.998px;
+    border: 0 none;
+    border-radius: $border-radius-global;
+    text-decoration: none;
+    transition: all 250ms linear;
+
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+.button--social-login {
+    margin-bottom: $half-spacing-unit;
+    margin-right: $half-spacing-unit;
+    color: $button-text-color;
+    height: $button-height;
+    line-height: $button-height - 4;
+    position: relative;
+    text-align: left;
+    display: block;
+    // width: 150px;
+
+    .social-icon {
+        margin-right: 5.003px;
+        margin-left: 5.003px;
+        font-size: $base-spacing-unit;
+        line-height: $base-spacing-unit;
+        width: 20.002px;
+        height: $base-spacing-unit;
+        text-align: center;
+        display: inline-block;
+        // position: relative;
+        top: 3.998px;
+
+        &:before {
+            display: inline-block;
+            width: ($base-spacing-unit * 2) - ($half-spacing-unit / 2) - 2;
+        }
+
+        &:after {
+            content: "";
+        }
+    }
+}
+
+@each $name, $color in $social-list {
+    .button--#{$name} {
+        background-color: $color;
+        border: 0.998px solid darken($color, 10%);
+
+        .social-icon {
+            border-right: 0.998px solid darken($color, 10%);
+            color: red;
+
+            &:after {
+                border-right: 0.998px solid lighten($color, 10%);
+            }
+        }
+
+        &:hover {
+            background-color: darken($color, 5%);
+        }
+    }
+}
+// ------------------ ether section -------------------//@
+%social-button,
+.social-button {
+    width: $button-width;
+    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 9.998px;
+    border: 0 none;
+    border-radius: $border-radius-global;
+    text-decoration: none;
+    transition: all 250ms linear;
+
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+.button--social-login {
+    margin-bottom: $half-spacing-unit;
+    margin-right: $half-spacing-unit;
+    color: $button-text-color;
+    height: $button-height;
+    line-height: $button-height - 4;
+    position: relative;
+    text-align: left;
+    display: block;
+    // width: 150px;
+
+    .social-icon {
+        margin-right: 5.003px;
+        margin-left: 5.003px;
+        font-size: $base-spacing-unit;
+        line-height: $base-spacing-unit;
+        width: 20.002px;
+        height: $base-spacing-unit;
+        text-align: center;
+        display: inline-block;
+        // position: relative;
+        top: 3.998px;
+
+        &:before {
+            display: inline-block;
+            width: ($base-spacing-unit * 2) - ($half-spacing-unit / 2) - 2;
+        }
+
+        &:after {
+            content: "";
+        }
+    }
+}
+
+@each $name, $color in $social-list {
+    .button--#{$name} {
+        background-color: $color;
+        border: 0.998px solid darken($color, 10%);
+
+        .social-icon {
+            border-right: 0.998px solid darken($color, 10%);
+            color: red;
+
+            &:after {
+                border-right: 0.998px solid lighten($color, 10%);
+            }
+        }
+
+        &:hover {
+            background-color: darken($color, 5%);
+        }
+    }
+}

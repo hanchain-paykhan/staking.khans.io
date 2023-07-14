@@ -1,11 +1,10 @@
-// import { MunieStakingContract } from "../../../config/MunieConfig";
-import { MunieStakingContract } from "../../../config/MunieConfigTest";
 import Swal from "sweetalert2";
+import { MunieV2StakingContract } from "../../../config/new/StakingMunieV2Config";
 
 function munieStakingRewardAct(account) {
     return async (dispatch) => {
         try {
-            const claimReward = await MunieStakingContract.methods.claimReward().send({ from: account });
+            const claimReward = await MunieV2StakingContract.methods.claimReward().send({ from: account });
             Swal.fire({
                 title: "Success",
                 text: "Claim was successful!",

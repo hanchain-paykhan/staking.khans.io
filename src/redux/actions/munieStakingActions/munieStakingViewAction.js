@@ -1,23 +1,29 @@
-import { MunieStakingContract } from "../../../config/MunieConfigTest";
+import axios from "axios";
 
 function munieStakingViewAct(account) {
-    return async (dispatch) => {
-        try {
-            if (account !== "") {
-                // 초 당 보상으로 줄 보상 금액
-                const rewardTokenMuniePerStakingTokenApi = await MunieStakingContract.methods.rewardTokenPerStakingToken().call();
-                let [rewardTokenMuniePerStakingToken] = await Promise.all([rewardTokenMuniePerStakingTokenApi]);
-                dispatch({
-                    type: "MUNIE_STAKING_VIEW",
-                    payload: {
-                        rewardTokenMuniePerStakingToken: rewardTokenMuniePerStakingToken,
-                    },
-                });
-            }
-        } catch (error) {
-            console.error(error);
-        }
-    };
+  return async (dispatch) => {
+    try {
+      if (account !== "") {
+        const getMunieV2StakedAmountApi = await axios.post(`https://back.khans.io/block/munieV2StakedAmount`, {
+          account,
+        });
+        const getMunieV2StakedTokenIdApi = await axios.post(`https://back.khans.io/block/munieV2StakedTokenid`, {
+          account,
+        });
+
+        let [munieAmountStaked, munieStakedTokenIds] = await Promise.all([getMunieV2StakedAmountApi.data, getMunieV2StakedTokenIdApi.data]);
+        dispatch({
+          type: "MUNIE_STAKING_VIEW",
+          payload: {
+            munieAmountStaked: munieAmountStaked,
+            munieStakedTokenIds: munieStakedTokenIds,
+          },
+        });
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
 }
 
 export const munieStakingViewAction = { munieStakingViewAct };
