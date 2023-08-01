@@ -8,8 +8,8 @@ import "@openzeppelin/contracts/token/ERC721/IERC721.sol";
 import "@openzeppelin/contracts/security/Pausable.sol";
 
 contract PrivateStakingRakis49 is ReentrancyGuard, Ownable, Pausable {
-    IERC20 private stakingToken; // RAKIS-6 token
-    IERC20 private rewardToken; // HANeP token
+    IERC20 public stakingToken; // RAKIS-6 token
+    IERC20 public rewardToken; // HANeP token
     uint32 private participationCode;
 
     constructor(address _stakingToken, address _rewardToken, uint32 _participationCode) onlyOwner {
@@ -18,8 +18,8 @@ contract PrivateStakingRakis49 is ReentrancyGuard, Ownable, Pausable {
         participationCode = _participationCode;
     }
 
-    uint64 private constant hanepTokenPerLpToken = 29459865851; // Quantity of HANeP tokens rewarded per LP token
-    uint32 private constant withdrawDuration = 365 days; // The total amount of HANeP token available for reward = hanepTokenPerLpToken * tokenVolume * rewardsDuration
+    uint64 public constant hanepTokenPerLpToken = 29459865851; // Quantity of HANeP tokens rewarded per LP token
+    uint32 public constant withdrawDuration = 365 days; // The total amount of HANeP token available for reward = hanepTokenPerLpToken * tokenVolume * rewardsDuration
     uint256 public totalSupply; // Total amount of token staked
     uint256 public tokenQuota = 10000 ether; // The total amount of LP token that users can stake to contract
 
@@ -68,7 +68,7 @@ contract PrivateStakingRakis49 is ReentrancyGuard, Ownable, Pausable {
     function withdraw(uint256 _index) public nonReentrant {
         Staker storage staker = stakers[msg.sender];
         Staker storage array = stakerArray[msg.sender][_index];
-        // require(stakerArray[msg.sender][_index].timeStarted + withdrawDuration <= block.timestamp,"It's not the time to withdraw");
+        require(stakerArray[msg.sender][_index].timeStarted + withdrawDuration <= block.timestamp,"It's not the time to withdraw");
         totalSupply -= array.amount;
         staker.totalAmount -= array.amount;
         staker.unclaimedReward += (block.timestamp - stakerArray[msg.sender][_index].timeStarted) * ((stakerArray[msg.sender][_index].amount * hanepTokenPerLpToken) / 10**18);
