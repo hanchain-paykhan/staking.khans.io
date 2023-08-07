@@ -6,4 +6,4 @@ Contract Information
 
 # PrivateStaking [Rakis49] Locked 365 Day - Optimistic Ethereum Network
 
-0x296F1F18251D8FF71800C8B9384B93Ee44003de2
+0x22540365fc445107403ee3fa3864fc1f5dc84c2f
