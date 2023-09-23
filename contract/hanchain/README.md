@@ -1,7 +1,7 @@
 # HAN Bonus Staking on Optimism
 
 ### Staking Token Name (Symbol)
-- HanChain
+- HanChain (HAN)
 
 ### Staking Token Type
 - ERC-20
