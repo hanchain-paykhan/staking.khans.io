@@ -1,4 +1,32 @@
-Contract Information
+# MusiKhan Staking on Optimism
+
+### Staking Token Name (Symbol)
+- MusiKhan Tokens (numerous)
+
+### Staking Token Type
+- ERC-20
+
+### Staking Token Brief
+- Proof of ownership of Music Copyright Royalty.
+- Contract (OP) : numerous address
+
+### Buy
+- https://launchpad.khans.io/musikhan
+
+### Staking Contract address
+- optimism: 0x5AD7e2BF0204C066ac9C3DD7028cE30B41D12682
+
+### Unstaking Staked Token
+- Flexible
+
+### Reward Amount
+- 0.000000002314814815 HAN per token/sec
+
+### Staking Rewards Duration
+- 365 Days
+
+### Staking URL
+- https://staking.khans.io/hanep
 
 # Bridge - Ethereum Mainnet
 
@@ -11,10 +39,6 @@ Contract Information
 # MusikhanAirdrop - Optimistic Ethereum Network
 
 0x9B61907d84e774706023245930A2Aa3e719E8533
-
-# MusikhanStaking - Optimistic Ethereum Network
-
-0x5AD7e2BF0204C066ac9C3DD7028cE30B41D12682
 
 # MusikhanTokenFactory - Optimistic Ethereum Network
 
