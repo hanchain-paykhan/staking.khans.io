@@ -1,4 +1,4 @@
-# HanBonus Staking on Optimism
+# HAN Bonus Staking on Optimism
 
 ### Staking Token Name (Symbol)
 - HanChain
