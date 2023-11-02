@@ -28,6 +28,23 @@
 ### Staking URL
 - https://staking.khans.io/hanep
 
+# MusiKhan Reward V2 on Optimism
+
+### Staking Token Name (Symbol)
+- MusiKhan tokens that are staked in MusiKhan Staking and are listed on the Launchpad (numerous)
+
+### Staking Contract address
+- optimism: 0xFaDA2FCe08051f8da30E67Ead174D3CCb967699B
+
+### Reward Amount
+- 0.000000001157407407 HAN per token/sec
+
+### Staking Rewards Duration
+- 365 Days
+
+### Staking URL
+- https://staking.khans.io/hanep
+
 # Bridge - Ethereum Mainnet
 
 0xb19F76093198c9D8E23bC415921a3509a051ED47
