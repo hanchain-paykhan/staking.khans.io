@@ -37,7 +37,7 @@
 - optimism: 0xFaDA2FCe08051f8da30E67Ead174D3CCb967699B
 
 ### Reward Amount
-- 0.000000001157407407 HAN per token/sec
+- 0.000000001157407407 HANeP per token/sec
 
 ### Staking Rewards Duration
 - 365 Days
