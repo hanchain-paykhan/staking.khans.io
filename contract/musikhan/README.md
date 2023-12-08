@@ -34,7 +34,7 @@
 - MusiKhan tokens that are staked in MusiKhan Staking and are listed on the Launchpad (numerous)
 
 ### Staking Contract address
-- optimism: 0xFaDA2FCe08051f8da30E67Ead174D3CCb967699B
+- optimism: 0xBbE6C05615955f3d1C222f8D6b5d23cfBcd1a4d1
 
 ### Reward Amount
 - 0.000000001157407407 HANeP per token/sec
