@@ -41,7 +41,7 @@
 - optimism: 0x21578cDcfe425B2b6376C2c4dd7c159c2bF4aAD7
 
 ### Quota
-- 25,875 HANep
+- 25,875 HANeP
 
 ### Unstaking Staked Token
 - 365-Day Wait
