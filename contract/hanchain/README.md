@@ -34,7 +34,7 @@
 # HAN Bonus V3 on Optimism
 
 ### Staking Token Name (Symbol)
-- HANePlatform (HANeP)
+- HanChain (HAN)
 
 ### Buy
 - [Uniswap V3 on Optimism](https://app.uniswap.org/swap?inputCurrency=0x4200000000000000000000000000000000000006&outputCurrency=0x50bce64397c75488465253c0a034b8097fea6578&chain=optimism)
