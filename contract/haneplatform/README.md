@@ -54,3 +54,23 @@
 
 ### Staking URL
 - https://staking.khans.io/hanep
+
+# HANeP Bonus V3 on Optimism
+
+### Staking Contract address
+- optimism: 0xfEeEf1eb3bF843A7b98a5Fd117851c100045653E
+
+### Quota
+- Balanced by Tokenomics
+
+### Unstaking Staked Token
+- 365-Day Wait
+
+### Reward Amount
+- 0.00000004318912037 HANeP per token/sec
+
+### Staking Rewards Duration
+- 365 Days
+
+### Staking URL
+- https://staking.khans.io/hanep
