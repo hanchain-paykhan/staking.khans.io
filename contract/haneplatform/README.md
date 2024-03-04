@@ -58,7 +58,7 @@
 # HANeP Bonus V3 on Optimism
 
 ### Staking Contract address
-- optimism: 0xfEeEf1eb3bF843A7b98a5Fd117851c100045653E
+- optimism: 0x7DB8fBB773EE3Ed35f0b578f6416Fe3f03F2AA6b
 
 ### Quota
 - Balanced by Tokenomics
