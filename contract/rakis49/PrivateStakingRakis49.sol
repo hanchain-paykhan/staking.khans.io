@@ -68,7 +68,7 @@ contract PrivateStakingRakis49 is ReentrancyGuard, Ownable, Pausable {
     function withdraw(uint256 _index) public nonReentrant {
         Staker storage staker = stakers[msg.sender];
         Staker storage array = stakerArray[msg.sender][_index];
-        require(stakerArray[msg.sender][_index].timeStarted + withdrawDuration <= block.timestamp,"It's not the time to withdraw");
+        require(stakerArray[msg.sender][_index].withdrawalTime <= block.timestamp,"It's not the time to withdraw");
         totalSupply -= array.amount;
         staker.totalAmount -= array.amount;
         staker.unclaimedReward += (block.timestamp - stakerArray[msg.sender][_index].timeStarted) * ((stakerArray[msg.sender][_index].amount * hanepTokenPerLpToken) / 10**18);
